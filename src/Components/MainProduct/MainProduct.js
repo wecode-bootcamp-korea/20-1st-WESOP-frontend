@@ -4,7 +4,7 @@ import './MainProduct.scss';
 class MainProduct extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { products: [], rightPx: 0, rightHr: 542 };
+    this.state = { products: [], rightPx: 0, leftHr: 100 };
   }
 
   componentDidMount() {
@@ -15,7 +15,7 @@ class MainProduct extends React.Component {
       });
   }
   render() {
-    const { products, rightPx, rightHr } = this.state;
+    const { products, rightPx, leftHr } = this.state;
     return (
       <div className="MainProduct">
         <div style={{ right: rightPx }}>
@@ -31,7 +31,7 @@ class MainProduct extends React.Component {
           className="prev"
           onClick={() => {
             rightPx > 0 &&
-              this.setState({ rightPx: rightPx - F00, rightHr: rightHr + F01 });
+              this.setState({ rightPx: rightPx - F00, leftHr: leftHr - F01 });
           }}
           style={{ left: rightPx <= 0 && -90 }}
         >
@@ -41,14 +41,14 @@ class MainProduct extends React.Component {
           className="next"
           onClick={() => {
             rightPx < 1200 &&
-              this.setState({ rightPx: rightPx + F00, rightHr: rightHr - F01 });
+              this.setState({ rightPx: rightPx + F00, leftHr: leftHr + F01 });
           }}
           style={{ right: rightPx > 1200 && -90 }}
         >
           <i class="fas fa-chevron-right" />
         </button>
         <hr />
-        <hr className="move" style={{ right: rightHr }} />
+        <hr className="move" style={{ width: F01, left: leftHr }} />
       </div>
     );
   }
@@ -57,4 +57,4 @@ class MainProduct extends React.Component {
 export default MainProduct;
 
 const F00 = 250;
-const F01 = 1300 / 6;
+const F01 = Math.ceil((window.innerWidth - 200) / 6);

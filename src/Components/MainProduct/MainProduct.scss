@@ -57,13 +57,12 @@ $darkGray: #333;
   }
 
   hr {
-    width: 1300px;
+    // width: 1300px;
     border: 1px solid lightgray;
 
     &.move {
-      position: relative;
-      right: -500px;
-      bottom: 10px;
+      position: absolute;
+      bottom: 9px;
       width: 216px;
       border-color: $darkGray;
       transition: 1s;
