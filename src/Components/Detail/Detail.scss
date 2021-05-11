@@ -1,6 +1,7 @@
 .detailProduct {
   -webkit-font-smoothing: antialiased;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
   font-family: 'Suisse Regular', sans-serif;
@@ -12,21 +13,21 @@
 
   .detailBox {
     color: rgb(51, 51, 51);
-    font-size: 14px;
+    font-size: 12px;
     width: 350px;
 
     .category {
       ul {
         display: flex;
         margin-right: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
     }
 
     .detailNameExplain {
       border-bottom: 2px solid black;
       .detailName {
-        font-size: 30px;
+        font-size: 25px;
         margin-bottom: 20px;
       }
       .detailExplain {
@@ -36,13 +37,16 @@
 
     .detailInfo {
       margin-top: 15px;
-      ul > li {
+      p {
+        margin-bottom: 10px;
+        &:last-child {
+          color: #686868;
+        }
+      }
+
+      li {
         border-bottom: 1px solid #d6d5cc;
-      }
-      li {
         margin-bottom: 15px;
-      }
-      li {
         &:last-child {
           border-bottom: none;
         }
@@ -52,7 +56,7 @@
     .addCart {
       border: solid 1px #333333;
       background-color: #333333;
-      width: 370px;
+      width: 100%;
       height: 60px;
       color: #fffef2;
       font-size: 12px;

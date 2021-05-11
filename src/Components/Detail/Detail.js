@@ -45,7 +45,7 @@ class Detail extends React.Component {
               </ul>
             </div>
             <div className="detailNameExplain">
-              <h1 className="detailName">너처러</h1>
+              <h1 className="detailName">이솝 테싯</h1>
               <p className="detailExplain">
                 어머니를 비롯해 보살펴 주신 모든 분들에게 감사를 표현하는 기프트
                 키트. 인기 많은 핸드 밤, 상쾌한 바디 클렌저, 영양을 전하는 립
@@ -55,14 +55,16 @@ class Detail extends React.Component {
             <div className="detailInfo">
               <ul>
                 <li>
-                  <div className="headerFirst">카트 구성</div>
-                  <div className="explainFirst">
-                    손을 부드럽게 향기로운 트리오
-                  </div>
+                  <p>카트 구성</p>
+                  <p>손을 부드럽게 향기로운 트리오</p>
                 </li>
                 <li>
-                  <div className="headerSecond">상세 정보</div>
-                  <div className="explainSecond">레저렉션</div>
+                  <p>상세 정보</p>
+                  <p>레저렉션</p>
+                </li>
+                <li>
+                  <p>주요 성분</p>
+                  <p>만다린, 로즈마리 리프</p>
                 </li>
               </ul>
             </div>
