@@ -1,9 +1,9 @@
 import React from 'react';
-import Gift from '../../Components/Gift/Gift';
+import GiftList from '../../Components/GiftList/GiftList';
 
 class Main extends React.Component {
   render() {
-    return <Gift />;
+    return <GiftList />;
   }
 }
 
