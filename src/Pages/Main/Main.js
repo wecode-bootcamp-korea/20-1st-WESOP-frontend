@@ -1,8 +1,9 @@
 import React from 'react';
+import Detail from '../../Components/Detail/Detail';
 
 class Main extends React.Component {
   render() {
-    return <div>haha</div>;
+    return <Detail />;
   }
 }
 
