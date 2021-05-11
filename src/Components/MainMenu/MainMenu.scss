@@ -1,9 +1,52 @@
 .MainMenu {
+  $darkGray: #333;
+
+  position: relative;
   width: 33.333%;
   min-height: 100vh;
+  padding: 40px;
   background-color: #fffff2;
 
+  .menuNav {
+    ul {
+      display: flex;
+
+      li {
+        position: relative;
+        margin-right: 30px;
+
+        hr {
+          position: absolute;
+          top: 12px;
+          width: 0;
+          border: none;
+          border-bottom: 1px solid #333;
+          transition: 0.5s;
+        }
+      }
+    }
+
+    i {
+      position: absolute;
+      top: 40px;
+      right: 0px;
+    }
+  }
+
   .logo {
+    position: absolute;
+    top: 150px;
     width: 100px;
+    margin-bottom: 20px;
+  }
+
+  .category {
+    position: absolute;
+    top: 300px;
+    font-size: 30px;
+
+    li {
+      margin: 15px 5px;
+    }
   }
 }
