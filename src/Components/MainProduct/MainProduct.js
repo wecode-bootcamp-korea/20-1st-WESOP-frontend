@@ -4,8 +4,20 @@ import './MainProduct.scss';
 class MainProduct extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { products: [], rightPx: 0, leftHr: 100 };
+    this.state = { products: [], slideRight: 0, barLeft: 100, innerWidth: 0 };
+    this.barWidth = 0;
   }
+
+  setBar = () => {
+    this.setState({ innerWidth: window.innerWidth }, () => {
+      this.barWidth = (this.state.innerWidth - 200) / 6;
+    });
+
+    this.setState({
+      slideRight: F00 * clickedNumber,
+      barLeft: 100 + this.barWidth * clickedNumber,
+    });
+  };
 
   componentDidMount() {
     fetch('/data/mockdata.json')
@@ -13,12 +25,19 @@ class MainProduct extends React.Component {
       .then(productData => {
         this.setState({ products: productData });
       });
+
+    this.setBar();
+
+    window.addEventListener('resize', this.setBar);
   }
+
   render() {
-    const { products, rightPx, leftHr } = this.state;
+    const { products, slideRight, barLeft } = this.state;
+    const { barWidth } = this;
+
     return (
       <div className="MainProduct">
-        <div style={{ right: rightPx }}>
+        <div style={{ right: slideRight }}>
           {products.map(product => (
             <div className="product">
               <img src={product.img} />
@@ -30,25 +49,33 @@ class MainProduct extends React.Component {
         <button
           className="prev"
           onClick={() => {
-            rightPx > 0 &&
-              this.setState({ rightPx: rightPx - F00, leftHr: leftHr - F01 });
+            clickedNumber--;
+            slideRight > 0 &&
+              this.setState({
+                slideRight: F00 * clickedNumber,
+                barLeft: 100 + barWidth * clickedNumber,
+              });
           }}
-          style={{ left: rightPx <= 0 && -90 }}
+          style={{ left: slideRight <= 0 && -90 }}
         >
           <i class="fas fa-chevron-left" />
         </button>
         <button
           className="next"
           onClick={() => {
-            rightPx < 1200 &&
-              this.setState({ rightPx: rightPx + F00, leftHr: leftHr + F01 });
+            clickedNumber++;
+            slideRight < 1200 &&
+              this.setState({
+                slideRight: F00 * clickedNumber,
+                barLeft: 100 + barWidth * clickedNumber,
+              });
           }}
-          style={{ right: rightPx > 1200 && -90 }}
+          style={{ right: slideRight > 1200 && -90 }}
         >
           <i class="fas fa-chevron-right" />
         </button>
         <hr />
-        <hr className="move" style={{ width: F01, left: leftHr }} />
+        <hr className="move" style={{ width: barWidth, left: barLeft }} />
       </div>
     );
   }
@@ -57,4 +84,4 @@ class MainProduct extends React.Component {
 export default MainProduct;
 
 const F00 = 250;
-const F01 = Math.ceil((window.innerWidth - 200) / 6);
+let clickedNumber = 0;
