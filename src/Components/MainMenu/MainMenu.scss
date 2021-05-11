@@ -43,10 +43,22 @@
   .category {
     position: absolute;
     top: 300px;
-    font-size: 30px;
+    font-size: 28px;
 
     li {
+      opacity: 0;
       margin: 15px 5px;
+      animation: appear 1s ease 0s 1 normal forwards;
     }
+  }
+}
+
+@keyframes appear {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

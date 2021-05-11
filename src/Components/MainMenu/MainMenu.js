@@ -17,10 +17,10 @@ class MainMenu extends React.Component {
             {UPPERCATEGORIES.map((title, index) => (
               <li
                 onMouseOver={() => {
-                  const newHover = { ...ALLNOTHOVER };
-                  newHover[`li${index}`] = true;
+                  // const newHover = { ...ALLNOTHOVER };
+                  // newHover[`li${index}`] = true;
                   this.setState({
-                    isHover: newHover,
+                    isHover: { ...ALLNOTHOVER, [`li${index}`]: true },
                   });
                 }}
               >
@@ -33,9 +33,11 @@ class MainMenu extends React.Component {
         </div>
         <img alt="wesop logo" src="images/wesop.png" className="logo" />
         <div className="category">
-          {CATEGORIES.map(cate => (
-            <li>{cate}</li>
-          ))}
+          {CATEGORIES['제품보기'].map((cate, index) => {
+            return (
+              <li style={{ animationDelay: `${0.1 * index}s` }}>{cate}</li>
+            );
+          })}
         </div>
       </div>
     );
@@ -45,5 +47,9 @@ class MainMenu extends React.Component {
 export default MainMenu;
 
 const UPPERCATEGORIES = ['제품보기', '읽기', '검색'];
-const CATEGORIES = ['스킨', '헤어', '바디 & 핸드', '향수', '기프트 가이드'];
+const CATEGORIES = {
+  제품보기: ['스킨', '헤어', '바디 & 핸드', '향수', '기프트 가이드'],
+  읽기: [],
+  검색: [],
+};
 const ALLNOTHOVER = { li0: false, li1: false, li2: false };
