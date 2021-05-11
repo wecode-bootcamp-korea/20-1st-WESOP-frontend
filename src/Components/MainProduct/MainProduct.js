@@ -15,8 +15,6 @@ class MainProduct extends React.Component {
   }
 
   setBar = () => {
-    const { innerWidth } = this.state;
-
     this.setState({ innerWidth: window.innerWidth });
 
     this.setState(previousState => {
@@ -58,7 +56,7 @@ class MainProduct extends React.Component {
         <div style={{ right: slideRight }}>
           {products.map(product => (
             <div className="product">
-              <img src={product.img} />
+              <img alt="individualProduct" src={product.img} />
               <p>{product.productName}</p>
               <p>{product.desc}</p>
             </div>
@@ -97,5 +95,3 @@ class MainProduct extends React.Component {
 }
 
 export default MainProduct;
-
-const F00 = 250;
