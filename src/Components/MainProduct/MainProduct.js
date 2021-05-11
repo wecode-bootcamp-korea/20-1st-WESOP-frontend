@@ -17,17 +17,23 @@ class MainProduct extends React.Component {
   setBar = () => {
     this.setState({ innerWidth: window.innerWidth });
 
-    this.setState(previousState => {
-      return { barWidth: (previousState.innerWidth - 200) / 6 };
-      //6은 this.state.products.length... (products의 개수!)
-    });
+    if (this.state.products.length > 0) {
+      this.setState(previousState => {
+        return {
+          barWidth:
+            (previousState.innerWidth - 200) / this.state.products.length,
+        };
+      });
 
-    this.setState(previousState => {
-      return {
-        slideRight: (this.state.innerWidth / 6) * previousState.clickedNumber,
-        barLeft: 100 + previousState.barWidth * previousState.clickedNumber,
-      };
-    });
+      this.setState(previousState => {
+        return {
+          slideRight:
+            (this.state.innerWidth / this.state.products.length) *
+            previousState.clickedNumber,
+          barLeft: 100 + previousState.barWidth * previousState.clickedNumber,
+        };
+      });
+    }
   };
 
   componentDidMount() {
@@ -80,7 +86,6 @@ class MainProduct extends React.Component {
             slideRight < 1200 &&
               this.setState({ clickedNumber: clickedNumber + 1 }, () => {
                 this.setBar();
-                console.log(slideRight);
               });
           }}
           style={{ right: slideRight > 1200 && -90 }}
