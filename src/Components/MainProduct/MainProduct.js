@@ -4,18 +4,31 @@ import './MainProduct.scss';
 class MainProduct extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { products: [], slideRight: 0, barLeft: 100, innerWidth: 0 };
-    this.barWidth = 0;
+    this.state = {
+      products: [],
+      innerWidth: 0,
+      clickedNumber: 0,
+      slideRight: 0,
+      barLeft: 100,
+      barWidth: 0,
+    };
   }
 
   setBar = () => {
-    this.setState({ innerWidth: window.innerWidth }, () => {
-      this.barWidth = (this.state.innerWidth - 200) / 6;
+    const { innerWidth } = this.state;
+
+    this.setState({ innerWidth: window.innerWidth });
+
+    this.setState(previousState => {
+      return { barWidth: (previousState.innerWidth - 200) / 6 };
+      //6은 this.state.products.length... (products의 개수!)
     });
 
-    this.setState({
-      slideRight: F00 * clickedNumber,
-      barLeft: 100 + this.barWidth * clickedNumber,
+    this.setState(previousState => {
+      return {
+        slideRight: (this.state.innerWidth / 6) * previousState.clickedNumber,
+        barLeft: 100 + previousState.barWidth * previousState.clickedNumber,
+      };
     });
   };
 
@@ -23,7 +36,9 @@ class MainProduct extends React.Component {
     fetch('/data/mockdata.json')
       .then(productData => productData.json())
       .then(productData => {
-        this.setState({ products: productData });
+        this.setState({
+          products: productData,
+        });
       });
 
     this.setBar();
@@ -31,10 +46,13 @@ class MainProduct extends React.Component {
     window.addEventListener('resize', this.setBar);
   }
 
-  render() {
-    const { products, slideRight, barLeft } = this.state;
-    const { barWidth } = this;
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setBar);
+  }
 
+  render() {
+    const { products, slideRight, barLeft, clickedNumber, barWidth } =
+      this.state;
     return (
       <div className="MainProduct">
         <div style={{ right: slideRight }}>
@@ -49,11 +67,9 @@ class MainProduct extends React.Component {
         <button
           className="prev"
           onClick={() => {
-            clickedNumber--;
             slideRight > 0 &&
-              this.setState({
-                slideRight: F00 * clickedNumber,
-                barLeft: 100 + barWidth * clickedNumber,
+              this.setState({ clickedNumber: clickedNumber - 1 }, () => {
+                this.setBar();
               });
           }}
           style={{ left: slideRight <= 0 && -90 }}
@@ -63,11 +79,10 @@ class MainProduct extends React.Component {
         <button
           className="next"
           onClick={() => {
-            clickedNumber++;
             slideRight < 1200 &&
-              this.setState({
-                slideRight: F00 * clickedNumber,
-                barLeft: 100 + barWidth * clickedNumber,
+              this.setState({ clickedNumber: clickedNumber + 1 }, () => {
+                this.setBar();
+                console.log(slideRight);
               });
           }}
           style={{ right: slideRight > 1200 && -90 }}
@@ -84,4 +99,3 @@ class MainProduct extends React.Component {
 export default MainProduct;
 
 const F00 = 250;
-let clickedNumber = 0;
