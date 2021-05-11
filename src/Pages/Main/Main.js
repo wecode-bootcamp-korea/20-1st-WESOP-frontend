@@ -1,8 +1,9 @@
 import React from 'react';
+import MainMenu from '../../Components/MainMenu/MainMenu';
 
 class Main extends React.Component {
   render() {
-    return <div>haha</div>;
+    return <MainMenu />;
   }
 }
 
