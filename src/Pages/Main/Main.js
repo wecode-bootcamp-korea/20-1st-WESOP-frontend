@@ -5,6 +5,7 @@ class Main extends React.Component {
     super(props);
     this.state = {
       login: true, // 로그인 = true
+      notEmail: true,
     };
   }
 
@@ -14,6 +15,12 @@ class Main extends React.Component {
       // 로그인 = false
       this.setState({ login: false });
     }, 200); // 0.2초 후에 종료.
+  };
+
+  appearError = () => {
+    setTimeout(() => {
+      this.setState({ notEmail: false });
+    }, 200);
   };
 
   render() {

@@ -17,6 +17,12 @@ class Login extends React.Component {
     });
   };
 
+  handleValuePW = e => {
+    this.setState({
+      pw: e.target.value,
+    });
+  };
+
   handleBtn = e => {
     e.preventDefault();
     fetch('#', {
@@ -37,6 +43,10 @@ class Login extends React.Component {
   };
 
   render() {
+    const { email, pw } = this.state;
+    const isEmail =
+      (email.includes('@') && email.endsWith('.com')) || email.length < 1;
+    const isPssword = pw.length >= 5 && pw.length <= 10;
     return (
       <div className="bodyBack">
         <div className="login">
@@ -61,19 +71,45 @@ class Login extends React.Component {
                 <h1 className="modalTitle">안녕하세요.</h1>
                 <p>유효한 이메일 주소를 입력하세요.</p>
               </div>
+
               <div className="formRow">
                 <label htmlFor="">
                   <input
                     onChange={this.handleValueID}
                     aria-required="true"
-                    className="formTextInput"
+                    className={isEmail ? 'formTextInput' : 'isEmailError'}
                     name="email"
                     type="email"
                   />
-                  <span className="formTextLabel">이메일 주소</span>
+                  <span className={email ? 'typing' : 'formTextLabel'}>
+                    이메일 주소
+                  </span>
                 </label>
               </div>
-              <button className="btnLogin" onClick={this.handleBtn}>
+              <div className={isEmail ? 'opacity' : 'errorMessage'}>
+                유효한 이메일 주소를 입력하세요
+              </div>
+              <div className="formRow">
+                <label htmlFor="">
+                  <input
+                    //{this.state.pw.length !== 0 ? false : true}
+                    onChange={this.handleValuePW} // 빈번 함수 만들어줘야함.
+                    aria-required="true"
+                    className={isPssword ? 'formPwInput' : 'isPasswordError'}
+                    name="password"
+                    type="password"
+                  />
+                  <span className={isPssword ? 'typing' : 'formTextLabel'}>
+                    패스워드
+                  </span>
+                </label>
+              </div>
+
+              <button
+                className="btnLogin"
+                onClick={this.handleBtn}
+                disabled={isEmail && isPssword ? false : true}
+              >
                 <div className="btnContent">
                   <span className="btnLabel">계속</span>
                   <span className="loadingIndicator">

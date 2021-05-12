@@ -20,8 +20,8 @@
     width: 100%;
     height: 100%;
     max-width: 550px;
-    max-height: 446px;
-    padding: 50px;
+    max-height: 535px;
+    padding: 40px 50px;
     background-color: #fffef2;
     transform: translateZ(0);
     opacity: 1px;
@@ -44,6 +44,14 @@
 
       &:focus-within .formTextInput {
         border-bottom: 1px solid black !important;
+      }
+
+      &:focus-within .isEmailError {
+        border-bottom: 1px solid red !important;
+      }
+
+      &:focus-within .isPasswordError {
+        border-bottom: 1px solid red !important;
       }
 
       .modalHeadingWrap {
@@ -70,8 +78,8 @@
         z-index: 1;
         flex-wrap: nowrap;
         margin: 0 -10px;
-        margin-bottom: 35px;
-        padding: 35px 10px 0;
+        margin-bottom: 10px;
+        padding: 20px 10px 0;
         width: 100%;
 
         label {
@@ -81,6 +89,22 @@
           cursor: default;
 
           .formTextInput {
+            position: flex;
+            margin: 0;
+            margin-top: 17px;
+            padding: 8px 0 0 0;
+            width: 100%;
+            font-size: 18px;
+            background-color: transparent;
+            line-height: 1;
+            border: none;
+            border-bottom: 1.5px solid #e9e9e9;
+            height: 40px;
+            text-overflow: ellipsis;
+            //transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+
+          .formPwInput {
             position: flex;
             margin: 0;
             margin-top: 17px;
@@ -170,6 +194,52 @@
       }
     }
   }
+}
+.typing {
+  position: absolute;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.errorMessage {
+  font-size: 14px;
+  opacity: 1;
+  padding-bottom: 20px;
+  color: #ea6956;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.isPasswordError {
+  display: flex;
+  margin: 0;
+  margin-top: 17px;
+  padding: 8px 0 0 0;
+  width: 100%;
+  font-size: 18px;
+  background-color: transparent;
+  line-height: 1;
+  border: none;
+  border-bottom: 1.5px solid #e9e9e9;
+  height: 40px;
+  text-overflow: ellipsis;
+}
+
+.isEmailError {
+  display: flex;
+  margin: 0;
+  margin-top: 17px;
+  padding: 8px 0 0 0;
+  width: 100%;
+  font-size: 18px;
+  background-color: transparent;
+  line-height: 1;
+  border: none;
+  border-bottom: 1.5px solid #e9e9e9;
+  height: 40px;
+  text-overflow: ellipsis;
 }
 
 @keyframes test {
