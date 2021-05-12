@@ -6,35 +6,10 @@ class MainProduct extends React.Component {
     super(props);
     this.state = {
       products: [],
-      innerWidth: 0,
-      clickedNumber: 0,
       slideRight: 0,
-      barLeft: 100,
-      barWidth: 0,
+      barLeft: 0,
     };
   }
-
-  setBar = () => {
-    this.setState({ innerWidth: window.innerWidth });
-
-    if (this.state.products.length > 0) {
-      this.setState(previousState => {
-        return {
-          barWidth:
-            (previousState.innerWidth - 200) / this.state.products.length,
-        };
-      });
-
-      this.setState(previousState => {
-        return {
-          slideRight:
-            (this.state.innerWidth / this.state.products.length) *
-            previousState.clickedNumber,
-          barLeft: 100 + previousState.barWidth * previousState.clickedNumber,
-        };
-      });
-    }
-  };
 
   componentDidMount() {
     fetch('/data/mockdata.json')
@@ -44,24 +19,15 @@ class MainProduct extends React.Component {
           products: productData,
         });
       });
-
-    this.setBar();
-
-    window.addEventListener('resize', this.setBar);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.setBar);
   }
 
   render() {
-    const { products, slideRight, barLeft, clickedNumber, barWidth } =
-      this.state;
+    const { products, slideRight, barLeft } = this.state;
     return (
       <div className="MainProduct">
-        <div style={{ right: slideRight }}>
+        <div style={{ right: `${slideRight}%` }}>
           {products.map(product => (
-            <div className="product">
+            <div className="product" key={product.id}>
               <img alt="individualProduct" src={product.img} />
               <p>{product.productName}</p>
               <p>{product.desc}</p>
@@ -71,29 +37,32 @@ class MainProduct extends React.Component {
         <button
           className="prev"
           onClick={() => {
-            slideRight > 0 &&
-              this.setState({ clickedNumber: clickedNumber - 1 }, () => {
-                this.setBar();
+            barLeft > 0 &&
+              this.setState({
+                barLeft: barLeft - 16.4,
+                slideRight: slideRight - 10,
               });
           }}
-          style={{ left: slideRight <= 0 && -90 }}
+          style={{ left: barLeft <= 0 && -90 }}
         >
-          <i class="fas fa-chevron-left" />
+          <i className="fas fa-chevron-left" />
         </button>
         <button
           className="next"
           onClick={() => {
-            slideRight < 1200 &&
-              this.setState({ clickedNumber: clickedNumber + 1 }, () => {
-                this.setBar();
+            barLeft < 80 &&
+              this.setState({
+                barLeft: barLeft + 16.4,
+                slideRight: slideRight + 10,
               });
           }}
-          style={{ right: slideRight > 1200 && -90 }}
+          style={{ right: barLeft > 80 && -90 }}
         >
-          <i class="fas fa-chevron-right" />
+          <i className="fas fa-chevron-right" />
         </button>
-        <hr />
-        <hr className="move" style={{ width: barWidth, left: barLeft }} />
+        <div className="staticBar">
+          <div className="movingBar" style={{ left: `${barLeft}%` }}></div>
+        </div>
       </div>
     );
   }

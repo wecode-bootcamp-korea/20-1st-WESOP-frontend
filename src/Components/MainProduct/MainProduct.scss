@@ -56,15 +56,18 @@ $darkGray: #333;
     }
   }
 
-  hr {
-    // width: 1300px;
-    border: 1px solid lightgray;
+  .staticBar {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    border-bottom: 3px solid lightgray;
 
-    &.move {
+    .movingBar {
       position: absolute;
-      bottom: 9px;
-      width: 216px;
-      border-color: $darkGray;
+      left: 0%;
+      right: 0%;
+      width: 18%;
+      border-bottom: 3px solid $darkGray;
       transition: 1s;
     }
   }
