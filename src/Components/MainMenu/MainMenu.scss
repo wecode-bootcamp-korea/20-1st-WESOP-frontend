@@ -1,13 +1,23 @@
-.MainMenu {
-  $darkGray: #333;
+$darkGray: #333;
+$bgColor: #fffef2;
+$transparent: rgba(255, 255, 255, 0);
 
+.MainMenu {
+  width: fit-content;
   position: relative;
-  width: 33.333%;
-  min-height: 100vh;
-  padding: 40px;
-  background-color: #fffff2;
+  color: $darkGray;
+
+  li {
+    cursor: pointer;
+  }
 
   .menuNav {
+    position: fixed;
+    width: 100vw;
+    height: 70px;
+    padding: 40px;
+    z-index: 10;
+
     ul {
       display: flex;
 
@@ -29,36 +39,105 @@
     i {
       position: absolute;
       top: 40px;
-      right: 0px;
+      left: 29%;
     }
   }
 
-  .logo {
-    position: absolute;
-    top: 150px;
-    width: 100px;
-    margin-bottom: 20px;
+  .column {
+    display: flex;
+
+    @mixin menu($z-index) {
+      position: relative;
+      width: 33.333vw;
+      min-height: 100vh;
+      padding: 40px;
+      background-color: $bgColor;
+      z-index: $z-index;
+
+      .category {
+        position: absolute;
+        top: 300px;
+        width: 100%;
+        font-size: 28px;
+
+        li {
+          width: fit-content;
+          margin: 15px 5px;
+          padding-bottom: 8px;
+          border-bottom: 1px solid $transparent;
+          opacity: 0;
+          animation: appear 1s ease 0s 1 normal forwards;
+          transition: 1s;
+        }
+      }
+    }
+
+    .firstMenu {
+      @include menu(1);
+
+      i {
+        position: absolute;
+        top: 10px;
+        right: 15%;
+        color: $darkGray;
+        font-size: 18px;
+      }
+
+      input {
+        width: 85%;
+        margin-bottom: 30px;
+        padding-bottom: 5px;
+        background-color: $transparent;
+        border: none;
+        border-bottom: 1px solid lightgray;
+        outline-color: $transparent;
+        font-size: 32px;
+
+        &:focus-within {
+          border-color: $darkGray;
+        }
+      }
+
+      .logo {
+        position: absolute;
+        top: 150px;
+        width: 100px;
+        margin-bottom: 20px;
+        transition: 1s;
+      }
+    }
+
+    .secondMenu {
+      @include menu(0);
+      animation: accordion 1s ease 0s 1 normal forwards;
+      transition: 1s;
+      // z-index: -1;
+    }
+
+    .nextMenu {
+      border-right: 1px solid lightgray;
+    }
+
+    .prevMenu {
+      animation: accordion 1s ease 0s 1 reverse forwards;
+    }
   }
 
-  .category {
-    position: absolute;
-    top: 300px;
-    font-size: 28px;
-
-    li {
+  @keyframes appear {
+    from {
+      transform: translateX(-20px);
       opacity: 0;
-      margin: 15px 5px;
-      animation: appear 1s ease 0s 1 normal forwards;
+    }
+    to {
+      opacity: 1;
     }
   }
-}
 
-@keyframes appear {
-  from {
-    transform: translateX(-20px);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+  @keyframes accordion {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+    }
   }
 }
