@@ -8,6 +8,13 @@ class Gift extends React.Component {
       gift: [],
     };
   }
+  mouseIn() {
+    console.log('ininin');
+  }
+
+  mouseOut() {
+    console.log('outoutout');
+  }
 
   componentDidMount() {
     this.setState({
@@ -19,7 +26,11 @@ class Gift extends React.Component {
     const { gift } = this.state;
     return (
       <div className="Gift">
-        <div className="giftBox">
+        <div
+          className="giftBox"
+          onMouseOver={this.mouseIn}
+          onMouseOut={this.mouseOut}
+        >
           <div className="giftModel">
             <div className="giftImg">
               <img alt="상품사진" src={gift.img}></img>

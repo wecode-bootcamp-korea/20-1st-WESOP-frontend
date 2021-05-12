@@ -1,3 +1,10 @@
+$darkGray: #333;
+
+.giftBox:hover {
+  background-color: #f0efe1;
+  transition-duration: 0.5s;
+}
+
 .giftBox {
   -webkit-font-smoothing: antialiased;
   display: flex;
@@ -5,7 +12,7 @@
   flex-direction: column;
   font-family: 'Suisse Regular', sans-serif;
   width: 480px;
-  color: rgb(51, 51, 51);
+  color: #333333;
   font-size: 11px;
 
   .giftModel {
