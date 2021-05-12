@@ -11,19 +11,45 @@
   .giftModel {
     text-align: center;
     margin-bottom: 20px;
+
     .giftImg img {
       width: 350px;
       height: 350px;
       margin-bottom: 20px;
     }
+
     .giftNameSize {
+      font-size: 15px;
       border-bottom: 2px solid black;
+      padding-bottom: 40px;
+
+      p {
+        padding: 5px;
+        &:last-child {
+          color: #666666;
+        }
+      }
     }
   }
+
   .giftInfo {
     li {
       display: flex;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #d6d5cc;
+      p {
+        margin-top: 5px;
+        margin-bottom: 25px;
+        &:first-child {
+          font-size: 14px;
+          width: 100px;
+        }
+        &:last-child {
+          width: 380px;
+          font-size: 14px;
+          color: #666666;
+        }
+      }
     }
   }
 
@@ -31,8 +57,8 @@
     border: solid 1px #333333;
     background-color: #333333;
     width: 100%;
-    height: 50px;
+    height: 70px;
     color: #fffef2;
-    font-size: 11px;
+    font-size: 14px;
   }
 }
