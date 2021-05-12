@@ -6,15 +6,12 @@ class Gift extends React.Component {
     super(props);
     this.state = {
       gift: [],
+      // disabled: false,
     };
   }
-  mouseIn() {
-    console.log('ininin');
-  }
+  mouseIn() {}
 
-  mouseOut() {
-    console.log('outoutout');
-  }
+  mouseOut() {}
 
   componentDidMount() {
     this.setState({
@@ -54,7 +51,12 @@ class Gift extends React.Component {
               </li>
             </ul>
           </div>
-          <button className="addCart">카트에 추가하기 - ₩ ${gift.price}</button>
+          <button
+            className="addCart"
+            // disabled={false}
+          >
+            카트에 추가하기 - ₩ ${gift.price}
+          </button>
         </div>
       </div>
     );

@@ -1,10 +1,5 @@
 $darkGray: #333;
 
-.giftBox:hover {
-  background-color: #f0efe1;
-  transition-duration: 0.5s;
-}
-
 .giftBox {
   -webkit-font-smoothing: antialiased;
   display: flex;
@@ -14,6 +9,11 @@ $darkGray: #333;
   width: 480px;
   color: #333333;
   font-size: 11px;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: #f0efe1;
+  }
 
   .giftModel {
     text-align: center;
@@ -21,7 +21,7 @@ $darkGray: #333;
 
     .giftImg img {
       width: 350px;
-      height: 350px;
+      height: 450px;
       margin-bottom: 20px;
     }
 
@@ -67,5 +67,10 @@ $darkGray: #333;
     height: 70px;
     color: #fffef2;
     font-size: 14px;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: black;
+    }
   }
 }
