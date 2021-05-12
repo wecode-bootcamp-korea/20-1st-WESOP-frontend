@@ -17,7 +17,7 @@ class Nav extends React.Component {
             <ul className="navHeaderNenu">
               <li className="navHeaderNenuList">
                 <a className="navHeaderNenuListText" href="#">
-                  <span>제품설명</span>
+                  <span>제품보기</span>
                 </a>
               </li>
               <li className="navHeaderNenuList">
@@ -44,6 +44,13 @@ class Nav extends React.Component {
               </li>
             </ul>
           </div>
+          <a className="navLogo" href="#">
+            <img
+              className="navLogoImg"
+              src="../../img/wesop.png"
+              alt="로고 이미지"
+            />
+          </a>
         </div>
       </>
     );

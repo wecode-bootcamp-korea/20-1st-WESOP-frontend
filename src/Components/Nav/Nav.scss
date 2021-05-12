@@ -22,6 +22,7 @@
 
 .navHeader {
   height: 69px;
+  position: relative;
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -52,6 +53,21 @@
 
 .navHeaderLoginAndCartText {
   margin-left: 25px;
+}
+
+
+.navLogo {
+  position: absolute;
+  top: 50px;
+}
+
+
+.navLogoImg {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 110px;
+  left: 40px;
 }
 
 
