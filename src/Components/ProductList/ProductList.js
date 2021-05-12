@@ -24,7 +24,7 @@ class ProductList extends React.Component {
   render() {
     const { products, slideRight, barLeft } = this.state;
     return (
-      <div className="MainProduct">
+      <div className="ProductList">
         <div style={{ right: `${slideRight}%` }}>
           {products.map(product => (
             <div className="product" key={product.id}>
