@@ -1,0 +1,35 @@
+@import '../../Styles/variables.scss';
+
+.inventory {
+  display: flex;
+  position: relative;
+  height: 530px;
+  color: $darkGray;
+  background-color: #f6f5e8;
+  overflow-x: hidden;
+
+  .categoryDesc {
+    min-width: 405px;
+    height: 100%;
+    padding: 40px;
+    line-height: normal;
+
+    h2 {
+      margin-top: 250px;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 20px 0 45px;
+    }
+
+    span {
+      font-size: 15px;
+    }
+  }
+
+  .productList {
+    display: flex;
+    position: relative;
+  }
+}

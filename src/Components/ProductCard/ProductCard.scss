@@ -1,0 +1,34 @@
+.productCard {
+  width: 405px;
+  height: 100%;
+  transition: 0.5s;
+
+  .imgContainer {
+    position: relative;
+    width: 100%;
+    height: 80%;
+
+    img {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+    }
+  }
+
+  .desc {
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.8;
+
+    span {
+      color: lightgray;
+    }
+  }
+
+  &:hover {
+    background-color: #f0efe1;
+  }
+}
