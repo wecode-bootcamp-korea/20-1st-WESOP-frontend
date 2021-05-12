@@ -7,6 +7,7 @@ class Login extends React.Component {
     this.state = {
       email: '',
       pw: '',
+      close: '',
     };
   }
 
@@ -38,35 +39,45 @@ class Login extends React.Component {
   render() {
     return (
       <div className="bodyBack">
-        <div className="Login">
-          <div className="Modal-body">
-            <form className="LoginForm">
-              <button className="Modal-closeBtn" type="button">
+        <div className="login">
+          <div className="modalBody">
+            {/* onclick을 하면 css class변경 해주기 "LoginForm" + " " 상태인데
+            50번줄에 onClick이 실행되면 Main.js에 있는 offLogin()함수가 실행되고 close: "" 가
+            close : "offLoginPage의 css 속성을 먹는다."  */}
+            <form className={'loginForm ' + this.state.close}>
+              <button
+                className="modalCloseBtn"
+                type="button"
+                onClick={() => {
+                  this.props.offLogin();
+                  this.setState({
+                    close: 'offLoginPage',
+                  });
+                }}
+              >
                 <img alt="closeButton_image" src="./images/closeBtn.png" />
               </button>
-              <div className="Modal-headingWrap">
-                <h2 className="Modal-title">안녕하세요.</h2>
+              <div className="modalHeadingWrap">
+                <h1 className="modalTitle">안녕하세요.</h1>
                 <p>유효한 이메일 주소를 입력하세요.</p>
               </div>
-              <div className="Form-row">
-                <div className="FormText">
-                  <label htmlFor="">
-                    <input
-                      onChange={this.handleValueID}
-                      aria-required="true"
-                      className="FormText-input"
-                      name="email"
-                      type="email"
-                    />
-                    <span className="FormText-label">이메일 주소</span>
-                  </label>
-                </div>
+              <div className="formRow">
+                <label htmlFor="">
+                  <input
+                    onChange={this.handleValueID}
+                    aria-required="true"
+                    className="formTextInput"
+                    name="email"
+                    type="email"
+                  />
+                  <span className="formTextLabel">이메일 주소</span>
+                </label>
               </div>
-              <button className="Btn-Login" onClick={this.handleBtn}>
-                <div className="Btn-content">
-                  <span className="Btn-label">계속</span>
-                  <span className="LoadingIndicator">
-                    <span className="LoadingIndicator-label">
+              <button className="btnLogin" onClick={this.handleBtn}>
+                <div className="btnContent">
+                  <span className="btnLabel">계속</span>
+                  <span className="loadingIndicator">
+                    <span className="loadingIndicatorLabel">
                       필수 입력 항목입니다.
                     </span>
                   </span>
