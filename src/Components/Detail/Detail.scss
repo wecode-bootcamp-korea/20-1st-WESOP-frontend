@@ -6,7 +6,7 @@
   justify-content: center;
   font-family: 'Suisse Regular', sans-serif;
 
-  .detailImg img {
+  .detailImg {
     width: 600px;
     height: 400px;
   }
@@ -17,12 +17,10 @@
     font-size: 11px;
 
     .category {
-      ul {
-        display: flex;
-        margin: {
-          right: 30px;
-          bottom: 20px;
-        }
+      display: flex;
+      margin: {
+        right: 30px;
+        bottom: 20px;
       }
     }
 
