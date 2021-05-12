@@ -3,13 +3,14 @@
 .inventory {
   display: flex;
   position: relative;
+  width: 100vw;
   height: 530px;
   color: $darkGray;
   background-color: #f6f5e8;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   .categoryDesc {
-    min-width: 405px;
+    width: 340px;
     height: 100%;
     padding: 40px;
     line-height: normal;
@@ -28,8 +29,37 @@
     }
   }
 
-  .productList {
+  .slideContainer {
     display: flex;
     position: relative;
+    overflow: hidden;
+
+    .productList {
+      display: flex;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 90px;
+      height: 90px;
+      background-color: $darkGray;
+      border: none;
+      transition: 0.5s;
+
+      &.prev {
+        left: -90px;
+      }
+
+      &.next {
+        right: -90px;
+      }
+
+      i {
+        color: white;
+        font-size: 20px;
+      }
+    }
   }
 }
