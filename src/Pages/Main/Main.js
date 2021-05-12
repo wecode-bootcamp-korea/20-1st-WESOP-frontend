@@ -4,17 +4,14 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      login: true, // 로그인 = true
-      notEmail: true,
+      login: true,
     };
   }
 
-  // 로그인창이 close 되는 함수.
   offLogin = () => {
     setTimeout(() => {
-      // 로그인 = false
       this.setState({ login: false });
-    }, 200); // 0.2초 후에 종료.
+    }, 200);
   };
 
   appearError = () => {

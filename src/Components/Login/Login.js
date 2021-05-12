@@ -8,8 +8,27 @@ class Login extends React.Component {
       email: '',
       pw: '',
       close: '',
+      product: {},
     };
   }
+
+  // 서버에서 데이터 받기
+  // getInfo = e => {
+  //   e.preventDefault();
+  //   fetch('http://10.58.0.170:8000/products/openproduct', {
+  //     method: 'GET',
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       this.setState({
+  //         product: result,
+  //       });
+  //     });
+  // };
+
+  // componentDidMount() {
+  //   this.getInfo();
+  // }
 
   handleValueID = e => {
     this.setState({
@@ -29,6 +48,7 @@ class Login extends React.Component {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
+        pw: this.state.email,
       }),
     })
       .then(resData => resData.json())
@@ -44,16 +64,12 @@ class Login extends React.Component {
 
   render() {
     const { email, pw } = this.state;
-    const isEmail =
-      (email.includes('@') && email.endsWith('.com')) || email.length < 1;
-    const isPssword = pw.length >= 5 && pw.length <= 10;
+    const isEmail = email.includes('@') && email.endsWith('.com');
+    const isPassword = pw.length >= 6 && pw.length <= 10; //대문자 , 숫자 적용하기
     return (
       <div className="bodyBack">
         <div className="login">
           <div className="modalBody">
-            {/* onclick을 하면 css class변경 해주기 "LoginForm" + " " 상태인데
-            50번줄에 onClick이 실행되면 Main.js에 있는 offLogin()함수가 실행되고 close: "" 가
-            close : "offLoginPage의 css 속성을 먹는다."  */}
             <form className={'loginForm ' + this.state.close}>
               <button
                 className="modalCloseBtn"
@@ -69,9 +85,8 @@ class Login extends React.Component {
               </button>
               <div className="modalHeadingWrap">
                 <h1 className="modalTitle">안녕하세요.</h1>
-                <p>유효한 이메일 주소를 입력하세요.</p>
+                <p>Wesop에 오신 것을 진심으로 환영합니다.</p>
               </div>
-
               <div className="formRow">
                 <label htmlFor="">
                   <input
@@ -86,37 +101,37 @@ class Login extends React.Component {
                   </span>
                 </label>
               </div>
-              <div className={isEmail ? 'opacity' : 'errorMessage'}>
+              <div className={email && !isEmail ? 'errorMessage' : 'opacity'}>
                 유효한 이메일 주소를 입력하세요
               </div>
+            </form>
+            <form className={'loginForm ' + this.state.close}>
               <div className="formRow">
                 <label htmlFor="">
                   <input
-                    //{this.state.pw.length !== 0 ? false : true}
-                    onChange={this.handleValuePW} // 빈번 함수 만들어줘야함.
+                    onChange={this.handleValuePW}
                     aria-required="true"
-                    className={isPssword ? 'formPwInput' : 'isPasswordError'}
+                    className={isPassword ? 'formPwInput' : 'isPasswordError'}
                     name="password"
                     type="password"
                   />
-                  <span className={isPssword ? 'typing' : 'formTextLabel'}>
+                  <span className={pw ? 'typing' : 'formTextLabel'}>
                     패스워드
                   </span>
                 </label>
               </div>
-
+              <div className={pw && !isPassword ? 'errorMessage' : 'opacity '}>
+                <span className="errorMessage">
+                  패스워드는 5자리부터 10자리 이상이어야 합니다
+                </span>
+              </div>
               <button
                 className="btnLogin"
                 onClick={this.handleBtn}
-                disabled={isEmail && isPssword ? false : true}
+                disabled={isEmail && isPassword ? false : true}
               >
                 <div className="btnContent">
                   <span className="btnLabel">계속</span>
-                  <span className="loadingIndicator">
-                    <span className="loadingIndicatorLabel">
-                      필수 입력 항목입니다.
-                    </span>
-                  </span>
                 </div>
               </button>
             </form>
