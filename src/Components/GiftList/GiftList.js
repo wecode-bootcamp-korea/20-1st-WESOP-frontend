@@ -27,7 +27,7 @@ class GiftList extends React.Component {
   render() {
     const { product } = this.state;
     return (
-      <div className="GiftList">
+      <div className="giftList">
         {product.map(gift => {
           return (
             <Gift

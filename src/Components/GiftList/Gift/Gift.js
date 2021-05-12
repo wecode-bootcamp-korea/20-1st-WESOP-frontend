@@ -31,7 +31,7 @@ class Gift extends React.Component {
   render() {
     const { gift, btnActive } = this.state;
     return (
-      <div className="Gift">
+      <div className="gift">
         <div
           className="giftBox"
           onMouseOver={this.mouseIn}
