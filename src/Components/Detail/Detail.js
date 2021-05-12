@@ -1,7 +1,5 @@
 import React from 'react';
 import './Detail.scss';
-import '../../Styles/common.scss';
-import '../../Styles/reset.scss';
 
 class Detail extends React.Component {
   constructor(props) {
@@ -10,6 +8,7 @@ class Detail extends React.Component {
       product: {},
     };
   }
+
   getInfo = () => {
     fetch('/data/mockdata.json', {
       method: 'GET',
@@ -21,14 +20,15 @@ class Detail extends React.Component {
         });
       });
   };
+
   componentDidMount() {
     this.getInfo();
   }
+
   render() {
-    const { product } = this.state;
-    console.log(product);
+    // const { product } = this.state;
     return (
-      <div className="Detail">
+      <div className="detail">
         <div className="detailProduct">
           <div className="detailImg">
             <img

@@ -2,8 +2,8 @@
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
   font-family: 'Suisse Regular', sans-serif;
 
   .detailImg img {
@@ -12,9 +12,10 @@
   }
 
   .detailBox {
-    color: rgb(51, 51, 51);
-    font-size: 11px;
     width: 350px;
+    color: #333333;
+    font-size: 11px;
+
     .category {
       ul {
         display: flex;
@@ -27,10 +28,12 @@
 
     .detailNameExplain {
       border-bottom: 2px solid black;
+
       .detailName {
-        font-size: 25px;
         margin-bottom: 20px;
+        font-size: 25px;
       }
+
       .detailExplain {
         margin-bottom: 20px;
       }
@@ -38,15 +41,18 @@
 
     .detailInfo {
       margin-top: 15px;
+
       p {
         margin-bottom: 10px;
+
         &:last-child {
           color: #686868;
         }
       }
       li {
-        border-bottom: 1px solid #d6d5cc;
         margin-bottom: 15px;
+        border-bottom: 1px solid #d6d5cc;
+
         &:last-child {
           border-bottom: none;
         }
@@ -54,10 +60,10 @@
     }
 
     .addCart {
-      border: solid 1px #333333;
-      background-color: #333333;
       width: 100%;
       height: 50px;
+      border: solid 1px #333333;
+      background-color: #333333;
       color: #fffef2;
       font-size: 11px;
     }
