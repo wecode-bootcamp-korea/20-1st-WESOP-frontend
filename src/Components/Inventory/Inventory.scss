@@ -3,7 +3,7 @@
 .inventory {
   display: flex;
   position: relative;
-  width: 100vw;
+  // width: 100vw;
   height: 530px;
   color: $darkGray;
   background-color: #f6f5e8;
@@ -11,6 +11,7 @@
 
   .categoryDesc {
     width: 340px;
+    flex-shrink: 0;
     height: 100%;
     padding: 40px;
     line-height: normal;
@@ -36,6 +37,9 @@
 
     .productList {
       display: flex;
+      position: relative;
+      right: 0;
+      transition: 0.5s;
     }
 
     button {
@@ -47,6 +51,7 @@
       background-color: $darkGray;
       border: none;
       transition: 0.5s;
+      cursor: pointer;
 
       &.prev {
         left: -90px;
@@ -59,6 +64,15 @@
       i {
         color: white;
         font-size: 20px;
+      }
+    }
+
+    &:hover {
+      .prev {
+        left: 0;
+      }
+      .next {
+        right: 0;
       }
     }
   }

@@ -7,6 +7,7 @@ class Inventory extends React.Component {
     super(props);
     this.state = {
       products: [],
+      position: 0,
     };
   }
 
@@ -16,8 +17,14 @@ class Inventory extends React.Component {
       .then(productsData => this.setState({ products: productsData }));
   }
 
+  clickPrev = () => {};
+
+  clickNext = () => {};
+
   render() {
-    const { products } = this.state;
+    const { products, position } = this.state;
+    const { clickPrev, clickNext } = this;
+
     return (
       <div className="inventory">
         <div className="categoryDesc">
@@ -31,15 +38,30 @@ class Inventory extends React.Component {
           </span>
         </div>
         <div className="slideContainer">
-          <div className="productList">
+          <div className="productList" style={{ right: `${position}px` }}>
             {products.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-          <button className="prev">
+          <button
+            className="prev"
+            style={{ left: position <= 0 && '-90px' }}
+            onClick={() => {
+              position > 0 && this.setState({ position: position - 340 });
+            }}
+          >
             <i className="fas fa-chevron-left" />
           </button>
-          <button className="next">
+          <button
+            className="next"
+            style={{
+              right: position >= (products.length - 3) * 340 && '-90px',
+            }}
+            onClick={() => {
+              position < (products.length - 3) * 340 &&
+                this.setState({ position: position + 340 });
+            }}
+          >
             <i className="fas fa-chevron-right" />
           </button>
         </div>
