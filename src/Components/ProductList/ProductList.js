@@ -1,7 +1,7 @@
 import React from 'react';
-import './MainProduct.scss';
+import './ProductList.scss';
 
-class MainProduct extends React.Component {
+class ProductList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,4 +68,4 @@ class MainProduct extends React.Component {
   }
 }
 
-export default MainProduct;
+export default ProductList;
