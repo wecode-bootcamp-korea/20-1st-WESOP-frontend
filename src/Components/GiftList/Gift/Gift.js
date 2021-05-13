@@ -7,6 +7,7 @@ class Gift extends React.Component {
     this.state = {
       gift: [],
       btnActive: false,
+      btnAddCart: false,
     };
   }
   mouseIn = () => {
@@ -21,6 +22,10 @@ class Gift extends React.Component {
     });
   };
 
+  addCart = () => {
+    this.setState({ btnAddCart: true });
+  };
+
   componentDidMount() {
     this.setState({
       gift: this.props,
@@ -29,7 +34,7 @@ class Gift extends React.Component {
   }
 
   render() {
-    const { gift, btnActive } = this.state;
+    const { gift, btnActive, btnAddCart } = this.state;
     return (
       <div className="gift">
         <div
@@ -60,7 +65,10 @@ class Gift extends React.Component {
               </li>
             </ul>
           </div>
-          <button className={btnActive ? 'addCartDisabled' : 'addCart'}>
+          <button
+            onClick={this.addCart}
+            className={btnActive ? 'addCartDisabled' : 'addCartEnabled'}
+          >
             카트에 추가하기 - ₩{Number(gift.price).toLocaleString()}
           </button>
         </div>
