@@ -3,11 +3,9 @@
 .inventory {
   display: flex;
   position: relative;
-  // width: 100vw;
   height: 530px;
   color: $darkGray;
   background-color: #f6f5e8;
-  // overflow-x: hidden;
 
   .categoryDesc {
     width: 340px;
@@ -46,19 +44,19 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 90px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
       background-color: $darkGray;
       border: none;
       transition: 0.5s;
       cursor: pointer;
 
       &.prev {
-        left: -90px;
+        left: -80px;
       }
 
       &.next {
-        right: -90px;
+        right: -80px;
       }
 
       i {

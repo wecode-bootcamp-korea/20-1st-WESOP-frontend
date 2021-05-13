@@ -4,21 +4,34 @@ import './ProductCard.scss';
 class ProductCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { hover: false };
   }
 
+  handleHover = () => {
+    this.setState({ hover: !this.state.hover });
+  };
+
   render() {
-    const { productName, size, price, img } = this.props.product;
+    const { product_name, size, price, content_image_url } = this.props.product;
+    const { hoverColor } = this.props;
+    const { hover } = this.state;
+    const { handleHover } = this;
+
     return (
-      <div className="productCard">
+      <div
+        className="productCard"
+        style={{ backgroundColor: hover && hoverColor }}
+        onMouseOver={handleHover}
+        onMouseOut={handleHover}
+      >
         <div className="imgContainer">
-          <img alt="product image" src={img} />
+          <img alt="product" src={content_image_url} />
         </div>
         <div className="desc">
-          <h3>{productName}</h3>
+          <h3>{product_name}</h3>
           {`${parseInt(size)} mL`}
           <span> / </span>
-          {price > 1000 ? `₩ ${price / 1000},000` : `₩ ${price}`}
+          {price.toLocaleString()}
         </div>
       </div>
     );
