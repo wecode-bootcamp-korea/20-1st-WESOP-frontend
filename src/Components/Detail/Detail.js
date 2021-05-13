@@ -5,9 +5,21 @@ class Detail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: [{}],
+      product: '',
+      // temp: [],
     };
   }
+  // getTestInfo = () => {
+  //   fetch('/data/detailproduct.json', {
+  //     method: 'GET',
+  //   })
+  //     .then(data => data.json())
+  //     .then(data => {
+  //       this.setState({
+  //         temp: data['result'],
+  //       });
+  //     });
+  // };
 
   getInfo = () => {
     fetch('/data/mockdata.json', {
@@ -23,10 +35,13 @@ class Detail extends React.Component {
 
   componentDidMount() {
     this.getInfo();
+    // this.getTestInfo();
   }
 
   render() {
-    const { product } = this.state;
+    const { product, temp } = this.state;
+    // console.log(temp[0].feature[0].feature_category_name);
+    product && console.log(product[0].id);
     return (
       <div className="detail">
         <div className="detailProduct">
@@ -38,7 +53,7 @@ class Detail extends React.Component {
             <ul className="size">
               <li>
                 <input type="radio" name="size" value="20ml" checked />
-                <label for="20ml">20ml</label>
+                <label for="20ml"></label>
               </li>
               <li>
                 <input type="radio" name="size" value="50ml"></input>
@@ -57,8 +72,8 @@ class Detail extends React.Component {
               <li>바디 & 핸드</li>
             </ul>
             <div className="detailNameExplain">
-              <h1 className="detailName">{product[0].productName}</h1>
-              <p className="detailExplain">{product[0].desc}</p>
+              <h1 className="detailName">{/* {product[0].productName} */}</h1>
+              <p className="detailExplain">{/* {product[0].desc} */}</p>
             </div>
             <ul className="detailInfo">
               <li>
@@ -75,7 +90,7 @@ class Detail extends React.Component {
               </li>
             </ul>
             <button className="addCart">
-              카트에 추가 - ₩ {Number(product[0].price).toLocaleString()}
+              카트에 추가 - ₩{/* {Number(product[0].price).toLocaleString()} */}
             </button>
           </div>
         </div>
