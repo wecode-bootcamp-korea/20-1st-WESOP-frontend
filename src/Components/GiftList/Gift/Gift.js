@@ -61,7 +61,7 @@ class Gift extends React.Component {
             </ul>
           </div>
           <button className={btnActive ? 'addCartDisabled' : 'addCart'}>
-            카트에 추가하기 - ₩ ${gift.price}
+            카트에 추가하기 - ₩{Number(gift.price).toLocaleString()}
           </button>
         </div>
       </div>
