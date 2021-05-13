@@ -13,7 +13,15 @@ class SignUp extends React.Component {
       phoneNumber: '',
     };
   }
+
+  handleValueEmail = e => {
+    this.setState({
+      signUpEmail: e.target.value,
+    });
+  };
   render() {
+    const { signUpEmail } = this.state;
+    const isEmail = signUpEmail.includes('@') && signUpEmail.endsWith('.com');
     return (
       <div className="bodyBack">
         <div className="signUp">
@@ -31,14 +39,22 @@ class SignUp extends React.Component {
                 <div className="formText">
                   <label htmlFor="#">
                     <input
+                      onChange={this.handleValueEmail}
                       aria-required="true"
                       type="email"
-                      className="formTextInput"
+                      className={isEmail ? 'formTextInput' : 'isEmailError'}
                       name="email"
                     />
-                    <span className="formTextLabel">이메일 주소</span>
+                    <span className={signUpEmail ? 'typing' : 'formTextLabel'}>
+                      이메일 주소
+                    </span>
                   </label>
                 </div>
+              </div>
+              <div
+                className={signUpEmail && !isEmail ? 'errorMessage' : 'opacity'}
+              >
+                유효한 이메일 주소를 입력하세요
               </div>
             </div>
           </div>

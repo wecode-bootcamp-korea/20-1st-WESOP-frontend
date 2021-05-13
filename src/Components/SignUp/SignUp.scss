@@ -9,7 +9,6 @@
   input {
     outline: none;
     font-family: inherit;
-    box-shadow: inset 0 0 0 1000px #fff6bb;
   }
   .offLoginPage {
     animation: test 0.2s linear 0s 1 reverse;
@@ -39,16 +38,6 @@
           line-height: 1.7;
           color: #666;
         }
-
-        &:focus-within .formTextLabel {
-          display: relative;
-          top: 0%;
-          font-size: 15px;
-        }
-
-        &:focus-within .formTextInput {
-          border-bottom: 1px solid black !important;
-        }
       }
       .formRow {
         flex-wrap: nowrap;
@@ -61,42 +50,85 @@
         .formText {
           margin-bottom: 35px;
           padding-top: 35px;
-          margin: 0 0 30px;
+          margin: 0 0 20px;
           padding: 30px 10px 0;
           position: relative;
           width: 100%;
 
           label {
-            cursor: default;
             display: flex;
             position: relative;
             width: 100%;
+            cursor: default;
+
+            &:focus-within .formTextInput {
+              border-bottom: 1px solid black !important;
+            }
 
             .formTextInput {
+              position: flex;
+              margin: 0;
               width: 100%;
               height: 40px;
-              font-size: 23px;
+              font-size: 20px;
               line-height: 1;
               padding: 8px 0;
               border: solid rgba(51, 51, 51, 0.2);
               border-width: 0 0 1px;
+              background-color: transparent;
+            }
+            &:focus-within .formTextLabel {
+              display: relative;
+              font-size: 14px;
+              top: -42%;
             }
 
             .formTextLabel {
-              font-size: 24px;
+              position: absolute;
+              font-size: 28px;
               bottom: 0;
               color: #666;
               left: 0;
               line-height: 1.75;
               pointer-events: none;
-              position: absolute;
-              transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+              transition: 0.2s;
             }
           }
         }
       }
     }
   }
+}
+
+.isEmailError {
+  position: flex;
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 0;
+  border: solid rgba(51, 51, 51, 0.2);
+  border-width: 0 0 1px;
+  background-color: transparent;
+}
+
+.typing {
+  position: absolute;
+  color: #666;
+  font-size: 14px;
+  top: -30%;
+}
+
+.errorMessage {
+  font-size: 14px;
+  opacity: 1;
+  padding-bottom: 20px;
+  color: #ea6956;
+}
+
+.opacity {
+  opacity: 0;
 }
 
 @keyframes closePage {
