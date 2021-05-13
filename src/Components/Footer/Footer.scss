@@ -1,2 +1,59 @@
 .Footer {
+  background-color: #252525;
+  color: white;
+  font-size: 60px;
+
+  .gridContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+    min-height: 550px;
+
+    .box {
+      input[type='text'] {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        background-color: #252525;
+        font-size: 20px;
+        border: 1px solid white;
+        border-radius: 5px;
+
+        &::placeholder {
+          color: white;
+        }
+      }
+
+      input[type='checkbox'] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      span {
+        width: 5px;
+        height: 5px;
+        border: 1px solid white;
+      }
+
+      .title {
+        height: 55px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid white;
+      }
+
+      font-size: 14px;
+      color: #fffef2;
+      line-height: 2.5;
+    }
+  }
+  .banner {
+    height: 70px;
+    border-top: 3px solid lightgray;
+  }
 }
