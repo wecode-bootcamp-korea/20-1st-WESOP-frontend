@@ -8,10 +8,30 @@ class MainMenu extends React.Component {
       wheel: 0,
       firstRequest: '제품보기',
       secondRequest: '',
+      menus: [],
+      categories: [],
     };
   }
 
   componentDidMount() {
+    fetch('/data/menuMockdata.json')
+      .then(res => res.json())
+      .then(res => {
+        const menus = res['MENU & CATEGORY INFO']
+          .filter(obj => !obj['category_name'])
+          .map(obj => obj['menu_name']);
+        this.setState({ menus: menus });
+
+        const categories = {};
+        res['MENU & CATEGORY INFO']
+          .filter(obj => obj['category_name'])
+          .forEach(obj => {
+            categories[obj['menu_name']]
+              ? categories[obj['menu_name']].push(obj['category_name'])
+              : (categories[obj['menu_name']] = [obj['category_name']]);
+          });
+        this.setState({ categories: categories });
+      });
     window.addEventListener('wheel', this.handleWheel);
   }
 
@@ -23,47 +43,54 @@ class MainMenu extends React.Component {
     this.setState({ wheel: this.state.wheel + e.deltaY * 0.001 });
   };
 
-  handleFirstRequest = menu => {
+  handleFirstRequest = upperMenu => {
     this.setState(
       {
         firstRequest: '',
         secondRequest: '',
       },
       () => {
-        this.setState({ firstRequest: menu });
+        this.setState({ firstRequest: upperMenu });
       }
     );
   };
 
-  handleSecondRequest = category => {
+  handleSecondRequest = menu => {
     this.setState(
       {
         secondRequest: [],
       },
       () => {
         this.setState({
-          secondRequest: category,
+          secondRequest: menu,
         });
       }
     );
   };
 
   render() {
-    const { wheel, firstRequest, secondRequest } = this.state;
+    const { wheel, firstRequest, secondRequest, menus, categories } =
+      this.state;
     const { handleFirstRequest, handleSecondRequest } = this;
+
+    let upperMenus = {
+      제품보기: this.state.menus,
+      읽기: ['더 아테네움', '회사 소개', '철학', 'Taxonomy of Design'],
+      검색: ['인기검색어', '클렌저', '페뷸러스', '향수'],
+    };
 
     return (
       <div className="MainMenu">
         <div className="menuNav">
           <ul>
-            {Object.keys(CATEGORIES).map(menu => (
+            {Object.keys(upperMenus).map(upperMenu => (
               <li
                 onMouseOver={() => {
-                  handleFirstRequest(menu);
+                  handleFirstRequest(upperMenu);
                 }}
               >
-                {menu}
-                <hr style={{ width: firstRequest === menu && `100%` }} />
+                {upperMenu}
+                <hr style={{ width: firstRequest === upperMenu && `100%` }} />
               </li>
             ))}
           </ul>
@@ -85,20 +112,17 @@ class MainMenu extends React.Component {
                 </>
               )}
               <ul>
-                {(firstRequest
-                  ? Object.keys(CATEGORIES[firstRequest])
-                  : []
-                ).map((category, index) => (
+                {(upperMenus[firstRequest] || []).map((menu, index) => (
                   <li
                     style={{
                       animationDelay: `${index * 0.1}s`,
-                      borderColor: category === secondRequest && '#333',
+                      borderColor: menu === secondRequest && '#333',
                     }}
                     onMouseOver={() => {
-                      handleSecondRequest(category);
+                      handleSecondRequest(menu);
                     }}
                   >
-                    {category}
+                    {menu}
                   </li>
                 ))}
               </ul>
@@ -107,10 +131,7 @@ class MainMenu extends React.Component {
           {secondRequest && (
             <div className="secondMenu">
               <ul className="category">
-                {(Array.isArray(secondRequest)
-                  ? []
-                  : CATEGORIES[firstRequest][secondRequest]
-                ).map((category, index) => (
+                {(categories[secondRequest] || []).map((category, index) => (
                   <li style={{ animationDelay: `${index * 0.1 + 0.2}s` }}>
                     {category}
                   </li>
@@ -125,41 +146,3 @@ class MainMenu extends React.Component {
 }
 
 export default MainMenu;
-
-const CATEGORIES = {
-  제품보기: {
-    스킨: [
-      '모두 보기',
-      '스킨 케어 기프트',
-      '클렌저',
-      '각질 제거',
-      '트리트먼트 & 마스크',
-      '토너',
-      '하이드레이터',
-      '립 & 아이',
-    ],
-    헤어: ['모두 보기', '샴푸', '컨디셔너', '트리트먼트', '그루밍'],
-    '바디 & 핸드': [
-      '핸드 및 바디 케어 기프트',
-      '핸드',
-      '바디',
-      '퍼스널 케어',
-      '번들',
-    ],
-    향수: [
-      '로즈 오 드 퍼퓸',
-      '로즈 앙상블',
-      '휠 오 드 퍼퓸',
-      '마라케시 인텐스 퍼퓸',
-    ],
-    '기프트 가이드': ['모든 기프트', '이솝에서 사랑받는 제품들'],
-  },
-
-  읽기: {
-    '더 아테네움': [],
-    '회사 소개': [],
-    철학: [],
-    'Taxonomy of Design': [],
-  },
-  검색: { 인기검색어: ['클렌저', '페뷸러스', '향수'] },
-};

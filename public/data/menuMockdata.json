@@ -1,0 +1,53 @@
+{
+  "MENU & CATEGORY INFO": [
+    { "menu_name": "스킨" },
+    { "menu_name": "헤어" },
+    { "menu_name": "바디 & 핸드" },
+    { "menu_name": "향수" },
+    { "menu_name": "홈" },
+    { "menu_name": "키트 & 여행 제품" },
+    { "menu_name": "기프트 가이드" },
+    {
+      "menu_name": "스킨",
+      "category_name": "스킨 케어 기프트",
+      "description_title": "스킨과 감각을 위한 셀렉션",
+      "description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다."
+    },
+    {
+      "menu_name": "스킨",
+      "category_name": "클렌저",
+      "description_title": "처음의 시작",
+      "description": "각질, 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다."
+    },
+    {
+      "menu_name": "스킨",
+      "category_name": "각질 제거",
+      "description_title": "마찰로 만드는 아름다움",
+      "description": "효과적인 각질 관리는 지친 피부로부터 자유롭게 하여, 부드럽고 생기 있으며 매끄러운 피부로 가꿔줍니다."
+    },
+    {
+      "menu_name": "스킨",
+      "category_name": "트리트먼트 & 마스크",
+      "description_title": "데일리 스킨 케어의 보완",
+      "description": "데일리 스킨 케어 루틴을 보완해 트리트먼트와 마스크를 정기적으로 사용하세요. 잔여물을 씻어내주고 영양과 수분을 보충해 피부를 부드럽고 유연하게 가꾸고 건강하게 지켜줍니다."
+    },
+    {
+      "menu_name": "헤어",
+      "category_name": "샴푸",
+      "description_title": "데일리 스킨 케어의 보완",
+      "description": "데일리 스킨 케어 루틴을 보완해 트리트먼트와 마스크를 정기적으로 사용하세요. 잔여물을 씻어내주고 영양과 수분을 보충해 피부를 부드럽고 유연하게 가꾸고 건강하게 지켜줍니다."
+    },
+    {
+      "menu_name": "헤어",
+      "category_name": "컨디셔너",
+      "description_title": "데일리 스킨 케어의 보완",
+      "description": "데일리 스킨 케어 루틴을 보완해 트리트먼트와 마스크를 정기적으로 사용하세요. 잔여물을 씻어내주고 영양과 수분을 보충해 피부를 부드럽고 유연하게 가꾸고 건강하게 지켜줍니다."
+    },
+    {
+      "menu_name": "헤어",
+      "category_name": "트리트먼트",
+      "description_title": "데일리 스킨 케어의 보완",
+      "description": "데일리 스킨 케어 루틴을 보완해 트리트먼트와 마스크를 정기적으로 사용하세요. 잔여물을 씻어내주고 영양과 수분을 보충해 피부를 부드럽고 유연하게 가꾸고 건강하게 지켜줍니다."
+    }
+  ]
+}
