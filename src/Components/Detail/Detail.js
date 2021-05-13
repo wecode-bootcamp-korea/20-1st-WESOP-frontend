@@ -5,7 +5,7 @@ class Detail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: {},
+      product: [{}],
     };
   }
 
@@ -27,24 +27,21 @@ class Detail extends React.Component {
 
   render() {
     const { product } = this.state;
+    console.log(product);
     return (
-      <div className="Detail">
+      <div className="detail">
         <div className="detailProduct">
-          {/* <div className="detailImg"> */}
           <img
             className="detailImg"
             alt="제품사진"
             src="https://www.aesop.com/medias/Aesop-Kits-Nurturer-GL-Web-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3w0NTkzNTl8aW1hZ2UvcG5nfGltYWdlcy9oZjAvaGM1Lzk5MjYzNDQ1NDAxOTAucG5nfDU0ZjhmNTM5OTU5MjIzNmI1OTI4ZTEwNmE1MmRlNWQ2ZGY3YTI0Y2NmOTFiYTI4N2QwMjY3OWVjMzUxNzFmNGM"
           />
-          {/* </div> */}
           <div className="detailBox">
-            {/* <div className="category"> */}
             <ul className="category">
               <li>키트 & 여행제품</li>
               <li>&nbsp;&nbsp;&#183;&nbsp;&nbsp;</li>
               <li>바디 & 핸드</li>
             </ul>
-            {/* </div> */}
             <div className="detailNameExplain">
               <h1 className="detailName">이솝 테싯</h1>
               <p className="detailExplain">
