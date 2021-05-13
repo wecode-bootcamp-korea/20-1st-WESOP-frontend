@@ -1,8 +1,13 @@
 import React from 'react';
+import SignUp from '../../Components/SignUp/SignUp';
 
 class Main extends React.Component {
   render() {
-    return <div>haha</div>;
+    return (
+      <div>
+        <SignUp />
+      </div>
+    );
   }
 }
 

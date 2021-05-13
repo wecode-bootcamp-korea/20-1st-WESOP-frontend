@@ -1,0 +1,24 @@
+.bodyBack {
+  background-color: pink;
+  background-color: red;
+}
+
+.modalBody {
+  margin: 300px;
+  width: 100%;
+  height: 100%;
+  max-width: 550px;
+  max-height: 535px;
+  padding: 50px;
+  background-color: red;
+
+  .loginForm {
+    background-color: red;
+    .modalHeadingWrap {
+      h1 {
+        font-weight: 400;
+        background-color: yellow;
+      }
+    }
+  }
+}
