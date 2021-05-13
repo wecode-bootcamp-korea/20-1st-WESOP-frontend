@@ -16,7 +16,7 @@ class Detail extends React.Component {
       .then(products => products.json())
       .then(products => {
         this.setState({
-          product: products.filter(product => product.id === 2),
+          product: products.filter(product => product.id === 0),
         });
       });
   };
@@ -27,15 +27,29 @@ class Detail extends React.Component {
 
   render() {
     const { product } = this.state;
-    console.log(product);
     return (
       <div className="detail">
         <div className="detailProduct">
-          <img
-            className="detailImg"
-            alt="제품사진"
-            src="https://www.aesop.com/medias/Aesop-Kits-Nurturer-GL-Web-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3w0NTkzNTl8aW1hZ2UvcG5nfGltYWdlcy9oZjAvaGM1Lzk5MjYzNDQ1NDAxOTAucG5nfDU0ZjhmNTM5OTU5MjIzNmI1OTI4ZTEwNmE1MmRlNWQ2ZGY3YTI0Y2NmOTFiYTI4N2QwMjY3OWVjMzUxNzFmNGM"
-          />
+          <div className="detailImg">
+            <img
+              alt="제품사진"
+              src="https://www.aesop.com/medias/Aesop-Kits-Nurturer-GL-Web-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3w0NTkzNTl8aW1hZ2UvcG5nfGltYWdlcy9oZjAvaGM1Lzk5MjYzNDQ1NDAxOTAucG5nfDU0ZjhmNTM5OTU5MjIzNmI1OTI4ZTEwNmE1MmRlNWQ2ZGY3YTI0Y2NmOTFiYTI4N2QwMjY3OWVjMzUxNzFmNGM"
+            />
+            <ul className="size">
+              <li>
+                <input type="radio" name="size" value="20ml" checked />
+                <label for="20ml">20ml</label>
+              </li>
+              <li>
+                <input type="radio" name="size" value="50ml"></input>
+                <label for="50ml">50ml</label>
+              </li>
+              <li>
+                <input type="radio" name="size" value="100ml"></input>
+                <label for="100ml">100ml</label>
+              </li>
+            </ul>
+          </div>
           <div className="detailBox">
             <ul className="category">
               <li>키트 & 여행제품</li>
@@ -43,12 +57,8 @@ class Detail extends React.Component {
               <li>바디 & 핸드</li>
             </ul>
             <div className="detailNameExplain">
-              <h1 className="detailName">이솝 테싯</h1>
-              <p className="detailExplain">
-                어머니를 비롯해 보살펴 주신 모든 분들에게 감사를 표현하는 기프트
-                키트. 인기 많은 핸드 밤, 상쾌한 바디 클렌저, 영양을 전하는 립
-                살브가 재사용이 가능한 어메니티 케이스에 담겨 선보입니다
-              </p>
+              <h1 className="detailName">{product[0].productName}</h1>
+              <p className="detailExplain">{product[0].desc}</p>
             </div>
             <ul className="detailInfo">
               <li>
@@ -64,7 +74,9 @@ class Detail extends React.Component {
                 <p>만다린, 로즈마리 리프</p>
               </li>
             </ul>
-            <button className="addCart">카트에 추가 - ₩ 96,000</button>
+            <button className="addCart">
+              카트에 추가 - ₩ {Number(product[0].price).toLocaleString()}
+            </button>
           </div>
         </div>
       </div>

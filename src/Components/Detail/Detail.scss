@@ -5,16 +5,21 @@
   flex-direction: row;
   justify-content: center;
   font-family: 'Suisse Regular', sans-serif;
+  width: 100%;
 
   .detailImg {
-    width: 600px;
-    height: 400px;
+    img {
+      width: 770px;
+      height: 400px;
+    }
+    .size {
+    }
   }
 
   .detailBox {
-    width: 350px;
+    width: 400px;
     color: #333333;
-    font-size: 11px;
+    font-size: 14px;
 
     .category {
       display: flex;
@@ -63,7 +68,7 @@
       border: solid 1px #333333;
       background-color: #333333;
       color: #fffef2;
-      font-size: 11px;
+      font-size: 14px;
       transition: 0.5s;
       cursor: pointer;
 
