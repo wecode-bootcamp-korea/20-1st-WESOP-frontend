@@ -6,7 +6,7 @@ class Login extends React.Component {
     super(props);
     this.state = {
       email: '',
-      pw: '',
+      password: '',
       close: '',
       product: {},
     };
@@ -38,34 +38,34 @@ class Login extends React.Component {
 
   handleValuePW = e => {
     this.setState({
-      pw: e.target.value,
+      password: e.target.value,
     });
   };
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('#', {
+    fetch('http://10.58.2.6:8000/user/login', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
-        pw: this.state.email,
+        password: this.state.password,
       }),
     })
       .then(resData => resData.json())
       .then(jsonData => {
-        if (jsonData.MESSAGE === 'SUCCES') {
-          localStorage.setItem('accessToken', jsonData.ACCESS_TOKEN);
-          this.props.history.push('#');
-        } else if (jsonData.MESSAGE === 'INVALID_USER') {
+        console.log(jsonData);
+        localStorage.setItem('accessToken', jsonData.token);
+        // this.props.history.push('#');
+        if (jsonData.MESSAGE === 'INVALID_EMAIL') {
           alert('이메일을 확인해주세요.');
         }
       });
   };
 
   render() {
-    const { email, pw } = this.state;
+    const { email, password } = this.state;
     const isEmail = email.includes('@') && email.endsWith('.com');
-    const isPassword = pw.length >= 6 && pw.length <= 10; //대문자 , 숫자 적용하기
+    const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
     return (
       <div className="bodyBack">
         <div className="login">
@@ -115,12 +115,16 @@ class Login extends React.Component {
                     name="password"
                     type="password"
                   />
-                  <span className={pw ? 'typing' : 'formTextLabel'}>
+                  <span className={password ? 'typing' : 'formTextLabel'}>
                     패스워드
                   </span>
                 </label>
               </div>
-              <div className={pw && !isPassword ? 'errorMessage' : 'opacity '}>
+              <div
+                className={
+                  password && !isPassword ? 'errorMessage' : 'opacity '
+                }
+              >
                 <span className="errorMessage">
                   패스워드는 5자리부터 10자리 이상이어야 합니다
                 </span>
