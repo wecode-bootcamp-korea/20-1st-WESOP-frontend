@@ -14,12 +14,6 @@ class Main extends React.Component {
     }, 200);
   };
 
-  appearError = () => {
-    setTimeout(() => {
-      this.setState({ notEmail: false });
-    }, 200);
-  };
-
   render() {
     return (
       // state에 있는 login 이 true면 offLogin 함수 전달 Login.js에서 사용할 수 있게.
