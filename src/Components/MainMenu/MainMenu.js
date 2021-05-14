@@ -11,6 +11,7 @@ class MainMenu extends React.Component {
       thirdRequest: '',
       menus: [],
       categories: [],
+      products: '',
     };
   }
 
@@ -61,6 +62,7 @@ class MainMenu extends React.Component {
     this.setState(
       {
         secondRequest: [],
+        thirdRequest: '',
       },
       () => {
         this.setState({
@@ -79,6 +81,11 @@ class MainMenu extends React.Component {
         this.setState({ thirdRequest: category });
       }
     );
+
+    fetch('./data/productMockdata.json')
+      .then(res => res.json())
+      .then(products => this.setState({ products: products.result }));
+    //나중에 이부분 수정해줘야 세 번째 칸 데이터를 제대로 받을 수 있음
   };
 
   render() {
@@ -89,9 +96,13 @@ class MainMenu extends React.Component {
       thirdRequest,
       menus,
       categories,
+      products,
     } = this.state;
+
     const { handleFirstRequest, handleSecondRequest, handleThirdRequest } =
       this;
+
+    console.log(products);
 
     let upperMenus = {
       제품보기: menus,
@@ -168,9 +179,48 @@ class MainMenu extends React.Component {
             </ul>
           </div>
         )}
-        {thirdRequest && (
+        {thirdRequest && products && (
           <div className="thirdMenu">
-            <ul className="category"></ul>
+            <p className="seeAll">{thirdRequest} 모두 보기</p>
+            <ul className="products">
+              {products.map((product, index) => (
+                <li
+                  key={index}
+                  style={{
+                    animationDelay: `${index * 0.1 + 0.2}s`,
+                  }}
+                >
+                  <div className="individualProduct">
+                    <img
+                      alt="product thumbnail"
+                      src={product.product_selections[0].image_url}
+                    />
+                    <div class="productInfo">
+                      <p>{product.product_name}</p>
+                      {product.product_selections.length > 1 ? (
+                        <p>
+                          {`${product.product_selections.length} 사이즈 `}
+                          <span>/</span>{' '}
+                          {` ₩ ${Number(
+                            product.product_selections[0].price
+                          ).toLocaleString()} 원부터`}
+                        </p>
+                      ) : (
+                        <p>
+                          {`${parseInt(
+                            product.product_selections[0].size
+                          )} mL `}
+                          <span>/</span>{' '}
+                          {` ₩ ${Number(
+                            product.product_selections[0].price
+                          ).toLocaleString()}`}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>
