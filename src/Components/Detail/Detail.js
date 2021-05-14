@@ -5,21 +5,9 @@ class Detail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: [{}],
-      // temp: [],
+      product: {},
     };
   }
-  // getTestInfo = () => {
-  //   fetch('/data/detailproduct.json', {
-  //     method: 'GET',
-  //   })
-  //     .then(data => data.json())
-  //     .then(data => {
-  //       this.setState({
-  //         temp: data['result'],
-  //       });
-  //     });
-  // };
 
   getInfo = () => {
     fetch('/data/mockdata.json', {
@@ -28,20 +16,17 @@ class Detail extends React.Component {
       .then(products => products.json())
       .then(products => {
         this.setState({
-          product: products.filter(product => product.id === 0),
+          product: products.result[0],
         });
       });
   };
 
   componentDidMount() {
     this.getInfo();
-    // this.getTestInfo();
   }
 
   render() {
-    const { product, temp } = this.state;
-    // console.log(temp[0].feature[0].feature_category_name);
-    // product && console.log(product[0].id);
+    const { product } = this.state;
     return (
       <div className="detail">
         <div className="detailProduct">
@@ -53,7 +38,7 @@ class Detail extends React.Component {
             <ul className="size">
               <li>
                 <input type="radio" name="size" value="20ml" checked />
-                <label for="20ml"></label>
+                <label for="20ml">1L</label>
               </li>
               <li>
                 <input type="radio" name="size" value="50ml"></input>
@@ -67,13 +52,13 @@ class Detail extends React.Component {
           </div>
           <div className="detailBox">
             <ul className="category">
-              <li>키트 & 여행제품</li>
+              <li>{product.category_name}</li>
               <li>&nbsp;&nbsp;&#183;&nbsp;&nbsp;</li>
-              <li>바디 & 핸드</li>
+              <li>{product.menu_name}</li>
             </ul>
             <div className="detailNameExplain">
-              <h1 className="detailName">{product[0].productName}</h1>
-              <p className="detailExplain">{product[0].desc}</p>
+              <h1 className="detailName">{product.category_name}</h1>
+              <p className="detailExplain">{product.description}</p>
             </div>
             <ul className="detailInfo">
               <li>
@@ -81,16 +66,16 @@ class Detail extends React.Component {
                 <p>손을 부드럽게 향기로운 트리오</p>
               </li>
               <li>
-                <p>상세 정보</p>
-                <p>레저렉션</p>
+                <p></p>
+                <p>dd</p>
               </li>
               <li>
                 <p>주요 성분</p>
-                <p>만다린, 로즈마리 리프</p>
+                <p>{product.ingredient}</p>
               </li>
             </ul>
             <button className="addCart">
-              카트에 추가 - ₩{Number(product[0].price).toLocaleString()}
+              카트에 추가 - ₩{Number(product.product_name).toLocaleString()}
             </button>
           </div>
         </div>
