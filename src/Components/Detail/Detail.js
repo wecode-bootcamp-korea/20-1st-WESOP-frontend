@@ -5,7 +5,7 @@ class Detail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: '',
+      product: [{}],
       // temp: [],
     };
   }
@@ -41,7 +41,7 @@ class Detail extends React.Component {
   render() {
     const { product, temp } = this.state;
     // console.log(temp[0].feature[0].feature_category_name);
-    product && console.log(product[0].id);
+    // product && console.log(product[0].id);
     return (
       <div className="detail">
         <div className="detailProduct">
@@ -72,8 +72,8 @@ class Detail extends React.Component {
               <li>바디 & 핸드</li>
             </ul>
             <div className="detailNameExplain">
-              <h1 className="detailName">{/* {product[0].productName} */}</h1>
-              <p className="detailExplain">{/* {product[0].desc} */}</p>
+              <h1 className="detailName">{product[0].productName}</h1>
+              <p className="detailExplain">{product[0].desc}</p>
             </div>
             <ul className="detailInfo">
               <li>
@@ -90,7 +90,7 @@ class Detail extends React.Component {
               </li>
             </ul>
             <button className="addCart">
-              카트에 추가 - ₩{/* {Number(product[0].price).toLocaleString()} */}
+              카트에 추가 - ₩{Number(product[0].price).toLocaleString()}
             </button>
           </div>
         </div>
