@@ -1,6 +1,6 @@
 $darkGray: #333;
 
-.ProductList {
+.productList {
   position: relative;
   height: 560px;
   padding: 0 100px;
@@ -14,8 +14,8 @@ $darkGray: #333;
   }
 
   .product {
-    text-align: center;
     width: 435px;
+    text-align: center;
 
     img {
       width: 380px;

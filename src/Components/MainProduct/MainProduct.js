@@ -8,7 +8,7 @@ class MainProduct extends React.Component {
   }
   render() {
     return (
-      <div className="MainProduct">
+      <div className="mainProduct">
         <div>
           <p>아침과 저녁을 위한 비타민 C</p>
           <h2 className="mainDesc">피부 구조를 탄탄하게 지탱해주는 성분</h2>

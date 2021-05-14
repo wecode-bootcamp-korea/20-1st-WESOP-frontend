@@ -21,10 +21,29 @@ class ProductList extends React.Component {
       });
   }
 
+  clickPrev = () => {
+    const { slideRight, barLeft } = this.state;
+    barLeft > 0 &&
+      this.setState({
+        barLeft: barLeft - 16.4,
+        slideRight: slideRight - 10,
+      });
+  };
+
+  clickNext = () => {
+    const { slideRight, barLeft } = this.state;
+    barLeft < 80 &&
+      this.setState({
+        barLeft: barLeft + 16.4,
+        slideRight: slideRight + 10,
+      });
+  };
+
   render() {
     const { products, slideRight, barLeft } = this.state;
+    const { clickPrev, clickNext } = this;
     return (
-      <div className="ProductList">
+      <div className="productList">
         <div style={{ right: `${slideRight}%` }}>
           {products.map(product => (
             <div className="product" key={product.id}>
@@ -36,26 +55,14 @@ class ProductList extends React.Component {
         </div>
         <button
           className="prev"
-          onClick={() => {
-            barLeft > 0 &&
-              this.setState({
-                barLeft: barLeft - 16.4,
-                slideRight: slideRight - 10,
-              });
-          }}
+          onClick={clickPrev}
           style={{ left: barLeft <= 0 && -90 }}
         >
           <i className="fas fa-chevron-left" />
         </button>
         <button
           className="next"
-          onClick={() => {
-            barLeft < 80 &&
-              this.setState({
-                barLeft: barLeft + 16.4,
-                slideRight: slideRight + 10,
-              });
-          }}
+          onClick={clickNext}
           style={{ right: barLeft > 80 && -90 }}
         >
           <i className="fas fa-chevron-right" />
