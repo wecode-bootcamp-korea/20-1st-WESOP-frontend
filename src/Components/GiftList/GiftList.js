@@ -11,9 +11,7 @@ class GiftList extends React.Component {
   }
   // http://10.58.1.64:8000/products/detailproduct
   getInfo = () => {
-    fetch('./data/mockdata.json', {
-      method: 'GET',
-    })
+    fetch('./data/mockdata.json')
       .then(products => products.json())
       .then(products =>
         this.setState({
@@ -30,18 +28,7 @@ class GiftList extends React.Component {
     return (
       <div className="giftList">
         {product.map(gift => {
-          return (
-            <Gift
-              key={gift.id}
-              id={gift.id}
-              productName={gift.productName}
-              img={gift.img}
-              price={gift.price}
-              size={gift.size}
-              desc={gift.desc}
-              contents={gift.contents}
-            />
-          );
+          return <Gift key={gift.id} gift={gift} />;
         })}
       </div>
     );

@@ -6,7 +6,7 @@ class Gift extends React.Component {
     super(props);
     this.state = {
       gift: [],
-      btnActive: false,
+      btnActive: true,
       btnAddCart: false,
     };
   }
@@ -28,28 +28,28 @@ class Gift extends React.Component {
 
   componentDidMount() {
     this.setState({
-      gift: this.props,
-      btnActive: this.props,
+      gift: this.props.gift,
     });
   }
 
   render() {
     const { gift, btnActive, btnAddCart } = this.state;
+    console.log(this.state);
     return (
       <div className="gift">
         <div
           className="giftBox"
-          onMouseOver={this.mouseIn}
-          onMouseOut={this.mouseOut}
+          onMouseEnter={this.mouseIn}
+          onMouseLeave={this.mouseOut}
         >
           <div className="giftModel">
             <div className="giftImg">
-              <img alt="상품사진" src={gift.img}></img>
+              <img alt="상품사진" src={gift.img} />
             </div>
             <div className="giftNameSize">
               <p>{gift.productName}</p>
               <p>
-                ₩ {gift.price} / {gift.size}
+                ₩ {Number(gift.price).toLocaleString()} / {gift.size}
               </p>
             </div>
           </div>
