@@ -17,7 +17,7 @@ class Main extends React.Component {
   render() {
     return (
       // state에 있는 login 이 true면 offLogin 함수 전달 Login.js에서 사용할 수 있게.
-      <div>{this.state.login ? <Login offLogin={this.offLogin} /> : null}</div>
+      this.state.login && <Login offLogin={this.offLogin} />
     );
   }
 }

@@ -44,7 +44,8 @@ class Login extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://10.58.2.6:8000/user/login', {
+    fetch('', {
+      //http://10.58.2.6:8000/user/login
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -52,14 +53,19 @@ class Login extends React.Component {
       }),
     })
       .then(resData => resData.json())
-      .then(jsonData => {
-        console.log(jsonData);
-        localStorage.setItem('accessToken', jsonData.token);
-        // this.props.history.push('#');
-        if (jsonData.MESSAGE === 'INVALID_EMAIL') {
-          alert('이메일을 확인해주세요.');
+      .then(
+        jsonData => {
+          console.log(jsonData);
+          localStorage.setItem('accessToken', jsonData.token);
+          // this.props.history.push('#');
+          if (jsonData.MESSAGE === 'INVALID_EMAIL') {
+            alert('이메일을 확인해주세요.');
+          }
+        },
+        () => {
+          console.log('button');
         }
-      });
+      );
   };
 
   render() {
@@ -134,9 +140,7 @@ class Login extends React.Component {
                 onClick={this.handleBtn}
                 disabled={isEmail && isPassword ? false : true}
               >
-                <div className="btnContent">
-                  <span className="btnLabel">계속</span>
-                </div>
+                계속
               </button>
             </form>
           </div>

@@ -3,7 +3,7 @@
 }
 
 .login {
-  font-size: 1.6rem;
+  font-size: 30px;
   -webkit-font-smoothing: antialiased;
   color: #333;
   animation: test 0.2s linear 0s 1 normal;
@@ -17,41 +17,28 @@
 
   .modalBody {
     margin: 0 auto;
+    padding: 40px 50px;
     width: 100%;
     height: 100%;
     max-width: 550px;
     max-height: 535px;
-    padding: 40px 50px;
     background-color: #fffef2;
     transform: translateZ(0);
     opacity: 1px;
 
     .loginForm {
-      margin-top: 0em;
-      font-size: 1.6rem;
-
       .modalCloseBtn {
         float: right;
         background-color: transparent;
         border: none;
       }
 
-      &:focus-within .formTextLabel {
-        display: relative;
-        top: 0%;
-        font-size: 15px;
-      }
-
-      &:focus-within .formTextInput {
-        border-bottom: 1px solid black !important;
-      }
-
       &:focus-within .isEmailError {
-        border-bottom: 1px solid red !important;
+        border-bottom: 1px solid red;
       }
 
       &:focus-within .isPasswordError {
-        border-bottom: 1px solid red !important;
+        border-bottom: 1px solid red;
       }
 
       .modalHeadingWrap {
@@ -61,7 +48,7 @@
           margin: 0;
           padding: 40px 0px 10px;
           color: black;
-          font-weight: bold;
+
           line-height: 1.33;
         }
         p {
@@ -74,13 +61,13 @@
 
       .formRow {
         display: flex;
-        position: relative;
-        z-index: 1;
         flex-wrap: nowrap;
+        position: relative;
         margin: 0 -10px;
         margin-bottom: 10px;
         padding: 20px 10px 0;
         width: 100%;
+        z-index: 1;
 
         label {
           display: flex;
@@ -88,38 +75,35 @@
           width: 100%;
           cursor: default;
 
-          .formTextInput {
-            position: flex;
-            margin: 0;
-            margin-top: 17px;
-            padding: 8px 0 0 0;
-            width: 100%;
-            font-size: 18px;
-            background-color: transparent;
-            line-height: 1;
-            border: none;
-            border-bottom: 1.5px solid #e9e9e9;
-            height: 40px;
-            text-overflow: ellipsis;
+          &:focus-within .formTextLabel {
+            display: relative;
+            top: 0%;
+            font-size: 15px;
           }
 
+          &:focus-within .formTextInput {
+            border-bottom: 1px solid black;
+          }
+
+          .formTextInput,
           .formPwInput {
             position: flex;
             margin: 0;
             margin-top: 17px;
             padding: 8px 0 0 0;
+            height: 40px;
             width: 100%;
             font-size: 18px;
             background-color: transparent;
             line-height: 1;
             border: none;
             border-bottom: 1.5px solid #e9e9e9;
-            height: 40px;
             text-overflow: ellipsis;
           }
 
           .formTextLabel {
             position: absolute;
+            font-size: 24px;
             bottom: 0;
             color: #666;
             left: 0;
@@ -137,65 +121,44 @@
         height: 60px;
         min-width: 210px;
         background-color: #333;
+        color: white;
         border: 1px solid rgba(51, 51, 51, 0.2);
         transition: all 0.5s ease;
-
-        .btnContent {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          margin: auto;
-          overflow: hidden;
-          color: white;
-        }
+        color: white;
       }
     }
   }
 }
 .typing {
   position: absolute;
-  font-size: 15px;
   margin-top: 5px;
+  font-size: 15px;
 }
 
 .errorMessage {
-  font-size: 14px;
-  opacity: 1;
   padding-bottom: 20px;
+  font-size: 14px;
   color: #ea6956;
+  opacity: 1;
 }
 
 .opacity {
   opacity: 0;
 }
 
+.isEmailError,
 .isPasswordError {
   display: flex;
   margin: 0;
   margin-top: 17px;
   padding: 8px 0 0 0;
   width: 100%;
+  height: 40px;
   font-size: 18px;
   background-color: transparent;
   line-height: 1;
   border: none;
   border-bottom: 1.5px solid #e9e9e9;
-  height: 40px;
-  text-overflow: ellipsis;
-}
-
-.isEmailError {
-  display: flex;
-  margin: 0;
-  margin-top: 17px;
-  padding: 8px 0 0 0;
-  width: 100%;
-  font-size: 18px;
-  background-color: transparent;
-  line-height: 1;
-  border: none;
-  border-bottom: 1.5px solid #e9e9e9;
-  height: 40px;
   text-overflow: ellipsis;
 }
 
