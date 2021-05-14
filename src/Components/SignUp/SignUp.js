@@ -5,8 +5,8 @@ class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signUpEmail: '',
-      signUpPW: '',
+      email: '',
+      password: '',
       pwCheck: '',
       firstName: '',
       lastName: '',
@@ -16,12 +16,19 @@ class SignUp extends React.Component {
 
   handleValueEmail = e => {
     this.setState({
-      signUpEmail: e.target.value,
+      email: e.target.value,
+    });
+  };
+
+  handleValuePW = e => {
+    this.setState({
+      password: e.target.value,
     });
   };
   render() {
-    const { signUpEmail } = this.state;
-    const isEmail = signUpEmail.includes('@') && signUpEmail.endsWith('.com');
+    const { email, password } = this.state;
+    const isEmail = email.includes('@') && email.endsWith('.com');
+    const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
     return (
       <div className="bodyBack">
         <div className="signUp">
@@ -45,16 +52,38 @@ class SignUp extends React.Component {
                       className={isEmail ? 'formTextInput' : 'isEmailError'}
                       name="email"
                     />
-                    <span className={signUpEmail ? 'typing' : 'formTextLabel'}>
+                    <span className={email ? 'typing' : 'formTextLabel'}>
                       이메일 주소
                     </span>
                   </label>
                 </div>
               </div>
-              <div
-                className={signUpEmail && !isEmail ? 'errorMessage' : 'opacity'}
-              >
+              <div className={email && !isEmail ? 'errorMessage' : 'opacity'}>
                 유효한 이메일 주소를 입력하세요
+              </div>
+
+              <div className="formRow">
+                <div className="formText">
+                  <label htmlFor="#">
+                    <input
+                      onChange={this.handleValuePW}
+                      aria-required="true"
+                      type="passwrod"
+                      className={
+                        isPassword ? 'formTextInput' : 'isPasswordError'
+                      }
+                      name="email"
+                    />
+                    <span className={password ? 'typing' : 'formTextLabel'}>
+                      패스워드
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div
+                className={password && !isPassword ? 'errorMessage' : 'opacity'}
+              >
+                패스워드는 5자리부터 10자리 미만이어야 합니다
               </div>
             </div>
           </div>

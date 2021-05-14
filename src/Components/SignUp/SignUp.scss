@@ -14,6 +14,14 @@
     animation: test 0.2s linear 0s 1 reverse;
   }
 
+  &:focus-within .isEmailError {
+    border-bottom: 1px solid red !important;
+  }
+
+  &:focus-within .isPasswordError {
+    border-bottom: 1px solid red !important;
+  }
+
   .modalBody {
     margin: 0 auto;
     max-width: 550px;
@@ -48,10 +56,8 @@
         z-index: 1;
 
         .formText {
-          margin-bottom: 35px;
-          padding-top: 35px;
-          margin: 0 0 20px;
-          padding: 30px 10px 0;
+          margin: 0 0 10px;
+          padding: 40px 10px 0;
           position: relative;
           width: 100%;
 
@@ -113,6 +119,19 @@
   background-color: transparent;
 }
 
+.isPasswordError {
+  position: flex;
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 0;
+  border: solid rgba(51, 51, 51, 0.2);
+  border-width: 0 0 1px;
+  background-color: transparent;
+}
+
 .typing {
   position: absolute;
   color: #666;
@@ -123,7 +142,7 @@
 .errorMessage {
   font-size: 14px;
   opacity: 1;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   color: #ea6956;
 }
 
