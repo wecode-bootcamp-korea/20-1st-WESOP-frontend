@@ -10,16 +10,13 @@
     outline: none;
     font-family: inherit;
   }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
   .offLoginPage {
     animation: test 0.2s linear 0s 1 reverse;
-  }
-
-  &:focus-within .isEmailError {
-    border-bottom: 1px solid red !important;
-  }
-
-  &:focus-within .isPasswordError {
-    border-bottom: 1px solid red !important;
   }
 
   .modalBody {
@@ -48,16 +45,16 @@
         }
       }
       .formRow {
-        flex-wrap: nowrap;
-        animation: fade-in 0.3s ease-in;
-        display: flex;
-        margin: 0 -10px;
         position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0 -10px;
+        animation: fade-in 0.3s ease-in;
         z-index: 1;
 
         .formText {
           margin: 0 0 10px;
-          padding: 40px 10px 0;
+          padding: 30px 10px 0;
           position: relative;
           width: 100%;
 
@@ -99,26 +96,25 @@
               pointer-events: none;
               transition: 0.2s;
             }
+            &:focus-within .isPhoneNumberError,
+            &:focus-within .isFirstNameError,
+            &:focus-within .isLastNameError,
+            &:focus-within .isConfirmError,
+            &:focus-within .isEmailError,
+            &:focus-within .isPasswordError {
+              border-bottom: 1px solid red;
+            }
           }
         }
       }
     }
   }
 }
-
-.isEmailError {
-  position: flex;
-  margin: 0;
-  width: 100%;
-  height: 40px;
-  font-size: 20px;
-  line-height: 1;
-  padding: 8px 0;
-  border: solid rgba(51, 51, 51, 0.2);
-  border-width: 0 0 1px;
-  background-color: transparent;
-}
-
+.isPhoneNumberError,
+.isFirstNameError,
+.isLastNameError,
+.isConfirmError,
+.isEmailError,
 .isPasswordError {
   position: flex;
   margin: 0;
