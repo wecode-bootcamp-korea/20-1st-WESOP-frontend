@@ -32,8 +32,8 @@ class ProductCard extends React.Component {
           />
         </div>
         <div className="desc">
-          <h3>{product_name}</h3>
-          {productSelections && productSelections.size}
+          <p>{product_name}</p>
+          {productSelections && `${parseInt(productSelections.size)} mL`}
           <span> / </span>
           {productSelections &&
             Number(productSelections.price).toLocaleString()}

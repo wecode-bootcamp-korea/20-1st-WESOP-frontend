@@ -1,20 +1,12 @@
 import React from 'react';
+import Carousel from '../Carousel/Carousel';
 import ProductCard from '../ProductCard/ProductCard';
 import './Inventory.scss';
 
 class Inventory extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      products: [],
-      position: 0,
-    };
-  }
-
-  componentDidMount() {
-    fetch('/data/mockdata.json')
-      .then(productsData => productsData.json())
-      .then(productsData => this.setState({ products: productsData }));
+    this.state = {};
   }
 
   category_name = '';
@@ -22,7 +14,6 @@ class Inventory extends React.Component {
   //백엔드에서 데이터 키값을 알려 주셔서 임시로 js 파일 안에 변수를 선언해뒀습니다!
 
   render() {
-    const { products, position } = this.state;
     const { bgColor } = this.props;
     const { category_name, description } = this;
 
@@ -38,39 +29,7 @@ class Inventory extends React.Component {
             스킨 케어 기프트 (16) <i className="fas fa-arrow-right" />
           </span>
         </div>
-        <div className="slideContainer">
-          <div className="productList" style={{ right: `${position}px` }}>
-            {/* {products.map((product, index) => (
-              <ProductCard
-                key={index}
-                product={product}
-                hoverColor={hoverColor || '#f0efe1'}
-              />
-            ))} */}
-            {this.props.children}
-          </div>
-          <button
-            className="prev"
-            style={{ left: position <= 0 && '-80px' }}
-            onClick={() => {
-              position > 0 && this.setState({ position: position - 340 });
-            }}
-          >
-            <i className="fas fa-chevron-left" />
-          </button>
-          <button
-            className="next"
-            style={{
-              right: position >= (products.length - 3) * 340 && '-80px',
-            }}
-            onClick={() => {
-              position < (products.length - 3) * 340 &&
-                this.setState({ position: position + 340 });
-            }}
-          >
-            <i className="fas fa-chevron-right" />
-          </button>
-        </div>
+        <Carousel children={this.props.children} />
       </div>
     );
   }

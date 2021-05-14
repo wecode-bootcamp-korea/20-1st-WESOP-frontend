@@ -1,11 +1,9 @@
 .productCard {
   width: 340px;
-  height: 100%;
   transition: 0.5s;
 
   .imgContainer {
     position: relative;
-    width: 100%;
     height: 80%;
 
     img {
@@ -23,8 +21,13 @@
     text-align: center;
     line-height: 1.8;
 
+    p {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
     span {
-      color: lightgray;
+      color: rgb(160, 160, 160);
     }
   }
 }

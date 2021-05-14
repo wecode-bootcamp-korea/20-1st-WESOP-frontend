@@ -26,17 +26,17 @@ class Main extends React.Component {
               key={index}
               product={product}
               productSelections={product.product_selections[0]}
-              hoverColor={'#f0efe1'}
+              hoverColor="#f0efe1"
             />
           ))}
         </Inventory>
-        <Inventory bgColor={'#EBEBDE'}>
+        <Inventory bgColor="#EBEBDE">
           {inventoryData.map((product, index) => (
             <ProductCard
               key={index}
               product={product}
               productSelections={product.product_selections[0]}
-              hoverColor={'#E5E5D8'}
+              hoverColor="#E5E5D8"
             />
           ))}
         </Inventory>
