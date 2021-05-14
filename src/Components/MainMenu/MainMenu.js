@@ -17,13 +17,13 @@ class MainMenu extends React.Component {
     fetch('/data/menuMockdata.json')
       .then(res => res.json())
       .then(res => {
-        const menus = res['MENU & CATEGORY INFO']
+        const menus = res['result']
           .filter(obj => !obj['category_name'])
           .map(obj => obj['menu_name']);
         this.setState({ menus: menus });
 
         const categories = {};
-        res['MENU & CATEGORY INFO']
+        res['result']
           .filter(obj => obj['category_name'])
           .forEach(obj => {
             categories[obj['menu_name']]
@@ -80,11 +80,12 @@ class MainMenu extends React.Component {
     };
 
     return (
-      <div className="MainMenu">
+      <div className="mainMenu">
         <div className="menuNav">
           <ul>
-            {Object.keys(upperMenus).map(upperMenu => (
+            {Object.keys(upperMenus).map((upperMenu, index) => (
               <li
+                key={index}
                 onMouseOver={() => {
                   handleFirstRequest(upperMenu);
                 }}
@@ -132,7 +133,10 @@ class MainMenu extends React.Component {
             <div className="secondMenu">
               <ul className="category">
                 {(categories[secondRequest] || []).map((category, index) => (
-                  <li style={{ animationDelay: `${index * 0.1 + 0.2}s` }}>
+                  <li
+                    key={index}
+                    style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
+                  >
                     {category}
                   </li>
                 ))}
