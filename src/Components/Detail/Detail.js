@@ -9,20 +9,14 @@ class Detail extends React.Component {
     };
   }
 
-  getInfo = () => {
-    fetch('/data/mockdata.json', {
-      method: 'GET',
-    })
+  componentDidMount() {
+    fetch('/data/mockdata.json')
       .then(products => products.json())
       .then(products => {
         this.setState({
           product: products.result[0],
         });
       });
-  };
-
-  componentDidMount() {
-    this.getInfo();
   }
 
   render() {
