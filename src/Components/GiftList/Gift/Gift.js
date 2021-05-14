@@ -34,7 +34,6 @@ class Gift extends React.Component {
 
   render() {
     const { gift, btnActive, btnAddCart } = this.state;
-    console.log(this.state);
     return (
       <div className="gift">
         <div
@@ -44,12 +43,22 @@ class Gift extends React.Component {
         >
           <div className="giftModel">
             <div className="giftImg">
-              <img alt="상품사진" src={gift.img} />
+              <img
+                alt="상품사진"
+                src={
+                  gift.product_selections &&
+                  gift.product_selections[0].imgage_url
+                }
+              />
             </div>
             <div className="giftNameSize">
-              <p>{gift.productName}</p>
+              <p>{gift.category_name}</p>
               <p>
-                ₩ {Number(gift.price).toLocaleString()} / {gift.size}
+                ₩
+                {Number(
+                  gift.product_selections && gift.product_selections[0].price
+                ).toLocaleString()}{' '}
+                / {gift.product_selections && gift.product_selections[0].size}
               </p>
             </div>
           </div>
@@ -57,11 +66,11 @@ class Gift extends React.Component {
             <ul>
               <li>
                 <p>기프트 소개</p>
-                <p>{gift.desc}</p>
+                <p>{gift.description}</p>
               </li>
               <li>
                 <p>구성품</p>
-                <p>{gift.contents}</p>
+                <p>{gift.content}</p>
               </li>
             </ul>
           </div>
@@ -69,7 +78,10 @@ class Gift extends React.Component {
             onClick={this.addCart}
             className={btnActive ? 'addCartDisabled' : 'addCartEnabled'}
           >
-            카트에 추가하기 - ₩{Number(gift.price).toLocaleString()}
+            카트에 추가하기 - ₩
+            {Number(
+              gift.product_selections && gift.product_selections[0].price
+            ).toLocaleString()}
           </button>
         </div>
       </div>

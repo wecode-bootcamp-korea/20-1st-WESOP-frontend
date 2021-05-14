@@ -9,27 +9,25 @@ class GiftList extends React.Component {
       product: [],
     };
   }
-  // http://10.58.1.64:8000/products/detailproduct
-  getInfo = () => {
+
+  componentDidMount() {
     fetch('./data/mockdata.json')
       .then(products => products.json())
       .then(products =>
         this.setState({
-          product: products,
+          product: products.result,
         })
       );
-  };
-  componentDidMount() {
-    this.getInfo();
   }
 
   render() {
     const { product } = this.state;
     return (
       <div className="giftList">
-        {product.map(gift => {
-          return <Gift key={gift.id} gift={gift} />;
-        })}
+        {product &&
+          product.map(gift => {
+            return <Gift gift={gift} />;
+          })}
       </div>
     );
   }
