@@ -1,0 +1,101 @@
+.CartWrapper {
+  background-color: #252525;
+  color: #fffef2;
+  width: 100%;
+}
+
+
+.CartProducts {
+  padding: 40px 40px 0;
+}
+
+
+.CartProductsHeader {
+  border-bottom: 2px solid rgba(255,254,242,.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 15px;
+  font-size: 14px;
+}
+
+
+.CartProductsHeaderTitle {
+  width: 41.66667%;
+}
+
+
+.CartProductsHeaderSize {
+  width: 25%;
+}
+
+
+.CartProductsHeaderQuntity {
+  flex-grow: 1;
+}
+
+
+.closeButton {
+  border: 0;
+  color: #fffef2;
+  width: 18px;
+  height: 18px;
+}
+
+
+.CartProductsList {
+    margin: 0;
+    padding: 0;
+}
+
+
+.CartProductsListItem {
+  align-items: center;
+  display: flex;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,254,242,.1);
+}
+
+
+.CartProduct {
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+
+
+.CartProductNameWrapper{
+  width: 66.66667%;
+  display: flex;
+}
+
+
+.CartRropductName{
+  width: 62.5%;
+}
+
+.CartRropductSize {
+  width: 25%;
+
+}
+
+
+.CartProductQuantity {
+  border: 1px solid rgba(255,254,242,.1);
+  padding: 10px 36px 10px 19px;
+}
+
+
+.CartProductRemove {
+  flex-grow: 1;
+}
+
+
+.CartProductRemoveBtn {
+  margin: 10px 0;
+  opacity: 0;
+  transition: all .3s cubic-bezier(.215,.61,.355,1);
+  background: transparent;
+  color: #fffef2;
+  border: 0;
+  
+}
