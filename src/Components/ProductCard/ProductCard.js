@@ -12,7 +12,8 @@ class ProductCard extends React.Component {
   };
 
   render() {
-    const { product_name, size, price, content_image_url } = this.props.product;
+    const { productSelections } = this.props;
+    const { product_name } = this.props.product;
     const { hoverColor } = this.props;
     const { hover } = this.state;
     const { handleHover } = this;
@@ -25,13 +26,17 @@ class ProductCard extends React.Component {
         onMouseOut={handleHover}
       >
         <div className="imgContainer">
-          <img alt="product" src={content_image_url} />
+          <img
+            alt="product"
+            src={productSelections && productSelections.image_url}
+          />
         </div>
         <div className="desc">
           <h3>{product_name}</h3>
-          {`${parseInt(size)} mL`}
+          {productSelections && productSelections.size}
           <span> / </span>
-          {price.toLocaleString()}
+          {productSelections &&
+            Number(productSelections.price).toLocaleString()}
         </div>
       </div>
     );

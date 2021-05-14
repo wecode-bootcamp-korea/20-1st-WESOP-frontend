@@ -23,7 +23,7 @@ class Inventory extends React.Component {
 
   render() {
     const { products, position } = this.state;
-    const { bgColor, hoverColor } = this.props;
+    const { bgColor } = this.props;
     const { category_name, description } = this;
 
     return (
