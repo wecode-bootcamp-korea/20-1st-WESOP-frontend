@@ -19,14 +19,13 @@ class Cart extends React.Component {
       });
   }
 
-  handleRemove = () => {
-    const { data, onRemove } = this.props;
-    onRemove(data.id);
-    console.log(data.id);
-  };
-
   render() {
     const { products } = this.state;
+
+    const onRemove = id => {
+      this.setState(products.filter(product => product.id !== id));
+    };
+
     return (
       <div className="Cart">
         <section className="CartBox">
@@ -65,7 +64,7 @@ class Cart extends React.Component {
                         <div className="CartProductRemove">
                           <button
                             className="CartProductRemoveBtn"
-                            onClick={this.handleRemove}
+                            onClick={() => onRemove(product.id)}
                           >
                             삭제
                           </button>
