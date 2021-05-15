@@ -1,78 +1,69 @@
-.shippingBanner {
-  display: flex;
-  width: 100%;
-  height: 50px;
-  background-color: #252525;
-  justify-content: center;
-  border: 1px solid
-}
-
-
-.shippingBannerButton {
-  height: 21px;
-  margin: auto;
-  background: transparent;
-  border: 0;
-}
-
-.shippingBannerContent {
-  color: #fffef2;
-}
-
-
-.navHeader {
-  height: 69px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  
-  .navHeaderContainer {
-    width: 100%;
+.nav {
+  .shippingBanner {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    background-color: #252525;
+    justify-content: center;
+    border: 1px solid;
+  }
+
+  .shippingBannerButton {
+    height: 21px;
+    margin: auto;
+    background: transparent;
+    border: 0;
+  }
+
+  .shippingBannerContent {
+    color: #fffef2;
+  }
+
+  .navHeader {
+    height: 69px;
+    position: relative;
+    display: flex;
     align-items: center;
+    font-size: 14px;
+
+    .navHeaderContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .navHeaderNenu {
+    padding-left: 40px;
+  }
+
+  .LoginAndCart {
+    padding-right: 40px;
+  }
+
+  .NenuListText {
+    margin-right: 25px;
+  }
+
+  .LoginAndCartText {
+    margin-left: 25px;
+  }
+
+  .navLogo {
+    position: absolute;
+    top: 50px;
+  }
+
+  .navLogoImg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 110px;
+    left: 40px;
+  }
+
+  li {
+    float: left;
   }
 }
-
-
-.navHeaderNenu {
-  padding-left: 40px;
-}
-
-
-.navHeaderLoginAndCart {
-  padding-right: 40px;
-}
-
-
-.navHeaderNenuListText {
-  margin-right: 25px;
-}
-
-
-.navHeaderLoginAndCartText {
-  margin-left: 25px;
-}
-
-
-.navLogo {
-  position: absolute;
-  top: 50px;
-}
-
-
-.navLogoImg {
-   position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 110px;
-  left: 40px;
-}
-
-
-li {
-  float: left;
-}
-
-

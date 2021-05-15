@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 
 class Nav extends React.Component {
   render() {
     return (
-      <>
+      <div className="nav">
         <div className="shippingBanner">
           <button className="shippingBannerButton" type="button">
             <p className="shippingBannerContent">
@@ -15,44 +16,44 @@ class Nav extends React.Component {
         <div className="navHeader">
           <div className="navHeaderContainer">
             <ul className="navHeaderNenu">
-              <li className="navHeaderNenuList">
-                <a className="navHeaderNenuListText" href="#">
+              <li>
+                <Link to="#" className="NenuListText">
                   <span>제품보기</span>
-                </a>
+                </Link>
               </li>
-              <li className="navHeaderNenuList">
-                <a className="navHeaderNenuListText" href="#">
+              <li>
+                <Link to="#" className="NenuListText">
                   <span>스토어</span>
-                </a>
+                </Link>
               </li>
-              <li className="navHeaderNenuList">
-                <a className="navHeaderNenuListText" href="#">
+              <li>
+                <Link to="#" className="NenuListText">
                   <span>검색</span>
-                </a>
+                </Link>
               </li>
             </ul>
-            <ul className="navHeaderLoginAndCart">
-              <li className="login">
-                <a className="navHeaderLoginAndCartText" href="#">
+            <ul className="LoginAndCart">
+              <li>
+                <Link to="#" className="LoginAndCartText">
                   <span>로그인</span>
-                </a>
+                </Link>
               </li>
-              <li className="cart">
-                <a className="navHeaderLoginAndCartText" href="#">
+              <li>
+                <Link to="#" className="LoginAndCartText">
                   <span>카트</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
-          <a className="navLogo" href="#">
+          <Link to="#" className="navLogo">
             <img
               className="navLogoImg"
               src="../../img/wesop.png"
               alt="로고 이미지"
             />
-          </a>
+          </Link>
         </div>
-      </>
+      </div>
     );
   }
 }
