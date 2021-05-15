@@ -17,6 +17,11 @@
     outline: none;
     font-family: inherit;
   }
+
+  .offLoginPage {
+    animation: test 0.2s linear 0s 1 reverse;
+  }
+
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -37,6 +42,13 @@
     width: 100%;
 
     .loginForm {
+      .modalCloseBtn {
+        float: right;
+        margin-bottom: 120px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
       .modalHeadingWrap {
         padding-bottom: 30px;
         .modalTitle {

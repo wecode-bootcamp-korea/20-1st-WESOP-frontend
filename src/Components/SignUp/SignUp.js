@@ -24,6 +24,10 @@ class SignUp extends React.Component {
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
+        firstname: this.state.firstname,
+        lastname: this.state.lastname,
+        phonenumber: this.state.phonenumber,
+        checkbox: this.state.checkbox,
       }),
     })
       .then(resData => resData.json())
@@ -42,6 +46,18 @@ class SignUp extends React.Component {
       );
   };
 
+  checkBoxValue = () => {
+    if (this.state.checkbox === false) {
+      this.setState({
+        checkbox: true,
+      });
+    } else {
+      this.setState({
+        checkbox: false,
+      });
+    }
+  };
+
   handleValue = e => {
     const { name, value } = e.target;
     this.setState({
@@ -50,8 +66,15 @@ class SignUp extends React.Component {
   };
 
   render() {
-    const { email, password, pwconfirm, lastname, firstname, phonenumber } =
-      this.state;
+    const {
+      email,
+      password,
+      pwconfirm,
+      lastname,
+      firstname,
+      phonenumber,
+      checkbox,
+    } = this.state;
 
     const isEmail = email.includes('@') && email.endsWith('.com');
     const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
@@ -59,6 +82,7 @@ class SignUp extends React.Component {
     const isLastName = lastname.length >= 1 && lastname.length <= 10;
     const isFirstName = firstname.length >= 1 && firstname.length <= 15;
     const isPhoneNumber = phonenumber.length >= 8;
+    const isCheck = checkbox;
 
     const isButton =
       isEmail &&
@@ -68,66 +92,23 @@ class SignUp extends React.Component {
       isFirstName &&
       isPhoneNumber;
 
-    // const inputs = [
-    //   {
-    //     type: 'email',
-    //     check: 'isEmail',
-    //     name: 'email',
-    //     text: '이메일 주소.',
-    //     isError: 'isEmailError',
-    //   },
-    //   {
-    //     type: 'password',
-    //     check: 'isPassword',
-    //     name: 'password',
-    //     text: '패스워드',
-    //     isError: 'isPasswordError',
-    //   },
-    //   {
-    //     type: 'password',
-    //     check: 'isConfirm',
-    //     name: 'pwconfirm',
-    //     text: '패스워드 확인',
-    //     isError: 'isConfirmError',
-    //   },
-    //   {
-    //     type: 'lastname',
-    //     check: 'isLastName',
-    //     name: 'lastname',
-    //     text: '성',
-    //     isError: 'isConfirmError',
-    //   },
-    //   {
-    //     type: 'firstname',
-    //     check: 'isFirstName',
-    //     name: 'firstname',
-    //     text: '이름',
-    //   },
-    //   {
-    //     type: 'number',
-    //     check: 'isPhoneNumber',
-    //     name: 'phonenumber',
-    //     text: '핸드폰 번호',
-    //   },
-    // ];
-
-    // const mapBox = inputs.map((el, index) => (
-    //   <Form
-    //     key={index}
-    //     onChange={this.handleValue}
-    //     type={el.type}
-    //     check={el.check}
-    //     name={el.name}
-    //     text={el.text}
-    //   />
-    // ));
-    // console.log(mapBox);
-
     return (
       <div className="bodyBack">
         <div className="signUp">
           <div className="modalBody">
             <div className="loginForm">
+              <button
+                className="modalCloseBtn"
+                type="button"
+                onClick={() => {
+                  this.props.offLogin();
+                  this.setState({
+                    close: 'offLoginPage',
+                  });
+                }}
+              >
+                <img alt="closeButton_image" src="/closeBtn.png" />
+              </button>
               <div className="modalHeadingWrap">
                 <h1 className="modalTitle">
                   처음 만나 뵙게 되네요. WeSop에 오신 것을 환영합니다.
@@ -273,7 +254,12 @@ class SignUp extends React.Component {
 
               <div className="formText">
                 <form method="POST">
-                  <input type="checkbox" id="checkBox" name="ageCheck" />
+                  <input
+                    type="checkbox"
+                    id="checkBox"
+                    name="ageCheck"
+                    onChange={this.checkBoxValue}
+                  />
                   <label htmlFor="checkBox">
                     가입자 본인은 만 14세 이상입니다.
                   </label>
@@ -282,7 +268,7 @@ class SignUp extends React.Component {
               <button
                 className="btnLogin"
                 onClick={this.handleBtn}
-                disabled={isButton ? false : true}
+                disabled={isButton && isCheck ? false : true}
               >
                 등록
               </button>
