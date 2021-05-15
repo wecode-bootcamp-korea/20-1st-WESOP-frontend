@@ -24,7 +24,6 @@ class Detail extends React.Component {
   render() {
     const { product } = this.state;
     const feature = product && product.feature;
-    const size = product && product.product_selections;
     const featureList =
       feature &&
       feature.map(feature => (
@@ -33,6 +32,7 @@ class Detail extends React.Component {
           <p>{feature.features.join(', ')}</p>
         </li>
       ));
+    const size = product && product.product_selections;
     const sizeList =
       size &&
       size.map(size => (
