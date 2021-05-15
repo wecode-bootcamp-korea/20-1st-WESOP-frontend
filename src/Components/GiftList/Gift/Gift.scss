@@ -25,8 +25,12 @@
 
     .giftInfo {
       padding-bottom: 40px;
-      border-bottom: 2px solid black;
+      // border-bottom: 2px solid black;
       font-size: 15px;
+
+      .giftPriceSize {
+      }
+
       .sizeList {
         display: flex;
         justify-content: center;
@@ -45,6 +49,10 @@
   }
 
   .giftDetailInfo {
+    margin: auto;
+    width: 90%;
+    padding-top: 20px;
+    border-top: 2px solid black;
     li {
       display: flex;
       margin-bottom: 25px;
