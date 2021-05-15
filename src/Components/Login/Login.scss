@@ -1,5 +1,5 @@
 .bodyBack {
-  background-color: pink;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .login {
@@ -31,6 +31,7 @@
         float: right;
         background-color: transparent;
         border: none;
+        cursor: pointer;
       }
 
       &:focus-within .isEmailError {
@@ -73,7 +74,6 @@
           display: flex;
           position: relative;
           width: 100%;
-          cursor: default;
 
           &:focus-within .formTextLabel {
             display: relative;
@@ -124,51 +124,51 @@
         color: white;
         border: 1px solid rgba(51, 51, 51, 0.2);
         transition: all 0.5s ease;
-        color: white;
+        cursor: pointer;
       }
     }
   }
-}
-.typing {
-  position: absolute;
-  margin-top: 5px;
-  font-size: 15px;
-}
+  .typing {
+    position: absolute;
+    margin-top: 5px;
+    font-size: 15px;
+  }
 
-.errorMessage {
-  padding-bottom: 20px;
-  font-size: 14px;
-  color: #ea6956;
-  opacity: 1;
-}
+  .errorMessage {
+    padding-bottom: 20px;
+    font-size: 14px;
+    color: #ea6956;
+    opacity: 1;
+  }
 
-.opacity {
-  opacity: 0;
-}
-
-.isEmailError,
-.isPasswordError {
-  display: flex;
-  margin: 0;
-  margin-top: 17px;
-  padding: 8px 0 0 0;
-  width: 100%;
-  height: 40px;
-  font-size: 18px;
-  background-color: transparent;
-  line-height: 1;
-  border: none;
-  border-bottom: 1.5px solid #e9e9e9;
-  text-overflow: ellipsis;
-}
-
-@keyframes test {
-  from {
-    transform: scale(0.2);
+  .opacity {
     opacity: 0;
   }
-  to {
-    transform: scale(1);
-    opacity: 1;
+
+  .isEmailError,
+  .isPasswordError {
+    display: flex;
+    margin: 0;
+    margin-top: 17px;
+    padding: 8px 0 0 0;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    background-color: transparent;
+    line-height: 1;
+    border: none;
+    border-bottom: 1.5px solid #e9e9e9;
+    text-overflow: ellipsis;
+  }
+
+  @keyframes test {
+    from {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
