@@ -1,0 +1,44 @@
+@import '../../Styles/variables.scss';
+
+@mixin domino {
+  opacity: 0;
+  animation: appear 1s ease 0s 1 normal forwards;
+  transition: 1s;
+}
+
+.menuColumn {
+  position: relative;
+  left: 0;
+  width: 33vw;
+  min-height: 100vh;
+  padding: 40px;
+  background-color: $bgColor;
+  border-right: 1px solid lightgray;
+  animation: accordion 1s ease 0s 1 normal forwards;
+  transform: translateX(0%);
+  transition: 1s;
+
+  &.close {
+    right: 34%;
+    transition: 1s;
+  }
+
+  .category {
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    font-size: 28px;
+
+    .categoryList {
+      width: fit-content;
+      margin: 15px 5px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid $transparent;
+      @include domino;
+    }
+  }
+
+  &.allClose {
+    transform: translateX(-100%);
+  }
+}
