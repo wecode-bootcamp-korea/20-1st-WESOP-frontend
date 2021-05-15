@@ -15,7 +15,6 @@
   background-color: $bgColor;
   border-right: 1px solid lightgray;
   animation: accordion 1s ease 0s 1 normal forwards;
-  transform: translateX(0%);
   transition: 1s;
 
   &.close {
@@ -40,5 +39,6 @@
 
   &.allClose {
     transform: translateX(-100%);
+    transition: 0.5s;
   }
 }

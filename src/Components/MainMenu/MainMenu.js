@@ -138,7 +138,11 @@ class MainMenu extends React.Component {
               <i
                 className="fas fa-times"
                 onClick={() => {
-                  this.setState({ closeAnimation: 'allClose' });
+                  this.setState({
+                    secondRequest: '',
+                    thirdRequest: '',
+                    closeAnimation: 'allClose',
+                  });
                   setTimeout(menuToggle, 1000);
                 }}
               />
