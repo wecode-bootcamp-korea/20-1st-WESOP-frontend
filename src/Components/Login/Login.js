@@ -30,15 +30,10 @@ class Login extends React.Component {
   //   this.getInfo();
   // }
 
-  handleValueID = e => {
+  handleValue = e => {
+    const { name, value } = e.target;
     this.setState({
-      email: e.target.value,
-    });
-  };
-
-  handleValuePW = e => {
-    this.setState({
-      password: e.target.value,
+      [name]: value,
     });
   };
 
@@ -53,25 +48,21 @@ class Login extends React.Component {
       }),
     })
       .then(resData => resData.json())
-      .then(
-        jsonData => {
-          console.log(jsonData);
-          localStorage.setItem('accessToken', jsonData.token);
-          // this.props.history.push('#');
-          if (jsonData.MESSAGE === 'INVALID_EMAIL') {
-            alert('이메일을 확인해주세요.');
-          }
-        },
-        () => {
-          console.log('button');
+      .then(jsonData => {
+        console.log(jsonData);
+        localStorage.setItem('accessToken', jsonData.token);
+        // this.props.history.push('#');
+        if (jsonData.MESSAGE === 'INVALID_EMAIL') {
+          alert('이메일을 확인해주세요.');
         }
-      );
+      });
   };
 
   render() {
     const { email, password } = this.state;
     const isEmail = email.includes('@') && email.endsWith('.com');
     const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
+
     return (
       <div className="bodyBack">
         <div className="login">
@@ -96,7 +87,7 @@ class Login extends React.Component {
               <div className="formRow">
                 <label htmlFor="">
                   <input
-                    onChange={this.handleValueID}
+                    onChange={this.handleValue}
                     aria-required="true"
                     className={isEmail ? 'formTextInput' : 'isEmailError'}
                     name="email"
@@ -115,7 +106,7 @@ class Login extends React.Component {
               <div className="formRow">
                 <label htmlFor="">
                   <input
-                    onChange={this.handleValuePW}
+                    onChange={this.handleValue}
                     aria-required="true"
                     className={isPassword ? 'formPwInput' : 'isPasswordError'}
                     name="password"
