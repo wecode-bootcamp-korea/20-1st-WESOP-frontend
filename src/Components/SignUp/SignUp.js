@@ -101,7 +101,7 @@ class SignUp extends React.Component {
                 className="modalCloseBtn"
                 type="button"
                 onClick={() => {
-                  this.props.offLogin();
+                  this.props.signUpToggle();
                   this.setState({
                     close: 'offLoginPage',
                   });
