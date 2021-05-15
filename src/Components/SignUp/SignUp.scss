@@ -1,8 +1,15 @@
 .bodyBack {
-  background-color: pink;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .signUp {
+  position: relative;
+  top: 5%;
   -webkit-font-smoothing: antialiased;
   color: #333;
   animation: test 0.2s linear 0s 1 normal;
@@ -122,66 +129,69 @@
         font-weight: inherit;
         font-size: 14px;
         color: white;
+        cursor: pointer;
       }
     }
   }
-}
-.formText {
-  margin-top: 20px;
-  .isPhoneNumberError {
-    width: 70%;
-    form {
-      label {
-        font-weight: inherit;
+
+  .formText {
+    margin-top: 20px;
+
+    .isPhoneNumberError {
+      width: 70%;
+      form {
+        label {
+          font-weight: inherit;
+        }
       }
     }
   }
-}
 
-.isError,
-.isPhoneNumberError,
-.isFirstNameError,
-.isLastNameError,
-.isConfirmError,
-.isEmailError,
-.isPasswordError {
-  position: flex;
-  margin: 0;
-  width: 100%;
-  height: 40px;
-  font-size: 20px;
-  line-height: 1;
-  padding: 8px 0;
-  border: solid rgba(51, 51, 51, 0.2);
-  border-width: 0 0 1px;
-  background-color: transparent;
-}
+  .isError,
+  .isPhoneNumberError,
+  .isFirstNameError,
+  .isLastNameError,
+  .isConfirmError,
+  .isEmailError,
+  .isPasswordError {
+    position: flex;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    line-height: 1;
+    padding: 8px 0;
+    border: solid rgba(51, 51, 51, 0.2);
+    border-width: 0 0 1px;
+    background-color: transparent;
+  }
 
-.typing {
-  position: absolute;
-  color: #666;
-  font-size: 14px;
-  top: -30%;
-}
+  .typing {
+    position: absolute;
+    color: #666;
+    font-size: 14px;
+    top: -30%;
+  }
 
-.errorMessage {
-  font-size: 14px;
-  opacity: 1;
-  padding-bottom: 10px;
-  color: #ea6956;
-}
+  .errorMessage {
+    font-size: 14px;
+    opacity: 1;
+    padding-bottom: 10px;
+    color: #ea6956;
+  }
 
-.opacity {
-  opacity: 0;
-}
-
-@keyframes closePage {
-  from {
-    transform: scale(0.2);
+  .opacity {
     opacity: 0;
   }
-  to {
-    transform: scale(1);
-    opacity: 1;
+
+  @keyframes closePage {
+    from {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
