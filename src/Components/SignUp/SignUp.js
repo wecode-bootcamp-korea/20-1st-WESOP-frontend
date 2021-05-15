@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+//import Form from './Form';
 import './SignUp.scss';
 
 class SignUp extends React.Component {
@@ -12,50 +12,29 @@ class SignUp extends React.Component {
       firstname: '',
       lastname: '',
       phonenumber: '',
+      checkbox: false,
     };
   }
 
+  checkboxValue = e => {};
+
   handleValue = e => {
     const { name, value } = e.target;
-    console.log(typeof name);
     this.setState({
       [name]: value,
     });
   };
 
-  // handleValuePW = e => {
-  //   this.setState({
-  //     password: e.target.value,
-  //   });
-  // };
-
-  // handleConfirm = e => {
-  //   this.setState({
-  //     pwconfirm: e.target.value,
-  //   });
-  // };
-
-  // handleLastName = e => {
-  //   this.setState({
-  //     lastname: e.target.value,
-  //   });
-  // };
-
-  // handleFirstName = e => {
-  //   this.setState({
-  //     firstname: e.target.value,
-  //   });
-  // };
-
-  // handlePhoneNumber = e => {
-  //   this.setState({
-  //     phonenumber: e.target.value,
-  //   });
-  // };
-
   render() {
-    const { email, password, pwconfirm, lastname, firstname, phonenumber } =
-      this.state;
+    const {
+      email,
+      password,
+      pwconfirm,
+      lastname,
+      firstname,
+      phonenumber,
+      checkbox,
+    } = this.state;
     const isEmail = email.includes('@') && email.endsWith('.com');
     const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
     const isConfirm = password === pwconfirm && pwconfirm.length >= 6;
@@ -63,55 +42,60 @@ class SignUp extends React.Component {
     const isFirstName = firstname.length >= 1 && firstname.length <= 15;
     const isPhoneNumber = isNaN(phonenumber) && phonenumber.length >= 6;
 
-    const inputs = [
-      {
-        type: 'email',
-        check: 'isEmail',
-        name: 'email',
-        text: '이메일 주소.',
-      },
-      {
-        type: 'password',
-        check: 'isPassword',
-        name: 'password',
-        text: '패스워드',
-      },
-      {
-        type: 'password',
-        check: 'isConfirm',
-        name: 'pwconfirm',
-        text: '패스워드 확인',
-      },
-      {
-        type: 'lastname',
-        check: 'isLastName',
-        name: 'lastname',
-        text: '성',
-      },
-      {
-        type: 'firstname',
-        check: 'isFirstName',
-        name: 'firstname',
-        text: '이름',
-      },
-      {
-        type: 'number',
-        check: 'isPhoneNumber',
-        name: 'phonenumber',
-        text: '핸드폰 번호',
-      },
-    ];
+    // const inputs = [
+    //   {
+    //     type: 'email',
+    //     check: 'isEmail',
+    //     name: 'email',
+    //     text: '이메일 주소.',
+    //     isError: 'isEmailError',
+    //   },
+    //   {
+    //     type: 'password',
+    //     check: 'isPassword',
+    //     name: 'password',
+    //     text: '패스워드',
+    //     isError: 'isPasswordError',
+    //   },
+    //   {
+    //     type: 'password',
+    //     check: 'isConfirm',
+    //     name: 'pwconfirm',
+    //     text: '패스워드 확인',
+    //     isError: 'isConfirmError',
+    //   },
+    //   {
+    //     type: 'lastname',
+    //     check: 'isLastName',
+    //     name: 'lastname',
+    //     text: '성',
+    //     isError: 'isConfirmError',
+    //   },
+    //   {
+    //     type: 'firstname',
+    //     check: 'isFirstName',
+    //     name: 'firstname',
+    //     text: '이름',
+    //   },
+    //   {
+    //     type: 'number',
+    //     check: 'isPhoneNumber',
+    //     name: 'phonenumber',
+    //     text: '핸드폰 번호',
+    //   },
+    // ];
 
-    const mapBox = inputs.map((el, index) => (
-      <Form
-        onChange={this.handleValue}
-        type={el.type}
-        check={el.check}
-        name={el.name}
-        text={el.text}
-      />
-    ));
-    console.log(mapBox);
+    // const mapBox = inputs.map((el, index) => (
+    //   <Form
+    //     key={index}
+    //     onChange={this.handleValue}
+    //     type={el.type}
+    //     check={el.check}
+    //     name={el.name}
+    //     text={el.text}
+    //   />
+    // ));
+    // console.log(mapBox);
 
     return (
       <div className="bodyBack">
@@ -126,12 +110,12 @@ class SignUp extends React.Component {
                   계정을 만들려면 아래에 세부 정보를 입력하십시오.
                 </div>
               </div>
-              {mapBox}
-              {/* <div className="formRow">
+
+              <div className="formRow">
                 <div className="formText">
                   <label htmlFor="#">
                     <input
-                      onChange={this.handleValueEmail}
+                      onChange={this.handleValue}
                       aria-required="true"
                       type="email"
                       className={isEmail ? 'formTextInput' : 'isEmailError'}
@@ -142,19 +126,16 @@ class SignUp extends React.Component {
                     </span>
                   </label>
                 </div>
-              </div> */}
-
-              {/* <Form onChange={this.handleValue} type={}  check={} name={} text={} /> */}
+              </div>
               <div className={email && !isEmail ? 'errorMessage' : 'opacity'}>
                 유효한 이메일 주소를 입력하세요
               </div>
-              {/* </div> */}
-              {/* <div className="loginForm"> */}
+
               <div className="formRow">
                 <div className="formText">
                   <label htmlFor="#">
                     <input
-                      onChange={this.handleValuePW}
+                      onChange={this.handleValue}
                       aria-required="true"
                       type="password"
                       className={
@@ -178,7 +159,7 @@ class SignUp extends React.Component {
                 <div className="formText">
                   <label htmlFor="#">
                     <input
-                      onChange={this.handleConfirm}
+                      onChange={this.handleValue}
                       aria-required="true"
                       type="password"
                       className={isConfirm ? 'formTextInput' : 'isConfirmError'}
@@ -200,7 +181,7 @@ class SignUp extends React.Component {
                 <div className="formText">
                   <label htmlFor="#">
                     <input
-                      onChange={this.handleLastName}
+                      onChange={this.handleValue}
                       aria-required="true"
                       type="text"
                       className={
@@ -216,7 +197,7 @@ class SignUp extends React.Component {
                 <div className="formText">
                   <label htmlFor="#">
                     <input
-                      onChange={this.handleFirstName}
+                      onChange={this.handleValue}
                       aria-required="true"
                       type="text"
                       className={
@@ -242,7 +223,7 @@ class SignUp extends React.Component {
                 <div className="formText">
                   <label htmlFor="#">
                     <input
-                      onChange={this.handlePhoneNumber}
+                      onChange={this.handleValue}
                       aria-required="true"
                       type="number"
                       className={
@@ -255,22 +236,15 @@ class SignUp extends React.Component {
                     </span>
                   </label>
                 </div>
-                <div className="formText">
-                  <label htmlFor="#">
-                    <input
-                      onChange={this.handlePhoneNumber}
-                      aria-required="true"
-                      type="number"
-                      className={
-                        isPhoneNumber ? 'formTextInput' : 'isPhoneNumberError'
-                      }
-                      name="phonenumber"
-                    />
-                    <span className={phonenumber ? 'typing' : 'formTextLabel'}>
-                      핸드폰 번호
-                    </span>
+              </div>
+
+              <div className="formText">
+                <form method="POST">
+                  <input type="checkbox" id="checkBox" name="ageCheck" />
+                  <label htmlFor="checkBox">
+                    가입자 본인은 만 14세 이상입니다.
                   </label>
-                </div>
+                </form>
               </div>
             </div>
           </div>

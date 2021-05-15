@@ -6,8 +6,10 @@ class Form extends React.Component {
     this.state = {};
   }
   render() {
-    const { onChange, type, check, name, text } = this.props;
-    console.log(this.props.onChange);
+    const { onChange, type, check, name, text, isError, errorMsg } = this.props;
+
+    console.log([type]);
+
     return (
       <div className="formRow">
         <div className="formText">
@@ -16,11 +18,16 @@ class Form extends React.Component {
               onChange={onChange}
               aria-required="true"
               type={type}
-              className={check ? 'formTextInput' : 'isEmailError'}
+              className={check ? 'formTextInput' : isError}
               name={name}
             />
-            <span className={name ? 'typing' : 'formTextLabel'}>{text}</span>
+            <span className={this.props.password ? 'typing' : 'formTextLabel'}>
+              {text}
+            </span>
           </label>
+        </div>
+        <div className={name && !check ? 'errorMessage' : 'opacity'}>
+          {errorMsg}
         </div>
       </div>
     );

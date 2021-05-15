@@ -96,6 +96,7 @@
               pointer-events: none;
               transition: 0.2s;
             }
+            &:focus-within .isError,
             &:focus-within .isPhoneNumberError,
             &:focus-within .isFirstNameError,
             &:focus-within .isLastNameError,
@@ -110,6 +111,19 @@
     }
   }
 }
+.formText {
+  margin-top: 20px;
+  .isPhoneNumberError {
+    width: 70%;
+    form {
+      label {
+        font-weight: inherit;
+      }
+    }
+  }
+}
+
+.isError,
 .isPhoneNumberError,
 .isFirstNameError,
 .isLastNameError,
