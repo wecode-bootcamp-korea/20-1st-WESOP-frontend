@@ -16,7 +16,31 @@ class SignUp extends React.Component {
     };
   }
 
-  checkboxValue = e => {};
+  handleBtn = e => {
+    e.preventDefault();
+    fetch('', {
+      //http://10.58.2.6:8000/user/login
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then(resData => resData.json())
+      .then(
+        jsonData => {
+          console.log(jsonData);
+          localStorage.setItem('accessToken', jsonData.token);
+          // this.props.history.push('#');
+          if (jsonData.MESSAGE === 'INVALID_EMAIL') {
+            alert('이메일을 확인해주세요.');
+          }
+        },
+        () => {
+          console.log('button');
+        }
+      );
+  };
 
   handleValue = e => {
     const { name, value } = e.target;
@@ -26,21 +50,23 @@ class SignUp extends React.Component {
   };
 
   render() {
-    const {
-      email,
-      password,
-      pwconfirm,
-      lastname,
-      firstname,
-      phonenumber,
-      checkbox,
-    } = this.state;
+    const { email, password, pwconfirm, lastname, firstname, phonenumber } =
+      this.state;
+
     const isEmail = email.includes('@') && email.endsWith('.com');
     const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
     const isConfirm = password === pwconfirm && pwconfirm.length >= 6;
     const isLastName = lastname.length >= 1 && lastname.length <= 10;
     const isFirstName = firstname.length >= 1 && firstname.length <= 15;
-    const isPhoneNumber = isNaN(phonenumber) && phonenumber.length >= 6;
+    const isPhoneNumber = phonenumber.length >= 8;
+
+    const isButton =
+      isEmail &&
+      isPassword &&
+      isConfirm &&
+      isLastName &&
+      isFirstName &&
+      isPhoneNumber;
 
     // const inputs = [
     //   {
@@ -237,6 +263,13 @@ class SignUp extends React.Component {
                   </label>
                 </div>
               </div>
+              <div
+                className={
+                  phonenumber && !isPhoneNumber ? 'errorMessage' : 'opacity'
+                }
+              >
+                유효하지 않는 번호입니다.
+              </div>
 
               <div className="formText">
                 <form method="POST">
@@ -246,6 +279,13 @@ class SignUp extends React.Component {
                   </label>
                 </form>
               </div>
+              <button
+                className="btnLogin"
+                onClick={this.handleBtn}
+                disabled={isButton ? false : true}
+              >
+                등록
+              </button>
             </div>
           </div>
         </div>
