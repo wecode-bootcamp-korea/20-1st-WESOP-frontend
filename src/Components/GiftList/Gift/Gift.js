@@ -6,19 +6,28 @@ class Gift extends React.Component {
     super(props);
     this.state = {
       gift: [],
+      img: '',
       btnActive: true,
-      btnAddCart: false,
+      priceAndSize: true,
+      allSize: false,
     };
   }
+
+  choiceSize = () => {
+    this.setState({});
+  };
   mouseIn = () => {
     this.setState({
       btnActive: false,
+      priceAndSize: false,
+      allSize: true,
     });
   };
-
   mouseOut = () => {
     this.setState({
       btnActive: true,
+      priceAndSize: true,
+      allSize: false,
     });
   };
 
@@ -33,7 +42,23 @@ class Gift extends React.Component {
   }
 
   render() {
-    const { gift, btnActive, btnAddCart } = this.state;
+    const { gift, img, btnActive, priceAndSize, allSize } = this.state;
+    const size = gift && gift.product_selections;
+    const sizeList =
+      size &&
+      size.map(size => (
+        <li>
+          <input
+            type="radio"
+            onClick={() => {
+              this.choiceSize(size);
+            }}
+            name="size"
+            value={size.size}
+          />
+          <label>{size.size}</label>
+        </li>
+      ));
     return (
       <div className="gift">
         <div
@@ -47,22 +72,29 @@ class Gift extends React.Component {
                 alt="상품사진"
                 src={
                   gift.product_selections &&
-                  gift.product_selections[0].imgage_url
+                  gift.product_selections[0].image_url
                 }
               />
             </div>
-            <div className="giftNameSize">
-              <p>{gift.category_name}</p>
-              <p>
-                ₩
-                {Number(
-                  gift.product_selections && gift.product_selections[0].price
-                ).toLocaleString()}{' '}
-                / {gift.product_selections && gift.product_selections[0].size}
-              </p>
+            <div className="giftInfo">
+              <p>{gift.product_name}</p>
+              <div className="giftPriceSize">
+                {priceAndSize && (
+                  <p>
+                    ₩
+                    {Number(
+                      gift.product_selections &&
+                        gift.product_selections[0].price
+                    ).toLocaleString()}{' '}
+                    /{' '}
+                    {gift.product_selections && gift.product_selections[0].size}
+                  </p>
+                )}
+              </div>
+              <div className="sizeList">{allSize && sizeList}</div>
             </div>
           </div>
-          <div className="giftInfo">
+          <div className="giftDetailInfo">
             <ul>
               <li>
                 <p>기프트 소개</p>
