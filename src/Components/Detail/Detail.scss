@@ -12,7 +12,11 @@
       width: 770px;
       height: 400px;
     }
+
     .size {
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
     }
   }
 
