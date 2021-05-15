@@ -36,11 +36,17 @@ class Detail extends React.Component {
               </li>
               <li>
                 <input type="radio" name="size" value="50ml"></input>
-                <label for="50ml">50ml</label>
+                <label for="">
+                  {product.product_selections &&
+                    product.product_selections[0].size}
+                </label>
               </li>
               <li>
                 <input type="radio" name="size" value="100ml"></input>
-                <label for="100ml">100ml</label>
+                <label for="">
+                  {product.product_selections &&
+                    product.product_selections[1].size}
+                </label>
               </li>
             </ul>
           </div>
@@ -56,12 +62,16 @@ class Detail extends React.Component {
             </div>
             <ul className="detailInfo">
               <li>
-                <p>카트 구성</p>
-                <p>손을 부드럽게 향기로운 트리오</p>
+                <p>
+                  {product.feature && product.feature[0].feature_category_name}
+                </p>
+                <p>{product.feature && product.feature[0].features}</p>
               </li>
               <li>
-                <p></p>
-                <p>dd</p>
+                <p>
+                  {product.feature && product.feature[1].feature_category_name}
+                </p>
+                <p>{product.feature && product.feature[1].features}</p>
               </li>
               <li>
                 <p>주요 성분</p>
@@ -69,7 +79,11 @@ class Detail extends React.Component {
               </li>
             </ul>
             <button className="addCart">
-              카트에 추가 - ₩{Number(product.product_name).toLocaleString()}
+              카트에 추가 - ₩
+              {Number(
+                product.product_selections &&
+                  product.product_selections[0].price
+              ).toLocaleString()}
             </button>
           </div>
         </div>
