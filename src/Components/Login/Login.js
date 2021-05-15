@@ -82,7 +82,7 @@ class Login extends React.Component {
               </button>
               <div className="modalHeadingWrap">
                 <h1 className="modalTitle">안녕하세요.</h1>
-                <p>Wesop에 오신 것을 진심으로 환영합니다.</p>
+                <p>WeSop에 오신 것을 진심으로 환영합니다.</p>
               </div>
               <div className="formRow">
                 <label htmlFor="">
@@ -123,7 +123,7 @@ class Login extends React.Component {
                 }
               >
                 <span className="errorMessage">
-                  패스워드는 5자리부터 10자리 이상이어야 합니다
+                  패스워드는 5자리부터 10자리 미만입니다.
                 </span>
               </div>
               <button
