@@ -6,20 +6,20 @@ class Form extends React.Component {
     this.state = {};
   }
   render() {
+    const { onChange, type, check, name, text } = this.props;
+    console.log(this.props.onChange);
     return (
       <div className="formRow">
         <div className="formText">
           <label htmlFor="#">
             <input
-              onChange={this.handleValueEmail}
+              onChange={onChange}
               aria-required="true"
-              type="email"
-              className={this.props.isEmail ? 'formTextInput' : 'isEmailError'}
-              name="email"
+              type={type}
+              className={check ? 'formTextInput' : 'isEmailError'}
+              name={name}
             />
-            <span className={this.props.email ? 'typing' : 'formTextLabel'}>
-              이메일 주소
-            </span>
+            <span className={name ? 'typing' : 'formTextLabel'}>{text}</span>
           </label>
         </div>
       </div>

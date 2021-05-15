@@ -103,9 +103,13 @@ class SignUp extends React.Component {
     ];
 
     const mapBox = inputs.map((el, index) => (
-      <div className="formRow">
-        <div className="formText">{(el, index)}</div>
-      </div>
+      <Form
+        onChange={this.handleValue}
+        type={el.type}
+        check={el.check}
+        name={el.name}
+        text={el.text}
+      />
     ));
     console.log(mapBox);
 
@@ -122,6 +126,7 @@ class SignUp extends React.Component {
                   계정을 만들려면 아래에 세부 정보를 입력하십시오.
                 </div>
               </div>
+              {mapBox}
               {/* <div className="formRow">
                 <div className="formText">
                   <label htmlFor="#">
