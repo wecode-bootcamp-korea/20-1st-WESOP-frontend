@@ -11,18 +11,27 @@ class Detail extends React.Component {
     };
   }
 
+  choiceSize = size => {
+    this.setState({
+      img: size.image_url,
+      price: size.price,
+    });
+  };
+
   componentDidMount() {
     fetch('/data/mockdata.json')
       .then(products => products.json())
       .then(products => {
         this.setState({
           product: products.result[0],
+          img: products.result[0].product_selections[0].image_url,
+          price: products.result[0].product_selections[0].price,
         });
       });
   }
 
   render() {
-    const { product } = this.state;
+    const { product, img, price } = this.state;
     const feature = product && product.feature;
     const featureList =
       feature &&
@@ -37,7 +46,14 @@ class Detail extends React.Component {
       size &&
       size.map(size => (
         <li>
-          <input type="radio" name="size" value={size.size} checked />
+          <input
+            type="radio"
+            onClick={() => {
+              this.choiceSize(size);
+            }}
+            name="size"
+            value={size.size}
+          />
           <label>{size.size}</label>
         </li>
       ));
@@ -48,10 +64,7 @@ class Detail extends React.Component {
           <div className="detail">
             <div className="detailProduct">
               <div className="detailImg">
-                <img
-                  alt="제품사진"
-                  src="https://www.aesop.com/medias/Aesop-Kits-Nurturer-GL-Web-Large-1584x962px.png?context=bWFzdGVyfGltYWdlc3w0NTkzNTl8aW1hZ2UvcG5nfGltYWdlcy9oZjAvaGM1Lzk5MjYzNDQ1NDAxOTAucG5nfDU0ZjhmNTM5OTU5MjIzNmI1OTI4ZTEwNmE1MmRlNWQ2ZGY3YTI0Y2NmOTFiYTI4N2QwMjY3OWVjMzUxNzFmNGM"
-                />
+                <img alt="제품사진" src={img} />
                 {product.product_selections.length > 1 && (
                   <ul className="btnSize">{sizeList}</ul>
                 )}
@@ -71,8 +84,7 @@ class Detail extends React.Component {
                   {/* {ingredientList} */}
                 </ul>
                 <button className="addCart">
-                  카트에 추가 - ₩
-                  {Number(product.product_selections[0].price).toLocaleString()}
+                  카트에 추가 - ₩{Number(price).toLocaleString()}
                 </button>
               </div>
             </div>
