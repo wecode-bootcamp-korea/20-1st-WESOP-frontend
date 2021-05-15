@@ -1,8 +1,15 @@
 .bodyBack {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .login {
+  position: relative;
+  top: 5%;
   font-size: 30px;
   -webkit-font-smoothing: antialiased;
   color: #333;
