@@ -1,7 +1,7 @@
 .CartWrapper {
+  width: 100%;
   background-color: #252525;
   color: #fffef2;
-  width: 100%;
 }
 
 
@@ -35,8 +35,8 @@
 
 
 .closeButton {
+  background: transparent;
   border: 0;
-  color: #fffef2;
   width: 18px;
   height: 18px;
 }
@@ -80,6 +80,7 @@
 
 
 .CartProductQuantity {
+  margin-right: 30px;
   border: 1px solid rgba(255,254,242,.1);
   padding: 10px 36px 10px 19px;
 }
@@ -97,5 +98,9 @@
   background: transparent;
   color: #fffef2;
   border: 0;
+}
+
+.CartProductRemoveBtn:hover {
+  opacity: 1;
   
 }

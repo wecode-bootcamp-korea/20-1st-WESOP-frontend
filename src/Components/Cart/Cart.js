@@ -1,6 +1,5 @@
 import React from 'react';
 import './Cart.scss';
-//import CartProduct from './CartProduct/CartProduct';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -19,6 +18,13 @@ class Cart extends React.Component {
         });
       });
   }
+
+  handleRemove = () => {
+    const { data, onRemove } = this.props;
+    onRemove(data.id);
+    console.log(data.id);
+  };
+
   render() {
     const { products } = this.state;
     return (
@@ -57,10 +63,15 @@ class Cart extends React.Component {
                           </button>
                         </div>
                         <div className="CartProductRemove">
-                          <button className="CartProductRemoveBtn">삭제</button>
+                          <button
+                            className="CartProductRemoveBtn"
+                            onClick={this.handleRemove}
+                          >
+                            삭제
+                          </button>
                         </div>
                         <div className="CartProductTotal">
-                          <span>{product.price}</span>
+                          <span>₩ {product.price}</span>
                         </div>
                       </div>
                     </li>
