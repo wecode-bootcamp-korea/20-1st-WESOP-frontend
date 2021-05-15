@@ -10,11 +10,10 @@ class Detail extends React.Component {
       price: '',
     };
   }
-
-  choiceSize = size => {
+  choiceSize = selectInfo => {
     this.setState({
-      img: size.image_url,
-      price: size.price,
+      img: selectInfo.image_url,
+      price: selectInfo.price,
     });
   };
 
@@ -41,20 +40,20 @@ class Detail extends React.Component {
           <p>{feature.features.join(', ')}</p>
         </li>
       ));
-    const size = product && product.product_selections;
-    const sizeList =
-      size &&
-      size.map(size => (
+    const selectInfo = product && product.product_selections;
+    const selectInfoList =
+      selectInfo &&
+      selectInfo.map(selectInfo => (
         <li>
           <input
             type="radio"
             onClick={() => {
-              this.choiceSize(size);
+              this.choiceSize(selectInfo);
             }}
-            name="size"
-            value={size.size}
+            name="slectSize"
+            value={selectInfo.size}
           />
-          <label>{size.size}</label>
+          <label>{selectInfo.size}</label>
         </li>
       ));
 
@@ -66,7 +65,7 @@ class Detail extends React.Component {
               <div className="detailImg">
                 <img alt="제품사진" src={img} />
                 {product.product_selections.length > 1 && (
-                  <ul className="btnSize">{sizeList}</ul>
+                  <ul className="btnSize">{selectInfoList}</ul>
                 )}
               </div>
               <div className="detailBox">
