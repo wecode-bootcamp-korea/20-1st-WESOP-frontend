@@ -11,7 +11,7 @@ class SecondMenu extends React.Component {
   render() {
     const {
       categories,
-      closeAnimation,
+      animation,
       secondRequest,
       thirdRequest,
       handleThirdRequest,
@@ -21,8 +21,8 @@ class SecondMenu extends React.Component {
     return (
       <MenuColumn
         zIndex={1}
-        left={!secondRequest && '-34vw'}
-        closeAnimation={closeAnimation}
+        left={!categories[secondRequest] && '-34vw'}
+        animation={animation}
       >
         {secondRequest && (
           <div className="secondMenu">

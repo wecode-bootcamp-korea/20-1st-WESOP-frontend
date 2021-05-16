@@ -7,10 +7,10 @@ class MenuColumn extends React.Component {
   }
 
   render() {
-    const { zIndex, left, closeAnimation } = this.props;
+    const { zIndex, left, animation } = this.props;
     return (
       <div
-        className={`menuColumn ${closeAnimation}`}
+        className={`menuColumn ${animation}`}
         style={{ zIndex: zIndex, left: left }}
       >
         {this.props.children}

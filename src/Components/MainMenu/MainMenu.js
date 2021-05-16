@@ -14,14 +14,14 @@ class MainMenu extends React.Component {
       menus: [],
       categories: [],
       products: '',
-      closeAnimation: 'allClose',
+      animation: 'openAnimation',
     };
   }
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ closeAnimation: '' });
-    }, 1);
+      this.setState({ animation: '' });
+    }, 1000);
     fetch('/data/menuMockdata.json')
       .then(res => res.json())
       .then(res => {
@@ -89,7 +89,7 @@ class MainMenu extends React.Component {
     this.setState({
       secondRequest: '',
       thirdRequest: '',
-      closeAnimation: 'allClose',
+      animation: 'closeAnimation',
     });
     setTimeout(this.props.menuToggle, 500);
   };
@@ -102,7 +102,7 @@ class MainMenu extends React.Component {
       menus,
       categories,
       products,
-      closeAnimation,
+      animation,
     } = this.state;
 
     const {
@@ -121,21 +121,21 @@ class MainMenu extends React.Component {
           handleFirstRequest={handleFirstRequest}
           handleSecondRequest={handleSecondRequest}
           close={close}
-          closeAnimation={closeAnimation}
+          animation={animation}
           menus={menus}
         />
         <SecondMenu
           categories={categories}
           secondRequest={secondRequest}
           thirdRequest={thirdRequest}
-          closeAnimation={closeAnimation}
+          animation={animation}
           handleThirdRequest={handleThirdRequest}
           close={close}
         />
         <ThirdMenu
           products={products}
           thirdRequest={thirdRequest}
-          closeAnimation={closeAnimation}
+          animation={animation}
         />
       </div>
     );

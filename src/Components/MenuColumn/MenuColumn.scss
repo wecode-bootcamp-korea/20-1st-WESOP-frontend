@@ -16,13 +16,16 @@
   border-right: 1px solid lightgray;
   transition: 1s;
 
-  .contents {
-    position: absolute;
-    transition: 1s;
+  &.openAnimation {
+    animation: slide 0.5s linear 0s 1 normal forwards;
   }
 
-  &.close {
-    right: 34%;
+  &.closeAnimation {
+    animation: slide 0.5s linear 0s 1 reverse forwards;
+  }
+
+  .contents {
+    position: absolute;
     transition: 1s;
   }
 
@@ -41,8 +44,12 @@
     }
   }
 
-  &.allClose {
-    transform: translateX(-100%);
-    transition: 0.5s;
+  @keyframes slide {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
   }
 }

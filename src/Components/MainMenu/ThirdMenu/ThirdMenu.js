@@ -9,13 +9,13 @@ class ThirdMenu extends React.Component {
     this.state = {};
   }
   render() {
-    const { products, thirdRequest, closeAnimation } = this.props;
+    const { products, thirdRequest, animation } = this.props;
 
     return (
       <MenuColumn
         zIndex={0}
         left={!thirdRequest && '-67vw'}
-        closeAnimation={closeAnimation}
+        animation={animation}
       >
         {thirdRequest && products && (
           <div className="thirdMenu">

@@ -29,7 +29,7 @@ class FirstMenu extends React.Component {
       handleFirstRequest,
       handleSecondRequest,
       close,
-      closeAnimation,
+      animation,
     } = this.props;
 
     let upperMenus = {
@@ -39,7 +39,7 @@ class FirstMenu extends React.Component {
     };
 
     return (
-      <MenuColumn zIndex={2} closeAnimation={closeAnimation}>
+      <MenuColumn zIndex={2} animation={animation}>
         <div className="firstMenu">
           <div className="menuNav">
             <ul>
