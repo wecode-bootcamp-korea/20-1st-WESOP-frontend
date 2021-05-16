@@ -5,9 +5,9 @@ class Gift extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      price: '',
-      img: '',
-      size: '',
+      price: this.props.gift.product_selections[0].price,
+      img: this.props.gift.product_selections[0].image_url,
+      size: this.props.gift.product_selections[0].size,
       btnActive: true,
       priceSize: true,
       allSize: false,
