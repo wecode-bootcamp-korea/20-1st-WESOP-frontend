@@ -2,10 +2,18 @@
 
 .mainMenu {
   display: flex;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
   color: $darkGray;
-  overflow-x: hidden;
+  z-index: 2;
+
+  .background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
   li {
     cursor: pointer;
@@ -15,108 +23,6 @@
     opacity: 0;
     animation: appear 1s ease 0s 1 normal forwards;
     transition: 1s;
-  }
-
-  .firstMenu {
-    .menuNav {
-      width: 100%;
-      height: 70px;
-
-      ul {
-        display: flex;
-
-        li {
-          position: relative;
-          margin-right: 30px;
-
-          hr {
-            position: absolute;
-            top: 12px;
-            width: 0;
-            border: none;
-            border-bottom: 1px solid #333;
-            transition: 0.5s;
-          }
-        }
-      }
-
-      .fa-times {
-        position: absolute;
-        top: 30px;
-        right: 40px;
-        cursor: pointer;
-      }
-    }
-
-    i {
-      position: absolute;
-      top: 10px;
-      right: 15%;
-      color: $darkGray;
-      font-size: 18px;
-    }
-
-    input {
-      width: 85%;
-      margin-bottom: 30px;
-      padding-bottom: 5px;
-      background-color: $transparent;
-      border: none;
-      border-bottom: 1px solid lightgray;
-      outline-color: $transparent;
-      font-size: 32px;
-
-      &:focus-within {
-        border-color: $darkGray;
-      }
-    }
-
-    .logo {
-      position: absolute;
-      top: 150px;
-      width: 100px;
-      margin-bottom: 20px;
-      transition: 1s;
-    }
-  }
-
-  .thirdMenu {
-    .products {
-      li {
-        font-size: 14px;
-        @include domino;
-
-        .individualProduct {
-          position: relative;
-          width: 80%;
-          height: 80px;
-          margin: 10px 0;
-
-          img {
-            position: absolute;
-            right: 0;
-            height: 80px;
-          }
-          .productInfo {
-            position: absolute;
-
-            p {
-              &:first-child {
-                margin: 15px 0;
-              }
-
-              &:last-child {
-                color: rgb(110, 110, 110);
-
-                span {
-                  color: lightgray;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 
   @keyframes appear {

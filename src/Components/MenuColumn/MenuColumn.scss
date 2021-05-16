@@ -17,6 +17,11 @@
   animation: accordion 1s ease 0s 1 normal forwards;
   transition: 1s;
 
+  .contents {
+    position: absolute;
+    transition: 1s;
+  }
+
   &.close {
     right: 34%;
     transition: 1s;

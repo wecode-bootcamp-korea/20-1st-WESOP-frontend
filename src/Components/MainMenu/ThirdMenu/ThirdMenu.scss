@@ -1,0 +1,44 @@
+.thirdMenu {
+  @mixin domino {
+    opacity: 0;
+    animation: appear 1s ease 0s 1 normal forwards;
+    transition: 1s;
+  }
+
+  .products {
+    li {
+      font-size: 14px;
+      @include domino;
+
+      .individualProduct {
+        position: relative;
+        width: 80%;
+        height: 80px;
+        margin: 10px 0;
+
+        img {
+          position: absolute;
+          right: 0;
+          height: 80px;
+        }
+        .productInfo {
+          position: absolute;
+
+          p {
+            &:first-child {
+              margin: 15px 0;
+            }
+
+            &:last-child {
+              color: rgb(110, 110, 110);
+
+              span {
+                color: lightgray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

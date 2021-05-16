@@ -12,6 +12,7 @@ class Main extends React.Component {
   menuToggle = () => {
     this.setState({ openMenu: !this.state.openMenu });
   };
+
   render() {
     const { openMenu } = this.state;
     const { menuToggle } = this;
