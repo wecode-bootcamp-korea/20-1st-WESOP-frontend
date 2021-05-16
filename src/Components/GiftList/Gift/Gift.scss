@@ -26,6 +26,9 @@
     .giftInfo {
       padding-bottom: 40px;
       font-size: 15px;
+      .productName {
+        margin-bottom: 10px;
+      }
 
       .giftPriceSize {
       }
@@ -33,11 +36,13 @@
       .sizeList {
         display: flex;
         justify-content: center;
+        height: 25px;
+        padding-top: 5px;
         color: #666666;
       }
 
       p {
-        padding: 5px;
+        padding: 1px;
 
         &:last-child {
           color: #666666;

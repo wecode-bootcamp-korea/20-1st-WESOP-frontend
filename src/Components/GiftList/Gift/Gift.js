@@ -77,7 +77,7 @@ class Gift extends React.Component {
                   <img alt="상품사진" src={img} />
                 </div>
                 <div className="giftInfo">
-                  <p>{gift.product_name}</p>
+                  <p className="productName">{gift.product_name}</p>
                   <div className="giftPriceSize">
                     {priceSize && (
                       <p>
