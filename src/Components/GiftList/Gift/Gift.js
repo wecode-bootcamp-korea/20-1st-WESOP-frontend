@@ -5,31 +5,33 @@ class Gift extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gift: [],
-      img: '',
       price: '',
+      img: '',
+      size: '',
       btnActive: true,
-      priceAndSize: true,
+      priceSize: true,
       allSize: false,
     };
   }
 
-  choiceSize = () => {
+  choiceSize = selectInfo => {
     this.setState({
-      // img,
+      img: selectInfo.image_url,
+      price: selectInfo.price,
+      size: selectInfo.size,
     });
   };
   mouseIn = () => {
     this.setState({
       btnActive: false,
-      priceAndSize: false,
+      priceSize: false,
       allSize: true,
     });
   };
   mouseOut = () => {
     this.setState({
       btnActive: true,
-      priceAndSize: true,
+      priceSize: true,
       allSize: false,
     });
   };
@@ -39,28 +41,26 @@ class Gift extends React.Component {
   };
 
   componentDidMount() {
-    // this.setState({
-    //   gift: this.props.gift,
-    // });
+    // this.setState({ img: this.props.product_selections[0].image_url });
   }
 
   render() {
-    const { btnActive, priceAndSize, allSize } = this.state;
-    const { gift, price } = this.props;
-    const size = gift && gift.product_selections;
-    const sizeList =
-      size &&
-      size.map(size => (
+    const { btnActive, priceSize, allSize, price, img, size } = this.state;
+    const { gift } = this.props;
+    const selectInfo = gift && gift.product_selections;
+    const selectInfoList =
+      selectInfo &&
+      selectInfo.map(selectInfo => (
         <li>
           <input
             type="radio"
             onClick={() => {
-              this.choiceSize(size);
+              this.choiceSize(selectInfo);
             }}
             name="size"
-            value={size.size}
+            value={selectInfo.size}
           />
-          <label>{size.size}</label>
+          <label>{selectInfo.size}</label>
         </li>
       ));
     return (
@@ -74,23 +74,23 @@ class Gift extends React.Component {
             >
               <div className="giftModel">
                 <div className="giftImg">
-                  <img
-                    alt="상품사진"
-                    src={gift.product_selections[0].image_url}
-                  />
+                  <img alt="상품사진" src={img} />
                 </div>
                 <div className="giftInfo">
                   <p>{gift.product_name}</p>
                   <div className="giftPriceSize">
-                    {priceAndSize && (
+                    {priceSize && (
                       <p>
-                        ₩{Number(price).toLocaleString()} /{' '}
-                        {gift.product_selections &&
-                          gift.product_selections[0].size}
+                        ₩{Number(price).toLocaleString()} / {size}
                       </p>
                     )}
                   </div>
-                  <div className="sizeList">{allSize && sizeList}</div>
+                  <div className="sizeList">
+                    {
+                      // gift.product_selections.length > 1 &&
+                      allSize && selectInfoList
+                    }
+                  </div>
                 </div>
               </div>
               <div className="giftDetailInfo">
@@ -109,8 +109,7 @@ class Gift extends React.Component {
                 onClick={this.addCart}
                 className={btnActive ? 'addCartDisabled' : 'addCartEnabled'}
               >
-                카트에 추가하기 - ₩
-                {Number(gift.product_selections[0].price).toLocaleString()}
+                카트에 추가하기 - ₩{Number(price).toLocaleString()}
               </button>
             </div>
           </div>
