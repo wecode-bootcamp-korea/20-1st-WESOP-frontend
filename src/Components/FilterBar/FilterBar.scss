@@ -1,0 +1,32 @@
+.filterBar {
+  height: 1000vh;
+  position: fixed;
+
+  .filterBarNav {
+    background-color: #eaeade;
+    width: 1500px;
+    height: 100px;
+    font-family: 'Suisse Regular', sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .filterList {
+      width: 1300px;
+      height: 20px;
+
+      li {
+        float: left;
+        padding-left: 20px;
+        color: #666666;
+
+        &:hover {
+          // border-bottom: 1px solid #666666;
+          text-decoration: underline;
+          text-decoration: #666666;
+        }
+      }
+    }
+  }
+}
