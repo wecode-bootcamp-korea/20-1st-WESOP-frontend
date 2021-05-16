@@ -1,4 +1,5 @@
 import React from 'react';
+import '../HowToUse/HowToUse.scss';
 
 class HowToUse extends React.Component {
   constructor(props) {
@@ -6,13 +7,7 @@ class HowToUse extends React.Component {
     this.state = {};
   }
   render() {
-    return (
-      <>
-        <div>
-          <span>안녕?</span>
-        </div>
-      </>
-    );
+    return <div className="howToUse"></div>;
   }
 }
 
