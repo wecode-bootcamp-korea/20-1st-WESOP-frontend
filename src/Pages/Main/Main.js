@@ -1,22 +1,14 @@
 import React from 'react';
-import SignUp from '../../Components/SignUp/SignUp';
+import HowToUse from '../../Components/HowToUse/HowToUse';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      signUp: true,
-    };
+    this.state = {};
   }
 
-  signUpToggle = () => {
-    setTimeout(() => {
-      this.setState({ login: false });
-    }, 200);
-  };
-
   render() {
-    return this.state.signUp && <SignUp signUpToggle={this.signUpToggle} />;
+    return <HowToUse />;
   }
 }
 
