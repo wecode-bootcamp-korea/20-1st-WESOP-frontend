@@ -11,7 +11,7 @@ class MainProduct extends React.Component {
       <div className="mainProduct">
         <div>
           <p>아침과 저녁을 위한 비타민 C</p>
-          <h2 className="mainDesc">피부 구조를 탄탄하게 지탱해주는 성분</h2>
+          <p className="mainDesc">피부 구조를 탄탄하게 지탱해주는 성분</p>
           <p className="subDesc">
             비타민 C는 피부의 탄력성을 강화하는 데 필수적입니다. 아침과 저녁에
             모두 사용하기 적합하며 시간을 두고 꾸준이 사용했을 때 뛰어난 효과를

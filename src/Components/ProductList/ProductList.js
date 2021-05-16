@@ -12,11 +12,11 @@ class ProductList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/mockdata.json')
+    fetch('/data/productMockdata.json')
       .then(productData => productData.json())
       .then(productData => {
         this.setState({
-          products: productData,
+          products: productData['result'],
         });
       });
   }
@@ -26,7 +26,7 @@ class ProductList extends React.Component {
     barLeft > 0 &&
       this.setState({
         barLeft: barLeft - 16.4,
-        slideRight: slideRight - 10,
+        slideRight: slideRight - 20,
       });
   };
 
@@ -35,21 +35,25 @@ class ProductList extends React.Component {
     barLeft < 80 &&
       this.setState({
         barLeft: barLeft + 16.4,
-        slideRight: slideRight + 10,
+        slideRight: slideRight + 20,
       });
   };
 
   render() {
     const { products, slideRight, barLeft } = this.state;
-    const { clickPrev, clickNext } = this;
+    const { clickPrev, clickNext, slider } = this;
+
     return (
       <div className="productList">
-        <div style={{ right: `${slideRight}%` }}>
-          {products.map(product => (
-            <div className="product" key={product.id}>
-              <img alt="individualProduct" src={product.img} />
-              <p>{product.productName}</p>
-              <p>{product.desc}</p>
+        <div style={{ right: `${slideRight}%` }} ref={slider}>
+          {products.map((product, index) => (
+            <div className="product" key={index}>
+              <img
+                alt="individualProduct"
+                src={product.product_selections[0].image_url}
+              />
+              <p>{product.product_name}</p>
+              <p>{product.ingredient.join(', ')}</p>
             </div>
           ))}
         </div>

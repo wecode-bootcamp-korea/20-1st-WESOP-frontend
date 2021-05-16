@@ -6,6 +6,7 @@ $darkGray: #333;
   padding: 0 100px;
   color: $darkGray;
   overflow-x: hidden;
+  animation: smoothAppear 1s;
 
   > div {
     display: flex;
@@ -15,10 +16,11 @@ $darkGray: #333;
 
   .product {
     width: 435px;
+    flex-shrink: 0;
     text-align: center;
 
     img {
-      width: 380px;
+      width: 60%;
       margin: 20px 25px;
     }
 
