@@ -8,7 +8,7 @@ class Footer extends React.Component {
   }
   render() {
     return (
-      <div className="Footer">
+      <div className="footer">
         <div className="gridContainer">
           <div className="box">
             <div className="inputBox">
