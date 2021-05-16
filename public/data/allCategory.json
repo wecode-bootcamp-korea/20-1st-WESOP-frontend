@@ -1,0 +1,1087 @@
+{
+  "result": [
+      [
+          {
+              "category_name": "스킨 케어 기프트",
+              "description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+              "description_title": "스킨과 감각을 위한 셀렉션",
+              "menu_name": "스킨"
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "아침 ∙ 저녁으로 깨끗한 손에 덜어 거품을 낸 후 물로 씻어 냅니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "수분 공급을 위한 보태니컬 성분이 함유된 부드러운 타입의 젤 클렌저",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "중성 피부",
+                          "건성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "상쾌한",
+                          "진정된",
+                          "부드러운"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "베르가못",
+                  "카모마일",
+                  "로즈힙열매오일"
+              ],
+              "menu_name": "스킨",
+              "product_name": "페뷸러스 페이스 클렌저",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "33000.00",
+                      "product_name": "페뷸러스 페이스 클렌저",
+                      "size": "100ml"
+                  },
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "53000.00",
+                      "product_name": "페뷸러스 페이스 클렌저",
+                      "size": "200ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "세안 후 토너를 바른 피부에 사용합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "우수한 성분이 혼합되어 부드럽고 매끈한 피부로 가꿔주는 알로에 베라 베이스의 수분 세럼",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "건성 피부",
+                          "민감성 피부",
+                          "자주 에어컨에 노출된 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "산뜻한",
+                          "매트한 마무리",
+                          "진정된"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "마트리카리아꽃오일",
+                  "레몬"
+              ],
+              "menu_name": "스킨",
+              "product_name": "파슬리 씨드 안티 옥시던트 세럼",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "85000.00",
+                      "product_name": "파슬리 씨드 안티 옥시던트 세럼",
+                      "size": "100ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "아침과 저녁 ∙ 화장솜이나 손에 직접 덜어내어 세안을 마친 얼굴과 목에 두드리세요.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "프로비타민 B5가 함유하여 피부의 밸런스를 잡아주는 수렴성 토너",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "모든 피부 타입",
+                          "덥고 습한 날씨"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "시원한",
+                          "가벼운",
+                          "생기있는"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "그레이프 씨드",
+                  "마카다미아 씨",
+                  "알로에 베라",
+                  "레몬 밤"
+              ],
+              "menu_name": "스킨",
+              "product_name": "비 앤 티 밸런싱 토너",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "39000.00",
+                      "product_name": "비 앤 티 밸런싱 토너",
+                      "size": "100ml"
+                  },
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "63000.00",
+                      "product_name": "비 앤 티 밸런싱 토너",
+                      "size": "200ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "아침 ∙ 저녁으로 깨끗한 손에 덜어 거품을 낸 후 세안합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "피부를 건조하지 않고 부드럽게 세정해주는 젤 클렌저",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "메이크업을 한 피부",
+                          "중성 피부",
+                          "복합성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "산뜻한",
+                          "진정된",
+                          "매끄러운"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "판테놀",
+                  "파슬리 씨드",
+                  "로즈"
+              ],
+              "menu_name": "스킨",
+              "product_name": "파슬리 씨드 페이셜 클렌저",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "45000.00",
+                      "product_name": "파슬리 씨드 페이셜 클렌저",
+                      "size": "100ml"
+                  },
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "69000.00",
+                      "product_name": "파슬리 씨드 페이셜 클렌저",
+                      "size": "200ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "세안 후 토너를 바른 피부에 사용합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "시트러스 기반의 보태니컬 오일 블렌드를 함유하여 피부의 정화와 밸런스 잡아주는 가벼운 타입의 수분 크림",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "잦은 여행자",
+                          "복합성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "수분 공급",
+                          "생기있는",
+                          "탄력"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "토코페롤",
+                  "만다린"
+              ],
+              "menu_name": "스킨",
+              "product_name": "만다린 페이셜 하이드레이팅 크림",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "63000.00",
+                      "product_name": "만다린 페이셜 하이드레이팅 크림",
+                      "size": "60ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "적당한 거리에서 원하는 얼굴과 목에 분사한 후 자연 건조시킵니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "어디서든 피부와 오감에 생기를 불어넣어 주는 상쾌한 미스트",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "추운 기후의 지성 피부",
+                          "민감성 피부",
+                          "중성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "유연",
+                          "부드러운",
+                          "가벼운 마무리"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "베타 카로틴",
+                  "라벤더 오일",
+                  "포도씨 오일"
+              ],
+              "menu_name": "스킨",
+              "product_name": "이미디에이트 모이스처 페이셜 하이드로졸",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "31000.00",
+                      "product_name": "이미디에이트 모이스처 페이셜 하이드로졸",
+                      "size": "50ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "세안 후 토너를 바른 피부에 사용합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "견과류와 식물성 추출물을 함유한 풍부한 영양의 하이드레이팅 크림",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "자주 에어컨에 노출된 피부",
+                          "건성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "상쾌한",
+                          "탄력",
+                          "수분 공급"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "레몬 밤",
+                  "티 트리 리프",
+                  "로즈힙열매오일",
+                  "베타 카로틴"
+              ],
+              "menu_name": "스킨",
+              "product_name": "카멜리아 너트 페이셜 하이드레이팅 크림",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "63000.00",
+                      "product_name": "카멜리아 너트 페이셜 하이드레이팅 크림",
+                      "size": "60ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "매주 2회 사용해주세요. 제품을 바른 후 토너를 적신 화장솜으로 닦아내어 피부 위에 가볍고 풍부한 수분막 형성해줍니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "피부의 밸런스를 유지하면서도 집중적으로 수분을 공급하는 가벼운 수분 마스크",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "덥고 습한 날씨",
+                          "복합성 피부",
+                          "민감성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "가벼운 마무리",
+                          "진정된",
+                          "수분 공급"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "카모마일",
+                  "베르가못",
+                  "마트리카리아꽃오일"
+              ],
+              "menu_name": "스킨",
+              "product_name": "블루 카모마일 페이셜 하이드레이팅 마스크",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "65000.00",
+                      "product_name": "블루 카모마일 페이셜 하이드레이팅 마스크",
+                      "size": "60ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "매주 2회 깨끗하게 클렌징하고 피부에 고르게 바릅니다. 최대 15분 동안 그대로 둔 다음 따뜻한 물로 씻어줍니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "식물성 오일이 피부에 영양분을 공급하는 동시에 잔여물을 깨끗이 씻어내어 상쾌함을 더하는 클레이 타입의 클렌징 마스크",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "중성 피부",
+                          "추운 기후의 지성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "산뜻한",
+                          "깔끔한",
+                          "가벼운"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "로즈",
+                  "베르가못"
+              ],
+              "menu_name": "스킨",
+              "product_name": "프림로즈 페이셜 클렌징 마스크",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "41000.00",
+                      "product_name": "프림로즈 페이셜 클렌징 마스크",
+                      "size": "60ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "스킨 케어 기프트",
+              "content": "튜브를 가볍게 짜서 입술 위에 펴 발라 주세요.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "보태니컬 오일로 부드러움 ∙ 보습 ∙ 영양을 공급하면서 UVB를 모두 차단하여 입술을 태양으로부터 보호해주는 립 밤. 실리콘 ∙ 파라핀 ∙ 비즈왁스 또는 기타 동물 유래 성분이 들어가지 않은 제품입니다.",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "모든 피부 타입"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "수분 공급",
+                          "생기있는",
+                          "가벼운 마무리"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "그레이프 씨드",
+                  "로즈힙열매오일",
+                  "로즈마리"
+              ],
+              "menu_name": "스킨",
+              "product_name": "프로텍티브 립 밤 SPF30",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "21000.00",
+                      "product_name": "프로텍티브 립 밤 SPF30",
+                      "size": "5.5g"
+                  }
+              ]
+          }
+      ],
+      [
+          {
+              "category_name": "클렌저",
+              "description": "각질 ∙ 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+              "description_title": "처음의 시작",
+              "menu_name": "스킨"
+          },
+          {
+              "category_name": "클렌저",
+              "content": "매주 2회 사용해주세요. 제품을 바른 후 토너를 적신 화장솜으로 닦아내어 피부 위에 가볍고 풍부한 수분막 형성해줍니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "가벼운 메이크업을 지워주고 피부에 남은 잔여물을 말끔하게 씻어내어 피부를 부드럽고 촉촉하게 가꿔 주는 크림 클렌저",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "메이크업을 한 피부",
+                          "복합성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "민트",
+                          "허브",
+                          "우드"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "판테놀",
+                  "만다린",
+                  "레몬",
+                  "텐저린"
+              ],
+              "menu_name": "스킨",
+              "product_name": "퓨리파잉 페이셜 크림 클렌저",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "45000.00",
+                      "product_name": "퓨리파잉 페이셜 크림 클렌저",
+                      "size": "100ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "클렌저",
+              "content": "젖은 화장솜에 덜어 아이 메이크업 제품이 용해될 때까지 기다렸다 닦아냅니다",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "눈 주위의 민감한 피부를 달래고 진정시켜주는 마트리카리아가 포함된 부드러운 오일 제형의 아이 메이크업 리무브",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "메이크업을 한 피부",
+                          "모든 피부 타입"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "시트러스",
+                          "민트"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "베르가못",
+                  "토코페롤",
+                  "마카다미아 씨"
+              ],
+              "menu_name": "스킨",
+              "product_name": "아이 리무버",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "30000.00",
+                      "product_name": "아이 리무버",
+                      "size": "60ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "클렌저",
+              "content": "아침 저녁으로 깨끗한 손에 덜어 거품을 낸 후 세안합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "부드러운 거품이 피부를 효과적으로 세정하고 피부의 균형을 잡아주는 데일리 클렌저",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "잦은 여행자",
+                          "메이크업을 한 피부",
+                          "민감성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "우드",
+                          "코코넛",
+                          "플로럴"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "라벤더 오일",
+                  "베타 카로틴"
+              ],
+              "menu_name": "스킨",
+              "product_name": "어메이징 페이스 클렌저",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "33000.00",
+                      "product_name": "어메이징 페이스 클렌저",
+                      "size": "100ml"
+                  },
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "53000.00",
+                      "product_name": "어메이징 페이스 클렌저",
+                      "size": "200ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "클렌저",
+              "content": "아침 저녁으로 깨끗한 손에 덜어 거품을 낸 후 물로 씻어냅니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "피부의 수분을 빼앗지 않으면서도 모공을 부드럽고 효과적으로 세정해주는 젤 타입 클렌저",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "메이크업을 한 피부",
+                          "중성 피부",
+                          "건성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "우드",
+                          "흙내음"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "로즈힙열매오일",
+                  "판테놀",
+                  "포도씨 오일"
+              ],
+              "menu_name": "스킨",
+              "product_name": "인 투 마인즈 페이셜 클렌저",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "33000.00",
+                      "product_name": "인 투 마인즈 페이셜 클렌저",
+                      "size": "100ml"
+                  },
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "53000.00",
+                      "product_name": "인 투 마인즈 페이셜 클렌저",
+                      "size": "200ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "클렌저",
+              "content": "아침과 저녁 사용 전에 흔들어 주세요. 이후 소량을 손에 덜어 얼굴과 목을 마사지합니다. 미지근한 물로 씻어 내거나 젖은 화장솜을 이용해 닦아냅니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "진정 효과가 뛰어난 보태니컬 성분이 함유되어 순한 데일리 클렌저로 사용하기 적합합니다. 손쉽게 메이크업을 지우고 편안하게 씻어냅니다.",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "메이크업을 한 피부",
+                          "민감성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "스모키",
+                          "플로럴",
+                          "시트러스"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "만다린",
+                  "베타 카로틴",
+                  "알로에 베라",
+                  "로즈마리"
+              ],
+              "menu_name": "스킨",
+              "product_name": "젠틀 페이셜 클렌징 밀크",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "40000.00",
+                      "product_name": "젠틀 페이셜 클렌징 밀크",
+                      "size": "100ml"
+                  },
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "60000.00",
+                      "product_name": "젠틀 페이셜 클렌징 밀크",
+                      "size": "200ml"
+                  }
+              ]
+          }
+      ],
+      [
+          {
+              "category_name": "각질 제거",
+              "description": "효과적인 각질 관리는 지친 피부로부터 자유롭게 하여 부드럽고 생기 있으며 매끄러운 피부로 가꿔줍니다.",
+              "description_title": "마찰로 만드는 아름다움",
+              "menu_name": "스킨"
+          }
+      ],
+      [
+          {
+              "category_name": "트리트먼트 & 마스크",
+              "description": "데일리 스킨 케어 루틴을 보완해 트리트먼트와 마스크를 정기적으로 사용하세요. 잔여물을 씻어내주고 영양과 수분을 보충해 피부를 부드럽고 유연하게 가꾸고 건강하게 지켜줍니다.",
+              "description_title": "데일리 스킨 케어의 보완",
+              "menu_name": "스킨"
+          },
+          {
+              "category_name": "트리트먼트 & 마스크",
+              "content": "매주 3회 세안 후 토너를 바른 피부에 사용합니다. 나이트 케어로 이솝의 하이드레이터에 섞어 풍부한 수분 공급을 합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "열 가지 우수한 식물 추출물이 함유되어 있는 건성 또는 문제성 피부에 적합한 페이셜 오일",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "추운 기후의 지성 피부",
+                          "중성 피부",
+                          "복합성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "허브",
+                          "시트러스",
+                          "흙내음"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "마카다미아 씨",
+                  "마트리카리아꽃오일",
+                  "라벤더 오일"
+              ],
+              "menu_name": "스킨",
+              "product_name": "다마스칸 로즈 페이셜 트리트먼트",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "95000.00",
+                      "product_name": "다마스칸 로즈 페이셜 트리트먼트",
+                      "size": "25ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "트리트먼트 & 마스크",
+              "content": "매주 2회 깨끗하게 클렌징한 피부에 얇게 바르거나 필요 시 문제성 피부가 발생한 곳에 사용 후 깨끗하게 세안해줍니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "건조함 없이 모공까지 깨끗하게 세정해주며 자극이 적고 효과적으로 피부를 진정시켜주어 문제성 피부 관리에도 적합한 딥 클렌징 마스크",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "자주 에어컨에 노출된 피부",
+                          "민감성 피부",
+                          "건성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "스모키",
+                          "우드",
+                          "허브"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "카모마일",
+                  "티 트리 리프"
+              ],
+              "menu_name": "스킨",
+              "product_name": "카모마일 컨센트레이트 안티 블레미쉬 마스크",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "53000.00",
+                      "product_name": "카모마일 컨센트레이트 안티 블레미쉬 마스크",
+                      "size": "60ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "트리트먼트 & 마스크",
+              "content": "매주 2회 깨끗하게 클렌징한 피부에 고르게 바릅니다. 마를 때까지 기다린 후 따뜻한 물로 세안합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "파슬리 씨드와 로즈힙 열매오일 추출물이 함유된 클레이 베이스의 딥 클렌징 마스크로 피부의 잔여물을 효과적으로 세정하며 피부의 수분감을 유지시켜줍니다.",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "잦은 여행자",
+                          "중성 피부",
+                          "복합성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "민트",
+                          "스파이시",
+                          "스모키"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "텐저린",
+                  "베르가못",
+                  "마트리카리아꽃오일",
+                  "베타 카로틴"
+              ],
+              "menu_name": "스킨",
+              "product_name": "파슬리 씨드 안티 옥시던트 페이셜 트리트먼트",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "70000.00",
+                      "product_name": "파슬리 씨드 안티 옥시던트 페이셜 트리트먼트",
+                      "size": "15ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "트리트먼트 & 마스크",
+              "content": "깨끗한 손가락이나 면봉을 사용하여 필요에 따라 바르세요. 하이드레이터 혹은 메이크업 위에도 사용하실 수 있습니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "문제성 피부를 효과적으로 진정시켜주는 순한 스팟 트리트먼트",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "덥고 습한 날씨",
+                          "중성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "시트러스",
+                          "플로럴"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "로즈힙열매오일",
+                  "알로에 베라",
+                  "레몬 밤"
+              ],
+              "menu_name": "스킨",
+              "product_name": "컨트롤",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "27000.00",
+                      "product_name": "컨트롤",
+                      "size": "9ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "트리트먼트 & 마스크",
+              "content": "수분 공급을 위해 필요한 만큼 자주 사용하세요.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "비타민 B ∙ C유도체 ∙ E ∙ F로 강화된 오버나이트 충전 마스크. 빠르고 지속적인 수분 공급으로 피부 밸런싱을 맞춰주며 피부를 고르게 가꿔줍니다.",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "덥고 습한 날씨",
+                          "모든 피부 타입",
+                          "민감성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "향",
+                      "features": [
+                          "민트",
+                          "우드",
+                          "코코넛"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "그레이프 씨드",
+                  "만다린",
+                  "레몬",
+                  "텐저린"
+              ],
+              "menu_name": "스킨",
+              "product_name": "서블라임 리플레니싱 나이트 마스크",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "150000.00",
+                      "product_name": "서블라임 리플레니싱 나이트 마스크",
+                      "size": "60ml"
+                  }
+              ]
+          }
+      ],
+      [
+          {
+              "category_name": "토너",
+              "description": "토닝은 깨끗한 피부를 탄생시키는 핵심적인 역할을 합니다. 오랫동안 남아있는 잔여물과 피지를 씻어내고 피부의 밸런스를 잡아주며 수분 공급을 위해 피부를 준비합니다.",
+              "description_title": "핵심이 되는 준비과정",
+              "menu_name": "스킨"
+          }
+      ],
+      [
+          {
+              "category_name": "하이드레이터",
+              "description": "피부에 보습 ∙ 영양을 주고 진정을 돕는 하이드레이터는 피부를 건강하게 가꿔주고 우수한 상태로 유지 시켜줍니다.",
+              "description_title": "건강하고 부드럽고 탄력 있는 피부를 위하여",
+              "menu_name": "스킨"
+          },
+          {
+              "category_name": "하이드레이터",
+              "content": "세안 후 토너를 바른 피부에 사용합니다. 자주 사용하는 이솝 하이드레이팅 크림 ∙ 세럼 또는 젤과 섞어 더 집중적으로 수분을 공급할 수 있습니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "정화 작용의 식물 추출물이 들어있어 혼잡한 피부를 정리하고 밸런스를 잡아주는 페이셜 오일",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "중성 피부",
+                          "건성 피부",
+                          "복합성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "산뜻한",
+                          "매끄러운",
+                          "유연"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "베르가못",
+                  "카모마일"
+              ],
+              "menu_name": "스킨",
+              "product_name": "페뷸러스 페이스 오일",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "67000.00",
+                      "product_name": "페뷸러스 페이스 오일",
+                      "size": "25ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "하이드레이터",
+              "content": "아침 저녁 쉐이빙 후 토너를 바른 피부에 사용합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "가볍게 수분을 공급하고 피부의 밸런스를 유지하는 동시에 쉐이빙 후 자극받은 피부를 진정시켜주는 보태니컬 오일이 함유된 남녀 공용 하이드레이터",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "모든 피부 타입",
+                          "잦은 여행자"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "시원한",
+                          "상쾌한",
+                          "깔끔한"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "토코페롤",
+                  "마트리카리아꽃오일",
+                  "라벤더 오일"
+              ],
+              "menu_name": "스킨",
+              "product_name": "모로칸 네롤리 포스트 쉐이브 로션",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "63000.00",
+                      "product_name": "모로칸 네롤리 포스트 쉐이브 로션",
+                      "size": "60ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "하이드레이터",
+              "content": "세안 후 토너를 바른 피부에 사용합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "우수한 오일과 함께 피부의 탄력을 돕는 풍부한 비타민 C 유도체와 비타민E가 조합된 풍부한 영양 크림",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "자주 에어컨에 노출된 피부",
+                          "민감성 피부",
+                          "건성 피부"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "진정된",
+                          "탄력",
+                          "부드러운"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "마카다미아 씨",
+                  "베타 카로틴",
+                  "라벤더 오일",
+                  "티 트리 리프"
+              ],
+              "menu_name": "스킨",
+              "product_name": "퍼펙트 페이셜 하이드레이팅 크림",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "140000.00",
+                      "product_name": "퍼펙트 페이셜 하이드레이팅 크림",
+                      "size": "60ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "하이드레이터",
+              "content": "세안 후 토너를 바른 피부에 사용합니다.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "가볍고 빠르게 흡수되는 로션 타입의 하이드레이터",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "복합성 피부",
+                          "중성 피부",
+                          "덥고 습한 날씨"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "유분기 없는",
+                          "깔끔한",
+                          "산뜻한"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "베르가못",
+                  "카모마일"
+              ],
+              "menu_name": "스킨",
+              "product_name": "파슬리 씨드 안티 옥시던트 하이드레이터",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "31000.00",
+                      "product_name": "파슬리 씨드 안티 옥시던트 하이드레이터",
+                      "size": "50ml"
+                  }
+              ]
+          },
+          {
+              "category_name": "하이드레이터",
+              "content": "아침과 저녁 세안 후 토너를 바른 다음 제품을 손에 덜어 따뜻하게 한 후 이마에서 목까지 부드럽게 마사지하세요. 원하는 만큼 수시로 바르세요.",
+              "content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+              "description": "뛰어난 보습력으로 피부의 방어막을 형성하여 피부를 보호하고 동시에 풍부한 영양을 공급하는 크림",
+              "feature": [
+                  {
+                      "feature_category_name": "피부 타입",
+                      "features": [
+                          "자주 에어컨에 노출된 피부",
+                          "모든 피부 타입"
+                      ]
+                  },
+                  {
+                      "feature_category_name": "사용감",
+                      "features": [
+                          "매끄러운",
+                          "탄력",
+                          "유연"
+                      ]
+                  }
+              ],
+              "ingredient": [
+                  "토코페롤",
+                  "마트리카리아꽃오일",
+                  "마카다미아 씨"
+              ],
+              "menu_name": "스킨",
+              "product_name": "엘레멘탈 페이셜 배리어 크림",
+              "product_selections": [
+                  {
+                      "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                      "price": "70000.00",
+                      "product_name": "엘레멘탈 페이셜 배리어 크림",
+                      "size": "60ml"
+                  }
+              ]
+          }
+      ],
+      [
+          {
+              "category_name": "립 & 아이",
+              "description": "얇고 섬세한 입술과 눈 주위의 피부에는 집중적인 관리가 필요합니다. 세심한 수분 공급과 매일 비타민이 풍부한 영양 공급이 필요합니다.",
+              "description_title": "세심한 케어가 필요한 섬세한 피부",
+              "menu_name": "스킨"
+          }
+      ],
+      [
+          {
+              "category_name": "쉐이빙",
+              "description": "이솝의 쉐이빙 제품은 자극 받은 피부를 진정 시키고 밸런스를 유지해줍니다. 또한 우수한 품질의 쉐이빙 도구는 뛰어난 쉐이빙 경험을 선사합니다.",
+              "description_title": "깔끔한 쉐이빙을 위한 필수품",
+              "menu_name": "스킨"
+          }
+      ],
+      [
+          {
+              "category_name": "선 케어 / SPF",
+              "description": "UVB 층으로부터 매일 피부를 보호하는 것은 건강하고 유연한 피부를 유지하는 핵심입니다. 이솝의 SPF 제품들은 광범위한 스펙트럼으로부터 피부를 보호할 뿐만 아니라 수분을 공급하고 부드러운 피부를 위해 영양을 공급합니다.",
+              "description_title": "햇빛에서 보내는 시간을 위한 지능적인 케어",
+              "menu_name": "스킨"
+          }
+      ],
+      [
+          {
+              "category_name": "키트",
+              "description": "다양한 피부 타입에 적합한 효과적인 셀렉션",
+              "description_title": "건강하고 윤기 나는 피부는 균형 잡힌 라이프스타일 ∙ 세심한 클렌징 그리고 적절한 수분 공급을 통한 산물입니다.",
+              "menu_name": "스킨"
+          }
+      ],
+      [
+          {
+              "category_name": "스킨케어 세트 추천",
+              "description": "함께 잘 어울리는 조합으로 구성되어 있어 간결하지만 탁월한 맞춤 케어를 제공합니다.",
+              "description_title": "함께 어울리는 조합",
+              "menu_name": "스킨"
+          }
+      ]
+  ]
+}

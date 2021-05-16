@@ -1,11 +1,10 @@
 @import '../../Styles/variables.scss';
 
 .carousel {
-  display: flex;
   position: relative;
   overflow: hidden;
 
-  .productList {
+  .list {
     display: flex;
     position: relative;
     right: 0;

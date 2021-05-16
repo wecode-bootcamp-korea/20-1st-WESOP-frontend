@@ -1,5 +1,6 @@
 .productCard {
-  width: 340px;
+  min-width: 340px;
+  height: 530px;
   transition: 0.5s;
 
   .imgContainer {
@@ -7,12 +8,11 @@
     height: 80%;
 
     img {
-      display: block;
       position: absolute;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 80%;
+      width: 60%;
     }
   }
 

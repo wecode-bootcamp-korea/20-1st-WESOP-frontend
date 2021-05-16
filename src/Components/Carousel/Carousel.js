@@ -8,12 +8,12 @@ class Carousel extends React.Component {
   }
   render() {
     const { position } = this.state;
-    const { children } = this.props;
+    const { amount, children } = this.props;
 
     return (
       <div className="carousel">
-        <div className="productList" style={{ right: `${position}px` }}>
-          {this.props.children}
+        <div className="list" style={{ right: `${position}px` }}>
+          {children}
         </div>
         <button
           className="prev"
@@ -27,10 +27,10 @@ class Carousel extends React.Component {
         <button
           className="next"
           style={{
-            right: position >= (children.length - 4) * 340 && '-80px',
+            right: position >= (amount - 3) * 340 && '-80px',
           }}
           onClick={() => {
-            position < (children.length - 4) * 340 &&
+            position < (amount - 3) * 340 &&
               this.setState({ position: position + 340 });
           }}
         >

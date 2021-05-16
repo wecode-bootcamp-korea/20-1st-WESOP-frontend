@@ -9,27 +9,30 @@ class Inventory extends React.Component {
     this.state = {};
   }
 
-  category_name = '';
-  description = '';
-  //백엔드에서 데이터 키값을 알려 주셔서 임시로 js 파일 안에 변수를 선언해뒀습니다!
-
   render() {
-    const { bgColor } = this.props;
-    const { category_name, description } = this;
+    const { bgColor, hoverColor, inventoryData, productsData } = this.props;
 
     return (
       <div className="inventory" style={{ backgroundColor: bgColor }}>
         <div className="categoryDesc">
-          <h2>{category_name || '스킨 케어 기프트'}</h2>
-          <p>
-            {description ||
-              '이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.'}
-          </p>
+          <h2>{inventoryData.category_name}</h2>
+          <p>{inventoryData.description}</p>
           <span>
-            스킨 케어 기프트 (16) <i className="fas fa-arrow-right" />
+            {inventoryData.category_name} (16){' '}
+            <i className="fas fa-arrow-right" />
           </span>
         </div>
-        <Carousel children={this.props.children} />
+        <Carousel amount={productsData && productsData.length}>
+          {productsData &&
+            productsData.map((product, index) => (
+              <ProductCard
+                key={index}
+                product={product}
+                productSelections={product.product_selections[0]}
+                hoverColor={hoverColor}
+              />
+            ))}
+        </Carousel>
       </div>
     );
   }
