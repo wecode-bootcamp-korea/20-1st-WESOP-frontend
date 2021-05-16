@@ -12,23 +12,20 @@
   top: 5%;
   -webkit-font-smoothing: antialiased;
   color: #333;
-  animation: test 0.2s linear 0s 1 normal;
+  animation: closePage 0.2s linear 0s 1 normal;
   input {
     outline: none;
     font-family: inherit;
   }
 
-  .offLoginPage {
-    animation: test 0.2s linear 0s 1 reverse;
+  .offSignUpPage {
+    animation: closePage 0.2s linear 0s 1 reverse;
   }
 
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
-  .offLoginPage {
-    animation: test 0.2s linear 0s 1 reverse;
   }
 
   .modalBody {

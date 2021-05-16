@@ -13,6 +13,7 @@ class SignUp extends React.Component {
       lastname: '',
       phonenumber: '',
       checkbox: false,
+      close: '',
     };
   }
 
@@ -103,7 +104,7 @@ class SignUp extends React.Component {
                 onClick={() => {
                   this.props.signUpToggle();
                   this.setState({
-                    close: 'offLoginPage',
+                    close: 'offSignUpPage',
                   });
                 }}
               >

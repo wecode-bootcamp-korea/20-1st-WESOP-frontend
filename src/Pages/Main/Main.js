@@ -16,11 +16,7 @@ class Main extends React.Component {
   };
 
   render() {
-    return (
-      <div>
-        this.state.signUp && <SignUp signUpToggle={this.offLogin} />
-      </div>
-    );
+    return this.state.signUp && <SignUp signUpToggle={this.signUpToggle} />;
   }
 }
 
