@@ -51,7 +51,7 @@ class FirstMenu extends React.Component {
                   }}
                 >
                   {upperMenu}
-                  <hr style={{ width: firstRequest === upperMenu && `100%` }} />
+                  <hr />
                 </li>
               ))}
             </ul>

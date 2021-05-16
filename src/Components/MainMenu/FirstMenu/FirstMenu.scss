@@ -11,14 +11,19 @@
       li {
         position: relative;
         margin-right: 30px;
+        overflow: hidden;
 
         hr {
-          position: absolute;
-          top: 12px;
-          width: 0;
+          position: relative;
+          top: -5px;
+          right: 100%;
           border: none;
           border-bottom: 1px solid #333;
           transition: 0.5s;
+        }
+
+        &:hover hr {
+          right: 0;
         }
       }
     }
