@@ -28,7 +28,7 @@ class ThirdMenu extends React.Component {
                   <li
                     key={index}
                     style={{
-                      animationDelay: `${index * 0.1 + 0.2}s`,
+                      animationDelay: `${index * 0.1 + 0.5}s`,
                     }}
                   >
                     <div className="individualProduct">

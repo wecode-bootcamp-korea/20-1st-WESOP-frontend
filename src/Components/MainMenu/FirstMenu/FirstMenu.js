@@ -83,7 +83,7 @@ class FirstMenu extends React.Component {
                   <li
                     className="categoryList"
                     style={{
-                      animationDelay: `${index * 0.1}s`,
+                      animationDelay: `${index * 0.1 + 0.2}s`,
                       borderColor: menu === secondRequest && '#333',
                     }}
                     onMouseOver={() => {

@@ -8,7 +8,7 @@ class MainMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstRequest: '제품보기',
+      firstRequest: this.props.firstRequest,
       secondRequest: '',
       thirdRequest: '',
       menus: [],
@@ -25,20 +25,16 @@ class MainMenu extends React.Component {
     fetch('/data/menuMockdata.json')
       .then(res => res.json())
       .then(res => {
-        const menus = res['result']
-          .filter(obj => !obj['category_name'])
-          .map(obj => obj['menu_name']);
+        const menus = res['result'].map(obj => obj['menu_name']);
         this.setState({ menus: menus });
 
         const categories = {};
-        res['result']
-          .filter(obj => obj['category_name'])
-          .forEach(obj => {
-            categories[obj['menu_name']]
-              ? categories[obj['menu_name']].push(obj['category_name'])
-              : (categories[obj['menu_name']] = [obj['category_name']]);
-          });
-        this.setState({ categories: categories });
+        res.result.forEach(menu => {
+          categories[menu.menu_name] = menu.category_list.map(
+            cat => cat.category_name
+          );
+          this.setState({ categories: categories });
+        });
       });
   }
 

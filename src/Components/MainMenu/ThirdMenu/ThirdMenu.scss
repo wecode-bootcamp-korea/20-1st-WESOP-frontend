@@ -2,7 +2,6 @@
   @mixin domino {
     opacity: 0;
     animation: appear 1s ease 0s 1 normal forwards;
-    transition: 1s;
   }
 
   .products {

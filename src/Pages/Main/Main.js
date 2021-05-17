@@ -1,25 +1,11 @@
 import React from 'react';
-import MainMenu from '../../Components/MainMenu/MainMenu';
+import Nav from '../../Components/Nav/Nav';
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      openMenu: true,
-    };
-  }
-
-  menuToggle = () => {
-    this.setState({ openMenu: !this.state.openMenu });
-  };
-
   render() {
-    const { openMenu } = this.state;
-    const { menuToggle } = this;
-
     return (
       <div className="main">
-        {openMenu && <MainMenu menuToggle={menuToggle} />}
+        <Nav />
       </div>
     );
   }

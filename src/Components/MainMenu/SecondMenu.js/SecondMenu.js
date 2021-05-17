@@ -33,7 +33,7 @@ class SecondMenu extends React.Component {
                     className="categoryList"
                     key={index}
                     style={{
-                      animationDelay: `${index * 0.1 + 0.2}s`,
+                      animationDelay: `${index * 0.1 + 0.3}s`,
                       borderColor: category === thirdRequest && '#333',
                     }}
                     onMouseOver={() => {
