@@ -13,7 +13,7 @@ class SignUp extends React.Component {
       lastname: '',
       phonenumber: '',
       checkbox: false,
-      close: '',
+      animation: 'onLogin',
     };
   }
 
@@ -66,6 +66,12 @@ class SignUp extends React.Component {
     });
   };
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ animation: '' });
+    }, 600);
+  }
+
   render() {
     const {
       email,
@@ -96,15 +102,14 @@ class SignUp extends React.Component {
     return (
       <div className="bodyBack">
         <div className="signUp">
-          <div className="modalBody">
+          <div className={'modalBody ' + this.state.animation}>
             <div className="loginForm">
               <button
                 className="modalCloseBtn"
                 type="button"
                 onClick={() => {
-                  this.props.signUpToggle();
                   this.setState({
-                    close: 'offSignUpPage',
+                    animation: 'offLoginPage',
                   });
                 }}
               >

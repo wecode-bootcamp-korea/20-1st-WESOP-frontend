@@ -5,6 +5,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
 }
 
 .signUp {
@@ -18,8 +19,12 @@
     font-family: inherit;
   }
 
-  .offSignUpPage {
-    animation: closePage 0.2s linear 0s 1 reverse;
+  .onLogin {
+    animation: test 0.5s ease-in-out 0s 1 normal forwards;
+  }
+
+  .offLoginPage {
+    animation: test 0.5s ease-in-out 0s 1 reverse forwards;
   }
 
   input[type='number']::-webkit-inner-spin-button,
@@ -193,7 +198,7 @@
     opacity: 0;
   }
 
-  @keyframes closePage {
+  @keyframes test {
     from {
       transform: scale(0.2);
       opacity: 0;
