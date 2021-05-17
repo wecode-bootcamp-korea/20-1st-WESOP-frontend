@@ -7,7 +7,17 @@ class HowToUse extends React.Component {
     this.state = {};
   }
   render() {
-    return <div className="howToUse"></div>;
+    return (
+      <div className="howToUse">
+        <section className="aboutProduct">
+          <div className="leftProductImage">
+            <figure>
+              <img src="." alt="" />
+            </figure>
+          </div>
+        </section>
+      </div>
+    );
   }
 }
 
