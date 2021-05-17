@@ -2,10 +2,6 @@ import React from 'react';
 import './Footer.scss';
 
 class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     return (
       <div className="footer">
@@ -31,11 +27,11 @@ class Footer extends React.Component {
           </div>
 
           {FOOTER_DATA.map((data, index) => (
-            <div className="box">
+            <div key={data + index} className="box">
               <div className="title">{Object.keys(data)}</div>
               <ul>
                 {Object.values(data)[0].map((info, index) => (
-                  <li>{info}</li>
+                  <li key={info + index}>{info}</li>
                 ))}
               </ul>
             </div>
