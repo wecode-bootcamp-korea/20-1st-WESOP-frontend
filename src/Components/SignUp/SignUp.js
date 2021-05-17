@@ -19,7 +19,7 @@ class SignUp extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://10.58.2.5:8000/user/login', {
+    fetch('http://10.58.2.5:8000/user/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -164,7 +164,7 @@ class SignUp extends React.Component {
               <div
                 className={password && !isPassword ? 'errorMessage' : 'opacity'}
               >
-                패스워드는 5자리부터 10자리 미만이어야 합니다
+                "대문자" 포함 및 5자리부터 10자리 미만이어야 합니다
               </div>
 
               <div className="formRow">
