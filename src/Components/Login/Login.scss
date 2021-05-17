@@ -13,13 +13,17 @@
   font-size: 30px;
   -webkit-font-smoothing: antialiased;
   color: #333;
-  animation: test 0.2s linear 0s 1 normal;
+
   input {
     outline: none;
   }
 
+  .onLogin {
+    animation: test 0.5s ease-in-out 0s 1 normal forwards;
+  }
+
   .offLoginPage {
-    animation: test 0.2s linear 0s 1 reverse;
+    animation: test 0.5s ease-in-out 0s 1 reverse forwards;
   }
 
   .modalBody {

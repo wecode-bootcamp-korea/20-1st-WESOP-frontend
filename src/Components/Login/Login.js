@@ -7,8 +7,7 @@ class Login extends React.Component {
     this.state = {
       email: '',
       password: '',
-      close: '',
-      product: {},
+      animation: 'onLogin',
     };
   }
 
@@ -36,6 +35,12 @@ class Login extends React.Component {
       [name]: value,
     });
   };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ animation: '' });
+    }, 600);
+  }
 
   handleBtn = e => {
     e.preventDefault();
@@ -65,16 +70,15 @@ class Login extends React.Component {
 
     return (
       <div className="bodyBack">
-        <div className="login">
-          <div className="modalBody">
-            <form className={'loginForm ' + this.state.close}>
+        <div className={'login'}>
+          <div className={'modalBody ' + this.state.animation}>
+            <form className={'loginForm '}>
               <button
                 className="modalCloseBtn"
                 type="button"
                 onClick={() => {
-                  this.props.offLogin();
                   this.setState({
-                    close: 'offLoginPage',
+                    animation: 'offLoginPage',
                   });
                 }}
               >
@@ -102,7 +106,7 @@ class Login extends React.Component {
                 유효한 이메일 주소를 입력하세요
               </div>
             </form>
-            <form className={'loginForm ' + this.state.close}>
+            <form className={'loginForm '}>
               <div className="formRow">
                 <label htmlFor="">
                   <input
