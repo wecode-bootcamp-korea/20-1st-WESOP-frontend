@@ -1,8 +1,10 @@
 .filterBar {
+  position: relative;
   height: 1000vh;
-  position: fixed;
 
   .filterBarNav {
+    position: sticky;
+    top: -50px;
     background-color: #eaeade;
     width: 1500px;
     height: 100px;
