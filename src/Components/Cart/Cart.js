@@ -57,9 +57,15 @@ class Cart extends React.Component {
                           </div>
                         </div>
                         <div className="CartProductQuantity">
-                          <button className="CartProductQuantityBtn">
-                            <span>1</span>
-                          </button>
+                          <select className="QuantityBtn">
+                            <option value="1" selected>
+                              1
+                            </option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
                         </div>
                         <div className="CartProductRemove">
                           <button
@@ -70,14 +76,31 @@ class Cart extends React.Component {
                           </button>
                         </div>
                         <div className="CartProductTotal">
-                          <span>₩ {product.price}</span>
+                          <span>₩ {product.price}</span>;
                         </div>
                       </div>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="CartSummary"></div>
+              <div className="CartSummary">
+                <div className="CartWrap">
+                  <div className="offerMessage">
+                    <span>전 제품 무료 배송 혜택을 즐겨보세요.</span>
+                  </div>
+                  <div className="itmeMessage">
+                    <h5 className="itemLabel">소계 (세금 포함)</h5>
+                    <div className="totalPrice">
+                      <span>₩ </span>
+                    </div>
+                  </div>
+                  <div className="offerBtn">
+                    <button className="btn" type="button">
+                      <span>결제하기</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
