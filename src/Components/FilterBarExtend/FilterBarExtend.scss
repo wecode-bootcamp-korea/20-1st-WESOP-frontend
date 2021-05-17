@@ -20,18 +20,19 @@
 }
 
 .filterBarNavExpend {
+  position: sticky;
+  top: 100px;
   display: flex;
   flex-direction: row;
-  width: 1500px;
+  width: 100vw;
   height: 350px;
+  padding: 20px;
   color: #666666;
   background-color: #eaeade;
   font-family: 'Suisse Regular', sans-serif;
   font-size: 14px;
-  // z-index: 1;
-  .openFilterBarNavExpend {
-    animation: slide 0.5s ease-in-out 0s 1 normal;
-  }
+  // .openFilterBarNavExpend {
+  animation: slide 0.5s ease-in-out 0s 1 normal;
   .closeFilterBarNavExpend {
     animation: slide 0.5s ease-in-out 0s 1 reverse;
   }

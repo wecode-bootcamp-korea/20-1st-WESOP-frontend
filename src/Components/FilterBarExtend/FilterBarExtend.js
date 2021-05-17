@@ -8,7 +8,13 @@ class FilterBarExtend extends React.Component {
   }
   render() {
     return (
-      <div className="filterBarNavExpend">
+      <div
+        className="filterBarNavExpend"
+        style={{
+          backgroundColor: this.props.styleChange && '#fffef2',
+          borderBottom: this.props.styleChange && '1px solid lightgray',
+        }}
+      >
         <div className="filterSkinType">
           <header className="themeSkinType">피부타입</header>
           <ul className="listSkinType">

@@ -1,21 +1,17 @@
 .filterBar {
   position: relative;
-  height: 1000vh;
 
   .filterBarNav {
-    position: sticky;
-    top: -50px;
     background-color: #eaeade;
-    width: 1500px;
     height: 100px;
     font-family: 'Suisse Regular', sans-serif;
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    z-index: 5;
 
     .filterList {
-      width: 1300px;
       height: 20px;
 
       li {
@@ -24,11 +20,31 @@
         color: #666666;
 
         &:hover {
-          // border-bottom: 1px solid #666666;
           text-decoration: underline;
           text-decoration: #666666;
         }
       }
+    }
+
+    .filterCategory {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  .filterBarAfter {
+    @extend .filterBarNav;
+    position: fixed;
+    border-bottom: 1px solid lightgray;
+    width: 100vw;
+    top: 0px;
+    background-color: #fffef2;
+    z-index: 5;
+
+    .logo {
+      width: 60px;
+      margin-left: 20px;
     }
   }
 }

@@ -3,7 +3,12 @@ import FilterBar from '../../Components/FilterBar/FilterBar';
 
 class Main extends React.Component {
   render() {
-    return <FilterBar />;
+    return (
+      <>
+        <FilterBar />
+        <img src="/images/wesop.png" />
+      </>
+    );
   }
 }
 
