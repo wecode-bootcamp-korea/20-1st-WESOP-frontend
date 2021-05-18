@@ -1,0 +1,57 @@
+@import '../../Styles/variables.scss';
+
+.mainProduct {
+  display: flex;
+  position: relative;
+  margin: 150px 0;
+  color: $darkGray;
+  text-align: right;
+
+  div {
+    padding: 50px;
+    text-align: left;
+    line-height: normal;
+
+    * {
+      margin: 30px;
+    }
+
+    .mainDesc {
+      font-size: 32px;
+    }
+
+    .subDesc {
+      font-size: 16px;
+    }
+
+    button {
+      position: relative;
+      width: 300px;
+      height: 60px;
+      padding: 10px 30px;
+      background-color: $transparent;
+      border: 1px solid lightgray;
+      text-align: left;
+      font-size: 14px;
+      transition: 0.5s;
+      cursor: pointer;
+
+      i {
+        position: absolute;
+        top: -7px;
+        right: 0;
+      }
+
+      &:hover {
+        color: white;
+        background-color: $darkGray;
+        border-color: $darkGray;
+      }
+    }
+  }
+
+  img {
+    width: 900px;
+    // height: 630px;
+  }
+}

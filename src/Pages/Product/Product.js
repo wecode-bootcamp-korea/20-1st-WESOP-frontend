@@ -1,8 +1,9 @@
 import React from 'react';
+import MenuColumn from '../../Components/MenuColumn/MenuColumn';
 
 class Product extends React.Component {
   render() {
-    return <div>hahahahahahahah</div>;
+    return <div>hahahahahahahahahah</div>;
   }
 }
 
