@@ -10,6 +10,11 @@ class Detail extends React.Component {
       price: '',
     };
   }
+
+  addCart = () =>{
+
+  }
+  
   choiceSize = selectInfo => {
     this.setState({
       img: selectInfo.image_url,
@@ -82,7 +87,7 @@ class Detail extends React.Component {
                   {featureList}
                   {/* {ingredientList} */}
                 </ul>
-                <button className="addCart">
+                <button className="addCart" onClick=this.addCart>
                   카트에 추가 - ₩{Number(price).toLocaleString()}
                 </button>
               </div>

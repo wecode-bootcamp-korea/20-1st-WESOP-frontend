@@ -5,7 +5,8 @@
   flex-direction: row;
   justify-content: center;
   font-family: 'Suisse Regular', sans-serif;
-  width: 100%;
+  width: 100vw;
+  animation: smoothAppear 1s;
 
   .detailImg {
     img {
@@ -50,6 +51,7 @@
 
     .detailInfo {
       margin-top: 15px;
+      line-height: normal;
 
       p {
         margin-bottom: 10px;
@@ -82,5 +84,13 @@
         background-color: black;
       }
     }
+  }
+}
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
