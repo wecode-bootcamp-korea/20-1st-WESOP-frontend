@@ -6,7 +6,6 @@ class Main extends React.Component {
     return (
       <>
         <FilterBar />
-        <img src="/images/wesop.png" />
       </>
     );
   }
