@@ -8,6 +8,8 @@ class Detail extends React.Component {
       product: '',
       img: '',
       price: '',
+      product_id: '',
+      size: '',
     };
   }
 
@@ -17,15 +19,13 @@ class Detail extends React.Component {
       method: 'POST',
       headers: { Authorization: localStorage.getItem('token') },
       body: JSON.stringify({
-        product_id: 10,
-        size: '60ml',
+        product_id: this.state.product_id,
+        size: this.state.size,
       }),
     })
       .then(response => response.json())
       .then(result => {
         if (result.MESSAGE === 'Product add in cart.') {
-          console.log(result.MESSAGE);
-          // localStorage.setItem('token', result.token);
         }
       });
   };
@@ -34,6 +34,7 @@ class Detail extends React.Component {
     this.setState({
       img: selectInfo.image_url,
       price: selectInfo.price,
+      size: selectInfo.size,
     });
   };
 
@@ -42,20 +43,22 @@ class Detail extends React.Component {
       .then(products => products.json())
       .then(products => {
         this.setState({
-          product: products.result[0],
-          img: products.result[0].product_selections[0].image_url,
-          price: products.result[0].product_selections[0].price,
+          product: products.result,
+          img: products.result.product_selections[0].image_url,
+          price: products.result.product_selections[0].price,
+          product_id: products.result.product_id,
+          size: products.result.product_selections[0].size,
         });
       });
   }
 
   render() {
     const { product, img, price } = this.state;
-    const feature = product && product.feature;
+    const feature = product && product.product_features;
     const featureList =
       feature &&
       feature.map(feature => (
-        <li>
+        <li key={feature.feature_category_name}>
           <p>{feature.feature_category_name}</p>
           <p>{feature.features.join(', ')}</p>
         </li>
@@ -64,16 +67,18 @@ class Detail extends React.Component {
     const selectInfoList =
       selectInfo &&
       selectInfo.map(selectInfo => (
-        <li>
-          <input
-            type="radio"
-            onClick={() => {
-              this.choiceSize(selectInfo);
-            }}
-            name="slectSize"
-            value={selectInfo.size}
-          />
-          <label>{selectInfo.size}</label>
+        <li key={selectInfo.size}>
+          <label>
+            <input
+              type="radio"
+              onClick={() => {
+                this.choiceSize(selectInfo);
+              }}
+              name="slectSize"
+              value={selectInfo.size}
+            />
+            {selectInfo.size}
+          </label>
         </li>
       ));
 
@@ -98,10 +103,7 @@ class Detail extends React.Component {
                   <h1 className="detailName">{product.category_name}</h1>
                   <p className="detailExplain">{product.description}</p>
                 </div>
-                <ul className="detailInfo">
-                  {featureList}
-                  {/* {ingredientList} */}
-                </ul>
+                <ul className="detailInfo">{featureList}</ul>
                 <button className="addCart" onClick={this.addCart}>
                   카트에 추가 - ₩{Number(price).toLocaleString()}
                 </button>
