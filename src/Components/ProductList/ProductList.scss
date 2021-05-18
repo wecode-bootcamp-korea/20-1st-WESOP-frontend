@@ -1,0 +1,88 @@
+$darkGray: #333;
+
+.productList {
+  position: relative;
+  height: 560px;
+  padding: 0 100px;
+  color: $darkGray;
+  overflow-x: hidden;
+  animation: smoothAppear 1s;
+
+  > div {
+    display: flex;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .product {
+    width: 435px;
+    flex-shrink: 0;
+    text-align: center;
+
+    img {
+      width: 60%;
+      margin: 20px 25px;
+    }
+
+    p {
+      margin: 20px;
+      font-size: 16px;
+
+      &:last-child {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90px;
+    height: 90px;
+    background-color: $darkGray;
+    border: none;
+    transition: 0.5s;
+
+    &.prev {
+      left: -90px;
+    }
+
+    &.next {
+      right: -90px;
+    }
+
+    i {
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+  .staticBar {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    border-bottom: 3px solid lightgray;
+
+    .movingBar {
+      position: absolute;
+      left: 0%;
+      right: 0%;
+      width: 18%;
+      border-bottom: 3px solid $darkGray;
+      transition: 1s;
+    }
+  }
+
+  &:hover button {
+    cursor: pointer;
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+  }
+}
