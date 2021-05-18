@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import MenuColumn from '../../MenuColumn/MenuColumn';
 import './SecondMenu.scss';
 
@@ -8,6 +8,12 @@ class SecondMenu extends React.Component {
     super(props);
     this.state = {};
   }
+
+  goToList = category_id => {
+    this.props.close();
+    this.props.history.push(`/products?category_id=${category_id}`);
+  };
+
   render() {
     const {
       categories,
@@ -17,6 +23,8 @@ class SecondMenu extends React.Component {
       handleThirdRequest,
       close,
     } = this.props;
+
+    const { goToList } = this;
 
     return (
       <MenuColumn
@@ -28,21 +36,23 @@ class SecondMenu extends React.Component {
           <div className="secondMenu">
             <ul className="category">
               {(categories[secondRequest] || []).map((category, index) => (
-                <Link key={index} to="/products">
-                  <li
-                    className="categoryList"
-                    style={{
-                      animationDelay: `${index * 0.1 + 0.3}s`,
-                      borderColor: category === thirdRequest && '#333',
-                    }}
-                    onMouseOver={() => {
-                      handleThirdRequest(category);
-                    }}
-                    onClick={close}
-                  >
-                    {category}
-                  </li>
-                </Link>
+                <li
+                  key={category.category_id}
+                  className="categoryList"
+                  style={{
+                    animationDelay: `${index * 0.1 + 0.3}s`,
+                    borderColor:
+                      category.catetgory_name === thirdRequest && '#333',
+                  }}
+                  onMouseOver={() => {
+                    handleThirdRequest(category.category_name);
+                  }}
+                  onClick={() => {
+                    goToList(category.category_id);
+                  }}
+                >
+                  {category.category_name}
+                </li>
               ))}
             </ul>
           </div>
@@ -52,4 +62,4 @@ class SecondMenu extends React.Component {
   }
 }
 
-export default SecondMenu;
+export default withRouter(SecondMenu);

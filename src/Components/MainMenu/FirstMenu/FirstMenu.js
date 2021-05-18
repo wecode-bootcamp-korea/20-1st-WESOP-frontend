@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import MenuColumn from '../../MenuColumn/MenuColumn';
 import './FirstMenu.scss';
 
@@ -21,6 +21,11 @@ class FirstMenu extends React.Component {
     this.setState({ wheel: this.state.wheel + e.deltaY * 0.001 });
   };
 
+  goToList = menu_id => {
+    this.props.close();
+    this.props.history.push(`/products?menu_id=${menu_id}`);
+  };
+
   render() {
     const { wheel } = this.state;
     const {
@@ -31,6 +36,7 @@ class FirstMenu extends React.Component {
       close,
       animation,
     } = this.props;
+    const { goToList } = this;
 
     let upperMenus = {
       제품보기: this.props.menus,
@@ -79,21 +85,22 @@ class FirstMenu extends React.Component {
             )}
             <ul>
               {(upperMenus[firstRequest] || []).map((menu, index) => (
-                <Link key={index} to="/products">
-                  <li
-                    className="categoryList"
-                    style={{
-                      animationDelay: `${index * 0.1 + 0.2}s`,
-                      borderColor: menu === secondRequest && '#333',
-                    }}
-                    onMouseOver={() => {
-                      handleSecondRequest(menu);
-                    }}
-                    onClick={close}
-                  >
-                    {menu}
-                  </li>
-                </Link>
+                <li
+                  key={menu.menu_id}
+                  className="categoryList"
+                  style={{
+                    animationDelay: `${index * 0.1 + 0.2}s`,
+                    borderColor: menu.menu_name === secondRequest && '#333',
+                  }}
+                  onMouseOver={() => {
+                    handleSecondRequest(menu.menu_name);
+                  }}
+                  onClick={() => {
+                    goToList(menu.menu_id);
+                  }}
+                >
+                  {menu.menu_name}
+                </li>
               ))}
             </ul>
           </div>
@@ -103,4 +110,4 @@ class FirstMenu extends React.Component {
   }
 }
 
-export default FirstMenu;
+export default withRouter(FirstMenu);

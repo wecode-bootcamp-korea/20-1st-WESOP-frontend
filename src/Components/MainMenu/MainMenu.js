@@ -26,15 +26,20 @@ class MainMenu extends React.Component {
     fetch('/data/menuMockdata.json')
       .then(res => res.json())
       .then(res => {
-        const menus = res['result'].map(obj => obj['menu_name']);
+        const menus = res['result'].map(obj => ({
+          menu_id: obj.menu_id,
+          menu_name: obj.menu_name,
+        }));
         this.setState({ menus: menus });
 
         const categories = {};
         res.result.forEach(menu => {
-          categories[menu.menu_name] = menu.category_list.map(
-            cat => cat.category_name
-          );
+          categories[menu.menu_name] = menu.category_list.map(obj => ({
+            category_id: obj.category_id,
+            category_name: obj.category_name,
+          }));
           this.setState({ categories: categories });
+          console.log(categories);
         });
       });
   }
