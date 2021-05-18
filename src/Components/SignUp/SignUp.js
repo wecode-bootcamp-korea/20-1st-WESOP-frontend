@@ -19,7 +19,7 @@ class SignUp extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://10.58.2.5:8000/user/signup', {
+    fetch('http://10.58.5.254:8000/user/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
