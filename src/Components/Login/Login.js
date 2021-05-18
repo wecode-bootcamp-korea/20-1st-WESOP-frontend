@@ -44,7 +44,8 @@ class Login extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://10.58.2.5:8000/user/login', {
+    fetch('', {
+      //http://10.58.2.5:8000/user/login
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -129,14 +130,14 @@ class Login extends React.Component {
                   패스워드는 5자리부터 10자리 미만입니다.
                 </span>
               </div>
-              <button
-                className="btnLogin"
-                onClick={this.handleBtn}
-                disabled={isEmail && isPassword ? false : true}
-              >
-                계속
-              </button>
             </form>
+            <button
+              className="btnLogin"
+              onClick={this.handleBtn}
+              disabled={isEmail && isPassword ? false : true}
+            >
+              계속
+            </button>
           </div>
         </div>
       </div>
