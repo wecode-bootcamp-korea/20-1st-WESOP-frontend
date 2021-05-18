@@ -1,9 +1,19 @@
 import React from 'react';
-import GiftList from '../../Components/GiftList/GiftList';
+import MainIllust from '../../Components/MainIllust/MainIllust';
+import MainProduct from '../../Components/MainProduct/MainProduct';
+import ProductList from '../../Components/ProductList/ProductList';
+import Footer from '../../Components/Footer/Footer';
 
 class Main extends React.Component {
   render() {
-    return <GiftList />;
+    return (
+      <div className="main">
+        <MainIllust />
+        <ProductList />
+        <MainProduct />
+        <Footer />
+      </div>
+    );
   }
 }
 
