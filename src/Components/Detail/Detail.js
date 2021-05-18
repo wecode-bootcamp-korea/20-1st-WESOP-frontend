@@ -12,12 +12,22 @@ class Detail extends React.Component {
   }
 
   addCart = () => {
-    fetch('/data/mockdata.json', {
+    console.log(localStorage.getItem('token'));
+    fetch('http://10.58.5.254:8000/order/cart', {
       method: 'POST',
-      body: JSON.stringify({}),
+      headers: { Authorization: localStorage.getItem('token') },
+      body: JSON.stringify({
+        product_id: 10,
+        size: '60ml',
+      }),
     })
       .then(response => response.json())
-      .then(result => {});
+      .then(result => {
+        if (result.MESSAGE === 'Product add in cart.') {
+          console.log(result.MESSAGE);
+          // localStorage.setItem('token', result.token);
+        }
+      });
   };
 
   choiceSize = selectInfo => {
