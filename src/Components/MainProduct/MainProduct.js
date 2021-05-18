@@ -1,11 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './MainProduct.scss';
 
 class MainProduct extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     return (
       <div className="mainProduct">
@@ -17,10 +14,12 @@ class MainProduct extends React.Component {
             모두 사용하기 적합하며 시간을 두고 꾸준이 사용했을 때 뛰어난 효과를
             선사합니다.
           </p>
-          <button>
-            비타민 C 알아보기
-            <i class="fas fa-arrow-right" />
-          </button>
+          <Link to="/products">
+            <button>
+              비타민 C 알아보기
+              <i class="fas fa-arrow-right" />
+            </button>
+          </Link>
         </div>
         <img
           alt="product image"
