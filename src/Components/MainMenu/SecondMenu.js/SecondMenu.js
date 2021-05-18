@@ -28,10 +28,9 @@ class SecondMenu extends React.Component {
           <div className="secondMenu">
             <ul className="category">
               {(categories[secondRequest] || []).map((category, index) => (
-                <Link to="/products">
+                <Link key={index} to="/products">
                   <li
                     className="categoryList"
-                    key={index}
                     style={{
                       animationDelay: `${index * 0.1 + 0.3}s`,
                       borderColor: category === thirdRequest && '#333',

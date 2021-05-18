@@ -36,7 +36,7 @@ class ThirdMenu extends React.Component {
                         alt="product thumbnail"
                         src={product.product_selections[0].image_url}
                       />
-                      <div class="productInfo">
+                      <div className="productInfo">
                         <p>{product.product_name}</p>
                         {product.product_selections.length > 1 ? (
                           <p>

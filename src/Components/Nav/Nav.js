@@ -90,9 +90,10 @@ class Nav extends React.Component {
         </div>
         {openState.로그인 && <div></div>}
         {NAV_DATA.slice(0, 3).map(
-          nav =>
+          (nav, index) =>
             openState[nav] && (
               <MainMenu
+                key={index}
                 menuToggle={() => {
                   navToggle(nav);
                 }}

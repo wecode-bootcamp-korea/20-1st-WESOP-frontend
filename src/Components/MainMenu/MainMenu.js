@@ -22,6 +22,7 @@ class MainMenu extends React.Component {
     setTimeout(() => {
       this.setState({ animation: '' });
     }, 1000);
+
     fetch('/data/menuMockdata.json')
       .then(res => res.json())
       .then(res => {

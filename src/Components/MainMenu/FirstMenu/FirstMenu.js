@@ -73,13 +73,13 @@ class FirstMenu extends React.Component {
           <div className="category">
             {firstRequest === '검색' && (
               <>
-                <i class="fas fa-arrow-right" />
+                <i className="fas fa-arrow-right" />
                 <input />
               </>
             )}
             <ul>
               {(upperMenus[firstRequest] || []).map((menu, index) => (
-                <Link to="/products">
+                <Link key={index} to="/products">
                   <li
                     className="categoryList"
                     style={{
