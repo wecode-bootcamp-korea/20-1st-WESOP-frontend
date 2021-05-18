@@ -38,40 +38,39 @@
     transform: translateZ(0);
     opacity: 1px;
 
+    .modalCloseBtn {
+      float: right;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    &:focus-within .isEmailError {
+      border-bottom: 1px solid red;
+    }
+
+    &:focus-within .isPasswordError {
+      border-bottom: 1px solid red;
+    }
+
+    .modalHeadingWrap {
+      padding-bottom: 30px;
+
+      .modalTitle {
+        margin: 0;
+        padding: 40px 0px 10px;
+        color: black;
+
+        line-height: 1.33;
+      }
+      p {
+        display: block;
+        line-height: 1.7;
+        font-size: 17px;
+        color: #666;
+      }
+    }
     .loginForm {
-      .modalCloseBtn {
-        float: right;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-      }
-
-      &:focus-within .isEmailError {
-        border-bottom: 1px solid red;
-      }
-
-      &:focus-within .isPasswordError {
-        border-bottom: 1px solid red;
-      }
-
-      .modalHeadingWrap {
-        padding-bottom: 30px;
-
-        .modalTitle {
-          margin: 0;
-          padding: 40px 0px 10px;
-          color: black;
-
-          line-height: 1.33;
-        }
-        p {
-          display: block;
-          line-height: 1.7;
-          font-size: 17px;
-          color: #666;
-        }
-      }
-
       .formRow {
         display: flex;
         flex-wrap: nowrap;

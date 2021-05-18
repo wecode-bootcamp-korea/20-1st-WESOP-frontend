@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from '../Form';
 import './Login.scss';
 
 class Login extends React.Component {
@@ -74,22 +75,22 @@ class Login extends React.Component {
       <div className="bodyBack">
         <div className={'login'}>
           <div className={'modalBody ' + this.state.animation}>
+            <button
+              className="modalCloseBtn"
+              type="button"
+              onClick={() => {
+                this.setState({
+                  animation: 'offLoginPage',
+                });
+              }}
+            >
+              <img alt="closeButton_image" src="./images/closeBtn.png" />
+            </button>
+            <div className="modalHeadingWrap">
+              <h1 className="modalTitle">안녕하세요.</h1>
+              <p>WeSop에 오신 것을 진심으로 환영합니다.</p>
+            </div>
             <form className={'loginForm '}>
-              <button
-                className="modalCloseBtn"
-                type="button"
-                onClick={() => {
-                  this.setState({
-                    animation: 'offLoginPage',
-                  });
-                }}
-              >
-                <img alt="closeButton_image" src="./images/closeBtn.png" />
-              </button>
-              <div className="modalHeadingWrap">
-                <h1 className="modalTitle">안녕하세요.</h1>
-                <p>WeSop에 오신 것을 진심으로 환영합니다.</p>
-              </div>
               <div className="formRow">
                 <label htmlFor="">
                   <input
@@ -107,8 +108,7 @@ class Login extends React.Component {
               <div className={email && !isEmail ? 'errorMessage' : 'opacity'}>
                 유효한 이메일 주소를 입력하세요
               </div>
-            </form>
-            <form className={'loginForm '}>
+
               <div className="formRow">
                 <label htmlFor="">
                   <input
