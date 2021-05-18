@@ -57,16 +57,16 @@ class Gift extends React.Component {
   componentDidMount() {}
 
   render() {
-    const { btnActive, priceSize, allSize, price, img, size, giftId } =
-      this.state;
+    const { btnActive, priceSize, allSize, price, img, size } = this.state;
     const { gift } = this.props;
-    const selectInfo = gift && gift.product_selections;
+    const selectInfo = gift && gift[0].product_selections;
     const selectInfoList =
       selectInfo &&
       selectInfo.map(selectInfo => (
         <li>
           <label>
             <input
+              className="selectSize"
               type="radio"
               onClick={() => {
                 this.choiceSize(selectInfo);
@@ -90,26 +90,44 @@ class Gift extends React.Component {
               <img alt="상품사진" src={img} />
             </div>
             <div className="giftInfo">
-              <p className="productName">{gift.product_name}</p>
+              <p className="productName">{gift[0].product_name}</p>
               <div className="giftPriceSize">
-                {priceSize && (
-                  <p>
-                    ₩{Number(price).toLocaleString()} / {size}
-                  </p>
-                )}
+                {gift[0].product_selections.length > 1
+                  ? priceSize && (
+                      <p className="priceSize">
+                        원부터 ₩{Number(price.toLocaleString())} /{' '}
+                        {gift[0].product_selections.length} 사이즈
+                      </p>
+                    )
+                  : priceSize && (
+                      <p>
+                        ₩{Number(price).toLocaleString()} / {size}
+                      </p>
+                    )}
+                {gift[0].product_selections.length === 1
+                  ? !priceSize && (
+                      <p>
+                        ₩{Number(price).toLocaleString()} / {size}
+                      </p>
+                    )
+                  : null}
               </div>
-              <div className="sizeList">{allSize && selectInfoList}</div>
+              <div className="sizeList">
+                {gift[0].product_selections.length > 1
+                  ? allSize && selectInfoList
+                  : null}
+              </div>
             </div>
           </div>
           <div className="giftDetailInfo">
             <ul>
               <li>
                 <p>기프트 소개</p>
-                <p>{gift.description}</p>
+                <p>{gift[0].category_description}</p>
               </li>
               <li>
                 <p>구성품</p>
-                <p>{gift.content}</p>
+                <p>{gift[0].product_content}</p>
               </li>
             </ul>
           </div>

@@ -1,3 +1,5 @@
+@import '../../../Styles/common.scss';
+
 .gift {
   position: relative;
   width: 33vw;
@@ -36,18 +38,35 @@
         .productName {
           margin-bottom: 10px;
         }
+        .giftPriceSize {
+          .priceSize {
+            animation: smoothAppear 1s;
+          }
+
+          p {
+            padding: 2px;
+
+            &:last-child {
+              color: #666666;
+            }
+          }
+        }
 
         .sizeList {
+          input[type='radio'] {
+            -webkit-appearance: none;
+            width: 13px;
+            height: 13px;
+            border: 1px solid #666666;
+            border-radius: 100%;
+            background: rgba(255, 0, 0, 0);
+          }
+
           display: flex;
           justify-content: center;
           color: #666666;
-        }
-
-        p {
-          padding: 1px;
-
-          &:last-child {
-            color: #666666;
+          li {
+            animation: smoothAppear 1s;
           }
         }
       }
@@ -112,14 +131,5 @@
       transition: 0.5s;
       opacity: 0;
     }
-  }
-}
-
-@keyframes smoothAppear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
