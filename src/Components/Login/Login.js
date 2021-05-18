@@ -44,8 +44,7 @@ class Login extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('', {
-      //http://10.58.2.5:8000/user/login
+    fetch('http://10.58.5.254:8000/user/login', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -59,6 +58,9 @@ class Login extends React.Component {
         // this.props.history.push('#');
         if (jsonData.MESSAGE === 'INVALID_EMAIL') {
           alert('이메일을 확인해주세요.');
+        }
+        if (jsonData.MESSAGE === 'INVALID_PASSWORD') {
+          alert('패스워드를 확인해주세요.');
         }
       });
   };
