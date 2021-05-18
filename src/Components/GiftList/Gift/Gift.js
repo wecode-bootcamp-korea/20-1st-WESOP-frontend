@@ -64,57 +64,53 @@ class Gift extends React.Component {
         </li>
       ));
     return (
-      <>
-        {gift && (
-          <div className="gift">
-            <div
-              className="giftBox"
-              onMouseEnter={this.mouseIn}
-              onMouseLeave={this.mouseOut}
-            >
-              <div className="giftModel">
-                <div className="giftImg">
-                  <img alt="상품사진" src={img} />
-                </div>
-                <div className="giftInfo">
-                  <p className="productName">{gift.product_name}</p>
-                  <div className="giftPriceSize">
-                    {priceSize && (
-                      <p>
-                        ₩{Number(price).toLocaleString()} / {size}
-                      </p>
-                    )}
-                  </div>
-                  <div className="sizeList">
-                    {
-                      // gift.product_selections.length > 1 &&
-                      allSize && selectInfoList
-                    }
-                  </div>
-                </div>
+      <div className="gift">
+        <div
+          className="giftBox"
+          onMouseEnter={this.mouseIn}
+          onMouseLeave={this.mouseOut}
+        >
+          <div className="giftModel">
+            <div className="giftImg">
+              <img alt="상품사진" src={img} />
+            </div>
+            <div className="giftInfo">
+              <p className="productName">{gift.product_name}</p>
+              <div className="giftPriceSize">
+                {priceSize && (
+                  <p>
+                    ₩{Number(price).toLocaleString()} / {size}
+                  </p>
+                )}
               </div>
-              <div className="giftDetailInfo">
-                <ul>
-                  <li>
-                    <p>기프트 소개</p>
-                    <p>{gift.description}</p>
-                  </li>
-                  <li>
-                    <p>구성품</p>
-                    <p>{gift.content}</p>
-                  </li>
-                </ul>
+              <div className="sizeList">
+                {
+                  // gift.product_selections.length > 1 &&
+                  allSize && selectInfoList
+                }
               </div>
-              <button
-                onClick={this.addCart}
-                className={btnActive ? 'addCartDisabled' : 'addCartEnabled'}
-              >
-                카트에 추가하기 - ₩{Number(price).toLocaleString()}
-              </button>
             </div>
           </div>
-        )}
-      </>
+          <div className="giftDetailInfo">
+            <ul>
+              <li>
+                <p>기프트 소개</p>
+                <p>{gift.description}</p>
+              </li>
+              <li>
+                <p>구성품</p>
+                <p>{gift.content}</p>
+              </li>
+            </ul>
+          </div>
+          <button
+            onClick={this.addCart}
+            className={btnActive ? 'addCartDisabled' : 'addCartEnabled'}
+          >
+            카트에 추가하기 - ₩{Number(price).toLocaleString()}
+          </button>
+        </div>
+      </div>
     );
   }
 }
