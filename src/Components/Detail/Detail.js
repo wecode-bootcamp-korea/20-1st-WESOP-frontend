@@ -11,10 +11,15 @@ class Detail extends React.Component {
     };
   }
 
-  addCart = () =>{
+  addCart = () => {
+    fetch('/data/mockdata.json', {
+      method: 'POST',
+      body: JSON.stringify({}),
+    })
+      .then(response => response.json())
+      .then(result => {});
+  };
 
-  }
-  
   choiceSize = selectInfo => {
     this.setState({
       img: selectInfo.image_url,
@@ -87,7 +92,7 @@ class Detail extends React.Component {
                   {featureList}
                   {/* {ingredientList} */}
                 </ul>
-                <button className="addCart" onClick=this.addCart>
+                <button className="addCart" onClick={this.addCart}>
                   카트에 추가 - ₩{Number(price).toLocaleString()}
                 </button>
               </div>
