@@ -11,7 +11,7 @@ class HowToUse extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://randomuser.me/api/?results=12', {
+    fetch('#', {
       method: 'GET',
     })
       .then(res => res.json())
