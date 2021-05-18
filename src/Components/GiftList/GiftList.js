@@ -11,7 +11,7 @@ class GiftList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('./data/mockdata.json')
+    fetch('./data/productMockdata.json')
       .then(products => products.json())
       .then(products =>
         this.setState({
@@ -22,11 +22,12 @@ class GiftList extends React.Component {
 
   render() {
     const { product } = this.state;
+    console.log(product);
     return (
       <div className="giftList">
         {product &&
           product.map(gift => {
-            return <Gift key={gift.id} gift={gift} />;
+            return <Gift key={gift[0].product_id} gift={gift} />;
           })}
       </div>
     );

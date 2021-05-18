@@ -5,9 +5,10 @@ class Gift extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      price: this.props.gift.product_selections[0].price,
-      img: this.props.gift.product_selections[0].image_url,
-      size: this.props.gift.product_selections[0].size,
+      price: this.props.gift[0].product_selections[0].price,
+      img: this.props.gift[0].product_selections[0].image_url,
+      size: this.props.gift[0].product_selections[0].size,
+      giftId: this.props.gift[0].product_id,
       btnActive: true,
       priceSize: true,
       allSize: false,
@@ -40,27 +41,28 @@ class Gift extends React.Component {
     this.setState({ btnAddCart: true });
   };
 
-  componentDidMount() {
-    // this.setState({ img: this.props.product_selections[0].image_url });
-  }
+  componentDidMount() {}
 
   render() {
-    const { btnActive, priceSize, allSize, price, img, size } = this.state;
+    const { btnActive, priceSize, allSize, price, img, size, giftId } =
+      this.state;
     const { gift } = this.props;
     const selectInfo = gift && gift.product_selections;
     const selectInfoList =
       selectInfo &&
       selectInfo.map(selectInfo => (
         <li>
-          <input
-            type="radio"
-            onClick={() => {
-              this.choiceSize(selectInfo);
-            }}
-            name="size"
-            value={selectInfo.size}
-          />
-          <label>{selectInfo.size}</label>
+          <label>
+            <input
+              type="radio"
+              onClick={() => {
+                this.choiceSize(selectInfo);
+              }}
+              name="size"
+              value={selectInfo.size}
+            />
+            {selectInfo.size}
+          </label>
         </li>
       ));
     return (
@@ -83,12 +85,7 @@ class Gift extends React.Component {
                   </p>
                 )}
               </div>
-              <div className="sizeList">
-                {
-                  // gift.product_selections.length > 1 &&
-                  allSize && selectInfoList
-                }
-              </div>
+              <div className="sizeList">{allSize && selectInfoList}</div>
             </div>
           </div>
           <div className="giftDetailInfo">
