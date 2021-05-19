@@ -1,52 +1,57 @@
 import React from 'react';
-import { INFO } from '../MockData';
 import '../HowToUse/HowToUse.scss';
 
 class HowToUse extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataBox: [],
+      dataBox: '',
     };
   }
 
   componentDidMount() {
-    fetch('#', {
-      method: 'GET',
-    })
+    fetch('/data/product:1.json')
       .then(res => res.json())
       .then(jsonData =>
         this.setState(
           {
-            dataBox: jsonData,
+            dataBox: jsonData.result,
           },
           () => {
-            console.log(jsonData);
+            console.log(this.state.dataBox);
           }
         )
       );
   }
 
   render() {
-    const infoMap = INFO.map((el, index) => (
-      <li key={index}>
-        <dt>{el.dt}</dt>
-        <dd>{el.dd}</dd>
-      </li>
-    ));
+    const { dataBox } = this.state;
+    console.log(dataBox);
+
+    const infoMap =
+      dataBox &&
+      dataBox.product_features.map((feature, index) => (
+        <li key={index}>
+          <dt>{feature.feature_category_name}</dt>
+          <dd>{feature.features.join(', ')}</dd>
+        </li>
+      ));
     return (
       <div className="howToUse">
         <section className="aboutProduct">
           <div className="leftProductImage">
             <figure>
-              <img alt="leftProductImage" src="/images/leftProduct.png" />
+              <img
+                alt="leftProductImage"
+                src={dataBox.product_content_image_url}
+              />
             </figure>
           </div>
           <div className="rightPart">
             <div className="rightProduct">
               <header>
                 <span>사용법</span>
-                <h1>제품을 사용할 때마다 감사의 마음이 전해집니다.</h1>
+                <h1>{dataBox.product_content}</h1>
               </header>
               <div className="productInfo">
                 <dl>{infoMap}</dl>

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import HowToUse from '../../Components/HowToUse/HowToUse';
 
 class ProductDetail extends React.Component {
@@ -8,9 +9,9 @@ class ProductDetail extends React.Component {
   }
   render() {
     return (
-      <>
+      <div className="productDetail">
         <HowToUse />
-      </>
+      </div>
     );
   }
 }
