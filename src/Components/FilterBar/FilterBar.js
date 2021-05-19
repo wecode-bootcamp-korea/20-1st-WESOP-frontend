@@ -12,11 +12,19 @@ class FilterBar extends React.Component {
       filterBtnClose: false,
       hide: false,
       offsetTop: 0,
+      category: [],
     };
   }
 
   componentDidMount() {
     window.addEventListener('wheel', this.handle);
+    fetch('./data/mockdata.json')
+      .then(category => category.json())
+      .then(category =>
+        this.setState({
+          // category: categor,
+        })
+      );
   }
 
   componentWillUnmount() {
@@ -39,7 +47,7 @@ class FilterBar extends React.Component {
       this.setState({ filterBtnOpen: true, filterBtnClose: false });
     }
   };
-  filterBar = React.createRef(); //
+  filterBar = React.createRef();
 
   render() {
     const { filterBtnOpen, filterBtnClose } = this.state;
@@ -76,9 +84,6 @@ class FilterBar extends React.Component {
                   {filterBtnClose && <FilterBtnClose />}
                 </div>
               </div>
-              {/* {filterBtnClose && (
-              <FilterBarExtend filterBtnClose={filterBtnClose} />
-            )} */}
             </>
           )}
         </div>
