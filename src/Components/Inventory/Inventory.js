@@ -26,7 +26,7 @@ class Inventory extends React.Component {
           {productsData &&
             productsData.map((product, index) => (
               <ProductCard
-                key={index}
+                key={product.product_id}
                 product={product}
                 productSelections={product.product_selections[0]}
                 hoverColor={hoverColor}

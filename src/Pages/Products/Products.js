@@ -16,7 +16,7 @@ class Products extends React.Component {
   }
 
   componentDidUpdate(pervProps) {
-    if (pervProps.match.params.mid != this.props.match.params.mid) {
+    if (pervProps.match.params.mid !== this.props.match.params.mid) {
       this.setState({ inventoryData: 0, productsData: 0 });
       this.getData();
     }
@@ -76,10 +76,10 @@ class Products extends React.Component {
 
   render() {
     const { inventoryData, productsData } = this.state;
-    console.log(inventoryData);
 
     return (
       <div className="products">
+        <Nav />
         <div className="upperBar">
           <Link to="/">
             <img alt="wesop logo" src="/images/wesop.png" className="logo" />

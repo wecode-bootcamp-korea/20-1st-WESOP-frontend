@@ -1,0 +1,461 @@
+{
+    "result": [
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "아침 ∙ 저녁으로 깨끗한 손에 덜어 거품을 낸 후 물로 씻어 냅니다.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "수분 공급을 위한 보태니컬 성분이 함유된 부드러운 타입의 젤 클렌저",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "중성 피부",
+                            "건성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "상쾌한",
+                            "진정된",
+                            "부드러운"
+                        ]
+                    }
+                ],
+                "product_id": 1,
+                "product_ingredients": [
+                    "베르가못",
+                    "카모마일",
+                    "로즈힙열매오일"
+                ],
+                "product_name": "페뷸러스 페이스 클렌저",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "33000.00",
+                        "size": "100ml"
+                    },
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "53000.00",
+                        "size": "200ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "세안 후 토너를 바른 피부에 사용합니다.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "우수한 성분이 혼합되어 부드럽고 매끈한 피부로 가꿔주는 알로에 베라 베이스의 수분 세럼",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "건성 피부",
+                            "민감성 피부",
+                            "자주 에어컨에 노출된 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "산뜻한",
+                            "매트한 마무리",
+                            "진정된"
+                        ]
+                    }
+                ],
+                "product_id": 2,
+                "product_ingredients": [
+                    "마트리카리아꽃오일",
+                    "레몬"
+                ],
+                "product_name": "파슬리 씨드 안티 옥시던트 세럼",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "85000.00",
+                        "size": "100ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "아침과 저녁 ∙ 화장솜이나 손에 직접 덜어내어 세안을 마친 얼굴과 목에 두드리세요.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "프로비타민 B5가 함유하여 피부의 밸런스를 잡아주는 수렴성 토너",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "모든 피부 타입",
+                            "덥고 습한 날씨"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "시원한",
+                            "가벼운",
+                            "생기있는"
+                        ]
+                    }
+                ],
+                "product_id": 3,
+                "product_ingredients": [
+                    "그레이프 씨드",
+                    "마카다미아 씨",
+                    "알로에 베라",
+                    "레몬 밤"
+                ],
+                "product_name": "비 앤 티 밸런싱 토너",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "39000.00",
+                        "size": "100ml"
+                    },
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "63000.00",
+                        "size": "200ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "아침 ∙ 저녁으로 깨끗한 손에 덜어 거품을 낸 후 세안합니다.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "피부를 건조하지 않고 부드럽게 세정해주는 젤 클렌저",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "메이크업을 한 피부",
+                            "중성 피부",
+                            "복합성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "산뜻한",
+                            "진정된",
+                            "매끄러운"
+                        ]
+                    }
+                ],
+                "product_id": 4,
+                "product_ingredients": [
+                    "판테놀",
+                    "파슬리 씨드",
+                    "로즈"
+                ],
+                "product_name": "파슬리 씨드 페이셜 클렌저",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "45000.00",
+                        "size": "100ml"
+                    },
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "69000.00",
+                        "size": "200ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "세안 후 토너를 바른 피부에 사용합니다.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "시트러스 기반의 보태니컬 오일 블렌드를 함유하여 피부의 정화와 밸런스 잡아주는 가벼운 타입의 수분 크림",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "잦은 여행자",
+                            "복합성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "수분 공급",
+                            "생기있는",
+                            "탄력"
+                        ]
+                    }
+                ],
+                "product_id": 5,
+                "product_ingredients": [
+                    "토코페롤",
+                    "만다린"
+                ],
+                "product_name": "만다린 페이셜 하이드레이팅 크림",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "63000.00",
+                        "size": "60ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "적당한 거리에서 원하는 얼굴과 목에 분사한 후 자연 건조시킵니다.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "어디서든 피부와 오감에 생기를 불어넣어 주는 상쾌한 미스트",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "추운 기후의 지성 피부",
+                            "민감성 피부",
+                            "중성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "유연",
+                            "부드러운",
+                            "가벼운 마무리"
+                        ]
+                    }
+                ],
+                "product_id": 6,
+                "product_ingredients": [
+                    "베타 카로틴",
+                    "라벤더 오일",
+                    "포도씨 오일"
+                ],
+                "product_name": "이미디에이트 모이스처 페이셜 하이드로졸",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "31000.00",
+                        "size": "50ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "세안 후 토너를 바른 피부에 사용합니다.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "견과류와 식물성 추출물을 함유한 풍부한 영양의 하이드레이팅 크림",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "자주 에어컨에 노출된 피부",
+                            "건성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "상쾌한",
+                            "탄력",
+                            "수분 공급"
+                        ]
+                    }
+                ],
+                "product_id": 7,
+                "product_ingredients": [
+                    "레몬 밤",
+                    "티 트리 리프",
+                    "로즈힙열매오일",
+                    "베타 카로틴"
+                ],
+                "product_name": "카멜리아 너트 페이셜 하이드레이팅 크림",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "63000.00",
+                        "size": "60ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "매주 2회 사용해주세요. 제품을 바른 후 토너를 적신 화장솜으로 닦아내어 피부 위에 가볍고 풍부한 수분막 형성해줍니다.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "피부의 밸런스를 유지하면서도 집중적으로 수분을 공급하는 가벼운 수분 마스크",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "덥고 습한 날씨",
+                            "복합성 피부",
+                            "민감성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "가벼운 마무리",
+                            "진정된",
+                            "수분 공급"
+                        ]
+                    }
+                ],
+                "product_id": 8,
+                "product_ingredients": [
+                    "카모마일",
+                    "베르가못",
+                    "마트리카리아꽃오일"
+                ],
+                "product_name": "블루 카모마일 페이셜 하이드레이팅 마스크",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "65000.00",
+                        "size": "60ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "매주 2회 깨끗하게 클렌징하고 피부에 고르게 바릅니다. 최대 15분 동안 그대로 둔 다음 따뜻한 물로 씻어줍니다.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "식물성 오일이 피부에 영양분을 공급하는 동시에 잔여물을 깨끗이 씻어내어 상쾌함을 더하는 클레이 타입의 클렌징 마스크",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "중성 피부",
+                            "추운 기후의 지성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "산뜻한",
+                            "깔끔한",
+                            "가벼운"
+                        ]
+                    }
+                ],
+                "product_id": 9,
+                "product_ingredients": [
+                    "로즈",
+                    "베르가못"
+                ],
+                "product_name": "프림로즈 페이셜 클렌징 마스크",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "41000.00",
+                        "size": "60ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "이솝 제품군에서 스킨 케어 제품은 개인용은 물론 사려 깊은 선물용으로 많은 사랑을 받고 있습니다.",
+                "category_description_title": "스킨과 감각을 위한 셀렉션",
+                "category_id": 1,
+                "category_name": "스킨 케어 기프트",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "튜브를 가볍게 짜서 입술 위에 펴 발라 주세요.",
+                "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+                "product_description": "보태니컬 오일로 부드러움 ∙ 보습 ∙ 영양을 공급하면서 UVB를 모두 차단하여 입술을 태양으로부터 보호해주는 립 밤. 실리콘 ∙ 파라핀 ∙ 비즈왁스 또는 기타 동물 유래 성분이 들어가지 않은 제품입니다.",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "모든 피부 타입"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "수분 공급",
+                            "생기있는",
+                            "가벼운 마무리"
+                        ]
+                    }
+                ],
+                "product_id": 10,
+                "product_ingredients": [
+                    "그레이프 씨드",
+                    "로즈힙열매오일",
+                    "로즈마리"
+                ],
+                "product_name": "프로텍티브 립 밤 SPF30",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+                        "price": "21000.00",
+                        "size": "5.5g"
+                    }
+                ]
+            }
+        ]
+    ]
+}

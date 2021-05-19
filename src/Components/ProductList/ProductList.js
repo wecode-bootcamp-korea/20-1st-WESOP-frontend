@@ -12,7 +12,7 @@ class ProductList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/productMockdata.json')
+    fetch('/data/category_id=1.json')
       .then(productData => productData.json())
       .then(productData => {
         this.setState({
@@ -50,10 +50,10 @@ class ProductList extends React.Component {
             <div className="product" key={index}>
               <img
                 alt="individualProduct"
-                src={product.product_selections[0].image_url}
+                src={product[0].product_selections[0].image_url}
               />
-              <p>{product.product_name}</p>
-              <p>{product.ingredient.join(', ')}</p>
+              <p>{product[0].product_name}</p>
+              <p>{product[0].product_ingredients.join(', ')}</p>
             </div>
           ))}
         </div>
