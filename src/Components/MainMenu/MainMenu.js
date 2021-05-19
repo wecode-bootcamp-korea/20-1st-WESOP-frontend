@@ -49,6 +49,7 @@ class MainMenu extends React.Component {
         firstRequest: '',
         secondRequest: '',
         thirdRequest: '',
+        products: '',
       },
       () => {
         this.setState({ firstRequest: upperMenu });
@@ -61,6 +62,7 @@ class MainMenu extends React.Component {
       {
         secondRequest: [],
         thirdRequest: '',
+        products: '',
       },
       () => {
         this.setState({
@@ -74,6 +76,7 @@ class MainMenu extends React.Component {
     this.setState(
       {
         thirdRequest: [],
+        products: '',
       },
       () => {
         this.setState({ thirdRequest: category.category_name });

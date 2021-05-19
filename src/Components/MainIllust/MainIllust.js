@@ -28,7 +28,7 @@ class MainIllust extends React.Component {
         <Link to="/">
           <img
             alt="wesop logo"
-            src="images/wesop.png"
+            src="/images/wesop.png"
             className="logo"
             style={{ transform: `rotate(${this.state.wheel}turn)` }}
           />

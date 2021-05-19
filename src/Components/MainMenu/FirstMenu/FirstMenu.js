@@ -73,14 +73,14 @@ class FirstMenu extends React.Component {
             </ul>
             <img
               alt="close button"
-              src="./images/closeBtn.png"
+              src="/images/closeBtn.png"
               onClick={close}
             />
           </div>
           <Link to="/">
             <img
               alt="wesop logo"
-              src="images/wesop.png"
+              src="/images/wesop.png"
               className="logo"
               style={{ transform: `rotate(${wheel}turn)` }}
               onClick={close}

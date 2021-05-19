@@ -14,7 +14,7 @@ class ThirdMenu extends React.Component {
     return (
       <MenuColumn
         zIndex={0}
-        left={!thirdRequest && '-67vw'}
+        left={!(thirdRequest && products) && '-67vw'}
         animation={animation}
       >
         {thirdRequest && products && (
