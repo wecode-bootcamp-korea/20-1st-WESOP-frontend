@@ -10,25 +10,30 @@ class Login extends React.Component {
       password: '',
       animation: 'onLogin',
     };
+
+    this.inputs = [
+      {
+        name: 'email',
+        type: 'text',
+        text: '이메일 주소',
+        isCheck: this.isEmail,
+        errorMsg: '유효한 이메일 주소를 입력하세요',
+      },
+
+      {
+        name: 'password',
+        type: 'password',
+        text: '패스워드',
+        isCheck: this.isPassword,
+        errorMsg: '패스워드는 5자리부터 10자리 미만입니다.',
+      },
+    ];
+
+    this.isEmail =
+      this.state.email.includes('@') && this.state.email.endsWith('.com');
+    this.isPassword =
+      this.state.password.length >= 6 && this.state.password.length <= 10; //대문자 , 숫자 적용하기
   }
-
-  // 서버에서 데이터 받기
-  // getInfo = e => {
-  //   e.preventDefault();
-  //   fetch('http://10.58.0.170:8000/products/openproduct', {
-  //     method: 'GET',
-  //   })
-  //     .then(response => response.json())
-  //     .then(result => {
-  //       this.setState({
-  //         product: result,
-  //       });
-  //     });
-  // };
-
-  // componentDidMount() {
-  //   this.getInfo();
-  // }
 
   handleValue = e => {
     const { name, value } = e.target;
@@ -67,7 +72,6 @@ class Login extends React.Component {
   };
 
   render() {
-    const { name, text, type, errorMsg, isCheck } = this.props;
     return (
       <div className="bodyBack">
         <div className={'login'}>
@@ -88,26 +92,20 @@ class Login extends React.Component {
               <p>WeSop에 오신 것을 진심으로 환영합니다.</p>
             </div>
 
-            <Form
-              name={name}
-              text={text}
-              type={type}
-              errorMsg={errorMsg}
-              isCheck={isCheck}
-              onChange={this.handleValue}
-            />
-            <Form
-              name={name}
-              text={text}
-              type={type}
-              errorMsg={errorMsg}
-              isCheck={isCheck}
-              onChange={this.handleValue}
-            />
+            {this.inputs.map(input => (
+              <Form
+                name={input.name}
+                text={input.text}
+                type={input.type}
+                errorMsg={input.errorMsg}
+                isCheck={input.isCheck}
+                handleValue={this.handleValue}
+              />
+            ))}
             <button
               className="btnLogin"
               onClick={this.handleBtn}
-              // disabled={isEmail && isPassword ? false : true}
+              disabled={this.isCheck ? false : true}
             >
               계속
             </button>
