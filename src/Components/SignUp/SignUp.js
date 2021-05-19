@@ -20,7 +20,7 @@ class SignUp extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('', {
+    fetch('http://192.168.0.24:8000/user/signup', {
       //http://10.58.5.240:8000/user/signup
       method: 'POST',
       body: JSON.stringify({
@@ -33,22 +33,25 @@ class SignUp extends React.Component {
       }),
     })
       .then(resData => resData.json())
-      .then(
-        jsonData => {
-          console.log(jsonData);
-          localStorage.setItem('accessToken', jsonData.token);
-          // this.props.history.push('#');
-          if (jsonData.MESSAGE === 'INVALID_EMAIL') {
-            alert('이메일을 확인해주세요.');
-          }
-          if (jsonData.MESSAGE === 'INVALID_PASSWORD') {
-            alert('비밀번호 양식을 다시 확인해주세요.');
-          }
-        },
-        () => {
-          console.log('button');
+      .then(jsonData => {
+        console.log(jsonData);
+        localStorage.setItem('accessToken', jsonData.token);
+        // this.props.history.push('#');
+        if (jsonData.MESSAGE === 'INVALID_EMAIL') {
+          alert('이메일을 확인해주세요.');
         }
-      );
+        if (jsonData.MESSAGE === 'EXISTING_USER') {
+          alert('이미 존재하는 이메일입니다');
+        }
+        if (jsonData.MESSAGE === 'INVALID_PASSWORD') {
+          alert('비밀번호 양식을 다시 확인해주세요.');
+        }
+        if (jsonData.MESSAGE === 'SUCCESS') {
+          this.setState({
+            animation: 'offLoginPage',
+          });
+        }
+      });
   };
 
   checkBoxValue = () => {
@@ -69,6 +72,12 @@ class SignUp extends React.Component {
       this.setState({ animation: '' });
     }, 600);
   }
+
+  close = () => {
+    this.setState({
+      animation: 'offLoginPage',
+    });
+  };
 
   render() {
     const {
