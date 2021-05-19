@@ -14,8 +14,19 @@ class Login extends React.Component {
 
   handleValue = e => {
     const { name, value } = e.target;
+    this.setState(
+      {
+        [name]: value,
+      },
+      () => {
+        // console.log(name, value);
+      }
+    );
+  };
+
+  hadleValueID = e => {
     this.setState({
-      [name]: value,
+      email: e.target.value,
     });
   };
 
@@ -27,18 +38,13 @@ class Login extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('', {
-      //http://10.58.5.254:8000/user/login
+    fetch('http://192.168.0.24:8000/user/login', {
+      //http://192.168.0.24:8000/user/login
       method: 'POST',
-      body: JSON.stringify(
-        {
-          email: this.state.email,
-          password: this.state.password,
-        },
-        () => {
-          console.log('button');
-        }
-      ),
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
     })
       .then(resData => resData.json())
       .then(jsonData => {
@@ -50,6 +56,12 @@ class Login extends React.Component {
         }
         if (jsonData.MESSAGE === 'INVALID_PASSWORD') {
           alert('패스워드를 확인해주세요.');
+        }
+        if (jsonData.MESSAGE === 'SUCCESS') {
+          this.setState({
+            animation: 'offLoginPage',
+          });
+          alert('환영합니다!');
         }
       });
   };
@@ -105,6 +117,7 @@ class Login extends React.Component {
                 errorMsg={input.errorMsg}
                 isCheck={input.isCheck}
                 handleValue={this.handleValue}
+                value={this.state.email}
               />
             ))}
 

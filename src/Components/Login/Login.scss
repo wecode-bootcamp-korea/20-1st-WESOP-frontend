@@ -45,14 +45,6 @@
       cursor: pointer;
     }
 
-    &:focus-within .isEmailError {
-      border-bottom: 1px solid red;
-    }
-
-    &:focus-within .isPasswordError {
-      border-bottom: 1px solid red;
-    }
-
     .modalHeadingWrap {
       padding-bottom: 30px;
 
@@ -91,6 +83,13 @@
             top: 0%;
             font-size: 15px;
           }
+          &:focus-within .isEmailError {
+            border-bottom: 1px solid red;
+          }
+
+          &:focus-within .isPasswordError {
+            border-bottom: 1px solid red;
+          }
 
           &:focus-within .formTextInput {
             border-bottom: 1px solid black;
@@ -124,6 +123,11 @@
             transition: 0.2s;
           }
         }
+        .typing {
+          position: absolute;
+          margin-top: 5px;
+          font-size: 15px;
+        }
       }
     }
     .btnLogin {
@@ -140,20 +144,19 @@
       cursor: pointer;
     }
   }
-  .typing {
-    position: absolute;
-    margin-top: 5px;
-    font-size: 15px;
-  }
 
   .errorMessage {
     padding-bottom: 20px;
     font-size: 14px;
+
     color: #ea6956;
     opacity: 1;
   }
 
   .opacity {
+    padding-bottom: 20px;
+    width: 100%;
+    height: 34px;
     opacity: 0;
   }
 

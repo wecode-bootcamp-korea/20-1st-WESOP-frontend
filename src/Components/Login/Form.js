@@ -3,12 +3,13 @@ import React from 'react';
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      box: '',
-    };
+    this.state = {};
   }
+
   render() {
-    const { name, type, text, errorMsg, handleValue, isCheck } = this.props;
+    const { name, type, text, errorMsg, handleValue, isCheck, value } =
+      this.props;
+    console.log(value);
     return (
       <form className="loginForm">
         <div className="formRow">
@@ -21,7 +22,7 @@ class Form extends React.Component {
               onChange={handleValue}
             />
 
-            <span className={name ? 'formTextLabel' : 'typing'}>{text}</span>
+            <span className={!name ? 'typing' : 'formTextLabel'}>{text}</span>
           </label>
         </div>
         <div className={name && !isCheck ? 'errorMessage' : 'opacity'}>
