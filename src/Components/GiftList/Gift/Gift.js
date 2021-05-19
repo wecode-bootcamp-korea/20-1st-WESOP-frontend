@@ -95,7 +95,7 @@ class Gift extends React.Component {
                 {gift[0].product_selections.length > 1
                   ? priceSize && (
                       <p className="priceSize">
-                        원부터 ₩{Number(price.toLocaleString())} /{' '}
+                        ₩{Number(price.toLocaleString())}원부터 /{' '}
                         {gift[0].product_selections.length} 사이즈
                       </p>
                     )
