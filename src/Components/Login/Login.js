@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../Form';
+import Form from './Form';
 import './Login.scss';
 
 class Login extends React.Component {
@@ -67,10 +67,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { email, password } = this.state;
-    const isEmail = email.includes('@') && email.endsWith('.com');
-    const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
-
+    const { name, text, type, errorMsg, isCheck } = this.props;
     return (
       <div className="bodyBack">
         <div className={'login'}>
@@ -90,53 +87,27 @@ class Login extends React.Component {
               <h1 className="modalTitle">안녕하세요.</h1>
               <p>WeSop에 오신 것을 진심으로 환영합니다.</p>
             </div>
-            <form className={'loginForm '}>
-              <div className="formRow">
-                <label htmlFor="">
-                  <input
-                    onChange={this.handleValue}
-                    aria-required="true"
-                    className={isEmail ? 'formTextInput' : 'isEmailError'}
-                    name="email"
-                    type="email"
-                  />
-                  <span className={email ? 'typing' : 'formTextLabel'}>
-                    이메일 주소
-                  </span>
-                </label>
-              </div>
-              <div className={email && !isEmail ? 'errorMessage' : 'opacity'}>
-                유효한 이메일 주소를 입력하세요
-              </div>
 
-              <div className="formRow">
-                <label htmlFor="">
-                  <input
-                    onChange={this.handleValue}
-                    aria-required="true"
-                    className={isPassword ? 'formPwInput' : 'isPasswordError'}
-                    name="password"
-                    type="password"
-                  />
-                  <span className={password ? 'typing' : 'formTextLabel'}>
-                    패스워드
-                  </span>
-                </label>
-              </div>
-              <div
-                className={
-                  password && !isPassword ? 'errorMessage' : 'opacity '
-                }
-              >
-                <span className="errorMessage">
-                  패스워드는 5자리부터 10자리 미만입니다.
-                </span>
-              </div>
-            </form>
+            <Form
+              name={name}
+              text={text}
+              type={type}
+              errorMsg={errorMsg}
+              isCheck={isCheck}
+              onChange={this.handleValue}
+            />
+            <Form
+              name={name}
+              text={text}
+              type={type}
+              errorMsg={errorMsg}
+              isCheck={isCheck}
+              onChange={this.handleValue}
+            />
             <button
               className="btnLogin"
               onClick={this.handleBtn}
-              disabled={isEmail && isPassword ? false : true}
+              // disabled={isEmail && isPassword ? false : true}
             >
               계속
             </button>
