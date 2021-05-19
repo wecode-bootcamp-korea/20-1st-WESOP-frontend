@@ -43,7 +43,7 @@ class Gift extends React.Component {
       method: 'POST',
       headers: { Authorization: localStorage.getItem('token') },
       body: JSON.stringify({
-        product_id: this.state.giftId,
+        product_id: Number(this.state.giftId),
         size: this.state.size,
       }),
     })
