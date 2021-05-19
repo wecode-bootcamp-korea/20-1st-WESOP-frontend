@@ -26,18 +26,14 @@ class MainMenu extends React.Component {
     fetch('/data/menuMockdata.json')
       .then(res => res.json())
       .then(res => {
-        const menus = res['result'].map(obj => ({
-          menu_id: obj.menu_id,
-          menu_name: obj.menu_name,
-        }));
+        const menus = res['result'].map(obj => obj['menu_name']);
         this.setState({ menus: menus });
 
         const categories = {};
         res.result.forEach(menu => {
-          categories[menu.menu_name] = menu.category_list.map(obj => ({
-            category_id: obj.category_id,
-            category_name: obj.category_name,
-          }));
+          categories[menu.menu_name] = menu.category_list.map(
+            cat => cat.category_name
+          );
           this.setState({ categories: categories });
         });
       });
@@ -49,7 +45,6 @@ class MainMenu extends React.Component {
         firstRequest: '',
         secondRequest: '',
         thirdRequest: '',
-        products: '',
       },
       () => {
         this.setState({ firstRequest: upperMenu });
@@ -62,7 +57,6 @@ class MainMenu extends React.Component {
       {
         secondRequest: [],
         thirdRequest: '',
-        products: '',
       },
       () => {
         this.setState({
@@ -76,21 +70,15 @@ class MainMenu extends React.Component {
     this.setState(
       {
         thirdRequest: [],
-        products: '',
       },
       () => {
-        this.setState({ thirdRequest: category.category_name });
+        this.setState({ thirdRequest: category });
       }
     );
 
-    fetch(`./data/category_id=${category.category_id}.json`, {
-      headers: {
-        Accept: 'application/json',
-      },
-    })
+    fetch('./data/productMockdata.json')
       .then(res => res.json())
       .then(products => this.setState({ products: products.result }));
-    console.log(this.state.products);
     //나중에 이부분 동적으로 수정해줘야 세 번째 칸 데이터를 제대로 받을 수 있음
   };
 
