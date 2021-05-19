@@ -15,11 +15,11 @@ class Detail extends React.Component {
 
   addCart = () => {
     console.log(localStorage.getItem('token'));
-    fetch('http://10.58.5.254:8000/order/cart', {
+    fetch('http://192.168.0.24:8000/orders/cart', {
       method: 'POST',
       headers: { Authorization: localStorage.getItem('token') },
       body: JSON.stringify({
-        product_id: this.state.product_id,
+        product_id: Number(this.state.product_id),
         size: this.state.size,
       }),
     })
