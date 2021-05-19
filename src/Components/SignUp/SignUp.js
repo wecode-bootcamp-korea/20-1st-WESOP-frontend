@@ -19,7 +19,7 @@ class SignUp extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://10.58.5.254:8000/user/signup', {
+    fetch('http://10.58.5.240:8000/user/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -39,6 +39,9 @@ class SignUp extends React.Component {
           if (jsonData.MESSAGE === 'INVALID_EMAIL') {
             alert('이메일을 확인해주세요.');
           }
+          if (jsonData.MESSAGE === 'INVALID_PASSWORD') {
+            alert('비밀번호 양식을 다시 확인해주세요.');
+          }
         },
         () => {
           console.log('button');
@@ -47,15 +50,9 @@ class SignUp extends React.Component {
   };
 
   checkBoxValue = () => {
-    if (this.state.checkbox === false) {
-      this.setState({
-        checkbox: true,
-      });
-    } else {
-      this.setState({
-        checkbox: false,
-      });
-    }
+    this.setState({
+      checkbox: this.state.checkbox ? false : true,
+    });
   };
 
   handleValue = e => {
