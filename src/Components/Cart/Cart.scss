@@ -3,16 +3,31 @@
 .cart {
   position: relative;
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   padding: 20px 50px;
   color: white;
   background-color: #252525;
-  overflow: hidden;
+  overflow: scroll;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .cartList {
+    text-align: center;
+
+    i {
+      position: absolute;
+      top: 45px;
+      right: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
     table {
-      width: 100%;
-      margin: auto;
+      width: 65%;
 
       tr {
         border-bottom: 1px solid rgb(75, 75, 75);
@@ -21,14 +36,6 @@
         &:first-child {
           color: rgb(140, 140, 140);
           border-bottom: 2px solid rgb(75, 75, 75);
-
-          i {
-            position: absolute;
-            top: 25px;
-            right: 20px;
-            font-size: 20px;
-            cursor: pointer;
-          }
         }
 
         &:hover p {
@@ -40,8 +47,24 @@
       th,
       td {
         position: relative;
-        padding: 25px 0;
+        padding: 15px 0;
         text-align: left;
+
+        &:first-child {
+          width: 45%;
+        }
+
+        select {
+          padding: 10px 15px;
+          color: white;
+          background: rgba(0, 0, 0, 0);
+          border: 1px solid #333;
+          outline: none;
+
+          &:hover {
+            border-color: white;
+          }
+        }
 
         p {
           display: none;
@@ -51,9 +74,17 @@
         }
       }
     }
+
+    .empty {
+      font-size: 20px;
+      margin-top: 200px;
+    }
   }
 
   .cartSum {
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
     margin: 20px 0;
     width: 100%;
     color: lightgray;

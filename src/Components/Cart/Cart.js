@@ -4,7 +4,7 @@ import './Cart.scss';
 class Cart extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { animation: 'openAnimation', cartData: 0 };
+    this.state = { animation: 'openAnimation', cartData: '' };
   }
 
   componentDidMount() {
@@ -80,26 +80,24 @@ class Cart extends React.Component {
   render() {
     const { cartData } = this.state;
 
-    // document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-
     return (
       <div className={`cart ${this.state.animation}`}>
         <div className="cartList">
-          {cartData && (
+          <i class="fas fa-times" onClick={this.close} />
+          {cartData ? (
             <>
               <table>
                 <tr>
                   <th>카트</th>
                   <th>사이즈</th>
-                  <th>
-                    수량
-                    <i class="fas fa-times" onClick={this.close} />
-                  </th>
+                  <th>수량</th>
+                  <th>가격</th>
                 </tr>
                 {cartData.map(product => (
                   <tr>
                     <td>{product.name}</td>
                     <td>{product.size}</td>
+                    <td>{`₩ ${Number(product.price).toLocaleString()}`}</td>
                     <td>
                       <select
                         name="amount"
@@ -132,6 +130,8 @@ class Cart extends React.Component {
                 ))}
               </table>
             </>
+          ) : (
+            <p className="empty">카트에 담긴 상품이 없습니다.</p>
           )}
         </div>
         <div className="cartSum">
@@ -140,13 +140,14 @@ class Cart extends React.Component {
             <div className="priceSum">
               <span>소계(세금 포함)</span>
               <span className="price">
-                ₩{' '}
-                {cartData &&
+                {`₩ ${
+                  cartData &&
                   cartData
                     .reduce((acc, cur) => {
                       return acc + Number(cur.price) * cur.quantity;
                     }, 0)
-                    .toLocaleString()}
+                    .toLocaleString()
+                }`}
               </span>
               <button onClick={this.order}>결제하기</button>
             </div>
