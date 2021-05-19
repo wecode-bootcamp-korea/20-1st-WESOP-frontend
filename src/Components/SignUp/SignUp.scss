@@ -117,13 +117,7 @@
               pointer-events: none;
               transition: 0.2s;
             }
-            &:focus-within .isError,
-            &:focus-within .isPhoneNumberError,
-            &:focus-within .isFirstNameError,
-            &:focus-within .isLastNameError,
-            &:focus-within .isConfirmError,
-            &:focus-within .isEmailError,
-            &:focus-within .isPasswordError {
+            &:focus-within .isError {
               border-bottom: 1px solid red;
             }
           }

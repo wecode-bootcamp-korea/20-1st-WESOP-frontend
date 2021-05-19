@@ -1,5 +1,6 @@
 import React from 'react';
-//import Form from './Form';
+import BaseForm from './Form/BaseForm';
+import AddForm from './Form/AddForm';
 import './SignUp.scss';
 
 class SignUp extends React.Component {
@@ -19,7 +20,8 @@ class SignUp extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://10.58.5.240:8000/user/signup', {
+    fetch('', {
+      //http://10.58.5.240:8000/user/signup
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -51,7 +53,7 @@ class SignUp extends React.Component {
 
   checkBoxValue = () => {
     this.setState({
-      checkbox: this.state.checkbox ? false : true,
+      checkbox: !this.state.checkbox,
     });
   };
 
@@ -86,7 +88,6 @@ class SignUp extends React.Component {
     const isFirstName = firstname.length >= 1 && firstname.length <= 15;
     const isPhoneNumber = phonenumber.length >= 8;
     const isCheck = checkbox;
-
     const isButton =
       isEmail &&
       isPassword &&
@@ -94,6 +95,45 @@ class SignUp extends React.Component {
       isLastName &&
       isFirstName &&
       isPhoneNumber;
+
+    const baseInputs = [
+      {
+        name: 'email',
+        type: 'text',
+        text: '이메일 주소',
+        errorMsg: ' 유효한 이메일 주소를 입력하세요',
+        isCheck: isEmail,
+      },
+      {
+        name: 'password',
+        type: 'password',
+        text: '패스워드',
+        errorMsg: '대문자 포함 및 5자리부터 10자리 미만이어야 합니다',
+        isCheck: isPassword,
+      },
+      {
+        name: 'pwconfirm',
+        type: 'password',
+        text: '패스워드 확인',
+        errorMsg: '입력하신 패스워드와 일치하지 않습니다.',
+        isCheck: isConfirm,
+      },
+    ];
+
+    const addInputs = [
+      {
+        name: 'lastname',
+        type: 'text',
+        text: ' 성',
+        isCheck: isLastName,
+      },
+      {
+        name: 'firstname',
+        type: 'text',
+        text: '이름',
+        isCheck: isFirstName,
+      },
+    ];
 
     return (
       <div className="bodyBack">
@@ -120,114 +160,29 @@ class SignUp extends React.Component {
                 </div>
               </div>
 
+              {baseInputs.map((el, index) => (
+                <BaseForm
+                  key={index}
+                  name={el.name}
+                  text={el.text}
+                  type={el.type}
+                  errorMsg={el.errorMsg}
+                  isCheck={el.isCheck}
+                  handleValue={this.handleValue}
+                />
+              ))}
               <div className="formRow">
-                <div className="formText">
-                  <label htmlFor="#">
-                    <input
-                      onChange={this.handleValue}
-                      aria-required="true"
-                      type="email"
-                      className={isEmail ? 'formTextInput' : 'isEmailError'}
-                      name="email"
-                    />
-                    <span className={email ? 'typing' : 'formTextLabel'}>
-                      이메일 주소
-                    </span>
-                  </label>
-                </div>
+                {addInputs.map((el, index) => (
+                  <AddForm
+                    key={index}
+                    name={el.name}
+                    text={el.text}
+                    type={el.type}
+                    isCheck={el.isCheck}
+                    handleValue={this.handleValue}
+                  />
+                ))}
               </div>
-              <div className={email && !isEmail ? 'errorMessage' : 'opacity'}>
-                유효한 이메일 주소를 입력하세요
-              </div>
-
-              <div className="formRow">
-                <div className="formText">
-                  <label htmlFor="#">
-                    <input
-                      onChange={this.handleValue}
-                      aria-required="true"
-                      type="password"
-                      className={
-                        isPassword ? 'formTextInput' : 'isPasswordError'
-                      }
-                      name="password"
-                    />
-                    <span className={password ? 'typing' : 'formTextLabel'}>
-                      패스워드
-                    </span>
-                  </label>
-                </div>
-              </div>
-              <div
-                className={password && !isPassword ? 'errorMessage' : 'opacity'}
-              >
-                "대문자" 포함 및 5자리부터 10자리 미만이어야 합니다
-              </div>
-
-              <div className="formRow">
-                <div className="formText">
-                  <label htmlFor="#">
-                    <input
-                      onChange={this.handleValue}
-                      aria-required="true"
-                      type="password"
-                      className={isConfirm ? 'formTextInput' : 'isConfirmError'}
-                      name="pwconfirm"
-                    />
-                    <span className={pwconfirm ? 'typing' : 'formTextLabel'}>
-                      패스워드 확인
-                    </span>
-                  </label>
-                </div>
-              </div>
-              <div
-                className={pwconfirm && !isConfirm ? 'errorMessage' : 'opacity'}
-              >
-                입력하신 패스워드와 일치하지 않습니다.
-              </div>
-
-              <div className="formRow">
-                <div className="formText">
-                  <label htmlFor="#">
-                    <input
-                      onChange={this.handleValue}
-                      aria-required="true"
-                      type="text"
-                      className={
-                        isLastName ? 'formTextInput' : 'isLastNameError'
-                      }
-                      name="lastname"
-                    />
-                    <span className={lastname ? 'typing' : 'formTextLabel'}>
-                      성
-                    </span>
-                  </label>
-                </div>
-                <div className="formText">
-                  <label htmlFor="#">
-                    <input
-                      onChange={this.handleValue}
-                      aria-required="true"
-                      type="text"
-                      className={
-                        isFirstName ? 'formTextInput' : 'isFirstNameError'
-                      }
-                      name="firstname"
-                    />
-                    <span className={firstname ? 'typing' : 'formTextLabel'}>
-                      이름
-                    </span>
-                  </label>
-                </div>
-              </div>
-              <div
-                className={
-                  firstname && !isFirstName ? 'errorMessage' : 'opacity'
-                }
-              >
-                이름을 올바르게 입력해주세요.
-              </div>
-
               <div className="formRow">
                 <div className="formText">
                   <label htmlFor="#">
@@ -235,9 +190,7 @@ class SignUp extends React.Component {
                       onChange={this.handleValue}
                       aria-required="true"
                       type="number"
-                      className={
-                        isPhoneNumber ? 'formTextInput' : 'isPhoneNumberError'
-                      }
+                      className={isPhoneNumber ? 'formTextInput' : 'isError'}
                       name="phonenumber"
                     />
                     <span className={phonenumber ? 'typing' : 'formTextLabel'}>
@@ -253,7 +206,6 @@ class SignUp extends React.Component {
               >
                 유효하지 않는 번호입니다.
               </div>
-
               <div className="formText">
                 <form method="POST">
                   <input
