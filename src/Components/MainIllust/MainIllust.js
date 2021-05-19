@@ -46,7 +46,7 @@ class MainIllust extends React.Component {
               <Link to="/giftpage">
                 <button>
                   기프트 보기
-                  <i class="fas fa-arrow-right" />
+                  <i className="fas fa-arrow-right" />
                 </button>
               </Link>
             </div>
