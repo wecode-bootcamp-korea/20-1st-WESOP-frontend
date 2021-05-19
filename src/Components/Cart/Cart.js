@@ -13,6 +13,12 @@ class Cart extends React.Component {
     }, 500);
 
     this.renewCartData();
+
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+  }
+
+  componentWillUnmount() {
+    document.getElementsByTagName('body')[0].style.overflow = '';
   }
 
   close = () => {
@@ -63,8 +69,18 @@ class Cart extends React.Component {
       });
   };
 
+  order = () => {
+    fetch('http://192.168.0.24:8000/orders/order', {
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    });
+  };
+
   render() {
     const { cartData } = this.state;
+
+    // document.getElementsByTagName('body')[0].style.overflow = 'hidden';
 
     return (
       <div className={`cart ${this.state.animation}`}>
@@ -132,7 +148,7 @@ class Cart extends React.Component {
                     }, 0)
                     .toLocaleString()}
               </span>
-              <button>결제하기</button>
+              <button onClick={this.order}>결제하기</button>
             </div>
           </div>
         </div>

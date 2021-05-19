@@ -37,6 +37,12 @@ class MainMenu extends React.Component {
           this.setState({ categories: categories });
         });
       });
+
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+  }
+
+  componentWillUnmount() {
+    document.getElementsByTagName('body')[0].style.overflow = '';
   }
 
   handleFirstRequest = upperMenu => {
