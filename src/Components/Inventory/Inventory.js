@@ -12,13 +12,13 @@ class Inventory extends React.Component {
   render() {
     const { bgColor, hoverColor, inventoryData, productsData } = this.props;
 
-    return (
+    return inventoryData ? (
       <div className="inventory" style={{ backgroundColor: bgColor }}>
         <div className="categoryDesc">
           <h2>{inventoryData.category_name}</h2>
-          <p>{inventoryData.description}</p>
+          <p>{inventoryData.category_description}</p>
           <span>
-            {inventoryData.category_name} (16){' '}
+            {inventoryData.category_name} ({productsData.length}){' '}
             <i className="fas fa-arrow-right" />
           </span>
         </div>
@@ -34,7 +34,7 @@ class Inventory extends React.Component {
             ))}
         </Carousel>
       </div>
-    );
+    ) : null;
   }
 }
 
