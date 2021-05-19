@@ -10,8 +10,8 @@ class Main extends React.Component {
     return (
       <div className="main">
         <MainIllust />
-        <ProductList />
         <FilterBar />
+        <ProductList />
         <MainProduct />
         <Footer />
       </div>

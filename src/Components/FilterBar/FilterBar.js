@@ -2,7 +2,7 @@ import React from 'react';
 import FilterBarExtend from '../FilterBarExtend/FilterBarExtend';
 import FilterBtnOpen from '../FilterBtn/FilterBtnOpen';
 import FilterBtnClose from '../FilterBtn/FilterBtnClose';
-import { Link } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 import './FilterBar.scss';
 
 class FilterBar extends React.Component {
@@ -21,11 +21,26 @@ class FilterBar extends React.Component {
     window.addEventListener('wheel', this.handle);
     fetch('./data/mockdata.json')
       .then(categorys => categorys.json())
-      .then(categorys =>
+      .then(categorys => {
+        const categories = {};
+        categorys.result.forEach(category => {
+          categories[category[0].category_id] = categories[
+            category[0].category_id
+          ] || {
+            menu_id: category[0].menu_id,
+            menu_name: category[0].menu_name,
+            category_id: category[0].category_id,
+            category_name: category[0].category_name,
+            feature_category_name:
+              category[0].product_features[0].feature_category_name,
+            features: category[0].product_features[0].features,
+            product_ingredients: category[0].product_ingredients,
+          };
+        });
         this.setState({
-          category: categorys.result,
-        })
-      );
+          category: Object.values(categories),
+        });
+      });
   }
 
   componentWillUnmount() {
@@ -53,17 +68,20 @@ class FilterBar extends React.Component {
   render() {
     const { filterBtnOpen, filterBtnClose, category } = this.state;
     // let array = [];
-    // array = array.push(category[0].category_name);
+    // array = array.push(category[0]);
     // const set = new Set(array);
     // const unique = [...set];
     // console.log(unique);
-    const categoryList =
-      category &&
-      category.map(categorys => (
-        <>
-          <li>{categorys[0].category_name}</li>
-        </>
-      ));
+    // console.log(category[0]);
+    // console.log(category && category[0].category_id);
+    // console.log(category);
+    const categoryList = category.map(categorys => (
+      <>
+        <Link to="d">
+          <li>{categorys.category_name}</li>
+        </Link>
+      </>
+    ));
     return (
       <>
         {category && (
@@ -71,7 +89,7 @@ class FilterBar extends React.Component {
             <div className="filterBarBefore">
               <div className="filterBarNav" ref={this.filterBar}>
                 <ul className="filterList">
-                  <li>모든스킨</li>
+                  <li>모든</li>
                   <li>|</li>
                   {categoryList}
                 </ul>
