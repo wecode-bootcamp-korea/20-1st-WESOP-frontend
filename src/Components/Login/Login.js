@@ -10,29 +10,6 @@ class Login extends React.Component {
       password: '',
       animation: 'onLogin',
     };
-
-    this.inputs = [
-      {
-        name: 'email',
-        type: 'text',
-        text: '이메일 주소',
-        isCheck: this.isEmail,
-        errorMsg: '유효한 이메일 주소를 입력하세요',
-      },
-
-      {
-        name: 'password',
-        type: 'password',
-        text: '패스워드',
-        isCheck: this.isPassword,
-        errorMsg: '패스워드는 5자리부터 10자리 미만입니다.',
-      },
-    ];
-
-    this.isEmail =
-      this.state.email.includes('@') && this.state.email.endsWith('.com');
-    this.isPassword =
-      this.state.password.length >= 6 && this.state.password.length <= 10; //대문자 , 숫자 적용하기
   }
 
   handleValue = e => {
@@ -50,12 +27,18 @@ class Login extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://10.58.5.254:8000/user/login', {
+    fetch('', {
+      //http://10.58.5.254:8000/user/login
       method: 'POST',
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password,
-      }),
+      body: JSON.stringify(
+        {
+          email: this.state.email,
+          password: this.state.password,
+        },
+        () => {
+          console.log('button');
+        }
+      ),
     })
       .then(resData => resData.json())
       .then(jsonData => {
@@ -72,6 +55,27 @@ class Login extends React.Component {
   };
 
   render() {
+    const { email, password } = this.state;
+    const isEmail = email.includes('@') && email.endsWith('.com');
+    const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
+
+    const inputs = [
+      {
+        name: 'email',
+        type: 'text',
+        text: '이메일 주소',
+        isCheck: isEmail,
+        errorMsg: '유효한 이메일 주소를 입력하세요',
+      },
+
+      {
+        name: 'password',
+        type: 'password',
+        text: '패스워드',
+        isCheck: isPassword,
+        errorMsg: '패스워드는 5자리부터 10자리 미만입니다.',
+      },
+    ];
     return (
       <div className="bodyBack">
         <div className={'login'}>
@@ -92,8 +96,9 @@ class Login extends React.Component {
               <p>WeSop에 오신 것을 진심으로 환영합니다.</p>
             </div>
 
-            {this.inputs.map(input => (
+            {inputs.map((input, index) => (
               <Form
+                key={index}
                 name={input.name}
                 text={input.text}
                 type={input.type}
@@ -102,10 +107,11 @@ class Login extends React.Component {
                 handleValue={this.handleValue}
               />
             ))}
+
             <button
               className="btnLogin"
               onClick={this.handleBtn}
-              disabled={this.isCheck ? false : true}
+              disabled={isEmail && isPassword ? false : true}
             >
               계속
             </button>
