@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Nav from '../../Components/Nav/Nav';
 import Inventory from '../../Components/Inventory/Inventory';
 import Footer from '../../Components/Footer/Footer';
 import './Products.scss';
@@ -23,6 +24,9 @@ class Products extends React.Component {
 
   getData = () => {
     fetch(`/data/menu_id=${this.props.match.params.mid}.json`)
+      // fetch(
+      //   `http://192.168.0.14:8000/products?menu_id=${this.props.match.params.mid}`
+      // )
       .then(res => res.json())
       .then(menuProducts => {
         const categories = {};
@@ -72,16 +76,19 @@ class Products extends React.Component {
 
   render() {
     const { inventoryData, productsData } = this.state;
+    console.log(inventoryData);
 
     return (
       <div className="products">
         <div className="upperBar">
           <Link to="/">
             <img alt="wesop logo" src="/images/wesop.png" className="logo" />
-            <h1>{inventoryData ? inventoryData[0].menu_name : 'Wesop'}</h1>
+            <h1>
+              {inventoryData.length ? inventoryData[0].menu_name : 'Wesop'}
+            </h1>
           </Link>
         </div>
-        {inventoryData ? (
+        {inventoryData.length ? (
           <>
             <Inventory
               hoverColor="#f0efe1"
@@ -97,18 +104,40 @@ class Products extends React.Component {
             <Inventory
               hoverColor="#f0efe1"
               inventoryData={inventoryData[2]}
-              productsData={productsData && productsData[4]}
+              productsData={productsData && productsData[3]}
             />
             <Inventory
               bgColor="#EBEBDE"
               hoverColor="#E5E5D8"
               inventoryData={inventoryData[3]}
-              productsData={productsData && productsData[6]}
+              productsData={productsData && productsData[4]}
             />
             <Inventory
               hoverColor="#f0efe1"
               inventoryData={inventoryData[4]}
-              productsData={productsData && productsData[4]}
+              productsData={productsData && productsData[5]}
+            />
+            <Inventory
+              bgColor="#EBEBDE"
+              hoverColor="#E5E5D8"
+              inventoryData={inventoryData[5]}
+              productsData={productsData && productsData[6]}
+            />
+            <Inventory
+              hoverColor="#f0efe1"
+              inventoryData={inventoryData[6]}
+              productsData={productsData && productsData[7]}
+            />
+            <Inventory
+              bgColor="#EBEBDE"
+              hoverColor="#E5E5D8"
+              inventoryData={inventoryData[7]}
+              productsData={productsData && productsData[8]}
+            />
+            <Inventory
+              hoverColor="#f0efe1"
+              inventoryData={inventoryData[8]}
+              productsData={productsData && productsData[9]}
             />
           </>
         ) : (

@@ -12,7 +12,7 @@ class Inventory extends React.Component {
   render() {
     const { bgColor, hoverColor, inventoryData, productsData } = this.props;
 
-    return inventoryData ? (
+    return inventoryData && productsData ? (
       <div className="inventory" style={{ backgroundColor: bgColor }}>
         <div className="categoryDesc">
           <h2>{inventoryData.category_name}</h2>
