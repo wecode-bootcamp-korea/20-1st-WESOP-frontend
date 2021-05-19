@@ -11,7 +11,7 @@ class SecondMenu extends React.Component {
 
   goToList = category_id => {
     this.props.close();
-    this.props.history.push(`/products?category_id=${category_id}`);
+    this.props.history.push(`/products/category_id/${category_id}`);
   };
 
   render() {
@@ -42,10 +42,10 @@ class SecondMenu extends React.Component {
                   style={{
                     animationDelay: `${index * 0.1 + 0.3}s`,
                     borderColor:
-                      category.catetgory_name === thirdRequest && '#333',
+                      category.category_name === thirdRequest && '#333',
                   }}
                   onMouseOver={() => {
-                    handleThirdRequest(category.category_name);
+                    handleThirdRequest(category);
                   }}
                   onClick={() => {
                     goToList(category.category_id);

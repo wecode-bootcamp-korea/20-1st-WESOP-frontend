@@ -39,7 +39,6 @@ class MainMenu extends React.Component {
             category_name: obj.category_name,
           }));
           this.setState({ categories: categories });
-          console.log(categories);
         });
       });
   }
@@ -77,13 +76,18 @@ class MainMenu extends React.Component {
         thirdRequest: [],
       },
       () => {
-        this.setState({ thirdRequest: category });
+        this.setState({ thirdRequest: category.category_name });
       }
     );
 
-    fetch('./data/productMockdata.json')
+    fetch(`./data/category_id=${category.category_id}.json`, {
+      headers: {
+        Accept: 'application/json',
+      },
+    })
       .then(res => res.json())
       .then(products => this.setState({ products: products.result }));
+    console.log(this.state.products);
     //나중에 이부분 동적으로 수정해줘야 세 번째 칸 데이터를 제대로 받을 수 있음
   };
 

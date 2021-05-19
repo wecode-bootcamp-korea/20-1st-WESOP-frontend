@@ -34,26 +34,26 @@ class ThirdMenu extends React.Component {
                     <div className="individualProduct">
                       <img
                         alt="product thumbnail"
-                        src={product.product_selections[0].image_url}
+                        src={product[0].product_selections[0].image_url}
                       />
                       <div className="productInfo">
-                        <p>{product.product_name}</p>
-                        {product.product_selections.length > 1 ? (
+                        <p>{product[0].product_name}</p>
+                        {product[0].product_selections.length > 1 ? (
                           <p>
-                            {`${product.product_selections.length} 사이즈 `}
+                            {`${product[0].product_selections.length} 사이즈 `}
                             <span>/</span>{' '}
                             {` ₩ ${Number(
-                              product.product_selections[0].price
+                              product[0].product_selections[0].price
                             ).toLocaleString()} 원부터`}
                           </p>
                         ) : (
                           <p>
                             {`${parseInt(
-                              product.product_selections[0].size
+                              product[0].product_selections[0].size
                             )} mL `}
                             <span>/</span>{' '}
                             {` ₩ ${Number(
-                              product.product_selections[0].price
+                              product[0].product_selections[0].price
                             ).toLocaleString()}`}
                           </p>
                         )}

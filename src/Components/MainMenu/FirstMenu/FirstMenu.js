@@ -23,7 +23,7 @@ class FirstMenu extends React.Component {
 
   goToList = menu_id => {
     this.props.close();
-    this.props.history.push(`/products?menu_id=${menu_id}`);
+    this.props.history.push(`/products/menu_id/${menu_id}`);
   };
 
   render() {
@@ -40,8 +40,18 @@ class FirstMenu extends React.Component {
 
     let upperMenus = {
       제품보기: this.props.menus,
-      읽기: ['더 아테네움', '회사 소개', '철학', 'Taxonomy of Design'],
-      검색: ['인기검색어', '클렌저', '페뷸러스', '향수'],
+      읽기: [
+        { menu_id: 1, menu_name: '더 아테네움' },
+        { menu_id: 2, menu_name: '회사 소개' },
+        { menu_id: 3, menu_name: '철학' },
+        { menu_id: 4, menu_name: 'Taxonomy of Design' },
+      ],
+      검색: [
+        { menu_id: 1, menu_name: '인기검색어' },
+        { menu_id: 2, menu_name: '클렌저' },
+        { menu_id: 3, menu_name: '트리트먼트' },
+        { menu_id: 4, menu_name: '마스크' },
+      ],
     };
 
     return (
