@@ -1,0 +1,101 @@
+@import '../../Styles/variables.scss';
+
+.cart {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  padding: 20px 50px;
+  color: white;
+  background-color: #252525;
+  overflow: hidden;
+
+  .cartList {
+    table {
+      width: 100%;
+      margin: auto;
+
+      tr {
+        border-bottom: 1px solid rgb(75, 75, 75);
+        align-items: center;
+
+        &:first-child {
+          color: rgb(140, 140, 140);
+          border-bottom: 2px solid rgb(75, 75, 75);
+
+          i {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+          }
+        }
+
+        &:hover p {
+          display: inline;
+          cursor: pointer;
+        }
+      }
+
+      th,
+      td {
+        position: relative;
+        padding: 25px 0;
+        text-align: left;
+
+        p {
+          display: none;
+          position: absolute;
+          top: 25px;
+          left: 50px;
+        }
+      }
+    }
+  }
+
+  .cartSum {
+    margin: 20px 0;
+    width: 100%;
+    color: lightgray;
+    overflow: auto;
+
+    > div {
+      float: right;
+      width: 29%;
+
+      .priceSum {
+        margin: 20px 0;
+
+        .price {
+          float: right;
+          color: white;
+          font-size: 28px;
+        }
+
+        button {
+          display: block;
+          width: 100%;
+          margin: 40px 0;
+          padding: 20px;
+          border: none;
+          background-color: lightgray;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &.openAnimation {
+    animation: verticalSlide 0.5s;
+  }
+  &.closeAnimation {
+    animation: verticalSlide 0.5s reverse;
+  }
+}
+
+@keyframes verticalSlide {
+  from {
+    height: 50px;
+  }
+  to {
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Nav.scss';
 import MainMenu from '../../Components/MainMenu/MainMenu';
+import Cart from '../Cart/Cart';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -50,13 +51,16 @@ class Nav extends React.Component {
             document.documentElement.scrollTop > 10 && 'background'
           }`}
         >
-          <div className="shippingBanner">
-            <button className="shippingBannerButton" type="button">
-              <p className="shippingBannerContent">
-                전 제품 무료 표준 배송 혜택을 즐겨보세요.
-              </p>
-            </button>
-          </div>
+          {openState.카트 && <Cart cartToggle={() => navToggle('카트')} />}
+          {!openState.카트 && (
+            <div className="shippingBanner">
+              <button className="shippingBannerButton" type="button">
+                <p className="shippingBannerContent">
+                  전 제품 무료 표준 배송 혜택을 즐겨보세요.
+                </p>
+              </button>
+            </div>
+          )}
           <div className="navHeader">
             <div className="navHeaderContainer">
               <ul className="leftMenu">
