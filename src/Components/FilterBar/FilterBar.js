@@ -2,6 +2,7 @@ import React from 'react';
 import FilterBarExtend from '../FilterBarExtend/FilterBarExtend';
 import FilterBtnOpen from '../FilterBtn/FilterBtnOpen';
 import FilterBtnClose from '../FilterBtn/FilterBtnClose';
+import { Link } from 'react-router-dom';
 import './FilterBar.scss';
 
 class FilterBar extends React.Component {
@@ -51,11 +52,11 @@ class FilterBar extends React.Component {
 
   render() {
     const { filterBtnOpen, filterBtnClose, category } = this.state;
-    let array = [];
-    array = array.push(category[0].category_name);
-    const set = new Set(array);
-    const unique = [...set];
-    console.log(unique);
+    // let array = [];
+    // array = array.push(category[0].category_name);
+    // const set = new Set(array);
+    // const unique = [...set];
+    // console.log(unique);
     const categoryList =
       category &&
       category.map(categorys => (
