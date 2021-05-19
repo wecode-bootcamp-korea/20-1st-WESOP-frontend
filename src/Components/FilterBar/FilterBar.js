@@ -19,10 +19,10 @@ class FilterBar extends React.Component {
   componentDidMount() {
     window.addEventListener('wheel', this.handle);
     fetch('./data/mockdata.json')
-      .then(category => category.json())
-      .then(category =>
+      .then(categorys => categorys.json())
+      .then(categorys =>
         this.setState({
-          // category: categor,
+          category: categorys.result,
         })
       );
   }
@@ -50,48 +50,60 @@ class FilterBar extends React.Component {
   filterBar = React.createRef();
 
   render() {
-    const { filterBtnOpen, filterBtnClose } = this.state;
-
+    const { filterBtnOpen, filterBtnClose, category } = this.state;
+    let array = [];
+    array = array.push(category[0].category_name);
+    const set = new Set(array);
+    const unique = [...set];
+    console.log(unique);
+    const categoryList =
+      category &&
+      category.map(categorys => (
+        <>
+          <li>{categorys[0].category_name}</li>
+        </>
+      ));
     return (
       <>
-        <div className="filterBar">
-          <div className="filterBarBefore">
-            <div className="filterBarNav" ref={this.filterBar}>
-              <ul className="filterList">
-                <li>모든 스킨</li>
-                <li>|</li>
-                <li>스킨케어기프트</li>
-                <li>클렌저</li>
-                <li>각질 제거</li>
-                <li>토너</li>
-                <li>쉐이빙</li>
-                <li>선케어</li>
-                <li>키트</li>
-              </ul>
-              <div className="filterCategory" onClick={this.filterBtn}>
-                {filterBtnOpen && <FilterBtnOpen />}
-                {filterBtnClose && <FilterBtnClose />}
-              </div>
-            </div>
-          </div>
-
-          {this.state.offsetTop < 0 && (
-            <>
-              <div className="filterBarAfter">
-                <img className="logo" alt="위솝로고" src="/images/wesop.png" />
+        {category && (
+          <div className="filterBar">
+            <div className="filterBarBefore">
+              <div className="filterBarNav" ref={this.filterBar}>
+                <ul className="filterList">
+                  <li>모든스킨</li>
+                  <li>|</li>
+                  {categoryList}
+                </ul>
                 <div className="filterCategory" onClick={this.filterBtn}>
                   {filterBtnOpen && <FilterBtnOpen />}
                   {filterBtnClose && <FilterBtnClose />}
                 </div>
               </div>
-            </>
-          )}
-        </div>
-        {filterBtnClose && (
-          <FilterBarExtend
-            filterBtnClose={filterBtnClose}
-            styleChange={this.state.offsetTop < 0}
-          />
+            </div>
+
+            {this.state.offsetTop < 0 && (
+              <>
+                <div className="filterBarAfter">
+                  <img
+                    className="logo"
+                    alt="위솝로고"
+                    src="/images/wesop.png"
+                  />
+                  <div className="filterCategory" onClick={this.filterBtn}>
+                    {filterBtnOpen && <FilterBtnOpen />}
+                    {filterBtnClose && <FilterBtnClose />}
+                  </div>
+                </div>
+              </>
+            )}
+            {filterBtnClose && (
+              <FilterBarExtend
+                category={category}
+                filterBtnClose={filterBtnClose}
+                styleChange={this.state.offsetTop < 0}
+              />
+            )}
+          </div>
         )}
       </>
     );

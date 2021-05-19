@@ -4,7 +4,9 @@ import './FilterBarExtend.scss';
 class FilterBarExtend extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      ha: this.props.category.category_description,
+    };
   }
   render() {
     return (
