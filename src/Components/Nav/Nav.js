@@ -15,6 +15,7 @@ class Nav extends React.Component {
         회원가입: false,
         카트: false,
       },
+      isLoggedIn: JSON.parse(window.sessionStorage.getItem('token')),
     };
   }
 
@@ -37,11 +38,20 @@ class Nav extends React.Component {
     });
   };
 
+  logOut = () => {
+    window.sessionStorage.removeItem('token');
+    this.setState({
+      isLoggedIn: JSON.parse(window.sessionStorage.getItem('token')),
+    });
+  };
+
   render() {
-    const { hide, openState } = this.state;
-    const { navToggle } = this;
+    const { hide, openState, isLoggedIn } = this.state;
+    const { navToggle, logOut } = this;
 
     const NAV_DATA = ['제품보기', '읽기', '검색', '로그인', '회원가입', '카트'];
+
+    // window.sessionStorage.setItem('token', JSON.stringify('aaaa'));
 
     return (
       <>
@@ -73,17 +83,34 @@ class Nav extends React.Component {
                 ))}
               </ul>
               <ul className="rightMenu">
-                {NAV_DATA.slice(3).map((nav, index) => (
-                  <li
-                    key={index}
-                    onClick={() => {
-                      navToggle(nav);
-                    }}
-                  >
-                    {nav}
-                    <hr />
-                  </li>
-                ))}
+                {!isLoggedIn ? (
+                  NAV_DATA.slice(3).map((nav, index) => (
+                    <li
+                      key={index}
+                      onClick={() => {
+                        navToggle(nav);
+                      }}
+                    >
+                      {nav}
+                      <hr />
+                    </li>
+                  ))
+                ) : (
+                  <>
+                    <li onClick={logOut}>
+                      로그아웃
+                      <hr />
+                    </li>
+                    <li
+                      onClick={() => {
+                        navToggle('카트');
+                      }}
+                    >
+                      카트
+                      <hr />
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>
