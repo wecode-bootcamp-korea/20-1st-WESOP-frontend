@@ -1,0 +1,200 @@
+.bodyBack {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.signUp {
+  position: relative;
+  top: 5%;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  animation: closePage 0.2s linear 0s 1 normal;
+  input {
+    outline: none;
+    font-family: inherit;
+  }
+
+  .onLogin {
+    animation: test 0.5s ease-in-out 0s 1 normal forwards;
+  }
+
+  .offLoginPage {
+    animation: test 0.5s ease-in-out 0s 1 reverse forwards;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .modalBody {
+    position: relative;
+    margin: 0 auto;
+    padding: 50px;
+    max-width: 550px;
+    width: 100%;
+    background-color: #fffef2;
+    color: #252525;
+    transform: translateZ(0);
+
+    .loginForm {
+      .modalCloseBtn {
+        float: right;
+        margin-bottom: 120px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+      .modalHeadingWrap {
+        padding-bottom: 30px;
+        .modalTitle {
+          padding: 40px 0 10px;
+          font-weight: 400;
+          font-size: 30px;
+          line-height: 1.33;
+        }
+
+        .modalSubTitle {
+          line-height: 1.7;
+          color: #666;
+        }
+      }
+      .formRow {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0 -10px;
+        animation: fade-in 0.3s ease-in;
+        z-index: 1;
+
+        .formText {
+          position: relative;
+          margin: 0 0 10px;
+          padding: 30px 10px 0;
+          width: 100%;
+
+          label {
+            display: flex;
+            position: relative;
+            width: 100%;
+            cursor: default;
+
+            &:focus-within .formTextInput {
+              border-bottom: 1px solid black !important;
+            }
+
+            .formTextInput {
+              position: flex;
+              margin: 0;
+              padding: 8px 0;
+              width: 100%;
+              height: 40px;
+              font-size: 20px;
+              line-height: 1;
+              border: solid rgba(51, 51, 51, 0.2);
+              border-width: 0 0 1px;
+              background-color: transparent;
+            }
+            &:focus-within .formTextLabel {
+              display: relative;
+              top: -42%;
+              font-size: 14px;
+            }
+
+            .formTextLabel {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              font-size: 28px;
+              color: #666;
+              line-height: 1.75;
+              pointer-events: none;
+              transition: 0.2s;
+            }
+            &:focus-within .isError {
+              border-bottom: 1px solid red;
+            }
+          }
+        }
+      }
+      .btnLogin {
+        position: relative;
+        margin: 40px 0 0;
+        padding: 21px 23px;
+        width: 100%;
+        height: 60px;
+        min-width: 210px;
+        background-color: #333;
+        border: 1px solid rgba(51, 51, 51, 0.2);
+        transition: all 0.5s ease;
+        font-weight: inherit;
+        font-size: 14px;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .formText {
+    margin-top: 20px;
+
+    .isPhoneNumberError {
+      width: 70%;
+      form {
+        label {
+          font-weight: inherit;
+        }
+      }
+    }
+  }
+
+  .isError {
+    position: flex;
+    padding: 8px 0;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    line-height: 1;
+    border: solid rgba(51, 51, 51, 0.2);
+    border-width: 0 0 1px;
+    background-color: transparent;
+  }
+
+  .typing {
+    position: absolute;
+    top: -28%;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .errorMessage {
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #ea6956;
+    opacity: 1;
+  }
+
+  .opacity {
+    width: 100%;
+    height: 24px;
+    opacity: 0;
+  }
+
+  @keyframes test {
+    from {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
