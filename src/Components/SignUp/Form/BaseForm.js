@@ -1,10 +1,6 @@
 import React from 'react';
 
 class BaseForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     const { name, text, type, errorMsg, isCheck, handleValue, value } =
       this.props;

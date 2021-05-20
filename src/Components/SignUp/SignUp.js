@@ -71,11 +71,11 @@ class SignUp extends React.Component {
       this.setState({ animation: '' });
     }, 600);
 
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
   }
 
   componentWillUnmount() {
-    document.getElementsByTagName('body')[0].style.overflow = '';
+    document.body.style.overflow = 'unset';
   }
 
   render() {
@@ -89,20 +89,20 @@ class SignUp extends React.Component {
       checkbox,
     } = this.state;
 
-    const isEmail = email.includes('@') && email.endsWith('.com');
-    const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
-    const isConfirm = password === pwconfirm && pwconfirm.length >= 6;
-    const isLastName = lastname.length >= 1 && lastname.length <= 10;
-    const isFirstName = firstname.length >= 1 && firstname.length <= 15;
-    const isPhoneNumber = phonenumber.length >= 8;
-    const isCheck = checkbox;
-    const isButton =
-      isEmail &&
-      isPassword &&
-      isConfirm &&
-      isLastName &&
-      isFirstName &&
-      isPhoneNumber;
+    const isEmailValid = email.includes('@') && email.endsWith('.com');
+    const isPasswordValid = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
+    const isConfirmValid = password === pwconfirm && pwconfirm.length >= 6;
+    const isLastNameValid = lastname.length >= 1 && lastname.length <= 10;
+    const isFirstNameValid = firstname.length >= 1 && firstname.length <= 15;
+    const isPhoneNumberValid = phonenumber.length >= 8;
+    const isCheckValid = checkbox;
+    const isButtonValid =
+      isEmailValid &&
+      isPasswordValid &&
+      isConfirmValid &&
+      isLastNameValid &&
+      isFirstNameValid &&
+      isPhoneNumberValid;
 
     const baseInputs = [
       {
@@ -110,21 +110,21 @@ class SignUp extends React.Component {
         type: 'text',
         text: '이메일 주소',
         errorMsg: ' 유효한 이메일 주소를 입력하세요',
-        isCheck: isEmail,
+        isCheck: isEmailValid,
       },
       {
         name: 'password',
         type: 'password',
         text: '패스워드',
         errorMsg: '대문자 포함 및 5자리부터 10자리 미만이어야 합니다',
-        isCheck: isPassword,
+        isCheck: isPasswordValid,
       },
       {
         name: 'pwconfirm',
         type: 'password',
         text: '패스워드 확인',
         errorMsg: '입력하신 패스워드와 일치하지 않습니다.',
-        isCheck: isConfirm,
+        isCheck: isConfirmValid,
       },
     ];
 
@@ -133,13 +133,13 @@ class SignUp extends React.Component {
         name: 'lastname',
         type: 'text',
         text: ' 성',
-        isCheck: isLastName,
+        isCheck: isLastNameValid,
       },
       {
         name: 'firstname',
         type: 'text',
         text: '이름',
-        isCheck: isFirstName,
+        isCheck: isFirstNameValid,
       },
     ];
 
@@ -200,7 +200,9 @@ class SignUp extends React.Component {
                       onChange={this.handleValue}
                       aria-required="true"
                       type="number"
-                      className={isPhoneNumber ? 'formTextInput' : 'isError'}
+                      className={
+                        isPhoneNumberValid ? 'formTextInput' : 'isError'
+                      }
                       name="phonenumber"
                     />
                     <span className={phonenumber ? 'typing' : 'formTextLabel'}>
@@ -211,7 +213,9 @@ class SignUp extends React.Component {
               </div>
               <div
                 className={
-                  phonenumber && !isPhoneNumber ? 'errorMessage' : 'opacity'
+                  phonenumber && !isPhoneNumberValid
+                    ? 'errorMessage'
+                    : 'opacity'
                 }
               >
                 유효하지 않는 번호입니다.
@@ -232,7 +236,7 @@ class SignUp extends React.Component {
               <button
                 className="btnLogin"
                 onClick={this.handleBtn}
-                disabled={isButton && isCheck ? false : true}
+                disabled={isButtonValid && isCheckValid ? false : true}
               >
                 등록
               </button>
