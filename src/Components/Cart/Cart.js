@@ -70,7 +70,7 @@ class Cart extends React.Component {
   };
 
   order = () => {
-    fetch('http://192.168.0.24:8000/orders/order', {
+    fetch('http://10.58.2.119:8000/orders/order', {
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
@@ -109,7 +109,7 @@ class Cart extends React.Component {
                         }}
                       >
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i =>
-                          i == product.quantity ? (
+                          i === product.quantity ? (
                             <option value={i} selected>
                               {i}
                             </option>
