@@ -26,6 +26,10 @@ class FirstMenu extends React.Component {
     this.props.history.push(`/products/menu_id/${menu_id}`);
   };
 
+  goToLink = link => {
+    window.location.href = link ? link : '';
+  };
+
   render() {
     const { wheel } = this.state;
     const {
@@ -36,21 +40,38 @@ class FirstMenu extends React.Component {
       close,
       animation,
     } = this.props;
-    const { goToList } = this;
+
+    const { goToList, goToLink } = this;
 
     let upperMenus = {
       제품보기: this.props.menus,
       읽기: [
-        { menu_id: 1, menu_name: '더 아테네움' },
-        { menu_id: 2, menu_name: '회사 소개' },
-        { menu_id: 3, menu_name: '철학' },
-        { menu_id: 4, menu_name: 'Taxonomy of Design' },
+        {
+          menu_id: 0,
+          menu_name: '더 아테네움',
+          link: 'https://www.aesop.com/kr/r/the-athenaeum/',
+        },
+        {
+          menu_id: 0,
+          menu_name: '회사 소개',
+          link: 'https://www.aesop.com/kr/r/about/',
+        },
+        {
+          menu_id: 0,
+          menu_name: '철학',
+          link: 'https://www.aesop.com/kr/r/philosophy-to-products/',
+        },
+        {
+          menu_id: 0,
+          menu_name: 'Taxonomy of Design',
+          link: 'http://taxonomyofdesign.com/#!/',
+        },
       ],
       검색: [
-        { menu_id: 1, menu_name: '인기검색어' },
-        { menu_id: 2, menu_name: '클렌저' },
-        { menu_id: 3, menu_name: '트리트먼트' },
-        { menu_id: 4, menu_name: '마스크' },
+        { menu_id: 0, menu_name: '인기검색어' },
+        { menu_id: 0, menu_name: '클렌저' },
+        { menu_id: 0, menu_name: '트리트먼트' },
+        { menu_id: 0, menu_name: '마스크' },
       ],
     };
 
@@ -106,7 +127,7 @@ class FirstMenu extends React.Component {
                     handleSecondRequest(menu.menu_name);
                   }}
                   onClick={() => {
-                    goToList(menu.menu_id);
+                    menu.menu_id ? goToList(menu.menu_id) : goToLink(menu.link);
                   }}
                 >
                   {menu.menu_name}
