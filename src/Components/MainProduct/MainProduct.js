@@ -21,10 +21,10 @@ class MainProduct extends React.Component {
             </button>
           </Link>
         </div>
-        <img
+        {/* <img
           alt="product image"
           src="https://cdn.eyesmag.com/content/uploads/sliderImages/2020/11/04/aseop-2020-gift-collection-sensory-chronicles-kits-info-01-27870b6a-043a-4f18-9da1-8f13a67eaa46.jpg"
-        />
+        /> */}
       </div>
     );
   }

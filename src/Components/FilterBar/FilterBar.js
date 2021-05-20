@@ -2,6 +2,7 @@ import React from 'react';
 import FilterBarExtend from '../FilterBarExtend/FilterBarExtend';
 import FilterBtnOpen from '../FilterBtn/FilterBtnOpen';
 import FilterBtnClose from '../FilterBtn/FilterBtnClose';
+import { BrowserRouter, Link } from 'react-router-dom';
 import './FilterBar.scss';
 
 class FilterBar extends React.Component {
@@ -12,11 +13,35 @@ class FilterBar extends React.Component {
       filterBtnClose: false,
       hide: false,
       offsetTop: 0,
+      category: [],
     };
   }
 
   componentDidMount() {
     window.addEventListener('wheel', this.handle);
+    fetch('./data/mockdata.json')
+      .then(categorys => categorys.json())
+      .then(categorys => {
+        const categories = {};
+        categorys.result.forEach(category => {
+          categories[category[0].category_id] = categories[
+            category[0].category_id
+          ] || {
+            menu_id: category[0].menu_id,
+            menu_name: category[0].menu_name,
+            category_id: category[0].category_id,
+            category_name: category[0].category_name,
+            feature_category_name:
+              category[0].product_features[0].feature_category_name,
+            features: category[0].product_features[0].features,
+            features_use: category[0].product_features[1].features,
+            product_ingredients: category[0].product_ingredients,
+          };
+        });
+        this.setState({
+          category: Object.values(categories),
+        });
+      });
   }
 
   componentWillUnmount() {
@@ -42,33 +67,31 @@ class FilterBar extends React.Component {
   filterBar = React.createRef();
 
   render() {
-    const { filterBtnOpen, filterBtnClose } = this.state;
-
+    const { filterBtnOpen, filterBtnClose, category } = this.state;
+    const categoryList = category.map(categorys => (
+      <Link to="">
+        <li>{categorys.category_name}</li>
+      </Link>
+    ));
     return (
       <>
-        <div className="filterBar">
-          <div className="filterBarBefore">
-            <div className="filterBarNav" ref={this.filterBar}>
-              <ul className="filterList">
-                <li>모든 스킨</li>
-                <li>|</li>
-                <li>스킨케어기프트</li>
-                <li>클렌저</li>
-                <li>각질 제거</li>
-                <li>토너</li>
-                <li>쉐이빙</li>
-                <li>선케어</li>
-                <li>키트</li>
-              </ul>
-              <div className="filterCategory" onClick={this.filterBtn}>
-                {filterBtnOpen && <FilterBtnOpen />}
-                {filterBtnClose && <FilterBtnClose />}
+        {category && (
+          <div className="filterBar">
+            <div className="filterBarBefore">
+              <div className="filterBarNav" ref={this.filterBar}>
+                <ul className="filterList">
+                  <li>모든상품</li>
+                  <li>|</li>
+                  {categoryList}
+                </ul>
+                <div className="filterCategory" onClick={this.filterBtn}>
+                  {filterBtnOpen && <FilterBtnOpen />}
+                  {filterBtnClose && <FilterBtnClose />}
+                </div>
               </div>
             </div>
-          </div>
 
-          {this.state.offsetTop < 0 && (
-            <>
+            {this.state.offsetTop < 0 && (
               <div className="filterBarAfter">
                 <img className="logo" alt="위솝로고" src="/images/wesop.png" />
                 <div className="filterCategory" onClick={this.filterBtn}>
@@ -76,11 +99,12 @@ class FilterBar extends React.Component {
                   {filterBtnClose && <FilterBtnClose />}
                 </div>
               </div>
-            </>
-          )}
-        </div>
+            )}
+          </div>
+        )}
         {filterBtnClose && (
           <FilterBarExtend
+            category={category}
             filterBtnClose={filterBtnClose}
             styleChange={this.state.offsetTop < 0}
           />
