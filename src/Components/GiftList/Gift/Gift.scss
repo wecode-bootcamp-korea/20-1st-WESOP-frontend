@@ -1,0 +1,135 @@
+@import '../../../Styles/common.scss';
+
+.gift {
+  position: relative;
+  width: 33vw;
+  height: 870px;
+  animation: smoothAppear 1s;
+
+  &:hover {
+    background-color: #f0efe1;
+  }
+
+  .giftBox {
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    color: #333333;
+    font-size: 11px;
+    font-family: 'Suisse Regular', sans-serif;
+    transition: 0.5s;
+
+    .giftModel {
+      margin-bottom: 20px;
+      text-align: center;
+
+      .giftImg img {
+        height: 100%;
+        margin-top: 100px;
+        margin-bottom: 20px;
+      }
+
+      .giftInfo {
+        padding-bottom: 40px;
+        font-size: 15px;
+
+        .productName {
+          margin-bottom: 10px;
+        }
+        .giftPriceSize {
+          .priceSize {
+            animation: smoothAppear 1s;
+          }
+
+          p {
+            padding: 2px;
+
+            &:last-child {
+              color: #666666;
+            }
+          }
+        }
+
+        .sizeList {
+          input[type='radio'] {
+            -webkit-appearance: none;
+            width: 13px;
+            height: 13px;
+            border: 1px solid #666666;
+            border-radius: 100%;
+            background: rgba(255, 0, 0, 0);
+          }
+
+          display: flex;
+          justify-content: center;
+          color: #666666;
+          li {
+            animation: smoothAppear 1s;
+          }
+        }
+      }
+    }
+
+    .giftDetailInfo {
+      margin: auto;
+      width: 90%;
+      padding-top: 20px;
+      border-top: 2px solid black;
+      line-height: normal;
+      li {
+        display: flex;
+        margin-bottom: 25px;
+        border-bottom: 1px solid #d6d5cc;
+
+        p {
+          margin-top: 5px;
+          margin-bottom: 25px;
+
+          &:first-child {
+            width: 100px;
+            font-size: 14px;
+          }
+          &:last-child {
+            width: 380px;
+            color: #666666;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    button {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .addCartEnabled {
+      width: 100%;
+      height: 70px;
+      border: solid 1px #333333;
+      background-color: #333333;
+      color: #fffef2;
+      font-size: 14px;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: black;
+      }
+    }
+
+    .addCartDisabled {
+      width: 100%;
+      height: 70px;
+      border: solid 1px #333333;
+      background-color: #333333;
+      color: #fffef2;
+      font-size: 14px;
+      transition: 0.5s;
+      opacity: 0;
+    }
+  }
+}

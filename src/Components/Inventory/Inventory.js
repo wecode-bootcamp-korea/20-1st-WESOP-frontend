@@ -4,11 +4,6 @@ import ProductCard from '../ProductCard/ProductCard';
 import './Inventory.scss';
 
 class Inventory extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     const { bgColor, hoverColor, inventoryData, productsData } = this.props;
 
