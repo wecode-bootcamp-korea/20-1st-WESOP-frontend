@@ -13,7 +13,7 @@ class Footer extends React.Component {
                 placeholder="이메일 주소"
                 className="enterEmail"
               />
-              <i class="fas fa-arrow-right" />
+              <i className="fas fa-arrow-right" />
             </div>
             <p>
               이솝 제품, 서비스, 스토어, 행사, 문화적 관심사 등 다양한 소식을
