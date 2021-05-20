@@ -15,7 +15,7 @@ class Nav extends React.Component {
         회원가입: false,
         카트: false,
       },
-      isLoggedIn: JSON.parse(window.sessionStorage.getItem('token')),
+      isLoggedIn: JSON.parse(window.sessionStorage.getItem('accessToken')),
     };
   }
 
@@ -41,7 +41,7 @@ class Nav extends React.Component {
   logOut = () => {
     window.sessionStorage.removeItem('token');
     this.setState({
-      isLoggedIn: JSON.parse(window.sessionStorage.getItem('token')),
+      isLoggedIn: JSON.parse(window.sessionStorage.getItem('accessToken')),
     });
   };
 
