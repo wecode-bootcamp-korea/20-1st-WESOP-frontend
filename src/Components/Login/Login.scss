@@ -1,0 +1,185 @@
+.bodyBack {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.login {
+  position: relative;
+  top: 5%;
+  font-size: 30px;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+
+  input {
+    outline: none;
+  }
+
+  .onLogin {
+    animation: test 0.5s ease-in-out 0s 1 normal forwards;
+  }
+
+  .offLoginPage {
+    animation: test 0.5s ease-in-out 0s 1 reverse forwards;
+  }
+
+  .modalBody {
+    margin: 0 auto;
+    padding: 40px 50px;
+    width: 100%;
+    height: 100%;
+    max-width: 550px;
+    max-height: 580px;
+    background-color: #fffef2;
+    transform: translateZ(0);
+    opacity: 1px;
+
+    .modalCloseBtn {
+      float: right;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .modalHeadingWrap {
+      padding-bottom: 30px;
+
+      .modalTitle {
+        margin: 0;
+        padding: 40px 0px 10px;
+        color: black;
+
+        line-height: 1.33;
+      }
+      p {
+        display: block;
+        line-height: 1.7;
+        font-size: 17px;
+        color: #666;
+      }
+    }
+    .loginForm {
+      .formRow {
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        margin: 0 -10px;
+        margin-bottom: 10px;
+        padding: 20px 10px 0;
+        width: 100%;
+        z-index: 1;
+
+        label {
+          display: flex;
+          position: relative;
+          width: 100%;
+
+          &:focus-within .formTextLabel {
+            display: relative;
+            top: 0%;
+            font-size: 15px;
+          }
+          &:focus-within .isEmailError {
+            border-bottom: 1px solid red;
+          }
+
+          &:focus-within .isPasswordError {
+            border-bottom: 1px solid red;
+          }
+
+          &:focus-within .formTextInput {
+            border-bottom: 1px solid black;
+          }
+
+          .formTextInput {
+            position: flex;
+            margin: 0;
+            margin-top: 17px;
+            padding: 8px 0 0 0;
+            height: 40px;
+            width: 100%;
+            font-size: 18px;
+            background-color: transparent;
+            line-height: 1;
+            border: none;
+            border-bottom: 1.5px solid #e9e9e9;
+            text-overflow: ellipsis;
+          }
+
+          .formTextLabel {
+            position: absolute;
+            font-size: 24px;
+            left: 0;
+            bottom: 0;
+            color: #666;
+            line-height: 1.75;
+            pointer-events: none;
+            transition: 0.2s;
+          }
+        }
+        .typing {
+          position: absolute;
+          margin-top: 5px;
+          font-size: 15px;
+        }
+      }
+    }
+    .btnLogin {
+      position: relative;
+      margin: 30px 0 0;
+      padding: 21px 23px;
+      min-width: 210px;
+      width: 100%;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      border: 1px solid rgba(51, 51, 51, 0.2);
+      transition: all 0.5s ease;
+      cursor: pointer;
+    }
+  }
+
+  .errorMessage {
+    padding-bottom: 20px;
+    font-size: 14px;
+    color: #ea6956;
+    opacity: 1;
+  }
+
+  .opacity {
+    padding-bottom: 20px;
+    width: 100%;
+    height: 34px;
+    opacity: 0;
+  }
+
+  .isError {
+    display: flex;
+    margin: 0;
+    margin-top: 17px;
+    padding: 8px 0 0 0;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    background-color: transparent;
+    line-height: 1;
+    border: none;
+    border-bottom: 1.5px solid #e9e9e9;
+    text-overflow: ellipsis;
+  }
+
+  @keyframes test {
+    from {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

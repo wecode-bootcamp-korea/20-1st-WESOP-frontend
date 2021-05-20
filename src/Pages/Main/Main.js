@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from '../../Components/Login/Login';
 import Nav from '../../Components/Nav/Nav';
 import MainIllust from '../../Components/MainIllust/MainIllust';
 import MainProduct from '../../Components/MainProduct/MainProduct';
@@ -14,6 +15,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main">
+        <Login />
         <Nav />
         <MainIllust />
         <ProductList />
