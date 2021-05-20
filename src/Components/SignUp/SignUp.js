@@ -34,9 +34,8 @@ class SignUp extends React.Component {
     })
       .then(resData => resData.json())
       .then(jsonData => {
-        console.log(jsonData);
         sessionStorage.setItem('accessToken', JSON.stringify(jsonData.token));
-        // this.props.history.push('#');
+
         if (jsonData.MESSAGE === 'INVALID_EMAIL') {
           alert('이메일을 확인해주세요.');
         }
@@ -71,6 +70,12 @@ class SignUp extends React.Component {
     setTimeout(() => {
       this.setState({ animation: '' });
     }, 600);
+
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+  }
+
+  componentWillUnmount() {
+    document.getElementsByTagName('body')[0].style.overflow = '';
   }
 
   render() {
