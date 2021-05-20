@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './ProductList.scss';
 
 class ProductList extends React.Component {
@@ -12,7 +13,7 @@ class ProductList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/productMockdata.json')
+    fetch('/data/category_id=1.json')
       .then(productData => productData.json())
       .then(productData => {
         this.setState({
@@ -39,21 +40,31 @@ class ProductList extends React.Component {
       });
   };
 
+  goToDetail = productId => {
+    this.props.history.push(`/productdetail/${productId}`);
+  };
+
   render() {
     const { products, slideRight, barLeft } = this.state;
-    const { clickPrev, clickNext, slider } = this;
+    const { clickPrev, clickNext, slider, goToDetail } = this;
 
     return products.product_selections ? (
       <div className="productList">
         <div style={{ right: `${slideRight}%` }} ref={slider}>
           {products.map((product, index) => (
-            <div className="product" key={index}>
+            <div
+              className="product"
+              key={index}
+              onClick={() => {
+                goToDetail(product[0].product_id);
+              }}
+            >
               <img
                 alt="individualProduct"
-                src={product.product_selections[0].image_url}
+                src={product[0].product_selections[0].image_url}
               />
-              <p>{product.product_name}</p>
-              <p>{product.ingredient.join(', ')}</p>
+              <p>{product[0].product_name}</p>
+              <p>{product[0].product_ingredients.join(', ')}</p>
             </div>
           ))}
         </div>
@@ -79,4 +90,4 @@ class ProductList extends React.Component {
   }
 }
 
-export default ProductList;
+export default withRouter(ProductList);

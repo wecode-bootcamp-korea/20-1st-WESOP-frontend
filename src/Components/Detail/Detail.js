@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './Detail.scss';
 
 class Detail extends React.Component {
@@ -41,6 +42,7 @@ class Detail extends React.Component {
 
   componentDidMount() {
     fetch('/data/mockdata.json')
+      // fetch(`/products/${this.props.match.params.pid}`)
       .then(products => products.json())
       .then(products => {
         this.setState({
@@ -102,7 +104,7 @@ class Detail extends React.Component {
                 </ul>
                 <div className="detailNameExplain">
                   <h1 className="detailName">{product.category_name}</h1>
-                  <p className="detailExplain">{product.description}</p>
+                  <p className="detailExplain">{product.product_description}</p>
                 </div>
                 <ul className="detailInfo">{featureList}</ul>
                 <button className="addCart" onClick={this.addCart}>
@@ -117,4 +119,4 @@ class Detail extends React.Component {
   }
 }
 
-export default Detail;
+export default withRouter(Detail);
