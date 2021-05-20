@@ -33,8 +33,8 @@ class FilterBar extends React.Component {
             category_name: category[0].category_name,
             feature_category_name:
               category[0].product_features[0].feature_category_name,
-            features_use: category[0].product_features[1].features,
             features: category[0].product_features[0].features,
+            features_use: category[0].product_features[1].features,
             product_ingredients: category[0].product_ingredients,
           };
         });

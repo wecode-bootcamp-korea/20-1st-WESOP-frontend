@@ -7,27 +7,51 @@ class FilterBarExtend extends React.Component {
     super(props);
     this.state = {
       category: this.props.category,
-      categoryExpend: [],
+      skinType: [],
     };
   }
   componentDidMount() {
-    const categories = {};
+    const skinType = {};
+    const themeUse = {};
+    const themeSmell = {};
+
     this.state.category.forEach(category => {
-      categories[category.features] = categories[category.features] || {
-        check_menu_id: category.menu_id,
-        check_menu_name: category.menu_name,
-        check_category_id: category.category_id,
-        check_category_name: category.category_name,
-        check_features_use: category.feature_use,
+      skinType[category.features] = skinType[category.features] || {
         check_features: category.features,
+      };
+    });
+    this.state.category.forEach(category => {
+      themeUse[category.features_use] = themeUse[category.features_use] || {
+        check_features_use: category.features_use,
+      };
+    });
+    this.state.category.forEach(category => {
+      themeSmell[category.features_use] = themeSmell[category.features_use] || {
         check_product_ingredients: category.product_ingredients,
       };
     });
-    this.setState({ categoryExpend: Object.values(categories) });
+    this.setState({
+      skinType: Object.values(skinType),
+      themeUse: Object.values(themeUse),
+      themeSmell: Object.values(themeSmell),
+    });
   }
+
   render() {
-    const { category, categoryExpend } = this.state;
-    console.log(categoryExpend);
+    const { category, skinType, themeUse, themeSmell } = this.state;
+
+    console.log(skinType);
+    // let skinTypeCategory = [];
+
+    // skinType &&
+    //   skinType.map(skin => {
+    //     for (let i = 0; i < Object.keys(skin).length; i++) {
+    //       skinTypeCategory.push(skin[i]);
+    //     }
+    //   });
+    // let skinList = new Set(skinTypeCategory);
+    // console.log(skinList);
+
     // const skinTypeCheck = category.map(categorys => (
     //   <>
     //     <label>
@@ -71,7 +95,6 @@ class FilterBarExtend extends React.Component {
           <Link to="d">
             <header className="themeSkinType">피부타입</header>
           </Link>
-          <p>{categoryExpend && categoryExpend.menu_name}</p>
           {/* <ul className="listSkinType">{skinTypeCheck}</ul> */}
         </div>
         <div className="filterUse">
