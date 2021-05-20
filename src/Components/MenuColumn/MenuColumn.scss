@@ -1,0 +1,60 @@
+@import '../../Styles/variables.scss';
+
+@mixin domino {
+  opacity: 0;
+  animation: appear 1s ease 0s 1 normal forwards;
+}
+
+.menuColumn {
+  position: relative;
+  left: 0;
+  width: 33vw;
+  min-height: 100vh;
+  padding: 40px;
+  background-color: $bgColor;
+  border-right: 1px solid lightgray;
+  transition: 1s;
+  overflow: scroll;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.openAnimation {
+    animation: slide 1s ease-in-out 0s 1 normal forwards;
+  }
+
+  &.closeAnimation {
+    animation: slide 0.5s ease-in-out 0s 1 reverse forwards;
+  }
+
+  .contents {
+    position: absolute;
+    transition: 1s;
+  }
+
+  .category {
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    font-size: 28px;
+
+    .categoryList {
+      width: fit-content;
+      margin: 15px 5px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid $transparent;
+      @include domino;
+    }
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+}
