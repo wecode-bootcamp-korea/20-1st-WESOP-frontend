@@ -29,15 +29,11 @@ class Cart extends React.Component {
   };
 
   deleteCartData = product => {
-    fetch('http://10.58.2.119:8000/orders/cart', {
+    fetch(`http://10.58.2.119:8000/orders/cart/${product.cart_id}`, {
       method: 'DELETE',
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
-      body: JSON.stringify({
-        product_id: Number(product.product_id),
-        size: product.size,
-      }),
     }).then(this.renewCartData);
   };
 

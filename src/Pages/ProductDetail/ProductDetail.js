@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Detail from '../../Components/Detail/Detail';
-import Footer from '../../Components/Footer/Footer';
-import Nav from '../../Components/Nav/Nav';
+import HowToUse from '../../Components/HowToUse/HowToUse';
 import ProductList from '../../Components/ProductList/ProductList';
 import './ProductDetail.scss';
 
@@ -23,7 +22,7 @@ class ProductDetail extends React.Component {
   }
 
   getData = () => {
-    fetch('/data/mockdata.json')
+    fetch('/data/product:1.json')
       // fetch(`/products/${this.props.match.params.pid}`)
       .then(product => product.json())
       .then(product => {
@@ -36,15 +35,14 @@ class ProductDetail extends React.Component {
   render() {
     return (
       <div className="productDetail">
-        <Nav />
         <div className="upperBar">
           <Link to="/">
             <img alt="wesop logo" src="/images/wesop.png" className="logo" />
           </Link>
         </div>
         <Detail product={this.state.product && this.state.product} />
+        <HowToUse />
         <ProductList />
-        <Footer />
       </div>
     );
   }

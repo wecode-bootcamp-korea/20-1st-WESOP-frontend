@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import './Gift.scss';
 
 class Gift extends React.Component {
@@ -56,7 +57,9 @@ class Gift extends React.Component {
       });
   };
 
-  componentDidMount() {}
+  goToDetail = pid => {
+    this.props.history.push(`productdetail/${pid}`);
+  };
 
   render() {
     const { btnActive, priceSize, allSize, price, img, size } = this.state;
@@ -70,7 +73,8 @@ class Gift extends React.Component {
             <input
               className="selectSize"
               type="radio"
-              onClick={() => {
+              onClick={e => {
+                e.stopPropagation();
                 this.choiceSize(selectInfo);
               }}
               name="size"
@@ -87,7 +91,12 @@ class Gift extends React.Component {
           onMouseEnter={this.mouseIn}
           onMouseLeave={this.mouseOut}
         >
-          <div className="giftModel">
+          <div
+            className="giftModel"
+            onClick={() => {
+              this.goToDetail(gift[0].product_id);
+            }}
+          >
             <div className="giftImg">
               <img alt="상품사진" src={img} />
             </div>
@@ -121,7 +130,12 @@ class Gift extends React.Component {
               </div>
             </div>
           </div>
-          <div className="giftDetailInfo">
+          <div
+            className="giftDetailInfo"
+            onClick={() => {
+              this.goToDetail(gift[0].product_id);
+            }}
+          >
             <ul>
               <li>
                 <p>기프트 소개</p>
@@ -145,4 +159,4 @@ class Gift extends React.Component {
   }
 }
 
-export default Gift;
+export default withRouter(Gift);

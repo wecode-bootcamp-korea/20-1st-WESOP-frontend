@@ -41,17 +41,18 @@ class Detail extends React.Component {
   };
 
   componentDidMount() {
-    fetch('/data/mockdata.json')
+    fetch('/data/product:1.json')
       // fetch(`/products/${this.props.match.params.pid}`)
       .then(products => products.json())
       .then(products => {
-        this.setState({
-          product: products.result,
-          img: products.result.product_selections[0].image_url,
-          price: products.result.product_selections[0].price,
-          product_id: products.result.product_id,
-          size: products.result.product_selections[0].size,
-        });
+        products.result.product_selections &&
+          this.setState({
+            product: products.result,
+            img: products.result.product_selections[0].image_url,
+            price: products.result.product_selections[0].price,
+            product_id: products.result.product_id,
+            size: products.result.product_selections[0].size,
+          });
       });
   }
 

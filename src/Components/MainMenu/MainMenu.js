@@ -148,6 +148,7 @@ class MainMenu extends React.Component {
           products={products}
           thirdRequest={thirdRequest}
           animation={animation}
+          close={close}
         />
       </div>
     );

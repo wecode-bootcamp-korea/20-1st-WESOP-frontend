@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import MenuColumn from '../../MenuColumn/MenuColumn';
 import './ThirdMenu.scss';
 
@@ -9,7 +9,7 @@ class ThirdMenu extends React.Component {
     this.state = {};
   }
   render() {
-    const { products, thirdRequest, animation } = this.props;
+    const { products, thirdRequest, animation, close } = this.props;
 
     return (
       <MenuColumn
@@ -29,6 +29,12 @@ class ThirdMenu extends React.Component {
                     key={index}
                     style={{
                       animationDelay: `${index * 0.1 + 0.5}s`,
+                    }}
+                    onClick={() => {
+                      close();
+                      this.props.history.push(
+                        `productdetail/${product[0].product_id}`
+                      );
                     }}
                   >
                     <div className="individualProduct">
@@ -70,4 +76,4 @@ class ThirdMenu extends React.Component {
   }
 }
 
-export default ThirdMenu;
+export default withRouter(ThirdMenu);

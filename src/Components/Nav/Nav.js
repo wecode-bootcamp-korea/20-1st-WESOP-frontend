@@ -1,6 +1,6 @@
 import React from 'react';
 import LogIn from '../../Components/Login/Login';
-// import SignUp from '../../Components/'
+import SignUp from '../../Components/SignUp/SignUp';
 import MainMenu from '../../Components/MainMenu/MainMenu';
 import NeedLogin from '../NeedLogin/NeedLogin';
 import Cart from '../Cart/Cart';
@@ -76,7 +76,13 @@ class Nav extends React.Component {
             }}
           />
         )}
-        {openState.회원가입 && <div></div>}
+        {openState.회원가입 && (
+          <SignUp
+            signUpToggle={() => {
+              navToggle('회원가입');
+            }}
+          />
+        )}
         {openState.주문내역 && (
           <OrderList
             navToggle={() => {

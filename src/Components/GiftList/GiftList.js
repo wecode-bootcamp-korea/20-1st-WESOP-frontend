@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Gift from './Gift/Gift';
 import './GiftList.scss';
 
@@ -20,6 +21,19 @@ class GiftList extends React.Component {
       );
   }
 
+  componentDidUpdate(pervProps) {
+    if (pervProps.match.params.mid !== this.props.match.params.mid) {
+      this.setState({ product: '' });
+      fetch('./data/category_id=1.json')
+        .then(products => products.json())
+        .then(products =>
+          this.setState({
+            product: products.result,
+          })
+        );
+    }
+  }
+
   render() {
     const { product } = this.state;
     console.log(product);
@@ -34,4 +48,4 @@ class GiftList extends React.Component {
   }
 }
 
-export default GiftList;
+export default withRouter(GiftList);
