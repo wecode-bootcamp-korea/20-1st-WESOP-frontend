@@ -26,17 +26,27 @@ class MainMenu extends React.Component {
     fetch('/data/menuMockdata.json')
       .then(res => res.json())
       .then(res => {
-        const menus = res['result'].map(obj => obj['menu_name']);
+        const menus = res['result'].map(obj => ({
+          menu_id: obj.menu_id,
+          menu_name: obj.menu_name,
+        }));
         this.setState({ menus: menus });
 
         const categories = {};
         res.result.forEach(menu => {
-          categories[menu.menu_name] = menu.category_list.map(
-            cat => cat.category_name
-          );
+          categories[menu.menu_name] = menu.category_list.map(obj => ({
+            category_id: obj.category_id,
+            category_name: obj.category_name,
+          }));
           this.setState({ categories: categories });
         });
       });
+
+    document.body.style.overflow = 'hidden';
+  }
+
+  componentWillUnmount() {
+    document.body.style.overflow = 'unset';
   }
 
   handleFirstRequest = upperMenu => {
@@ -72,13 +82,18 @@ class MainMenu extends React.Component {
         thirdRequest: [],
       },
       () => {
-        this.setState({ thirdRequest: category });
+        this.setState({ thirdRequest: category.category_name });
       }
     );
 
-    fetch('./data/productMockdata.json')
+    fetch(`./data/category_id=${category.category_id}.json`, {
+      headers: {
+        Accept: 'application/json',
+      },
+    })
       .then(res => res.json())
       .then(products => this.setState({ products: products.result }));
+
     //나중에 이부분 동적으로 수정해줘야 세 번째 칸 데이터를 제대로 받을 수 있음
   };
 
