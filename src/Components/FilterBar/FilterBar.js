@@ -33,6 +33,7 @@ class FilterBar extends React.Component {
             category_name: category[0].category_name,
             feature_category_name:
               category[0].product_features[0].feature_category_name,
+            features_use: category[0].product_features[1].features,
             features: category[0].product_features[0].features,
             product_ingredients: category[0].product_ingredients,
           };
@@ -67,14 +68,6 @@ class FilterBar extends React.Component {
 
   render() {
     const { filterBtnOpen, filterBtnClose, category } = this.state;
-    // let array = [];
-    // array = array.push(category[0]);
-    // const set = new Set(array);
-    // const unique = [...set];
-    // console.log(unique);
-    // console.log(category[0]);
-    // console.log(category && category[0].category_id);
-    // console.log(category);
     const categoryList = category.map(categorys => (
       <>
         <Link to="d">
@@ -89,7 +82,7 @@ class FilterBar extends React.Component {
             <div className="filterBarBefore">
               <div className="filterBarNav" ref={this.filterBar}>
                 <ul className="filterList">
-                  <li>모든</li>
+                  <li>모든상품</li>
                   <li>|</li>
                   {categoryList}
                 </ul>
@@ -115,14 +108,14 @@ class FilterBar extends React.Component {
                 </div>
               </>
             )}
-            {filterBtnClose && (
-              <FilterBarExtend
-                category={category}
-                filterBtnClose={filterBtnClose}
-                styleChange={this.state.offsetTop < 0}
-              />
-            )}
           </div>
+        )}
+        {filterBtnClose && (
+          <FilterBarExtend
+            category={category}
+            filterBtnClose={filterBtnClose}
+            styleChange={this.state.offsetTop < 0}
+          />
         )}
       </>
     );

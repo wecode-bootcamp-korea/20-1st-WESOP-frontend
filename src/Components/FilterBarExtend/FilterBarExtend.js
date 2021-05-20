@@ -11,43 +11,37 @@ class FilterBarExtend extends React.Component {
   }
   render() {
     const { category } = this.state;
-    const skinTypeCheck =
-      category &&
-      category.map(categorys => (
-        <>
-          <label>
-            <li>
-              <input type="checkbox" value="" />
-              {categorys.features}
-            </li>
-          </label>
-        </>
-      ));
-    const themeUseCheck = category.map(categorys => (
-      <>
-        <>
-          <label>
-            <li>
-              <input type="checkbox" value="" />
-              {/* {categorys[0].product_features[0].features} */}
-            </li>
-          </label>
-        </>
-      </>
-    ));
-    const themeSmellCheck = category.map(categorys => (
-      <>
-        <>
-          <label>
-            <li>
-              <input type="checkbox" value="" />
-              {/* {categorys[0].product_ingredients} */}
-            </li>
-          </label>
-        </>
-      </>
-    ));
-    console.log(category);
+    // const skinTypeCheck = category.map(categorys => (
+    //   <>
+    //     <label>
+    //       <li>
+    //         <input type="checkbox" value="" />
+    //         {categorys.features}
+    //       </li>
+    //     </label>
+    //   </>
+    // ));
+    // const themeUseCheck = category.map(categorys => (
+    //   <>
+    //     <label>
+    //       <li>
+    //         <input type="checkbox" value="" />
+    //         {categorys.features_use}
+    //       </li>
+    //     </label>
+    //   </>
+    // ));
+    // const themeSmellCheck = category.map(categorys => (
+    //   <>
+    //     <label>
+    //       <li>
+    //         <input type="checkbox" value="" />
+    //         {categorys.product_ingredients}
+    //       </li>
+    //     </label>
+    //   </>
+    // ));
+
     return (
       <div
         className="filterBarNavExpend"
