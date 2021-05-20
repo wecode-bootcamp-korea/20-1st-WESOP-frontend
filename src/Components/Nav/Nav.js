@@ -1,4 +1,6 @@
 import React from 'react';
+import LogIn from '../../Components/Login/Login';
+// import SignUp from '../../Components/'
 import MainMenu from '../../Components/MainMenu/MainMenu';
 import NeedLogin from '../NeedLogin/NeedLogin';
 import Cart from '../Cart/Cart';
@@ -65,19 +67,15 @@ class Nav extends React.Component {
       '주문내역',
     ];
 
-    // sessionStorage.setItem(
-    //   'accessToken',
-    //   JSON.stringify('17264sdfsdfds39127312830921')
-    // );
-
-    // sessionStorage.setItem(
-    //   'accessToken',
-    //   JSON.stringify('17264sdfsdfds39127312830921')
-    // );
-
     return (
       <>
-        {openState.로그인 && <div></div>}
+        {openState.로그인 && (
+          <LogIn
+            loginToggle={() => {
+              navToggle('로그인');
+            }}
+          />
+        )}
         {openState.회원가입 && <div></div>}
         {openState.주문내역 && (
           <OrderList
@@ -86,7 +84,6 @@ class Nav extends React.Component {
             }}
           />
         )}
-        {/* 로그인, 회원가입 컴포넌트 넣을 곳 */}
         {openState.비회원 && (
           <NeedLogin
             navToggle={() => {

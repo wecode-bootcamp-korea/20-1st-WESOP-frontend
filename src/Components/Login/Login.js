@@ -54,6 +54,9 @@ class Login extends React.Component {
           this.setState({
             animation: 'offLoginPage',
           });
+          setTimeout(() => {
+            this.props.loginToggle();
+          }, 600);
           alert('환영합니다!');
         }
       });
@@ -92,6 +95,9 @@ class Login extends React.Component {
                 this.setState({
                   animation: 'offLoginPage',
                 });
+                setTimeout(() => {
+                  this.props.loginToggle();
+                }, 600);
               }}
             >
               <img alt="closeButton_image" src="./images/closeBtn.png" />
