@@ -18,7 +18,7 @@ class Detail extends React.Component {
     fetch('http://192.168.0.24:8000/orders/cart', {
       method: 'POST',
       headers: {
-        Authorization: JSON.parse(window.sessionStorage.getItem('accessToken')),
+        Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
       body: JSON.stringify({
         product_id: Number(this.state.product_id),

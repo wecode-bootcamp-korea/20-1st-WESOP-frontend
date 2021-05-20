@@ -2,10 +2,6 @@ import React from 'react';
 import './MenuColumn.scss';
 
 class MenuColumn extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { zIndex, left, animation } = this.props;
     return (

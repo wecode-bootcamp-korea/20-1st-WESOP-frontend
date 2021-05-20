@@ -1,6 +1,9 @@
 import React from 'react';
-import './Nav.scss';
 import MainMenu from '../../Components/MainMenu/MainMenu';
+import NeedLogin from '../NeedLogin/NeedLogin';
+import Cart from '../Cart/Cart';
+import './Nav.scss';
+import OrderList from '../OrderList/OrderList';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -14,6 +17,8 @@ class Nav extends React.Component {
         로그인: false,
         회원가입: false,
         카트: false,
+        주문내역: false,
+        비회원: false,
       },
       isLoggedIn: JSON.parse(window.sessionStorage.getItem('accessToken')),
     };
@@ -50,7 +55,20 @@ class Nav extends React.Component {
     const { hide, openState, isLoggedIn } = this.state;
     const { navToggle, logOut } = this;
 
-    const NAV_DATA = ['제품보기', '읽기', '검색', '로그인', '회원가입', '카트'];
+    const NAV_DATA = [
+      '제품보기',
+      '읽기',
+      '검색',
+      '로그인',
+      '회원가입',
+      '카트',
+      '주문내역',
+    ];
+
+    // sessionStorage.setItem(
+    //   'accessToken',
+    //   JSON.stringify('17264sdfsdfds39127312830921')
+    // );
 
     // sessionStorage.setItem(
     //   'accessToken',
@@ -59,18 +77,39 @@ class Nav extends React.Component {
 
     return (
       <>
+        {openState.로그인 && <div></div>}
+        {openState.회원가입 && <div></div>}
+        {openState.주문내역 && (
+          <OrderList
+            navToggle={() => {
+              navToggle('주문내역');
+            }}
+          />
+        )}
+        {/* 로그인, 회원가입 컴포넌트 넣을 곳 */}
+        {openState.비회원 && (
+          <NeedLogin
+            navToggle={() => {
+              navToggle('비회원');
+            }}
+          />
+        )}
         <div
           className={`nav ${hide && 'hide'} ${
             document.documentElement.scrollTop > 10 && 'background'
           }`}
         >
-          <div className="shippingBanner">
-            <button className="shippingBannerButton" type="button">
-              <p className="shippingBannerContent">
-                전 제품 무료 표준 배송 혜택을 즐겨보세요.
-              </p>
-            </button>
-          </div>
+          {openState.카트 ? (
+            <Cart cartToggle={() => navToggle('카트')} />
+          ) : (
+            <div className="shippingBanner">
+              <button className="shippingBannerButton" type="button">
+                <p className="shippingBannerContent">
+                  전 제품 무료 표준 배송 혜택을 즐겨보세요.
+                </p>
+              </button>
+            </div>
+          )}
           <div className="navHeader">
             <div className="navHeaderContainer">
               <ul className="leftMenu">
@@ -92,7 +131,7 @@ class Nav extends React.Component {
                     <li
                       key={index}
                       onClick={() => {
-                        navToggle(nav);
+                        index >= 2 ? navToggle('비회원') : navToggle(nav);
                       }}
                     >
                       {nav}
@@ -113,13 +152,20 @@ class Nav extends React.Component {
                       카트
                       <hr />
                     </li>
+                    <li
+                      onClick={() => {
+                        navToggle('주문내역');
+                      }}
+                    >
+                      주문내역
+                      <hr />
+                    </li>
                   </>
                 )}
               </ul>
             </div>
           </div>
         </div>
-        {openState.로그인 && <div></div>}
         {NAV_DATA.slice(0, 3).map(
           (nav, index) =>
             openState[nav] && (

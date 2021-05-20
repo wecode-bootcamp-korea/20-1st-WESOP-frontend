@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import GiftPage from './Pages/GiftPage/GiftPage';
 import Main from './Pages/Main/Main';
 import Products from './Pages/Products/Products';
 import GiftPage from './Pages/GiftPage/GiftPage';
