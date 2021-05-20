@@ -41,6 +41,12 @@ class MainMenu extends React.Component {
           this.setState({ categories: categories });
         });
       });
+
+    document.body.style.overflow = 'hidden';
+  }
+
+  componentWillUnmount() {
+    document.body.style.overflow = 'unset';
   }
 
   handleFirstRequest = upperMenu => {
