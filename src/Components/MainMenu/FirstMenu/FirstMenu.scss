@@ -1,0 +1,69 @@
+@import '../../../Styles/variables.scss';
+
+.firstMenu {
+  .menuNav {
+    width: 100%;
+    height: 70px;
+
+    ul {
+      display: flex;
+
+      li {
+        position: relative;
+        margin-right: 30px;
+        overflow: hidden;
+
+        hr {
+          position: relative;
+          top: -5px;
+          right: 100%;
+          border: none;
+          border-bottom: 1px solid #333;
+          transition: 0.5s;
+        }
+
+        &:hover hr {
+          right: 0;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 35px;
+      right: 40px;
+      cursor: pointer;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 10px;
+    right: 15%;
+    color: $darkGray;
+    font-size: 18px;
+  }
+
+  input {
+    width: 85%;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    background-color: $transparent;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    outline-color: $transparent;
+    font-size: 32px;
+
+    &:focus-within {
+      border-color: $darkGray;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    top: 150px;
+    width: 100px;
+    margin-bottom: 20px;
+    transition: 1s;
+  }
+}

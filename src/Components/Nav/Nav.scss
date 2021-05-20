@@ -1,0 +1,84 @@
+.nav {
+  position: sticky;
+  top: -45px;
+  width: 100%;
+  color: #333;
+  z-index: 1;
+  transition: 0.5s;
+
+  &.background {
+    background-color: #fffef2;
+    border-bottom: 1px solid lightgray;
+  }
+
+  &.hide {
+    top: -120px;
+    transition: 1s;
+  }
+
+  li {
+    cursor: pointer;
+  }
+
+  .shippingBanner {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #252525;
+    justify-content: center;
+    border: 1px solid;
+
+    .shippingBannerButton {
+      height: 20px;
+      margin: auto;
+      background: transparent;
+      border: 0;
+
+      .shippingBannerContent {
+        color: #fffef2;
+      }
+    }
+  }
+
+  .navHeader {
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    .navHeaderContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .leftMenu,
+      .rightMenu {
+        display: flex;
+        padding: 20px;
+
+        li {
+          position: relative;
+          margin: 0 12px;
+          padding: 10px 0;
+          overflow: hidden;
+
+          hr {
+            position: absolute;
+            top: 20px;
+            right: 100%;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #333;
+            transition: 0.3s;
+          }
+
+          &:hover hr {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}

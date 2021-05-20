@@ -17,7 +17,7 @@ class MainProduct extends React.Component {
           <Link to="/products">
             <button>
               비타민 C 알아보기
-              <i class="fas fa-arrow-right" />
+              <i className="fas fa-arrow-right" />
             </button>
           </Link>
         </div>

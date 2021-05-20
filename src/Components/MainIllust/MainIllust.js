@@ -24,11 +24,15 @@ class MainIllust extends React.Component {
     const { children } = this.props;
     return (
       <div className="mainIllust">
-        <img className="illust" alt="main illust" src="/images/illust.png" />
+        <img
+          className="illust"
+          alt="main illust"
+          src={this.props.img || '/images/illust.png'}
+        />
         <Link to="/">
           <img
             alt="wesop logo"
-            src="images/wesop.png"
+            src="/images/wesop.png"
             className="logo"
             style={{ transform: `rotate(${this.state.wheel}turn)` }}
           />
@@ -46,7 +50,7 @@ class MainIllust extends React.Component {
               <Link to="/giftpage">
                 <button>
                   기프트 보기
-                  <i class="fas fa-arrow-right" />
+                  <i className="fas fa-arrow-right" />
                 </button>
               </Link>
             </div>
