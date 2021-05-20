@@ -11,7 +11,7 @@ class SecondMenu extends React.Component {
 
   goToList = category_id => {
     this.props.close();
-    this.props.history.push(`/products/category_id/${category_id}`);
+    this.props.history.push(`/giftpage/${category_id}`);
   };
 
   render() {
