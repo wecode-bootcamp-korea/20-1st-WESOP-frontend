@@ -55,7 +55,7 @@ class FilterBar extends React.Component {
   }
 
   handle = () => {
-    this.filterBar.current.getBoundingClientRect().top <= 50
+    this.filterBar.current.getBoundingClientRect().top <= 0
       ? this.setState({ offsetTop: true })
       : this.setState({ offsetTop: false });
   };
@@ -75,7 +75,7 @@ class FilterBar extends React.Component {
   render() {
     const { filterBtnOpen, filterBtnClose, category } = this.state;
     const categoryList = category.map(categorys => (
-      <Link to="">
+      <Link to="/giftpage">
         <li>{categorys.category_name}</li>
       </Link>
     ));
@@ -99,7 +99,13 @@ class FilterBar extends React.Component {
 
             {this.state.offsetTop && (
               <div className="filterBarAfter">
-                <img className="logo" alt="위솝로고" src="/images/wesop.png" />
+                <Link to="/">
+                  <img
+                    className="logo"
+                    alt="위솝로고"
+                    src="/images/wesop.png"
+                  />
+                </Link>
                 <div className="filterCategory" onClick={this.filterBtn}>
                   {filterBtnOpen && <FilterBtnOpen />}
                   {filterBtnClose && <FilterBtnClose />}

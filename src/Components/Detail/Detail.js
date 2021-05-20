@@ -118,7 +118,7 @@ class Detail extends React.Component {
                   <li>{product.menu_name}</li>
                 </ul>
                 <div className="detailNameExplain">
-                  <h1 className="detailName">{product.category_name}</h1>
+                  <h1 className="detailName">{product.product_name}</h1>
                   <p className="detailExplain">{product.product_description}</p>
                 </div>
                 <ul className="detailInfo">{featureList}</ul>

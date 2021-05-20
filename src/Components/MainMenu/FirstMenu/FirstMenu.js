@@ -69,10 +69,17 @@ class FirstMenu extends React.Component {
         },
       ],
       검색: [
-        { menu_id: 0, menu_name: '인기검색어' },
-        { menu_id: 0, menu_name: '클렌저' },
-        { menu_id: 0, menu_name: '트리트먼트' },
-        { menu_id: 0, menu_name: '마스크' },
+        {
+          menu_id: 0,
+          menu_name: '인기검색어',
+        },
+        { menu_id: 0, menu_name: '클렌저', link: '/search?search=클렌저' },
+        {
+          menu_id: 0,
+          menu_name: '트리트먼트',
+          link: '/search?search=트리트먼트',
+        },
+        { menu_id: 0, menu_name: '마스크', link: '/search?search=마스크' },
       ],
     };
 
@@ -112,7 +119,9 @@ class FirstMenu extends React.Component {
             {firstRequest === '검색' && (
               <>
                 <i className="fas fa-arrow-right" />
-                <input />
+                <form action="/search" method="get">
+                  <input name="search" />
+                </form>
               </>
             )}
             <ul>

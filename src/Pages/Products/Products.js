@@ -80,8 +80,6 @@ class Products extends React.Component {
   render() {
     const { inventoryData, productsData } = this.state;
 
-    console.log(Object.values(productsData));
-
     return (
       <div className="products">
         <div className="upperBar">

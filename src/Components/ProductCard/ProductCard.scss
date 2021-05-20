@@ -3,6 +3,7 @@
   height: 530px;
   transition: 0.5s;
   cursor: pointer;
+  animation: smoothAppear 1s;
 
   .imgContainer {
     position: relative;

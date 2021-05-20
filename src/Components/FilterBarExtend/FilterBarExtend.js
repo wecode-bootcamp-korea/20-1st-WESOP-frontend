@@ -72,7 +72,14 @@ class FilterBarExtend extends React.Component {
     const skinTypeCheck = skinType.map(categorys => (
       <label>
         <li>
-          <input type="checkbox" value="" />
+          <input
+            type="checkbox"
+            name="skintype_id"
+            value="9"
+            // onChange={e => {
+            //   console.log(e);
+            // }}
+          />
           {categorys}
         </li>
       </label>
@@ -104,22 +111,24 @@ class FilterBarExtend extends React.Component {
           borderBottom: this.props.styleChange && '1px solid lightgray',
         }}
       >
-        <div className="filterSkinType">
-          <Link to="d">
-            <header className="themeSkinType">피부타입</header>
-          </Link>
+        <form
+          className="filterSkinType"
+          action="/filter"
+          method="get"
+          // onChange={e => {
+          //   console.log(e);
+          // }}
+        >
+          <header className="themeSkinType">피부타입</header>
           <ul className="listSkinType">{skinTypeCheck}</ul>
-        </div>
+        </form>
         <div className="filterUse">
-          <Link to="d">
-            <header className="themeUse">제품특징</header>
-          </Link>
+          <header className="themeUse">제품특징</header>
           <ul className="listUse">{themeUseCheck}</ul>
         </div>
         <div className="filterSmell">
-          <Link to="">
-            <header className="themeSmell">성분</header>
-          </Link>
+          <header className="themeSmell">성분</header>
+
           <ul className="listSmell">{themeSmellCheck}</ul>
         </div>
       </div>
