@@ -6,12 +6,14 @@ class BaseForm extends React.Component {
     this.state = {};
   }
   render() {
-    const { name, text, type, errorMsg, isCheck, handleValue } = this.props;
+    const { name, text, type, errorMsg, isCheck, handleValue, value } =
+      this.props;
+
     return (
       <>
         <div className="formRow">
           <div className="formText">
-            <label htmlFor="#">
+            <label htmlFor={name}>
               <input
                 className={isCheck ? 'formTextInput' : 'isError'}
                 name={name}
@@ -19,11 +21,13 @@ class BaseForm extends React.Component {
                 aria-required="true"
                 onChange={handleValue}
               />
-              <span className={name ? 'formTextLabel' : 'typing'}>{text}</span>
+              <span className={!value ? 'formTextLabel' : 'typing'}>
+                {text}
+              </span>
             </label>
           </div>
         </div>
-        <div className={name && !isCheck ? 'errorMessage' : 'opacity'}>
+        <div className={value && !isCheck ? 'errorMessage' : 'opacity'}>
           {errorMsg}
         </div>
       </>

@@ -6,11 +6,12 @@ class AddForm extends React.Component {
     this.state = {};
   }
   render() {
-    const { name, text, type, isCheck, handleValue } = this.props;
+    const { name, text, type, isCheck, handleValue, value } = this.props;
+
     return (
       <>
         <div className="formText">
-          <label htmlFor="#">
+          <label htmlFor={name}>
             <input
               onChange={handleValue}
               aria-required="true"
@@ -18,7 +19,7 @@ class AddForm extends React.Component {
               className={isCheck ? 'formTextInput' : 'isError'}
               name={name}
             />
-            <span className={name ? 'formTextLabel' : 'typing'}>{text}</span>
+            <span className={!value ? 'formTextLabel' : 'typing'}>{text}</span>
           </label>
         </div>
       </>

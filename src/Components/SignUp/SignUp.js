@@ -20,8 +20,8 @@ class SignUp extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://192.168.0.24:8000/user/signup', {
-      //http://10.58.5.240:8000/user/signup
+    fetch('', {
+      //http://10.58.2.119:8000/user/signup
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -35,7 +35,7 @@ class SignUp extends React.Component {
       .then(resData => resData.json())
       .then(jsonData => {
         console.log(jsonData);
-        localStorage.setItem('accessToken', jsonData.token);
+        sessionStorage.setItem('accessToken', JSON.stringify(jsonData.token));
         // this.props.history.push('#');
         if (jsonData.MESSAGE === 'INVALID_EMAIL') {
           alert('이메일을 확인해주세요.');
@@ -72,12 +72,6 @@ class SignUp extends React.Component {
       this.setState({ animation: '' });
     }, 600);
   }
-
-  close = () => {
-    this.setState({
-      animation: 'offLoginPage',
-    });
-  };
 
   render() {
     const {
@@ -178,6 +172,7 @@ class SignUp extends React.Component {
                   errorMsg={el.errorMsg}
                   isCheck={el.isCheck}
                   handleValue={this.handleValue}
+                  value={this.state[el.name]}
                 />
               ))}
               <div className="formRow">
@@ -189,12 +184,13 @@ class SignUp extends React.Component {
                     type={el.type}
                     isCheck={el.isCheck}
                     handleValue={this.handleValue}
+                    value={this.state[el.name]}
                   />
                 ))}
               </div>
               <div className="formRow">
                 <div className="formText">
-                  <label htmlFor="#">
+                  <label htmlFor={this.state.phonenumber}>
                     <input
                       onChange={this.handleValue}
                       aria-required="true"
