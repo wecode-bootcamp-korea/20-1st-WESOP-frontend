@@ -44,7 +44,7 @@ class Login extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('', {
+    fetch('http://10.58.2.119:8000/user/login', {
       //http://192.168.0.24:8000/user/login
       method: 'POST',
       body: JSON.stringify({
@@ -54,7 +54,6 @@ class Login extends React.Component {
     })
       .then(resData => resData.json())
       .then(jsonData => {
-        console.log(jsonData);
         sessionStorage.setItem('accessToken', JSON.stringify(jsonData.token));
         // this.props.history.push('#');
         if (jsonData.MESSAGE === 'INVALID_EMAIL') {

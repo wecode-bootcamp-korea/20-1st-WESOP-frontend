@@ -9,7 +9,7 @@ class Form extends React.Component {
   render() {
     const { name, type, text, errorMsg, handleValue, isCheck, value } =
       this.props;
-    console.log(value);
+
     return (
       <form className="loginForm">
         <div className="formRow">
