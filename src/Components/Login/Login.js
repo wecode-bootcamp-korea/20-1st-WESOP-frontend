@@ -34,11 +34,17 @@ class Login extends React.Component {
     setTimeout(() => {
       this.setState({ animation: '' });
     }, 600);
+
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+  }
+
+  componentWillUnmount() {
+    document.getElementsByTagName('body')[0].style.overflow = '';
   }
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://192.168.0.24:8000/user/login', {
+    fetch('', {
       //http://192.168.0.24:8000/user/login
       method: 'POST',
       body: JSON.stringify({
@@ -49,7 +55,7 @@ class Login extends React.Component {
       .then(resData => resData.json())
       .then(jsonData => {
         console.log(jsonData);
-        sessionStorage.setItem('accessToken', jsonData.token);
+        sessionStorage.setItem('accessToken', JSON.stringify(jsonData.token));
         // this.props.history.push('#');
         if (jsonData.MESSAGE === 'INVALID_EMAIL') {
           alert('이메일을 확인해주세요.');
@@ -117,7 +123,7 @@ class Login extends React.Component {
                 errorMsg={input.errorMsg}
                 isCheck={input.isCheck}
                 handleValue={this.handleValue}
-                value={this.state.email}
+                value={this.state[input.name]}
               />
             ))}
 

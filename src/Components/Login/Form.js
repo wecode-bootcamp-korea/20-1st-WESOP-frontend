@@ -22,10 +22,10 @@ class Form extends React.Component {
               onChange={handleValue}
             />
 
-            <span className={!name ? 'typing' : 'formTextLabel'}>{text}</span>
+            <span className={value ? 'typing' : 'formTextLabel'}>{text}</span>
           </label>
         </div>
-        <div className={name && !isCheck ? 'errorMessage' : 'opacity'}>
+        <div className={value && !isCheck ? 'errorMessage' : 'opacity'}>
           {errorMsg}
         </div>
       </form>
