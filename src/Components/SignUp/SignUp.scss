@@ -34,14 +34,14 @@
   }
 
   .modalBody {
+    position: relative;
     margin: 0 auto;
-    max-width: 550px;
     padding: 50px;
+    max-width: 550px;
+    width: 100%;
     background-color: #fffef2;
     color: #252525;
-    position: relative;
     transform: translateZ(0);
-    width: 100%;
 
     .loginForm {
       .modalCloseBtn {
@@ -74,9 +74,9 @@
         z-index: 1;
 
         .formText {
+          position: relative;
           margin: 0 0 10px;
           padding: 30px 10px 0;
-          position: relative;
           width: 100%;
 
           label {
@@ -92,27 +92,27 @@
             .formTextInput {
               position: flex;
               margin: 0;
+              padding: 8px 0;
               width: 100%;
               height: 40px;
               font-size: 20px;
               line-height: 1;
-              padding: 8px 0;
               border: solid rgba(51, 51, 51, 0.2);
               border-width: 0 0 1px;
               background-color: transparent;
             }
             &:focus-within .formTextLabel {
               display: relative;
-              font-size: 14px;
               top: -42%;
+              font-size: 14px;
             }
 
             .formTextLabel {
               position: absolute;
-              font-size: 28px;
-              bottom: 0;
-              color: #666;
               left: 0;
+              bottom: 0;
+              font-size: 28px;
+              color: #666;
               line-height: 1.75;
               pointer-events: none;
               transition: 0.2s;
@@ -131,7 +131,6 @@
         height: 60px;
         min-width: 210px;
         background-color: #333;
-        color: white;
         border: 1px solid rgba(51, 51, 51, 0.2);
         transition: all 0.5s ease;
         font-weight: inherit;
@@ -155,20 +154,14 @@
     }
   }
 
-  .isError,
-  .isPhoneNumberError,
-  .isFirstNameError,
-  .isLastNameError,
-  .isConfirmError,
-  .isEmailError,
-  .isPasswordError {
+  .isError {
     position: flex;
+    padding: 8px 0;
     margin: 0;
     width: 100%;
     height: 40px;
     font-size: 20px;
     line-height: 1;
-    padding: 8px 0;
     border: solid rgba(51, 51, 51, 0.2);
     border-width: 0 0 1px;
     background-color: transparent;
@@ -176,16 +169,16 @@
 
   .typing {
     position: absolute;
+    top: -28%;
     color: #666;
     font-size: 14px;
-    top: -28%;
   }
 
   .errorMessage {
-    font-size: 14px;
-    opacity: 1;
     padding-bottom: 10px;
+    font-size: 14px;
     color: #ea6956;
+    opacity: 1;
   }
 
   .opacity {
