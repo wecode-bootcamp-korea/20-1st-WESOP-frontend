@@ -14,11 +14,20 @@ class FilterBarExtend extends React.Component {
     const skinType = {};
     const themeUse = {};
     const themeSmell = {};
+    let skinTypeCategory = [];
+    console.log(this.state.category);
 
     this.state.category.forEach(category => {
       skinType[category.features] = skinType[category.features] || {
         check_features: category.features,
       };
+    });
+    Object.values(skinType).forEach(ele => {
+      ele.check_features.forEach(type => {
+        if (!skinTypeCategory.includes(type)) {
+          skinTypeCategory.push(type);
+        }
+      });
     });
     this.state.category.forEach(category => {
       themeUse[category.features_use] = themeUse[category.features_use] || {
@@ -31,7 +40,7 @@ class FilterBarExtend extends React.Component {
       };
     });
     this.setState({
-      skinType: Object.values(skinType),
+      skinType: skinTypeCategory,
       themeUse: Object.values(themeUse),
       themeSmell: Object.values(themeSmell),
     });
@@ -41,7 +50,8 @@ class FilterBarExtend extends React.Component {
     const { category, skinType, themeUse, themeSmell } = this.state;
 
     console.log(skinType);
-    // let skinTypeCategory = [];
+
+    // console.log(skinTypeCategory);
 
     // skinType &&
     //   skinType.map(skin => {
