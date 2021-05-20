@@ -4,7 +4,7 @@ import GiftList from '../../Components/GiftList/GiftList';
 import Nav from '../../Components/Nav/Nav';
 import MainIllust from '../../Components/MainIllust/MainIllust';
 
-class GiftProductList extends React.Component {
+class GiftPage extends React.Component {
   render() {
     return (
       <>
@@ -17,4 +17,4 @@ class GiftProductList extends React.Component {
   }
 }
 
-export default GiftProductList;
+export default GiftPage;

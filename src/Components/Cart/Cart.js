@@ -38,7 +38,7 @@ class Cart extends React.Component {
         product_id: Number(product.product_id),
         size: product.size,
       }),
-    }).then(this.renewCartData());
+    }).then(this.renewCartData);
   };
 
   modifyCartData = (product, i) => {
@@ -52,9 +52,7 @@ class Cart extends React.Component {
         size: product.size,
         quantity: i,
       }),
-    }).then(() => {
-      this.renewCartData();
-    });
+    }).then(this.renewCartData);
   };
 
   renewCartData = () => {
@@ -74,7 +72,7 @@ class Cart extends React.Component {
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
-    }).then(this.renewCartData());
+    }).then(this.renewCartData);
   };
 
   render() {
