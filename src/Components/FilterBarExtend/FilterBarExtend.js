@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { BrowserRouter, withRouter, Link } from 'react-router-dom';
 import './FilterBarExtend.scss';
 
 class FilterBarExtend extends React.Component {
@@ -54,19 +54,19 @@ class FilterBarExtend extends React.Component {
           <Link to="d">
             <header className="themeSkinType">피부타입</header>
           </Link>
-          <ul className="listSkinType">{skinTypeCheck}</ul>
+          {/* <ul className="listSkinType">{skinTypeCheck}</ul> */}
         </div>
         <div className="filterUse">
           <Link to="d">
             <header className="themeUse">제품특징</header>
           </Link>
-          <ul className="listUse">{themeUseCheck}</ul>
+          {/* <ul className="listUse">{themeUseCheck}</ul> */}
         </div>
         <div className="filterSmell">
           <Link to="">
             <header className="themeSmell">성분</header>
           </Link>
-          <ul className="listSmell">{themeSmellCheck}</ul>
+          {/* <ul className="listSmell">{themeSmellCheck}</ul> */}
         </div>
       </div>
     );

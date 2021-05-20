@@ -69,11 +69,9 @@ class FilterBar extends React.Component {
   render() {
     const { filterBtnOpen, filterBtnClose, category } = this.state;
     const categoryList = category.map(categorys => (
-      <>
-        <Link to="d">
-          <li>{categorys.category_name}</li>
-        </Link>
-      </>
+      <Link to="d">
+        <li>{categorys.category_name}</li>
+      </Link>
     ));
     return (
       <>
@@ -94,19 +92,13 @@ class FilterBar extends React.Component {
             </div>
 
             {this.state.offsetTop < 0 && (
-              <>
-                <div className="filterBarAfter">
-                  <img
-                    className="logo"
-                    alt="위솝로고"
-                    src="/images/wesop.png"
-                  />
-                  <div className="filterCategory" onClick={this.filterBtn}>
-                    {filterBtnOpen && <FilterBtnOpen />}
-                    {filterBtnClose && <FilterBtnClose />}
-                  </div>
+              <div className="filterBarAfter">
+                <img className="logo" alt="위솝로고" src="/images/wesop.png" />
+                <div className="filterCategory" onClick={this.filterBtn}>
+                  {filterBtnOpen && <FilterBtnOpen />}
+                  {filterBtnClose && <FilterBtnClose />}
                 </div>
-              </>
+              </div>
             )}
           </div>
         )}
