@@ -38,11 +38,11 @@ class MainMenu extends React.Component {
         });
       });
 
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
   }
 
   componentWillUnmount() {
-    document.getElementsByTagName('body')[0].style.overflow = '';
+    document.body.style.overflow = 'unset';
   }
 
   handleFirstRequest = upperMenu => {

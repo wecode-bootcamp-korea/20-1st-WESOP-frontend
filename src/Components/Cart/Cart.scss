@@ -40,6 +40,8 @@
 
         &:hover p {
           display: inline;
+          position: relative;
+          right: 20px;
           cursor: pointer;
         }
       }

@@ -15,21 +15,21 @@ class OrderList extends React.Component {
       this.setState({ animation: '' });
     }, 600);
 
-    fetch('http://192.168.0.24:8000/orders/cart', {
+    fetch('http://10.58.2.119:8000/orders/log', {
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
     })
       .then(res => res.json())
       .then(orderData => {
-        this.setState({ orderData: orderData.result });
+        this.setState({ orderData: orderData.result, animation: '' });
       });
 
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
   }
 
   componentWillUnmount() {
-    document.getElementsByTagName('body')[0].style.overflow = '';
+    document.body.style.overflow = 'unset';
   }
 
   close = () => {
@@ -40,6 +40,8 @@ class OrderList extends React.Component {
   };
 
   render() {
+    const { orderData } = this.state;
+
     return (
       <div className="bodyBack">
         <div className="orderList">
@@ -53,34 +55,28 @@ class OrderList extends React.Component {
             </button>
             <div className="modalHeadingWrap">
               <h1 className="modalTitle">주문 내역</h1>
-              <table>
-                <tr>
-                  <th>상품명</th>
-                  <th>사이즈</th>
-                  <th>수량</th>
-                  <th>가격</th>
-                </tr>
-                <tr>
-                  <td>product.name</td>
-                  <td>product.size</td>
-                  <td>product.price</td>
-                  <td>product.quantity</td>
-                </tr>
-                {/* {cartData.map(product => (
+              {orderData ? (
+                <table>
                   <tr>
-                    <td>{product.name}</td>
-                    <td>{product.size}</td>
-                    <td>{`₩ ${Number(product.price).toLocaleString()}`}</td>
-                    <td>
-                      {product.quantity}
-                    </td>
+                    <th>주문일자</th>
+                    <th>상품명</th>
+                    <th>사이즈</th>
+                    <th>수량</th>
+                    <th>가격</th>
                   </tr>
-                ))} */}
-              </table>
-              <div className="orderInfo">
-                <span>주문일자: 2021.00.00</span>
-                <span>주문금액: ₩ 100,000</span>
-              </div>
+                  {orderData.map(product => (
+                    <tr>
+                      <td>{product.date.split('T')[0]}</td>
+                      <td>{product.name}</td>
+                      <td>{product.size}</td>
+                      <td>{product.quantity}</td>
+                      <td>{`₩ ${Number(product.price).toLocaleString()}`}</td>
+                    </tr>
+                  ))}
+                </table>
+              ) : (
+                <p>주문하신 내역이 없습니다.</p>
+              )}
             </div>
             <button className="btnLogin" onClick={this.close}>
               확인
