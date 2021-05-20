@@ -1,0 +1,47 @@
+@import '../../Styles/variables.scss';
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+
+  .list {
+    display: flex;
+    position: relative;
+    right: 0;
+    transition: 0.5s;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background-color: $darkGray;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &.prev {
+      left: -80px;
+    }
+
+    &.next {
+      right: -80px;
+    }
+
+    i {
+      color: white;
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import SignUp from '../../Components/SignUp/SignUp';
 import Login from '../../Components/Login/Login';
 import Nav from '../../Components/Nav/Nav';
 import MainIllust from '../../Components/MainIllust/MainIllust';
@@ -17,7 +16,6 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main">
-        <SignUp />;
         <Login />
         <Nav />
         <MainIllust />

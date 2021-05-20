@@ -70,6 +70,11 @@ class Nav extends React.Component {
     //   JSON.stringify('17264sdfsdfds39127312830921')
     // );
 
+    // sessionStorage.setItem(
+    //   'accessToken',
+    //   JSON.stringify('17264sdfsdfds39127312830921')
+    // );
+
     return (
       <>
         {openState.로그인 && <div></div>}

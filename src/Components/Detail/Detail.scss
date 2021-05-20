@@ -1,5 +1,6 @@
 .detail {
-  padding: 30px;
+  margin: -200px 0 80px 25%;
+
   .detailProduct {
     -webkit-font-smoothing: antialiased;
     display: flex;
@@ -17,6 +18,7 @@
       .btnSize {
         display: flex;
         justify-content: center;
+        margin-bottom: 50px;
         font-size: 16px;
         color: #333333;
       }
