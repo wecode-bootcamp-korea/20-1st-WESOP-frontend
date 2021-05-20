@@ -32,7 +32,7 @@ class Cart extends React.Component {
     fetch('http://192.168.0.24:8000/orders/cart', {
       method: 'DELETE',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
       body: JSON.stringify({
         product_id: Number(product.product_id),
@@ -45,7 +45,7 @@ class Cart extends React.Component {
     fetch('http://192.168.0.24:8000/orders/cart', {
       method: 'PATCH',
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
       body: JSON.stringify({
         product_id: Number(product.product_id),
@@ -60,7 +60,7 @@ class Cart extends React.Component {
   renewCartData = () => {
     fetch('http://192.168.0.24:8000/orders/cart', {
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
     })
       .then(res => res.json())
@@ -72,7 +72,7 @@ class Cart extends React.Component {
   order = () => {
     fetch('http://192.168.0.24:8000/orders/order', {
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
     });
   };
