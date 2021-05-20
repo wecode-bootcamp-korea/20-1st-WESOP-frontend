@@ -8,6 +8,8 @@ class FilterBarExtend extends React.Component {
     this.state = {
       category: this.props.category,
       skinType: [],
+      themeUse: [],
+      themeSmell: [],
     };
   }
   componentDidMount() {
@@ -15,7 +17,8 @@ class FilterBarExtend extends React.Component {
     const themeUse = {};
     const themeSmell = {};
     let skinTypeCategory = [];
-    console.log(this.state.category);
+    let themeUseCategory = [];
+    let themeSmellCategory = [];
 
     this.state.category.forEach(category => {
       skinType[category.features] = skinType[category.features] || {
@@ -29,69 +32,69 @@ class FilterBarExtend extends React.Component {
         }
       });
     });
+
     this.state.category.forEach(category => {
       themeUse[category.features_use] = themeUse[category.features_use] || {
         check_features_use: category.features_use,
       };
     });
+    Object.values(themeUse).forEach(ele => {
+      ele.check_features_use.forEach(type => {
+        if (!themeUseCategory.includes(type)) {
+          themeUseCategory.push(type);
+        }
+      });
+    });
+
     this.state.category.forEach(category => {
       themeSmell[category.features_use] = themeSmell[category.features_use] || {
         check_product_ingredients: category.product_ingredients,
       };
     });
+    Object.values(themeSmell).forEach(ele => {
+      ele.check_product_ingredients.forEach(type => {
+        if (!themeSmellCategory.includes(type)) {
+          themeSmellCategory.push(type);
+        }
+      });
+    });
+
     this.setState({
       skinType: skinTypeCategory,
-      themeUse: Object.values(themeUse),
-      themeSmell: Object.values(themeSmell),
+      themeUse: themeUseCategory,
+      themeSmell: themeSmellCategory,
     });
   }
 
   render() {
-    const { category, skinType, themeUse, themeSmell } = this.state;
+    const { skinType, themeUse, themeSmell } = this.state;
 
-    console.log(skinType);
+    const skinTypeCheck = skinType.map(categorys => (
+      <label>
+        <li>
+          <input type="checkbox" value="" />
+          {categorys}
+        </li>
+      </label>
+    ));
 
-    // console.log(skinTypeCategory);
+    const themeUseCheck = themeUse.map(categorys => (
+      <label>
+        <li>
+          <input type="checkbox" value="" />
+          {categorys}
+        </li>
+      </label>
+    ));
 
-    // skinType &&
-    //   skinType.map(skin => {
-    //     for (let i = 0; i < Object.keys(skin).length; i++) {
-    //       skinTypeCategory.push(skin[i]);
-    //     }
-    //   });
-    // let skinList = new Set(skinTypeCategory);
-    // console.log(skinList);
-
-    // const skinTypeCheck = category.map(categorys => (
-    //   <>
-    //     <label>
-    //       <li>
-    //         <input type="checkbox" value="" />
-    //         {categorys.features}
-    //       </li>
-    //     </label>
-    //   </>
-    // ));
-    // const themeUseCheck = category.map(categorys => (
-    //   <>
-    //     <label>
-    //       <li>
-    //         <input type="checkbox" value="" />
-    //         {categorys.features_use}
-    //       </li>
-    //     </label>
-    //   </>
-    // ));
-    // const themeSmellCheck = category.map(categorys => (
-    //   <>
-    //     <label>
-    //       <li>
-    //         <input type="checkbox" value="" />
-    //         {categorys.product_ingredients}
-    //       </li>
-    //     </label>
-    //   </>
-    // ));
+    const themeSmellCheck = themeSmell.map(categorys => (
+      <label>
+        <li>
+          <input type="checkbox" value="" />
+          {categorys}
+        </li>
+      </label>
+    ));
 
     return (
       <div
@@ -105,19 +108,19 @@ class FilterBarExtend extends React.Component {
           <Link to="d">
             <header className="themeSkinType">피부타입</header>
           </Link>
-          {/* <ul className="listSkinType">{skinTypeCheck}</ul> */}
+          <ul className="listSkinType">{skinTypeCheck}</ul>
         </div>
         <div className="filterUse">
           <Link to="d">
             <header className="themeUse">제품특징</header>
           </Link>
-          {/* <ul className="listUse">{themeUseCheck}</ul> */}
+          <ul className="listUse">{themeUseCheck}</ul>
         </div>
         <div className="filterSmell">
           <Link to="">
             <header className="themeSmell">성분</header>
           </Link>
-          {/* <ul className="listSmell">{themeSmellCheck}</ul> */}
+          <ul className="listSmell">{themeSmellCheck}</ul>
         </div>
       </div>
     );

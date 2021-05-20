@@ -16,7 +16,6 @@ class FilterBar extends React.Component {
       category: [],
     };
   }
-
   componentDidMount() {
     window.addEventListener('wheel', this.handle);
     fetch('./data/mockdata.json')
