@@ -16,6 +16,7 @@ class FilterBar extends React.Component {
       category: [],
     };
   }
+
   componentDidMount() {
     window.addEventListener('wheel', this.handle);
     fetch('./data/mockdata.json')
@@ -68,7 +69,7 @@ class FilterBar extends React.Component {
   render() {
     const { filterBtnOpen, filterBtnClose, category } = this.state;
     const categoryList = category.map(categorys => (
-      <Link to="d">
+      <Link to="">
         <li>{categorys.category_name}</li>
       </Link>
     ));

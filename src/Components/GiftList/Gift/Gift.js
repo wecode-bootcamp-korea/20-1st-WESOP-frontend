@@ -22,6 +22,7 @@ class Gift extends React.Component {
       size: selectInfo.size,
     });
   };
+
   mouseIn = () => {
     this.setState({
       btnActive: false,
@@ -29,6 +30,7 @@ class Gift extends React.Component {
       allSize: true,
     });
   };
+
   mouseOut = () => {
     this.setState({
       btnActive: true,
