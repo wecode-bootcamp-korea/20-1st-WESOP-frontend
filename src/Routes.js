@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GiftPage from './Pages/GiftPage/GiftPage';
 import Main from './Pages/Main/Main';
 import Products from './Pages/Products/Products';
-import GiftPage from './Pages/GiftPage/GiftPage';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
 
 class Routes extends React.Component {

@@ -26,4 +26,4 @@ class Main extends React.Component {
   }
 }
 
-export default Product;
+export default Main;
