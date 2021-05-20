@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Nav from '../../Components/Nav/Nav';
 import FilterBar from '../../Components/FilterBar/FilterBar';
 import Inventory from '../../Components/Inventory/Inventory';
-import Footer from '../../Components/Footer/Footer';
 import './Products.scss';
 
 class Products extends React.Component {
@@ -23,10 +21,10 @@ class Products extends React.Component {
   }
 
   getData = () => {
-    fetch(`/data/menu_id=${this.props.match.params.mid}.json`)
-      // fetch(
-      //   `http://192.168.0.14:8000/products?menu_id=${this.props.match.params.mid}`
-      // )
+    // fetch(`/data/menu_id=${this.props.match.params.mid}.json`)
+    fetch(
+      `http://10.58.5.74:8000/products?menu_id=${this.props.match.params.mid}`
+    )
       .then(res => res.json())
       .then(menuProducts => {
         const categories = {};
@@ -79,19 +77,18 @@ class Products extends React.Component {
 
   render() {
     const { inventoryData, productsData } = this.state;
-    console.log(inventoryData);
+
+    console.log(Object.values(productsData));
 
     return (
       <div className="products">
         <div className="upperBar">
           <Link to="/">
             <img alt="wesop logo" src="/images/wesop.png" className="logo" />
-            <h1>
-              {inventoryData.length ? inventoryData[0].menu_name : 'Wesop'}
-            </h1>
+            <h1>{productsData ? inventoryData[0].menu_name : 'Wesop'}</h1>
           </Link>
         </div>
-        {inventoryData.length ? (
+        {productsData ? (
           <>
             <FilterBar />
             <Inventory

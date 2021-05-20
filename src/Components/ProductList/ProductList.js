@@ -13,7 +13,8 @@ class ProductList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/category_id=1.json')
+    // fetch('/data/category_id=1.json')
+    fetch(`http://10.58.5.74:8000/products?category_id=2`)
       .then(productData => productData.json())
       .then(productData => {
         this.setState({

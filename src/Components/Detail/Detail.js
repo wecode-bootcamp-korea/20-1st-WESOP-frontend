@@ -40,9 +40,28 @@ class Detail extends React.Component {
     });
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.pid !== this.props.match.params.pid) {
+      console.log('change');
+      // fetch('/data/product:1.json')
+      fetch(`http://10.58.5.74:8000/products/${this.props.match.params.pid}`)
+        .then(products => products.json())
+        .then(products => {
+          products.result.product_selections &&
+            this.setState({
+              product: products.result,
+              img: products.result.product_selections[0].image_url,
+              price: products.result.product_selections[0].price,
+              product_id: products.result.product_id,
+              size: products.result.product_selections[0].size,
+            });
+        });
+    }
+  }
+
   componentDidMount() {
-    fetch('/data/product:1.json')
-      // fetch(`/products/${this.props.match.params.pid}`)
+    // fetch('/data/product:1.json')
+    fetch(`http://10.58.5.74:8000/products/${this.props.match.params.pid}`)
       .then(products => products.json())
       .then(products => {
         products.result.product_selections &&

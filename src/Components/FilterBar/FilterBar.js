@@ -19,7 +19,8 @@ class FilterBar extends React.Component {
 
   componentDidMount() {
     window.addEventListener('wheel', this.handle);
-    fetch('./data/mockdata.json')
+    // fetch('./data/mockdata.json')
+    fetch(`http://10.58.5.74:8000/products?category_id=1`)
       .then(categorys => categorys.json())
       .then(categorys => {
         const categories = {};

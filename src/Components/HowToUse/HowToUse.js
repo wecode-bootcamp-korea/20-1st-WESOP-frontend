@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import '../HowToUse/HowToUse.scss';
 
 class HowToUse extends React.Component {
@@ -10,23 +11,18 @@ class HowToUse extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/data/product:1.json')
+    // fetch('/data/product:1.json')
+    fetch(`http://10.58.5.74:8000/products/${this.props.match.params.pid}`)
       .then(res => res.json())
       .then(jsonData =>
-        this.setState(
-          {
-            dataBox: jsonData.result,
-          },
-          () => {
-            console.log(this.state.dataBox);
-          }
-        )
+        this.setState({
+          dataBox: jsonData.result,
+        })
       );
   }
 
   render() {
     const { dataBox } = this.state;
-    console.log(dataBox);
 
     const infoMap =
       dataBox &&
@@ -64,4 +60,4 @@ class HowToUse extends React.Component {
   }
 }
 
-export default HowToUse;
+export default withRouter(HowToUse);

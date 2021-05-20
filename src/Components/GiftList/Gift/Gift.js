@@ -44,7 +44,7 @@ class Gift extends React.Component {
     this.setState({ btnAddCart: true });
     fetch('http://10.58.5.254:8000/order/cart', {
       method: 'POST',
-      headers: { Authorization: localStorage.getItem('token') },
+      headers: { Authorization: JSON.parse(sessionStorage.getItem('token')) },
       body: JSON.stringify({
         product_id: Number(this.state.giftId),
         size: this.state.size,

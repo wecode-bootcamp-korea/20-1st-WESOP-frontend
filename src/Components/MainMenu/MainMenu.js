@@ -23,7 +23,8 @@ class MainMenu extends React.Component {
       this.setState({ animation: '' });
     }, 1000);
 
-    fetch('/data/menuMockdata.json')
+    // fetch('/data/menuMockdata.json')
+    fetch(`http://10.58.5.74:8000/products/meta`)
       .then(res => res.json())
       .then(res => {
         const menus = res['result'].map(obj => ({
@@ -86,11 +87,8 @@ class MainMenu extends React.Component {
       }
     );
 
-    fetch(`./data/category_id=${category.category_id}.json`, {
-      headers: {
-        Accept: 'application/json',
-      },
-    })
+    // fetch(`./data/category_id=${category.category_id}.json`)
+    fetch(`http://10.58.5.74:8000/products?category_id=${category.category_id}`)
       .then(res => res.json())
       .then(products => this.setState({ products: products.result }));
 

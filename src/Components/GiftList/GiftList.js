@@ -12,7 +12,8 @@ class GiftList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('./data/productMockdata.json')
+    // fetch('./data/productMockdata.json')
+    fetch(`http://10.58.5.74:8000/products?category_id=1`)
       .then(products => products.json())
       .then(products =>
         this.setState({
@@ -24,7 +25,8 @@ class GiftList extends React.Component {
   componentDidUpdate(pervProps) {
     if (pervProps.match.params.mid !== this.props.match.params.mid) {
       this.setState({ product: '' });
-      fetch('./data/category_id=1.json')
+      // fetch('./data/category_id=1.json')
+      fetch(`http://10.58.5.74:8000/products?category_id=1`)
         .then(products => products.json())
         .then(products =>
           this.setState({
@@ -36,7 +38,6 @@ class GiftList extends React.Component {
 
   render() {
     const { product } = this.state;
-    console.log(product);
     return (
       <div className="giftList">
         {product &&

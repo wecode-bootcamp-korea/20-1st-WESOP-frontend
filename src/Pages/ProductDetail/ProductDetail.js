@@ -15,15 +15,15 @@ class ProductDetail extends React.Component {
     this.getData();
   }
 
-  componentDidUpdate(pervProps) {
-    if (pervProps.match.params.pid !== this.props.match.params.pid) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.pid !== this.props.match.params.pid) {
       this.getData();
     }
   }
 
   getData = () => {
-    fetch('/data/product:1.json')
-      // fetch(`/products/${this.props.match.params.pid}`)
+    // fetch('/data/product:1.json')
+    fetch(`http://10.58.5.74:8000/products/${this.props.match.params.pid}`)
       .then(product => product.json())
       .then(product => {
         this.setState({
