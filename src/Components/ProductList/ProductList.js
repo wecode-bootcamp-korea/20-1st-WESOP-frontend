@@ -43,7 +43,7 @@ class ProductList extends React.Component {
     const { products, slideRight, barLeft } = this.state;
     const { clickPrev, clickNext, slider } = this;
 
-    return (
+    return products.product_selections ? (
       <div className="productList">
         <div style={{ right: `${slideRight}%` }} ref={slider}>
           {products.map((product, index) => (
@@ -75,7 +75,7 @@ class ProductList extends React.Component {
           <div className="movingBar" style={{ left: `${barLeft}%` }}></div>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 

@@ -1,0 +1,134 @@
+@import '../../Styles/variables.scss';
+
+.cart {
+  position: relative;
+  width: 100vw;
+  height: 70vh;
+  padding: 20px 50px;
+  color: white;
+  background-color: #252525;
+  overflow: scroll;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cartList {
+    text-align: center;
+
+    i {
+      position: absolute;
+      top: 45px;
+      right: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    table {
+      width: 65%;
+
+      tr {
+        border-bottom: 1px solid rgb(75, 75, 75);
+        align-items: center;
+
+        &:first-child {
+          color: rgb(140, 140, 140);
+          border-bottom: 2px solid rgb(75, 75, 75);
+        }
+
+        &:hover p {
+          display: inline;
+          position: relative;
+          right: 20px;
+          cursor: pointer;
+        }
+      }
+
+      th,
+      td {
+        position: relative;
+        padding: 15px 0;
+        text-align: left;
+
+        &:first-child {
+          width: 45%;
+        }
+
+        select {
+          padding: 10px 15px;
+          color: white;
+          background: rgba(0, 0, 0, 0);
+          border: 1px solid #333;
+          outline: none;
+
+          &:hover {
+            border-color: white;
+          }
+        }
+
+        p {
+          display: none;
+          position: absolute;
+          top: 25px;
+          left: 50px;
+        }
+      }
+    }
+
+    .empty {
+      font-size: 20px;
+      margin-top: 200px;
+    }
+  }
+
+  .cartSum {
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
+    margin: 20px 0;
+    width: 100%;
+    color: lightgray;
+    overflow: auto;
+
+    > div {
+      float: right;
+      width: 29%;
+
+      .priceSum {
+        margin: 20px 0;
+
+        .price {
+          float: right;
+          color: white;
+          font-size: 28px;
+        }
+
+        button {
+          display: block;
+          width: 100%;
+          margin: 40px 0;
+          padding: 20px;
+          border: none;
+          background-color: rgb(255, 255, 255);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &.openAnimation {
+    animation: verticalSlide 0.5s;
+  }
+  &.closeAnimation {
+    animation: verticalSlide 0.5s reverse;
+  }
+}
+
+@keyframes verticalSlide {
+  from {
+    height: 50px;
+  }
+  to {
+  }
+}

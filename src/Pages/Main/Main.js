@@ -1,10 +1,12 @@
 import React from 'react';
 import SignUp from '../../Components/SignUp/SignUp';
+import Login from '../../Components/Login/Login';
 import Nav from '../../Components/Nav/Nav';
 import MainIllust from '../../Components/MainIllust/MainIllust';
 import MainProduct from '../../Components/MainProduct/MainProduct';
 import ProductList from '../../Components/ProductList/ProductList';
 import Footer from '../../Components/Footer/Footer';
+import FilterBar from '../../Components/FilterBar/FilterBar';
 
 class Main extends React.Component {
   constructor(props) {
@@ -16,8 +18,10 @@ class Main extends React.Component {
     return (
       <div className="main">
         <SignUp />;
+        <Login />
         <Nav />
         <MainIllust />
+        <FilterBar />
         <ProductList />
         <MainProduct />
         <Footer />
