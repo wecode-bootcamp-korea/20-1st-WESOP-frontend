@@ -15,7 +15,7 @@ class Form extends React.Component {
         <div className="formRow">
           <label htmlFor={this.props.name}>
             <input
-              className={isCheck ? 'formTextInput' : 'isEmailError'}
+              className={isCheck ? 'formTextInput' : 'isError'}
               name={name}
               type={type}
               error={errorMsg}
