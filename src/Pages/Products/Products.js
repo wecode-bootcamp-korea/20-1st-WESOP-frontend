@@ -17,7 +17,6 @@ class Products extends React.Component {
 
   componentDidUpdate(pervProps) {
     if (pervProps.match.params.mid !== this.props.match.params.mid) {
-      this.setState({ inventoryData: 0, productsData: 0 });
       this.getData();
     }
   }
@@ -71,6 +70,9 @@ class Products extends React.Component {
           inventoryData: inventoryData,
           productsData: productsData,
         });
+      })
+      .catch(() => {
+        this.setState({ inventoryData: 0, productsData: 0 });
       });
   };
 
