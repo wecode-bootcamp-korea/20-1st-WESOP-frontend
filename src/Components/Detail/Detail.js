@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { PRODUCTS_BASE_URL, USER_BASE_URL } from '../../config';
 import './Detail.scss';
 
 class Detail extends React.Component {
@@ -15,7 +16,7 @@ class Detail extends React.Component {
   }
 
   addCart = () => {
-    fetch('http://192.168.0.24:8000/orders/cart', {
+    fetch(`${USER_BASE_URL}/orders/cart`, {
       method: 'POST',
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
@@ -40,28 +41,22 @@ class Detail extends React.Component {
     });
   };
 
+  componentDidMount() {
+    this.getData();
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.pid !== this.props.match.params.pid) {
-      console.log('change');
-      // fetch('/data/product:1.json')
-      fetch(`http://10.58.5.74:8000/products/${this.props.match.params.pid}`)
-        .then(products => products.json())
-        .then(products => {
-          products.result.product_selections &&
-            this.setState({
-              product: products.result,
-              img: products.result.product_selections[0].image_url,
-              price: products.result.product_selections[0].price,
-              product_id: products.result.product_id,
-              size: products.result.product_selections[0].size,
-            });
-        });
+      this.getData();
     }
   }
 
-  componentDidMount() {
-    // fetch('/data/product:1.json')
-    fetch(`http://10.58.5.74:8000/products/${this.props.match.params.pid}`)
+  getData = () => {
+    fetch(
+      PRODUCTS_BASE_URL
+        ? `${PRODUCTS_BASE_URL}/products/${this.props.match.params.pid}`
+        : `/data/product:${this.props.match.params.pid}.json`
+    )
       .then(products => products.json())
       .then(products => {
         products.result.product_selections &&
@@ -73,7 +68,7 @@ class Detail extends React.Component {
             size: products.result.product_selections[0].size,
           });
       });
-  }
+  };
 
   render() {
     const { product, img, price } = this.state;

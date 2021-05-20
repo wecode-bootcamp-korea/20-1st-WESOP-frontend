@@ -1,0 +1,297 @@
+HTTP/1.1 200 OK
+Content-Length: 11395
+Content-Type: application/json
+Date: Thu, 20 May 2021 14:52:54 GMT
+Referrer-Policy: same-origin
+Server: WSGIServer/0.2 CPython/3.9.4
+Vary: Origin
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{
+    "result": [
+        [
+            {
+                "category_description": "각질 ∙ 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+                "category_description_title": "처음의 시작",
+                "category_id": 2,
+                "category_name": "클렌저",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "매주 2회 사용해주세요. 제품을 바른 후 토너를 적신 화장솜으로 닦아내어 피부 위에 가볍고 풍부한 수분막 형성해줍니다.",
+                "product_content_image_url": "https://i.postimg.cc/Xq8Xph7q/contentimg3.jpg",
+                "product_description": "가벼운 메이크업을 지워주고 피부에 남은 잔여물을 말끔하게 씻어내어 피부를 부드럽고 촉촉하게 가꿔 주는 크림 클렌저",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "메이크업을 한 피부",
+                            "복합성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "향",
+                        "features": [
+                            "민트",
+                            "허브",
+                            "우드"
+                        ]
+                    }
+                ],
+                "product_id": 11,
+                "product_ingredients": [
+                    "판테놀",
+                    "만다린",
+                    "레몬",
+                    "텐저린"
+                ],
+                "product_name": "퓨리파잉 페이셜 크림 클렌저",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/PqpvQWgF/big-product5.png",
+                        "price": "45000.00",
+                        "size": "100ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "각질 ∙ 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+                "category_description_title": "처음의 시작",
+                "category_id": 2,
+                "category_name": "클렌저",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "젖은 화장솜에 덜어 아이 메이크업 제품이 용해될 때까지 기다렸다 닦아냅니다",
+                "product_content_image_url": "https://i.postimg.cc/kXTBCkph/contentimg4.jpg",
+                "product_description": "눈 주위의 민감한 피부를 달래고 진정시켜주는 마트리카리아가 포함된 부드러운 오일 제형의 아이 메이크업 리무브",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "메이크업을 한 피부",
+                            "모든 피부 타입"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "향",
+                        "features": [
+                            "시트러스",
+                            "민트"
+                        ]
+                    }
+                ],
+                "product_id": 12,
+                "product_ingredients": [
+                    "베르가못",
+                    "토코페롤",
+                    "마카다미아 씨"
+                ],
+                "product_name": "아이 리무버",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/bvBHzNh4/big-product2.png",
+                        "price": "30000.00",
+                        "size": "60ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "각질 ∙ 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+                "category_description_title": "처음의 시작",
+                "category_id": 2,
+                "category_name": "클렌저",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "아침 저녁으로 깨끗한 손에 덜어 거품을 낸 후 세안합니다.",
+                "product_content_image_url": "https://i.postimg.cc/D0rSrHC1/contentimg1.jpg",
+                "product_description": "부드러운 거품이 피부를 효과적으로 세정하고 피부의 균형을 잡아주는 데일리 클렌저",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "잦은 여행자",
+                            "메이크업을 한 피부",
+                            "민감성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "향",
+                        "features": [
+                            "우드",
+                            "코코넛",
+                            "플로럴"
+                        ]
+                    }
+                ],
+                "product_id": 13,
+                "product_ingredients": [
+                    "라벤더 오일",
+                    "베타 카로틴"
+                ],
+                "product_name": "어메이징 페이스 클렌저",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/j2sjmP1T/product1.png",
+                        "price": "33000.00",
+                        "size": "100ml"
+                    },
+                    {
+                        "image_url": "https://i.postimg.cc/zvdQ5YxB/big-product1.png",
+                        "price": "53000.00",
+                        "size": "200ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "각질 ∙ 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+                "category_description_title": "처음의 시작",
+                "category_id": 2,
+                "category_name": "클렌저",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "아침 저녁으로 깨끗한 손에 덜어 거품을 낸 후 물로 씻어냅니다.",
+                "product_content_image_url": "https://i.postimg.cc/5NJY490g/contentimg2.jpg",
+                "product_description": "피부의 수분을 빼앗지 않으면서도 모공을 부드럽고 효과적으로 세정해주는 젤 타입 클렌저",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "메이크업을 한 피부",
+                            "중성 피부",
+                            "건성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "향",
+                        "features": [
+                            "우드",
+                            "흙내음"
+                        ]
+                    }
+                ],
+                "product_id": 14,
+                "product_ingredients": [
+                    "로즈힙열매오일",
+                    "판테놀",
+                    "포도씨 오일"
+                ],
+                "product_name": "인 투 마인즈 페이셜 클렌저",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/pVGxRwhz/product6.png",
+                        "price": "33000.00",
+                        "size": "100ml"
+                    },
+                    {
+                        "image_url": "https://i.postimg.cc/xjyJ5TZY/big-product6.png",
+                        "price": "53000.00",
+                        "size": "200ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "각질 ∙ 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+                "category_description_title": "처음의 시작",
+                "category_id": 2,
+                "category_name": "클렌저",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "아침과 저녁 사용 전에 흔들어 주세요. 이후 소량을 손에 덜어 얼굴과 목을 마사지합니다. 미지근한 물로 씻어 내거나 젖은 화장솜을 이용해 닦아냅니다.",
+                "product_content_image_url": "https://i.postimg.cc/Xq8Xph7q/contentimg3.jpg",
+                "product_description": "진정 효과가 뛰어난 보태니컬 성분이 함유되어 순한 데일리 클렌저로 사용하기 적합합니다. 손쉽게 메이크업을 지우고 편안하게 씻어냅니다.",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "메이크업을 한 피부",
+                            "민감성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "향",
+                        "features": [
+                            "스모키",
+                            "플로럴",
+                            "시트러스"
+                        ]
+                    }
+                ],
+                "product_id": 15,
+                "product_ingredients": [
+                    "만다린",
+                    "베타 카로틴",
+                    "알로에 베라",
+                    "로즈마리"
+                ],
+                "product_name": "젠틀 페이셜 클렌징 밀크",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/brCq5Mb0/product3.png",
+                        "price": "40000.00",
+                        "size": "100ml"
+                    },
+                    {
+                        "image_url": "https://i.postimg.cc/8kWBSSnn/big-product3.png",
+                        "price": "60000.00",
+                        "size": "200ml"
+                    }
+                ]
+            }
+        ],
+        [
+            {
+                "category_description": "각질 ∙ 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+                "category_description_title": "처음의 시작",
+                "category_id": 2,
+                "category_name": "클렌저",
+                "menu_id": 1,
+                "menu_name": "스킨",
+                "product_content": "메이크업을 지울 때는 얼굴에 직접 발라 마사지 한 후 물로 씻어냅니다. 일반 세안 시에는 손바닥에 물과 함께 섞어 밀키한 에멀젼으로 만들어 얼굴과 목에 마사지 한 후 물로 씻어냅니다.",
+                "product_content_image_url": "https://i.postimg.cc/5NJY490g/contentimg2.jpg",
+                "product_description": "진한 메이크업도 부드럽고 깨끗하게 닦아주는 오일 타입의 클렌저",
+                "product_features": [
+                    {
+                        "feature_category_name": "피부 타입",
+                        "features": [
+                            "모든 피부 타입",
+                            "건성 피부",
+                            "민감성 피부"
+                        ]
+                    },
+                    {
+                        "feature_category_name": "사용감",
+                        "features": [
+                            "산뜻한",
+                            "수분 공급",
+                            "시원한"
+                        ]
+                    }
+                ],
+                "product_id": 26,
+                "product_ingredients": [
+                    "파슬리 씨드",
+                    "만다린",
+                    "베르가못",
+                    "라벤더 오일",
+                    "레몬 밤"
+                ],
+                "product_name": "파슬리 씨드 페이셜 클렌징 오일",
+                "product_selections": [
+                    {
+                        "image_url": "https://i.postimg.cc/xjyJ5TZY/big-product6.png",
+                        "price": "63000.00",
+                        "size": "200ml"
+                    }
+                ]
+            }
+        ]
+    ]
+}

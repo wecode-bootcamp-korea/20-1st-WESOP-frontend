@@ -1,5 +1,6 @@
 import React from 'react';
 import './Cart.scss';
+import { USER_BASE_URL } from '../../../src/config';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class Cart extends React.Component {
   };
 
   deleteCartData = product => {
-    fetch(`http://10.58.2.119:8000/orders/cart/${product.cart_id}`, {
+    fetch(`${USER_BASE_URL}/orders/cart/${product.cart_id}`, {
       method: 'DELETE',
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
@@ -38,7 +39,7 @@ class Cart extends React.Component {
   };
 
   modifyCartData = (product, i) => {
-    fetch('http://10.58.2.119:8000/orders/cart', {
+    fetch(`${USER_BASE_URL}/orders/cart`, {
       method: 'PATCH',
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
@@ -52,7 +53,7 @@ class Cart extends React.Component {
   };
 
   renewCartData = () => {
-    fetch('http://10.58.2.119:8000/orders/cart', {
+    fetch(`${USER_BASE_URL}/orders/cart`, {
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
@@ -64,7 +65,7 @@ class Cart extends React.Component {
   };
 
   order = () => {
-    fetch('http://10.58.2.119:8000/orders/order', {
+    fetch(`${USER_BASE_URL}/orders/order`, {
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },

@@ -3,6 +3,9 @@ import GiftList from '../../Components/GiftList/GiftList';
 import MainIllust from '../../Components/MainIllust/MainIllust';
 
 class GiftPage extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="giftPage">

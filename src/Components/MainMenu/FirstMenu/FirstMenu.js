@@ -24,6 +24,7 @@ class FirstMenu extends React.Component {
   goToList = menu_id => {
     this.props.close();
     this.props.history.push(`/products/${menu_id}`);
+    window.scrollTo(0, 0);
   };
 
   goToLink = link => {

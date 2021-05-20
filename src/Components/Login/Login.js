@@ -1,4 +1,5 @@
 import React from 'react';
+import { USER_BASE_URL } from '../../config';
 import Form from './Form';
 import './Login.scss';
 
@@ -33,7 +34,7 @@ class Login extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('http://10.58.2.119:8000/user/login', {
+    fetch(`${USER_BASE_URL}/user/login`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -43,7 +44,6 @@ class Login extends React.Component {
       .then(resData => resData.json())
       .then(jsonData => {
         sessionStorage.setItem('accessToken', JSON.stringify(jsonData.token));
-        // this.props.history.push('#');
         if (jsonData.MESSAGE === 'INVALID_EMAIL') {
           alert('이메일을 확인해주세요.');
         }

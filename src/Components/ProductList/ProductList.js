@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { PRODUCTS_BASE_URL } from '../../config';
 import './ProductList.scss';
 
 class ProductList extends React.Component {
@@ -13,8 +14,11 @@ class ProductList extends React.Component {
   }
 
   componentDidMount() {
-    // fetch('/data/category_id=1.json')
-    fetch(`http://10.58.5.74:8000/products?category_id=2`)
+    fetch(
+      PRODUCTS_BASE_URL
+        ? `${PRODUCTS_BASE_URL}/products?category_id=2`
+        : `/data/category_id=1.json`
+    )
       .then(productData => productData.json())
       .then(productData => {
         this.setState({
@@ -43,6 +47,7 @@ class ProductList extends React.Component {
 
   goToDetail = productId => {
     this.props.history.push(`/productdetail/${productId}`);
+    window.scrollTo(0, 0);
   };
 
   render() {

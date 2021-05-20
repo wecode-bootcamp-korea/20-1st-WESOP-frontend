@@ -5,7 +5,7 @@
     "menu_id": 1,
     "menu_name": "스킨",
     "product_content": "아침 ∙ 저녁으로 깨끗한 손에 덜어 거품을 낸 후 물로 씻어 냅니다.",
-    "product_content_image_url": "https://i.postimg.cc/nL8qrqTd/soap-2726394-1920.jpg",
+    "product_content_image_url": "https://i.postimg.cc/D0rSrHC1/contentimg1.jpg",
     "product_description": "수분 공급을 위한 보태니컬 성분이 함유된 부드러운 타입의 젤 클렌저",
     "product_features": [
       {
@@ -22,12 +22,12 @@
     "product_name": "페뷸러스 페이스 클렌저",
     "product_selections": [
       {
-        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+        "image_url": "https://i.postimg.cc/j2sjmP1T/product1.png",
         "price": "33000.00",
         "size": "100ml"
       },
       {
-        "image_url": "https://i.postimg.cc/jj70QYHx/eli-eshaghi-UB5yi-AWjq1-M-unsplash-removebg-preview.png",
+        "image_url": "https://i.postimg.cc/zvdQ5YxB/big-product1.png",
         "price": "53000.00",
         "size": "200ml"
       }

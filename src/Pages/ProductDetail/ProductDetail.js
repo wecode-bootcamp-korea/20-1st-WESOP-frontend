@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { PRODUCTS_BASE_URL } from '../../config';
 import Detail from '../../Components/Detail/Detail';
 import HowToUse from '../../Components/HowToUse/HowToUse';
 import ProductList from '../../Components/ProductList/ProductList';
@@ -22,8 +23,11 @@ class ProductDetail extends React.Component {
   }
 
   getData = () => {
-    // fetch('/data/product:1.json')
-    fetch(`http://10.58.5.74:8000/products/${this.props.match.params.pid}`)
+    fetch(
+      PRODUCTS_BASE_URL
+        ? `${PRODUCTS_BASE_URL}/products/${this.props.match.params.pid}`
+        : `/data/product:${this.props.match.params.pid}`
+    )
       .then(product => product.json())
       .then(product => {
         this.setState({
@@ -42,6 +46,7 @@ class ProductDetail extends React.Component {
         </div>
         <Detail product={this.state.product && this.state.product} />
         <HowToUse />
+        <div className="space" />
         <ProductList />
       </div>
     );

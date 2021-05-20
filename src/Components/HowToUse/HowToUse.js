@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { PRODUCTS_BASE_URL } from '../../config';
 import '../HowToUse/HowToUse.scss';
 
 class HowToUse extends React.Component {
@@ -11,15 +12,28 @@ class HowToUse extends React.Component {
   }
 
   componentDidMount() {
-    // fetch('/data/product:1.json')
-    fetch(`http://10.58.5.74:8000/products/${this.props.match.params.pid}`)
+    this.getData();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.pid !== this.props.match.params.pid) {
+      this.getData();
+    }
+  }
+
+  getData = () => {
+    fetch(
+      PRODUCTS_BASE_URL
+        ? `${PRODUCTS_BASE_URL}/products/${this.props.match.params.pid}`
+        : `/data/product:${this.props.match.params.pid}.json`
+    )
       .then(res => res.json())
       .then(jsonData =>
         this.setState({
           dataBox: jsonData.result,
         })
       );
-  }
+  };
 
   render() {
     const { dataBox } = this.state;

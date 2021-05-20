@@ -10,7 +10,7 @@ class FilterBtnOpen extends React.Component {
     return (
       <button className="filterBtnOpen">
         <p>필터</p>
-        <img alt="화살표" src="./images/DownArrow.png" />
+        <img alt="화살표" src="/images/DownArrow.png" />
       </button>
     );
   }

@@ -33,7 +33,7 @@ class ThirdMenu extends React.Component {
                     onClick={() => {
                       close();
                       this.props.history.push(
-                        `productdetail/${product[0].product_id}`
+                        `/productdetail/${product[0].product_id}`
                       );
                     }}
                   >

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import FilterBar from '../../Components/FilterBar/FilterBar';
 import Inventory from '../../Components/Inventory/Inventory';
+import { PRODUCTS_BASE_URL } from '../../config';
 import './Products.scss';
 
 class Products extends React.Component {
@@ -21,9 +22,10 @@ class Products extends React.Component {
   }
 
   getData = () => {
-    // fetch(`/data/menu_id=${this.props.match.params.mid}.json`)
     fetch(
-      `http://10.58.5.74:8000/products?menu_id=${this.props.match.params.mid}`
+      PRODUCTS_BASE_URL
+        ? `${PRODUCTS_BASE_URL}/products?menu_id=${this.props.match.params.mid}`
+        : `/data/menu_id=${this.props.match.params.mid}.json`
     )
       .then(res => res.json())
       .then(menuProducts => {

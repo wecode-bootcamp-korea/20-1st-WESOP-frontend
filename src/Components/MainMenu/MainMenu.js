@@ -1,4 +1,5 @@
 import React from 'react';
+import { PRODUCTS_BASE_URL } from '../../config';
 import FirstMenu from './FirstMenu/FirstMenu';
 import './MainMenu.scss';
 import SecondMenu from './SecondMenu.js/SecondMenu';
@@ -23,8 +24,11 @@ class MainMenu extends React.Component {
       this.setState({ animation: '' });
     }, 1000);
 
-    // fetch('/data/menuMockdata.json')
-    fetch(`http://10.58.5.74:8000/products/meta`)
+    fetch(
+      PRODUCTS_BASE_URL
+        ? `${PRODUCTS_BASE_URL}/products/meta`
+        : `/data/menuMockdata.json`
+    )
       .then(res => res.json())
       .then(res => {
         const menus = res['result'].map(obj => ({
@@ -87,8 +91,11 @@ class MainMenu extends React.Component {
       }
     );
 
-    // fetch(`./data/category_id=${category.category_id}.json`)
-    fetch(`http://10.58.5.74:8000/products?category_id=${category.category_id}`)
+    fetch(
+      PRODUCTS_BASE_URL
+        ? `${PRODUCTS_BASE_URL}/products?category_id=${category.category_id}`
+        : `./data/category_id=${category.category_id}.json`
+    )
       .then(res => res.json())
       .then(products => this.setState({ products: products.result }));
 

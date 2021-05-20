@@ -1,0 +1,41 @@
+{
+  "result": {
+    "category_id": 1,
+    "category_name": "스킨 케어 기프트",
+    "menu_id": 1,
+    "menu_name": "스킨",
+    "product_content": "아침과 저녁 ∙ 화장솜이나 손에 직접 덜어내어 세안을 마친 얼굴과 목에 두드리세요.",
+    "product_content_image_url": "https://i.postimg.cc/Xq8Xph7q/contentimg3.jpg",
+    "product_description": "프로비타민 B5가 함유하여 피부의 밸런스를 잡아주는 수렴성 토너",
+    "product_features": [
+      {
+        "feature_category_name": "피부 타입",
+        "features": ["모든 피부 타입", "덥고 습한 날씨"]
+      },
+      {
+        "feature_category_name": "사용감",
+        "features": ["시원한", "가벼운", "생기있는"]
+      }
+    ],
+    "product_id": 3,
+    "product_ingredients": [
+      "그레이프 씨드",
+      "마카다미아 씨",
+      "알로에 베라",
+      "레몬 밤"
+    ],
+    "product_name": "비 앤 티 밸런싱 토너",
+    "product_selections": [
+      {
+        "image_url": "https://i.postimg.cc/brCq5Mb0/product3.png",
+        "price": "39000.00",
+        "size": "100ml"
+      },
+      {
+        "image_url": "https://i.postimg.cc/8kWBSSnn/big-product3.png",
+        "price": "63000.00",
+        "size": "200ml"
+      }
+    ]
+  }
+}

@@ -4,6 +4,7 @@ import FilterBtnOpen from '../FilterBtn/FilterBtnOpen';
 import FilterBtnClose from '../FilterBtn/FilterBtnClose';
 import { BrowserRouter, Link } from 'react-router-dom';
 import './FilterBar.scss';
+import { PRODUCTS_BASE_URL } from '../../config';
 
 class FilterBar extends React.Component {
   constructor(props) {
@@ -12,15 +13,19 @@ class FilterBar extends React.Component {
       filterBtnOpen: true,
       filterBtnClose: false,
       hide: false,
-      offsetTop: 0,
+      offsetTop: false,
       category: [],
     };
   }
 
   componentDidMount() {
     window.addEventListener('wheel', this.handle);
-    // fetch('./data/mockdata.json')
-    fetch(`http://10.58.5.74:8000/products?category_id=1`)
+
+    fetch(
+      PRODUCTS_BASE_URL
+        ? `${PRODUCTS_BASE_URL}/products?category_id=1`
+        : `/data/category_id=1.json`
+    )
       .then(categorys => categorys.json())
       .then(categorys => {
         const categories = {};
@@ -50,9 +55,9 @@ class FilterBar extends React.Component {
   }
 
   handle = () => {
-    this.setState({
-      offsetTop: this.filterBar.current.getBoundingClientRect().top,
-    });
+    this.filterBar.current.getBoundingClientRect().top <= 50
+      ? this.setState({ offsetTop: true })
+      : this.setState({ offsetTop: false });
   };
 
   filterBtn = () => {
@@ -92,7 +97,7 @@ class FilterBar extends React.Component {
               </div>
             </div>
 
-            {this.state.offsetTop < 0 && (
+            {this.state.offsetTop && (
               <div className="filterBarAfter">
                 <img className="logo" alt="위솝로고" src="/images/wesop.png" />
                 <div className="filterCategory" onClick={this.filterBtn}>
@@ -107,7 +112,7 @@ class FilterBar extends React.Component {
           <FilterBarExtend
             category={category}
             filterBtnClose={filterBtnClose}
-            styleChange={this.state.offsetTop < 0}
+            styleChange={this.state.offsetTop}
           />
         )}
       </>

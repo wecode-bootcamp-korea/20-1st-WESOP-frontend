@@ -2,6 +2,7 @@ import React from 'react';
 import BaseForm from './Form/BaseForm';
 import AddForm from './Form/AddForm';
 import './SignUp.scss';
+import { USER_BASE_URL } from '../../config';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -20,8 +21,7 @@ class SignUp extends React.Component {
 
   handleBtn = e => {
     e.preventDefault();
-    fetch('', {
-      //http://10.58.2.119:8000/user/signup
+    fetch(`${USER_BASE_URL}/user/signup`, {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,

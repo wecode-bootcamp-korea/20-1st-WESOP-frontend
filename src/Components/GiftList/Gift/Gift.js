@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { USER_BASE_URL } from '../../../config';
 import './Gift.scss';
 
 class Gift extends React.Component {
@@ -42,7 +43,7 @@ class Gift extends React.Component {
 
   addCart = () => {
     this.setState({ btnAddCart: true });
-    fetch('http://10.58.5.254:8000/order/cart', {
+    fetch(`${USER_BASE_URL}/order/cart`, {
       method: 'POST',
       headers: { Authorization: JSON.parse(sessionStorage.getItem('token')) },
       body: JSON.stringify({
@@ -58,7 +59,8 @@ class Gift extends React.Component {
   };
 
   goToDetail = pid => {
-    this.props.history.push(`productdetail/${pid}`);
+    this.props.history.push(`/productdetail/${pid}`);
+    window.scrollTo(0, 0);
   };
 
   render() {

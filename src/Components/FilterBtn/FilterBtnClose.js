@@ -9,7 +9,7 @@ class FilterBtnClose extends React.Component {
   render() {
     return (
       <button className="filterBtnClose">
-        <img alt="화살표" src="./images/Close.png" />
+        <img alt="화살표" src="/images/Close.png" />
       </button>
     );
   }

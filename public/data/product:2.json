@@ -1,0 +1,31 @@
+{
+  "result": {
+    "category_id": 1,
+    "category_name": "스킨 케어 기프트",
+    "menu_id": 1,
+    "menu_name": "스킨",
+    "product_content": "세안 후 토너를 바른 피부에 사용합니다.",
+    "product_content_image_url": "https://i.postimg.cc/5NJY490g/contentimg2.jpg",
+    "product_description": "우수한 성분이 혼합되어 부드럽고 매끈한 피부로 가꿔주는 알로에 베라 베이스의 수분 세럼",
+    "product_features": [
+      {
+        "feature_category_name": "피부 타입",
+        "features": ["중성 피부", "건성 피부"]
+      },
+      {
+        "feature_category_name": "사용감",
+        "features": ["상쾌한", "진정된", "부드러운"]
+      }
+    ],
+    "product_id": 2,
+    "product_ingredients": ["마트리카리아꽃오일", "레몬"],
+    "product_name": "파슬리 씨드 안티 옥시던트 세럼",
+    "product_selections": [
+      {
+        "image_url": "https://i.postimg.cc/xjyJ5TZY/big-product6.png",
+        "price": "85000.00",
+        "size": "100ml"
+      }
+    ]
+  }
+}

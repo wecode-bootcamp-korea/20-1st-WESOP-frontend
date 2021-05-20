@@ -1,4 +1,5 @@
 import React from 'react';
+import { USER_BASE_URL } from '../../config';
 import './OrderList.scss';
 
 class OrderList extends React.Component {
@@ -15,7 +16,7 @@ class OrderList extends React.Component {
       this.setState({ animation: '' });
     }, 600);
 
-    fetch('http://10.58.2.119:8000/orders/log', {
+    fetch(`${USER_BASE_URL}/orders/log`, {
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },

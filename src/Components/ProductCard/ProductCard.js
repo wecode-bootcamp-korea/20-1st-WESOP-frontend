@@ -14,6 +14,7 @@ class ProductCard extends React.Component {
 
   goToDetail = productId => {
     this.props.history.push(`/productdetail/${productId}`);
+    window.scrollTo(0, 0);
   };
 
   render() {
