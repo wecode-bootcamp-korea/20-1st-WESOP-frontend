@@ -39,7 +39,8 @@ class Nav extends React.Component {
   };
 
   logOut = () => {
-    window.sessionStorage.removeItem('token');
+    window.confirm('로그아웃 하시겠습니까?') &&
+      window.sessionStorage.removeItem('accessToken');
     this.setState({
       isLoggedIn: JSON.parse(window.sessionStorage.getItem('accessToken')),
     });
@@ -51,7 +52,10 @@ class Nav extends React.Component {
 
     const NAV_DATA = ['제품보기', '읽기', '검색', '로그인', '회원가입', '카트'];
 
-    // window.sessionStorage.setItem('token', JSON.stringify('aaaa'));
+    // sessionStorage.setItem(
+    //   'accessToken',
+    //   JSON.stringify('17264sdfsdfds39127312830921')
+    // );
 
     return (
       <>
