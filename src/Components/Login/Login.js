@@ -14,19 +14,8 @@ class Login extends React.Component {
 
   handleValue = e => {
     const { name, value } = e.target;
-    this.setState(
-      {
-        [name]: value,
-      },
-      () => {
-        // console.log(name, value);
-      }
-    );
-  };
-
-  hadleValueID = e => {
     this.setState({
-      email: e.target.value,
+      [name]: value,
     });
   };
 
@@ -35,17 +24,16 @@ class Login extends React.Component {
       this.setState({ animation: '' });
     }, 600);
 
-    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
   }
 
   componentWillUnmount() {
-    document.getElementsByTagName('body')[0].style.overflow = '';
+    document.body.style.overflow = 'unset';
   }
 
   handleBtn = e => {
     e.preventDefault();
     fetch('http://10.58.2.119:8000/user/login', {
-      //http://192.168.0.24:8000/user/login
       method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
@@ -73,15 +61,15 @@ class Login extends React.Component {
 
   render() {
     const { email, password } = this.state;
-    const isEmail = email.includes('@') && email.endsWith('.com');
-    const isPassword = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
+    const isEmailValid = email.includes('@') && email.endsWith('.com');
+    const isPasswordValid = password.length >= 6 && password.length <= 10; //대문자 , 숫자 적용하기
 
     const inputs = [
       {
         name: 'email',
         type: 'text',
         text: '이메일 주소',
-        isCheck: isEmail,
+        isCheck: isEmailValid,
         errorMsg: '유효한 이메일 주소를 입력하세요',
       },
 
@@ -89,13 +77,13 @@ class Login extends React.Component {
         name: 'password',
         type: 'password',
         text: '패스워드',
-        isCheck: isPassword,
+        isCheck: isPasswordValid,
         errorMsg: '패스워드는 5자리부터 10자리 미만입니다.',
       },
     ];
     return (
       <div className="bodyBack">
-        <div className={'login'}>
+        <div className="login">
           <div className={'modalBody ' + this.state.animation}>
             <button
               className="modalCloseBtn"
@@ -129,7 +117,7 @@ class Login extends React.Component {
             <button
               className="btnLogin"
               onClick={this.handleBtn}
-              disabled={isEmail && isPassword ? false : true}
+              disabled={isEmailValid && isPasswordValid ? false : true}
             >
               계속
             </button>
