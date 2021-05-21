@@ -43,9 +43,11 @@ class Gift extends React.Component {
 
   addCart = () => {
     this.setState({ btnAddCart: true });
-    fetch(`${USER_BASE_URL}/order/cart`, {
+    fetch(`${USER_BASE_URL}/orders/cart`, {
       method: 'POST',
-      headers: { Authorization: JSON.parse(sessionStorage.getItem('token')) },
+      headers: {
+        Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
+      },
       body: JSON.stringify({
         product_id: Number(this.state.giftId),
         size: this.state.size,
@@ -55,7 +57,8 @@ class Gift extends React.Component {
       .then(result => {
         if (result.MESSAGE === 'Product add in cart.') {
         }
-      });
+      })
+      .then(alert('카트에 추가되었습니다!'));
   };
 
   goToDetail = pid => {

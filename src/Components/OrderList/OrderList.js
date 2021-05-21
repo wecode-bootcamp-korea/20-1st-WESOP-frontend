@@ -52,7 +52,7 @@ class OrderList extends React.Component {
               type="button"
               onClick={this.close}
             >
-              <img alt="closeButton_image" src="./images/closeBtn.png" />
+              <img alt="closeButton_image" src="/images/closeBtn.png" />
             </button>
             <div className="modalHeadingWrap">
               <h1 className="modalTitle">주문 내역</h1>

@@ -49,6 +49,7 @@
       th,
       td {
         position: relative;
+        width: 18%;
         padding: 15px 0;
         text-align: left;
 
@@ -66,13 +67,17 @@
           &:hover {
             border-color: white;
           }
+
+          option {
+            color: #333;
+          }
         }
 
         p {
           display: none;
           position: absolute;
-          top: 25px;
-          left: 50px;
+          top: 0px;
+          left: 20px;
         }
       }
     }

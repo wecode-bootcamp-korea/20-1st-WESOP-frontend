@@ -10,7 +10,7 @@
 
 .signUp {
   position: relative;
-  top: 5%;
+  top: 1%;
   -webkit-font-smoothing: antialiased;
   color: #333;
   animation: closePage 0.2s linear 0s 1 normal;
@@ -76,7 +76,7 @@
         .formText {
           position: relative;
           margin: 0 0 10px;
-          padding: 30px 10px 0;
+          padding: 15px 10px 0;
           width: 100%;
 
           label {
@@ -152,6 +152,12 @@
         }
       }
     }
+  }
+
+  .over14 {
+    position: relative;
+    top: 20px;
+    margin: 0;
   }
 
   .isError {

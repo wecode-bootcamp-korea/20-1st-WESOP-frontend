@@ -100,7 +100,7 @@ class Login extends React.Component {
                 }, 600);
               }}
             >
-              <img alt="closeButton_image" src="./images/closeBtn.png" />
+              <img alt="closeButton_image" src="/images/closeBtn.png" />
             </button>
             <div className="modalHeadingWrap">
               <h1 className="modalTitle">안녕하세요.</h1>

@@ -9,6 +9,7 @@ class Cart extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(1, 1);
     setTimeout(() => {
       this.setState({ animation: '' });
     }, 500);
@@ -69,7 +70,9 @@ class Cart extends React.Component {
       headers: {
         Authorization: JSON.parse(sessionStorage.getItem('accessToken')),
       },
-    }).then(this.renewCartData);
+    })
+      .then(this.renewCartData)
+      .then(alert('주문이 완료되었습니다!'));
   };
 
   render() {
@@ -79,7 +82,7 @@ class Cart extends React.Component {
       <div className={`cart ${this.state.animation}`}>
         <div className="cartList">
           <i class="fas fa-times" onClick={this.close} />
-          {cartData ? (
+          {cartData.length ? (
             <table>
               <tr>
                 <th>카트</th>

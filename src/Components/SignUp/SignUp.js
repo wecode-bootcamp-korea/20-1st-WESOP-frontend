@@ -34,7 +34,8 @@ class SignUp extends React.Component {
     })
       .then(resData => resData.json())
       .then(jsonData => {
-        sessionStorage.setItem('accessToken', JSON.stringify(jsonData.token));
+        JSON.stringify(jsonData.token) &&
+          sessionStorage.setItem('accessToken', JSON.stringify(jsonData.token));
 
         if (jsonData.MESSAGE === 'INVALID_EMAIL') {
           alert('이메일을 확인해주세요.');
@@ -226,7 +227,7 @@ class SignUp extends React.Component {
               >
                 유효하지 않는 번호입니다.
               </div>
-              <div className="formText">
+              <div className="formText over14">
                 <form method="POST">
                   <input
                     type="checkbox"

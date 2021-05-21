@@ -28,9 +28,11 @@ class Detail extends React.Component {
     })
       .then(response => response.json())
       .then(result => {
+        console.log(this.state.size);
         if (result.MESSAGE === 'Product add in cart.') {
         }
-      });
+      })
+      .then(alert('카트에 추가되었습니다!'));
   };
 
   choiceSize = selectInfo => {

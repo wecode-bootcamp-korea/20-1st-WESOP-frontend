@@ -24,9 +24,10 @@ class Search extends React.Component {
   }
 
   getData = () => {
+    console.log(`${PRODUCTS_BASE_URL}/products${this.props.location.search}`);
     fetch(
       PRODUCTS_BASE_URL
-        ? `${PRODUCTS_BASE_URL}/products?${this.props.location.search}`
+        ? `${PRODUCTS_BASE_URL}/products/search/item${this.props.location.search}`
         : `/data/category_id=1.json`
     )
       .then(productData => productData.json())
@@ -48,13 +49,16 @@ class Search extends React.Component {
             <h1>
               {products
                 ? `${decodeURI(
-                    this.props.location.search.split('=')[1]
+                    this.props.location.search
+                      .split('=')[1]
+                      .split('+')
+                      .join(' ')
                   )} 검색결과`
                 : 'Wesop'}
             </h1>
           </Link>
         </div>
-        {products ? (
+        {products.length ? (
           <>
             <Carousel amount={products && products.length}>
               {products &&
@@ -66,11 +70,11 @@ class Search extends React.Component {
                   />
                 ))}
             </Carousel>
-            <div className="space" />
           </>
         ) : (
           <p className="none">검색 결과가 없습니다.</p>
         )}
+        <div className="space" />
       </div>
     );
   }

@@ -119,8 +119,8 @@ class FirstMenu extends React.Component {
             {firstRequest === '검색' && (
               <>
                 <i className="fas fa-arrow-right" />
-                <form action="/search" method="get">
-                  <input name="search" />
+                <form action="/products/search/item" method="get">
+                  <input name="search_name" />
                 </form>
               </>
             )}
