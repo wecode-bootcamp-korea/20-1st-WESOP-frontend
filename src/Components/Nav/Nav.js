@@ -2,10 +2,10 @@ import React from 'react';
 import LogIn from '../../Components/Login/Login';
 import SignUp from '../../Components/SignUp/SignUp';
 import MainMenu from '../../Components/MainMenu/MainMenu';
-import NeedLogin from '../NeedLogin/NeedLogin';
 import Cart from '../Cart/Cart';
-import './Nav.scss';
 import OrderList from '../OrderList/OrderList';
+import NeedLogin from '../NeedLogin/NeedLogin';
+import './Nav.scss';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -77,7 +77,6 @@ class Nav extends React.Component {
       '카트',
       '주문내역',
     ];
-
     return (
       <>
         {openState.로그인 && (
@@ -141,7 +140,7 @@ class Nav extends React.Component {
               </ul>
               <ul className="rightMenu">
                 {!isLoggedIn ? (
-                  NAV_DATA.slice(3).map((nav, index) => (
+                  NAV_DATA.slice(3, 6).map((nav, index) => (
                     <li
                       key={index}
                       onClick={() => {

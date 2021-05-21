@@ -89,7 +89,7 @@ class Detail extends React.Component {
     const ingredientsList =
       ingredients &&
       ingredients.map(ingredient => (
-        <span>
+        <span key={ingredient}>
           {ingredient}
           {', '}
         </span>

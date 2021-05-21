@@ -73,13 +73,21 @@ class FirstMenu extends React.Component {
           menu_id: 0,
           menu_name: '인기검색어',
         },
-        { menu_id: 0, menu_name: '클렌저', link: '/search?search=클렌저' },
+        {
+          menu_id: 0,
+          menu_name: '클렌저',
+          link: '/products/search/item?search_name=클렌저',
+        },
         {
           menu_id: 0,
           menu_name: '트리트먼트',
-          link: '/search?search=트리트먼트',
+          link: '/products/search/item?search_name=트리트먼트',
         },
-        { menu_id: 0, menu_name: '마스크', link: '/search?search=마스크' },
+        {
+          menu_id: 0,
+          menu_name: '마스크',
+          link: '/products/search/item?search_name=마스크',
+        },
       ],
     };
 
