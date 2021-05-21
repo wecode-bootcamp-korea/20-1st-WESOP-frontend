@@ -12,6 +12,7 @@ class Detail extends React.Component {
       price: '',
       product_id: '',
       size: '',
+      ingredients: '',
     };
   }
 
@@ -68,6 +69,7 @@ class Detail extends React.Component {
             price: products.result.product_selections[0].price,
             product_id: products.result.product_id,
             size: products.result.product_selections[0].size,
+            ingredients: products.result.product_ingredients,
           });
       });
   };
@@ -82,6 +84,15 @@ class Detail extends React.Component {
           <p>{feature.feature_category_name}</p>
           <p>{feature.features.join(', ')}</p>
         </li>
+      ));
+    const ingredients = product && product.product_ingredients;
+    const ingredientsList =
+      ingredients &&
+      ingredients.map(ingredient => (
+        <span>
+          {ingredient}
+          {', '}
+        </span>
       ));
     const selectInfo = product && product.product_selections;
     const selectInfoList =
@@ -123,7 +134,11 @@ class Detail extends React.Component {
                   <h1 className="detailName">{product.product_name}</h1>
                   <p className="detailExplain">{product.product_description}</p>
                 </div>
-                <ul className="detailInfo">{featureList}</ul>
+                <ul className="detailInfo">
+                  {featureList}
+                  <p>성분</p>
+                  {ingredientsList}
+                </ul>
                 <button className="addCart" onClick={this.addCart}>
                   카트에 추가 - ₩{Number(price).toLocaleString()}
                 </button>

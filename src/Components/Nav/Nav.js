@@ -30,6 +30,17 @@ class Nav extends React.Component {
     window.addEventListener('wheel', this.handleWheel);
   }
 
+  componentDidUpdate() {
+    if (
+      this.state.isLoggedIn !==
+      JSON.parse(window.sessionStorage.getItem('accessToken'))
+    ) {
+      this.setState({
+        isLoggedIn: JSON.parse(window.sessionStorage.getItem('accessToken')),
+      });
+    }
+  }
+
   componentWillUnmount() {
     window.removeEventListener('wheel', this.handleWheel);
   }
