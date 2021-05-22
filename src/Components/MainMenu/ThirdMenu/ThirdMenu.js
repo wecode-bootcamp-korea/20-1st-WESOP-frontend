@@ -1,17 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import MenuColumn from '../../MenuColumn/MenuColumn';
+import MenuColumn from '../MenuColumn/MenuColumn';
 import './ThirdMenu.scss';
 
 class ThirdMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     const { products, thirdRequest, animation, close } = this.props;
 
     return (
+      //secondMenu와 전체적으로 동일하고, products 데이터 받아서 map 돌리는 부분이 길어졌어요!
       <MenuColumn
         zIndex={0}
         left={!(thirdRequest && products) && '-67vw'}

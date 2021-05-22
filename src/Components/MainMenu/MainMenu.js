@@ -1,13 +1,15 @@
 import React from 'react';
 import { PRODUCTS_BASE_URL } from '../../config';
 import FirstMenu from './FirstMenu/FirstMenu';
-import './MainMenu.scss';
 import SecondMenu from './SecondMenu.js/SecondMenu';
 import ThirdMenu from './ThirdMenu/ThirdMenu';
+import './MainMenu.scss';
 
 class MainMenu extends React.Component {
   constructor(props) {
     super(props);
+    //여기서 first,second,thirdMenu 다 조건부로 관리해 줘야 해서 state값이 많습니다
+    //firstRequest는 이미 nav에서 MainMenu 열 때 받아 오기 때문에 props로 전달 받고, 나머지는 비어있음!
     this.state = {
       firstRequest: this.props.firstRequest,
       secondRequest: '',
@@ -15,15 +17,18 @@ class MainMenu extends React.Component {
       menus: [],
       categories: [],
       products: '',
+      //mount시 애니메이션 담은 클래스명 (나중에 unmout시 애니메이션 담은 'closeAnimation'으로 바꿔줌)
       animation: 'openAnimation',
     };
   }
 
   componentDidMount() {
+    //mount 애니메이션 실행 끝나면 삭제
     setTimeout(() => {
       this.setState({ animation: '' });
     }, 1000);
 
+    //헬이었던 데이터 분해하는 부분......
     fetch(
       PRODUCTS_BASE_URL
         ? `${PRODUCTS_BASE_URL}/products/meta`
@@ -54,6 +59,7 @@ class MainMenu extends React.Component {
     document.body.style.overflow = 'unset';
   }
 
+  //firstRequest(상단 메뉴에서 고르는 것) 하나 선택하면 second, third request도 초기화해 줘야 second, third Menu가 닫힙니다
   handleFirstRequest = upperMenu => {
     this.setState(
       {
@@ -88,18 +94,15 @@ class MainMenu extends React.Component {
       },
       () => {
         this.setState({ thirdRequest: category.category_name });
+        fetch(
+          PRODUCTS_BASE_URL
+            ? `${PRODUCTS_BASE_URL}/products?category_id=${category.category_id}`
+            : `./data/category_id=${category.category_id}.json`
+        )
+          .then(res => res.json())
+          .then(products => this.setState({ products: products.result }));
       }
     );
-
-    fetch(
-      PRODUCTS_BASE_URL
-        ? `${PRODUCTS_BASE_URL}/products?category_id=${category.category_id}`
-        : `./data/category_id=${category.category_id}.json`
-    )
-      .then(res => res.json())
-      .then(products => this.setState({ products: products.result }));
-
-    //나중에 이부분 동적으로 수정해줘야 세 번째 칸 데이터를 제대로 받을 수 있음
   };
 
   close = () => {
