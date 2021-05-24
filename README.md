@@ -12,10 +12,13 @@
 <br>
 
 Frontend  
-[김도은](https://github.com/dosilv), [김휘성](https://github.com/Heessong), [최원근](https://github.com/choiwk) 
+- [김도은](https://github.com/dosilv)
+- [김휘성](https://github.com/Heessong)
+- [최원근](https://github.com/choiwk) 
 
 Backend  
-[양미화](https://github.com/hwaya2828), [문성호](https://github.com/Room9)
+- [양미화](https://github.com/hwaya2828)
+- [문성호](https://github.com/Room9)
 
 <br>
 
