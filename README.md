@@ -7,7 +7,6 @@
 
 - **기간** : 2021.05.10 ~ 2021.05.21
 
-- **인원**  
 
 Frontend  
 [김도은](https://github.com/dosilv), [김휘성](https://github.com/Heessong), [최원근](https://github.com/choiwk) 
